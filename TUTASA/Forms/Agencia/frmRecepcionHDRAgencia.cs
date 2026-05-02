@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA
+namespace TUTASA.Forms.Agencia
 {
-    public partial class Form1 : Form
+    public partial class frmRecepcionHDRAgencia : Form
     {
-        public Form1()
+        public frmRecepcionHDRAgencia()
         {
             InitializeComponent();
         }

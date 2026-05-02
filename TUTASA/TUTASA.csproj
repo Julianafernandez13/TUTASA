@@ -46,14 +46,113 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Administracion\frmEmitirFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Administracion\frmEmitirFactura.Designer.cs">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administracion\frmCostovsVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administracion\frmCostovsVentas.Designer.cs">
+      <DependentUpon>frmCostovsVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmEntregaAgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmEntregaAgencia.Designer.cs">
+      <DependentUpon>frmEntregaAgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmImposicionAgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmImposicionAgencia.Designer.cs">
+      <DependentUpon>frmImposicionAgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmRecepcionHDRAgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Agencia\frmRecepcionHDRAgencia.Designer.cs">
+      <DependentUpon>frmRecepcionHDRAgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CallCenter\frmConsultaTrackingCallCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CallCenter\frmConsultaTrackingCallCenter.Designer.cs">
+      <DependentUpon>frmConsultaTrackingCallCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CallCenter\frmSolicitudRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CallCenter\frmSolicitudRetiro.Designer.cs">
+      <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmAdmision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmAdmision.Designer.cs">
+      <DependentUpon>frmAdmision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmConfeccionHDRUltimaMilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmConfeccionHDRUltimaMilla.Designer.cs">
+      <DependentUpon>frmConfeccionHDRUltimaMilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmConsultaTrackingCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmConsultaTrackingCD.Designer.cs">
+      <DependentUpon>frmConsultaTrackingCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmDespacho.Designer.cs">
+      <DependentUpon>frmDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmEntregaCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmEntregaCD.Designer.cs">
+      <DependentUpon>frmEntregaCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmImposicionCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmImposicionCD.Designer.cs">
+      <DependentUpon>frmImposicionCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmRecepcionHDRTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmRecepcionHDRTransporte.Designer.cs">
+      <DependentUpon>frmRecepcionHDRTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CD\frmRendiciónHDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CD\frmRendiciónHDR.Designer.cs">
+      <DependentUpon>frmRendiciónHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CallCenter\frmConsultaTrackingCallCenter.resx">
+      <DependentUpon>frmConsultaTrackingCallCenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,5 +175,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
