@@ -16,5 +16,9 @@ namespace TUTASA.Forms.Agencia
         {
             InitializeComponent();
         }
+        private void frmEntregaAgencia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
