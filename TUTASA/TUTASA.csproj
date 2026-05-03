@@ -159,6 +159,9 @@
     <EmbeddedResource Include="Forms\CallCenter\frmSolicitudRetiro.resx">
       <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmImposicionCD.resx">
+      <DependentUpon>frmImposicionCD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
