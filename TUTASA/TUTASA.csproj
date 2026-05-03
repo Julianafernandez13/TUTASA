@@ -142,6 +142,30 @@
     <Compile Include="Forms\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Menu\frmMenuAdminFinanzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuAdminFinanzas.Designer.cs">
+      <DependentUpon>frmMenuAdminFinanzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuAgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuAgencia.Designer.cs">
+      <DependentUpon>frmMenuAgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuCallCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuCallCenter.Designer.cs">
+      <DependentUpon>frmMenuCallCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuGerencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\frmMenuGerencial.Designer.cs">
+      <DependentUpon>frmMenuGerencial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Menu\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

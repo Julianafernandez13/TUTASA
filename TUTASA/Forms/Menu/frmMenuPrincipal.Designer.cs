@@ -2,38 +2,155 @@
 {
     partial class frmMenuPrincipal
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.btnImposicionCD = new System.Windows.Forms.Button();
+            this.btnAdmision = new System.Windows.Forms.Button();
+            this.btnConfeccionHDR = new System.Windows.Forms.Button();
+            this.btnRendicionHDR = new System.Windows.Forms.Button();
+            this.btnDespacho = new System.Windows.Forms.Button();
+            this.btnRecepcionTransporte = new System.Windows.Forms.Button();
+            this.btnEntregaCD = new System.Windows.Forms.Button();
+            this.btnTracking = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBienvenida.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblBienvenida.Location = new System.Drawing.Point(131, 19);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(142, 32);
+            this.lblBienvenida.TabIndex = 0;
+            this.lblBienvenida.Text = "Bienvenido";
+            // 
+            // btnImposicionCD
+            // 
+            this.btnImposicionCD.Location = new System.Drawing.Point(30, 70);
+            this.btnImposicionCD.Name = "btnImposicionCD";
+            this.btnImposicionCD.Size = new System.Drawing.Size(352, 35);
+            this.btnImposicionCD.TabIndex = 0;
+            this.btnImposicionCD.Text = "Registrar imposición en CD";
+            this.btnImposicionCD.UseVisualStyleBackColor = true;
+            // 
+            // btnAdmision
+            // 
+            this.btnAdmision.Location = new System.Drawing.Point(30, 115);
+            this.btnAdmision.Name = "btnAdmision";
+            this.btnAdmision.Size = new System.Drawing.Size(352, 35);
+            this.btnAdmision.TabIndex = 1;
+            this.btnAdmision.Text = "Registrar admisión de encomiendas";
+            this.btnAdmision.UseVisualStyleBackColor = true;
+            // 
+            // btnConfeccionHDR
+            // 
+            this.btnConfeccionHDR.Location = new System.Drawing.Point(30, 160);
+            this.btnConfeccionHDR.Name = "btnConfeccionHDR";
+            this.btnConfeccionHDR.Size = new System.Drawing.Size(352, 35);
+            this.btnConfeccionHDR.TabIndex = 2;
+            this.btnConfeccionHDR.Text = "Confeccionar hojas de ruta última milla";
+            this.btnConfeccionHDR.UseVisualStyleBackColor = true;
+            // 
+            // btnRendicionHDR
+            // 
+            this.btnRendicionHDR.Location = new System.Drawing.Point(30, 205);
+            this.btnRendicionHDR.Name = "btnRendicionHDR";
+            this.btnRendicionHDR.Size = new System.Drawing.Size(352, 35);
+            this.btnRendicionHDR.TabIndex = 3;
+            this.btnRendicionHDR.Text = "Recepcionar y rendir hojas de ruta";
+            this.btnRendicionHDR.UseVisualStyleBackColor = true;
+            // 
+            // btnDespacho
+            // 
+            this.btnDespacho.Location = new System.Drawing.Point(30, 250);
+            this.btnDespacho.Name = "btnDespacho";
+            this.btnDespacho.Size = new System.Drawing.Size(352, 35);
+            this.btnDespacho.TabIndex = 4;
+            this.btnDespacho.Text = "Confeccionar HDR de transporte y despachar";
+            this.btnDespacho.UseVisualStyleBackColor = true;
+            // 
+            // btnRecepcionTransporte
+            // 
+            this.btnRecepcionTransporte.Location = new System.Drawing.Point(30, 295);
+            this.btnRecepcionTransporte.Name = "btnRecepcionTransporte";
+            this.btnRecepcionTransporte.Size = new System.Drawing.Size(352, 35);
+            this.btnRecepcionTransporte.TabIndex = 5;
+            this.btnRecepcionTransporte.Text = "Recepcionar HDR y bultos de media distancia";
+            this.btnRecepcionTransporte.UseVisualStyleBackColor = true;
+            // 
+            // btnEntregaCD
+            // 
+            this.btnEntregaCD.Location = new System.Drawing.Point(30, 340);
+            this.btnEntregaCD.Name = "btnEntregaCD";
+            this.btnEntregaCD.Size = new System.Drawing.Size(352, 35);
+            this.btnEntregaCD.TabIndex = 6;
+            this.btnEntregaCD.Text = "Registrar entrega en CD";
+            this.btnEntregaCD.UseVisualStyleBackColor = true;
+            // 
+            // btnTracking
+            // 
+            this.btnTracking.Location = new System.Drawing.Point(30, 385);
+            this.btnTracking.Name = "btnTracking";
+            this.btnTracking.Size = new System.Drawing.Size(352, 35);
+            this.btnTracking.TabIndex = 7;
+            this.btnTracking.Text = "Consultar tracking";
+            this.btnTracking.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(30, 450);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(352, 35);
+            this.btnCerrarSesion.TabIndex = 8;
+            this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // frmMenuPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmMenuPrincipal";
+            this.ClientSize = new System.Drawing.Size(413, 520);
+            this.Controls.Add(this.lblBienvenida);
+            this.Controls.Add(this.btnImposicionCD);
+            this.Controls.Add(this.btnAdmision);
+            this.Controls.Add(this.btnConfeccionHDR);
+            this.Controls.Add(this.btnRendicionHDR);
+            this.Controls.Add(this.btnDespacho);
+            this.Controls.Add(this.btnRecepcionTransporte);
+            this.Controls.Add(this.btnEntregaCD);
+            this.Controls.Add(this.btnTracking);
+            this.Controls.Add(this.btnCerrarSesion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "frmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TUTASA — Centro de Distribución";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
-        #endregion
+        private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.Button btnImposicionCD;
+        private System.Windows.Forms.Button btnAdmision;
+        private System.Windows.Forms.Button btnConfeccionHDR;
+        private System.Windows.Forms.Button btnRendicionHDR;
+        private System.Windows.Forms.Button btnDespacho;
+        private System.Windows.Forms.Button btnRecepcionTransporte;
+        private System.Windows.Forms.Button btnEntregaCD;
+        private System.Windows.Forms.Button btnTracking;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

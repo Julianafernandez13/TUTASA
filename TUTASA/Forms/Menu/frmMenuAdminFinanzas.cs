@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.Forms.CD
+namespace TUTASA.Forms.Menu
 {
-    public partial class frmAdmision : Form
+    public partial class frmMenuAdminFinanzas : Form
     {
-        public frmAdmision()
+        public frmMenuAdminFinanzas()
         {
             InitializeComponent();
         }
 
-        private void lblCargos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbDomicilio_CheckedChanged(object sender, EventArgs e)
+        private void btnEmitirFactura_Click(object sender, EventArgs e)
         {
 
         }

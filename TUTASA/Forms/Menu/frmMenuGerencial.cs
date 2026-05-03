@@ -8,21 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.Forms.CD
+namespace TUTASA.Forms.Menu
 {
-    public partial class frmAdmision : Form
+    public partial class frmMenuGerencial : Form
     {
-        public frmAdmision()
+        public frmMenuGerencial()
         {
             InitializeComponent();
         }
 
-        private void lblCargos_Click(object sender, EventArgs e)
+        private void lblBienvenida_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void rbDomicilio_CheckedChanged(object sender, EventArgs e)
+        private void frmMenuGerencial_Load(object sender, EventArgs e)
         {
 
         }
