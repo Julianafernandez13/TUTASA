@@ -150,8 +150,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Agencia\frmImposicionAgencia.resx">
+      <DependentUpon>frmImposicionAgencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CallCenter\frmConsultaTrackingCallCenter.resx">
       <DependentUpon>frmConsultaTrackingCallCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CallCenter\frmSolicitudRetiro.resx">
+      <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
