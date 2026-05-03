@@ -195,6 +195,9 @@
     <EmbeddedResource Include="Forms\CD\frmImposicionCD.resx">
       <DependentUpon>frmImposicionCD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmRecepcionHDRTransporte.resx">
+      <DependentUpon>frmRecepcionHDRTransporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
