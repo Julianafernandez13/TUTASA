@@ -148,8 +148,11 @@
     <Compile Include="Forms\Menu\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Administracion\frmEmitirFactura.resx">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Agencia\frmImposicionAgencia.resx">
       <DependentUpon>frmImposicionAgencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +162,17 @@
     <EmbeddedResource Include="Forms\CallCenter\frmSolicitudRetiro.resx">
       <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmDespacho.resx">
+      <DependentUpon>frmDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmEntregaCD.resx">
+      <DependentUpon>frmEntregaCD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CD\frmImposicionCD.resx">
       <DependentUpon>frmImposicionCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

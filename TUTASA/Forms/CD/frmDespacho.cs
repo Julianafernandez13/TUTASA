@@ -16,5 +16,15 @@ namespace TUTASA.Forms.CD
         {
             InitializeComponent();
         }
+
+        private void frmDespacho_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
