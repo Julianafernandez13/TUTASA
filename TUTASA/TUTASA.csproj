@@ -189,6 +189,9 @@
     <EmbeddedResource Include="Forms\CallCenter\frmSolicitudRetiro.resx">
       <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmConfeccionHDRUltimaMilla.resx">
+      <DependentUpon>frmConfeccionHDRUltimaMilla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CD\frmDespacho.resx">
       <DependentUpon>frmDespacho.cs</DependentUpon>
     </EmbeddedResource>

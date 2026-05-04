@@ -16,5 +16,10 @@ namespace TUTASA.Forms.CD
         {
             InitializeComponent();
         }
+
+        private void lblZona_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
