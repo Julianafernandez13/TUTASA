@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CallCenter
 {
-    partial class frmConsultaTrackingCallCenter
+    partial class frmConsultaTracking
     {
         /// <summary>
         /// Required designer variable.
@@ -34,35 +34,35 @@
             this.txtNroGuia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlResultado = new System.Windows.Forms.Panel();
-            this.grpEstado = new System.Windows.Forms.GroupBox();
-            this.lblFechaUltimo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblEstadoTitulo = new System.Windows.Forms.Label();
-            this.lblEstadoActual = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblGuia = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.grpHistorial = new System.Windows.Forms.GroupBox();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUbicación = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpEstado = new System.Windows.Forms.GroupBox();
             this.btnNuevaConsulta = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblGuia = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblFechaUltimo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblEstadoTitulo = new System.Windows.Forms.Label();
+            this.lblEstadoActual = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pnlResultado.SuspendLayout();
-            this.grpEstado.SuspendLayout();
             this.grpHistorial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
+            this.grpEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -128,181 +128,6 @@
             this.pnlResultado.Visible = false;
             this.pnlResultado.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlResultado_Paint);
             // 
-            // grpEstado
-            // 
-            this.grpEstado.Controls.Add(this.btnNuevaConsulta);
-            this.grpEstado.Controls.Add(this.label11);
-            this.grpEstado.Controls.Add(this.label12);
-            this.grpEstado.Controls.Add(this.label13);
-            this.grpEstado.Controls.Add(this.label14);
-            this.grpEstado.Controls.Add(this.label6);
-            this.grpEstado.Controls.Add(this.label8);
-            this.grpEstado.Controls.Add(this.label7);
-            this.grpEstado.Controls.Add(this.label5);
-            this.grpEstado.Controls.Add(this.lblCategoria);
-            this.grpEstado.Controls.Add(this.label4);
-            this.grpEstado.Controls.Add(this.lblGuia);
-            this.grpEstado.Controls.Add(this.label3);
-            this.grpEstado.Controls.Add(this.lblFechaUltimo);
-            this.grpEstado.Controls.Add(this.label2);
-            this.grpEstado.Controls.Add(this.lblEstadoTitulo);
-            this.grpEstado.Controls.Add(this.lblEstadoActual);
-            this.grpEstado.Location = new System.Drawing.Point(3, 3);
-            this.grpEstado.Name = "grpEstado";
-            this.grpEstado.Size = new System.Drawing.Size(839, 254);
-            this.grpEstado.TabIndex = 0;
-            this.grpEstado.TabStop = false;
-            this.grpEstado.Text = "Estado actual de la guía";
-            this.grpEstado.Enter += new System.EventHandler(this.grpEstado_Enter);
-            // 
-            // lblFechaUltimo
-            // 
-            this.lblFechaUltimo.AutoSize = true;
-            this.lblFechaUltimo.Location = new System.Drawing.Point(413, 28);
-            this.lblFechaUltimo.Name = "lblFechaUltimo";
-            this.lblFechaUltimo.Size = new System.Drawing.Size(0, 16);
-            this.lblFechaUltimo.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(313, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Actualizado:";
-            // 
-            // lblEstadoTitulo
-            // 
-            this.lblEstadoTitulo.AutoSize = true;
-            this.lblEstadoTitulo.Location = new System.Drawing.Point(13, 28);
-            this.lblEstadoTitulo.Name = "lblEstadoTitulo";
-            this.lblEstadoTitulo.Size = new System.Drawing.Size(53, 16);
-            this.lblEstadoTitulo.TabIndex = 1;
-            this.lblEstadoTitulo.Text = "Estado:";
-            // 
-            // lblEstadoActual
-            // 
-            this.lblEstadoActual.BackColor = System.Drawing.Color.LightGreen;
-            this.lblEstadoActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEstadoActual.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoActual.Location = new System.Drawing.Point(85, 28);
-            this.lblEstadoActual.Name = "lblEstadoActual";
-            this.lblEstadoActual.Size = new System.Drawing.Size(225, 33);
-            this.lblEstadoActual.TabIndex = 0;
-            this.lblEstadoActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEstadoActual.Click += new System.EventHandler(this.lblEstadoActual_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "N° de guía";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // lblGuia
-            // 
-            this.lblGuia.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblGuia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGuia.Location = new System.Drawing.Point(101, 74);
-            this.lblGuia.Name = "lblGuia";
-            this.lblGuia.Size = new System.Drawing.Size(220, 22);
-            this.lblGuia.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Categoria";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCategoria.Location = new System.Drawing.Point(101, 121);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(220, 22);
-            this.lblCategoria.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 171);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Remitente";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 221);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Destinatario";
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(101, 170);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 22);
-            this.label7.TabIndex = 9;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(101, 220);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(220, 22);
-            this.label8.TabIndex = 10;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(459, 121);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(220, 22);
-            this.label11.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(375, 122);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Destino";
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(459, 74);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(220, 22);
-            this.label13.TabIndex = 12;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(375, 75);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 20);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Origen";
-            // 
             // grpHistorial
             // 
             this.grpHistorial.Controls.Add(this.dgvHistorial);
@@ -362,6 +187,33 @@
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
             // 
+            // grpEstado
+            // 
+            this.grpEstado.Controls.Add(this.btnNuevaConsulta);
+            this.grpEstado.Controls.Add(this.label11);
+            this.grpEstado.Controls.Add(this.label12);
+            this.grpEstado.Controls.Add(this.label13);
+            this.grpEstado.Controls.Add(this.label14);
+            this.grpEstado.Controls.Add(this.label6);
+            this.grpEstado.Controls.Add(this.label8);
+            this.grpEstado.Controls.Add(this.label7);
+            this.grpEstado.Controls.Add(this.label5);
+            this.grpEstado.Controls.Add(this.lblCategoria);
+            this.grpEstado.Controls.Add(this.label4);
+            this.grpEstado.Controls.Add(this.lblGuia);
+            this.grpEstado.Controls.Add(this.label3);
+            this.grpEstado.Controls.Add(this.lblFechaUltimo);
+            this.grpEstado.Controls.Add(this.label2);
+            this.grpEstado.Controls.Add(this.lblEstadoTitulo);
+            this.grpEstado.Controls.Add(this.lblEstadoActual);
+            this.grpEstado.Location = new System.Drawing.Point(3, 3);
+            this.grpEstado.Name = "grpEstado";
+            this.grpEstado.Size = new System.Drawing.Size(839, 254);
+            this.grpEstado.TabIndex = 0;
+            this.grpEstado.TabStop = false;
+            this.grpEstado.Text = "Estado actual de la guía";
+            this.grpEstado.Enter += new System.EventHandler(this.grpEstado_Enter);
+            // 
             // btnNuevaConsulta
             // 
             this.btnNuevaConsulta.Location = new System.Drawing.Point(529, 171);
@@ -372,11 +224,159 @@
             this.btnNuevaConsulta.UseVisualStyleBackColor = true;
             this.btnNuevaConsulta.Click += new System.EventHandler(this.btnNuevaConsulta_Click);
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(459, 121);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(220, 22);
+            this.label11.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(375, 122);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 16);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Destino";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Location = new System.Drawing.Point(459, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(220, 22);
+            this.label13.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(375, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Origen";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 221);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Destinatario";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(101, 220);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(220, 22);
+            this.label8.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(101, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(220, 22);
+            this.label7.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Remitente";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCategoria.Location = new System.Drawing.Point(101, 121);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(220, 22);
+            this.lblCategoria.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Categoria";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lblGuia
+            // 
+            this.lblGuia.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblGuia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGuia.Location = new System.Drawing.Point(101, 74);
+            this.lblGuia.Name = "lblGuia";
+            this.lblGuia.Size = new System.Drawing.Size(220, 22);
+            this.lblGuia.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "N° de guía";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblFechaUltimo
+            // 
+            this.lblFechaUltimo.AutoSize = true;
+            this.lblFechaUltimo.Location = new System.Drawing.Point(413, 28);
+            this.lblFechaUltimo.Name = "lblFechaUltimo";
+            this.lblFechaUltimo.Size = new System.Drawing.Size(0, 16);
+            this.lblFechaUltimo.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(313, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Actualizado:";
+            // 
+            // lblEstadoTitulo
+            // 
+            this.lblEstadoTitulo.AutoSize = true;
+            this.lblEstadoTitulo.Location = new System.Drawing.Point(13, 28);
+            this.lblEstadoTitulo.Name = "lblEstadoTitulo";
+            this.lblEstadoTitulo.Size = new System.Drawing.Size(53, 16);
+            this.lblEstadoTitulo.TabIndex = 1;
+            this.lblEstadoTitulo.Text = "Estado:";
+            // 
+            // lblEstadoActual
+            // 
+            this.lblEstadoActual.BackColor = System.Drawing.Color.LightGreen;
+            this.lblEstadoActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEstadoActual.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoActual.Location = new System.Drawing.Point(85, 28);
+            this.lblEstadoActual.Name = "lblEstadoActual";
+            this.lblEstadoActual.Size = new System.Drawing.Size(225, 33);
+            this.lblEstadoActual.TabIndex = 0;
+            this.lblEstadoActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEstadoActual.Click += new System.EventHandler(this.lblEstadoActual_Click);
+            // 
             // frmConsultaTrackingCallCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 522);
+            this.ClientSize = new System.Drawing.Size(1036, 563);
             this.Controls.Add(this.pnlResultado);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -388,10 +388,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlResultado.ResumeLayout(false);
-            this.grpEstado.ResumeLayout(false);
-            this.grpEstado.PerformLayout();
             this.grpHistorial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
+            this.grpEstado.ResumeLayout(false);
+            this.grpEstado.PerformLayout();
             this.ResumeLayout(false);
 
         }
