@@ -189,6 +189,9 @@
     <EmbeddedResource Include="Forms\CallCenter\frmSolicitudRetiro.resx">
       <DependentUpon>frmSolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmAdmision.resx">
+      <DependentUpon>frmAdmision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CD\frmConfeccionHDRUltimaMilla.resx">
       <DependentUpon>frmConfeccionHDRUltimaMilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,8 +207,14 @@
     <EmbeddedResource Include="Forms\CD\frmRecepcionHDRTransporte.resx">
       <DependentUpon>frmRecepcionHDRTransporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CD\frmRendiciónHDR.resx">
+      <DependentUpon>frmRendiciónHDR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu\frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -41,7 +41,6 @@
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.grpFletero.SuspendLayout();
             this.grpHDR.SuspendLayout();
             this.grpGuias.SuspendLayout();
@@ -54,9 +53,11 @@
             this.grpFletero.Controls.Add(this.txtFletero);
             this.grpFletero.Controls.Add(this.btnBuscarFletero);
             this.grpFletero.Controls.Add(this.lblNombreFletero);
-            this.grpFletero.Location = new System.Drawing.Point(12, 12);
+            this.grpFletero.Location = new System.Drawing.Point(8, 8);
+            this.grpFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpFletero.Name = "grpFletero";
-            this.grpFletero.Size = new System.Drawing.Size(711, 60);
+            this.grpFletero.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFletero.Size = new System.Drawing.Size(474, 64);
             this.grpFletero.TabIndex = 0;
             this.grpFletero.TabStop = false;
             this.grpFletero.Text = "Identificación del fletero";
@@ -64,24 +65,27 @@
             // lblFleteroLabel
             // 
             this.lblFleteroLabel.AutoSize = true;
-            this.lblFleteroLabel.Location = new System.Drawing.Point(10, 26);
+            this.lblFleteroLabel.Location = new System.Drawing.Point(7, 17);
+            this.lblFleteroLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFleteroLabel.Name = "lblFleteroLabel";
-            this.lblFleteroLabel.Size = new System.Drawing.Size(103, 20);
+            this.lblFleteroLabel.Size = new System.Drawing.Size(73, 13);
             this.lblFleteroLabel.TabIndex = 0;
             this.lblFleteroLabel.Text = "Código / DNI:";
             // 
             // txtFletero
             // 
-            this.txtFletero.Location = new System.Drawing.Point(113, 23);
+            this.txtFletero.Location = new System.Drawing.Point(75, 15);
+            this.txtFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFletero.Name = "txtFletero";
-            this.txtFletero.Size = new System.Drawing.Size(150, 26);
+            this.txtFletero.Size = new System.Drawing.Size(101, 20);
             this.txtFletero.TabIndex = 0;
             // 
             // btnBuscarFletero
             // 
-            this.btnBuscarFletero.Location = new System.Drawing.Point(269, 22);
+            this.btnBuscarFletero.Location = new System.Drawing.Point(179, 14);
+            this.btnBuscarFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarFletero.Name = "btnBuscarFletero";
-            this.btnBuscarFletero.Size = new System.Drawing.Size(90, 25);
+            this.btnBuscarFletero.Size = new System.Drawing.Size(60, 21);
             this.btnBuscarFletero.TabIndex = 1;
             this.btnBuscarFletero.Text = "Buscar fletero";
             this.btnBuscarFletero.UseVisualStyleBackColor = true;
@@ -90,9 +94,10 @@
             // 
             this.lblNombreFletero.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombreFletero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNombreFletero.Location = new System.Drawing.Point(364, 23);
+            this.lblNombreFletero.Location = new System.Drawing.Point(243, 15);
+            this.lblNombreFletero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreFletero.Name = "lblNombreFletero";
-            this.lblNombreFletero.Size = new System.Drawing.Size(320, 22);
+            this.lblNombreFletero.Size = new System.Drawing.Size(214, 15);
             this.lblNombreFletero.TabIndex = 2;
             // 
             // grpHDR
@@ -109,9 +114,11 @@
             this.grpHDR.Controls.Add(this.lblMotivoLabel);
             this.grpHDR.Controls.Add(this.txtMotivo);
             this.grpHDR.Controls.Add(this.btnRegistrarHDR);
-            this.grpHDR.Location = new System.Drawing.Point(12, 82);
+            this.grpHDR.Location = new System.Drawing.Point(8, 88);
+            this.grpHDR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpHDR.Name = "grpHDR";
-            this.grpHDR.Size = new System.Drawing.Size(711, 171);
+            this.grpHDR.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHDR.Size = new System.Drawing.Size(474, 140);
             this.grpHDR.TabIndex = 1;
             this.grpHDR.TabStop = false;
             this.grpHDR.Text = "Datos de la hoja de ruta";
@@ -119,25 +126,28 @@
             // lblNroHDRLabel
             // 
             this.lblNroHDRLabel.AutoSize = true;
-            this.lblNroHDRLabel.Location = new System.Drawing.Point(10, 28);
+            this.lblNroHDRLabel.Location = new System.Drawing.Point(27, 32);
+            this.lblNroHDRLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroHDRLabel.Name = "lblNroHDRLabel";
-            this.lblNroHDRLabel.Size = new System.Drawing.Size(91, 20);
+            this.lblNroHDRLabel.Size = new System.Drawing.Size(64, 13);
             this.lblNroHDRLabel.TabIndex = 0;
             this.lblNroHDRLabel.Text = "N° de HDR:";
             // 
             // txtNroHDR
             // 
-            this.txtNroHDR.Location = new System.Drawing.Point(104, 25);
+            this.txtNroHDR.Location = new System.Drawing.Point(89, 30);
+            this.txtNroHDR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNroHDR.Name = "txtNroHDR";
-            this.txtNroHDR.Size = new System.Drawing.Size(120, 26);
+            this.txtNroHDR.Size = new System.Drawing.Size(81, 20);
             this.txtNroHDR.TabIndex = 2;
             // 
             // lblResultadoLabel
             // 
             this.lblResultadoLabel.AutoSize = true;
-            this.lblResultadoLabel.Location = new System.Drawing.Point(253, 28);
+            this.lblResultadoLabel.Location = new System.Drawing.Point(189, 32);
+            this.lblResultadoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultadoLabel.Name = "lblResultadoLabel";
-            this.lblResultadoLabel.Size = new System.Drawing.Size(86, 20);
+            this.lblResultadoLabel.Size = new System.Drawing.Size(58, 13);
             this.lblResultadoLabel.TabIndex = 3;
             this.lblResultadoLabel.Text = "Resultado:";
             // 
@@ -145,9 +155,10 @@
             // 
             this.rbEntregada.AutoSize = true;
             this.rbEntregada.Checked = true;
-            this.rbEntregada.Location = new System.Drawing.Point(353, 26);
+            this.rbEntregada.Location = new System.Drawing.Point(255, 31);
+            this.rbEntregada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbEntregada.Name = "rbEntregada";
-            this.rbEntregada.Size = new System.Drawing.Size(109, 24);
+            this.rbEntregada.Size = new System.Drawing.Size(74, 17);
             this.rbEntregada.TabIndex = 3;
             this.rbEntregada.TabStop = true;
             this.rbEntregada.Text = "Entregada";
@@ -155,66 +166,74 @@
             // rbIntentoFallido
             // 
             this.rbIntentoFallido.AutoSize = true;
-            this.rbIntentoFallido.Location = new System.Drawing.Point(473, 26);
+            this.rbIntentoFallido.Location = new System.Drawing.Point(335, 31);
+            this.rbIntentoFallido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbIntentoFallido.Name = "rbIntentoFallido";
-            this.rbIntentoFallido.Size = new System.Drawing.Size(130, 24);
+            this.rbIntentoFallido.Size = new System.Drawing.Size(88, 17);
             this.rbIntentoFallido.TabIndex = 4;
             this.rbIntentoFallido.Text = "Intento fallido";
             // 
             // lblDNIReceptorLabel
             // 
             this.lblDNIReceptorLabel.AutoSize = true;
-            this.lblDNIReceptorLabel.Location = new System.Drawing.Point(10, 65);
+            this.lblDNIReceptorLabel.Location = new System.Drawing.Point(27, 56);
+            this.lblDNIReceptorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDNIReceptorLabel.Name = "lblDNIReceptorLabel";
-            this.lblDNIReceptorLabel.Size = new System.Drawing.Size(104, 20);
+            this.lblDNIReceptorLabel.Size = new System.Drawing.Size(71, 13);
             this.lblDNIReceptorLabel.TabIndex = 5;
             this.lblDNIReceptorLabel.Text = "DNI receptor:";
             // 
             // txtDNIReceptor
             // 
-            this.txtDNIReceptor.Location = new System.Drawing.Point(117, 62);
+            this.txtDNIReceptor.Location = new System.Drawing.Point(98, 54);
+            this.txtDNIReceptor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDNIReceptor.Name = "txtDNIReceptor";
-            this.txtDNIReceptor.Size = new System.Drawing.Size(120, 26);
+            this.txtDNIReceptor.Size = new System.Drawing.Size(81, 20);
             this.txtDNIReceptor.TabIndex = 5;
             // 
             // lblNombreRecLabel
             // 
             this.lblNombreRecLabel.AutoSize = true;
-            this.lblNombreRecLabel.Location = new System.Drawing.Point(250, 65);
+            this.lblNombreRecLabel.Location = new System.Drawing.Point(187, 56);
+            this.lblNombreRecLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreRecLabel.Name = "lblNombreRecLabel";
-            this.lblNombreRecLabel.Size = new System.Drawing.Size(132, 20);
+            this.lblNombreRecLabel.Size = new System.Drawing.Size(89, 13);
             this.lblNombreRecLabel.TabIndex = 6;
             this.lblNombreRecLabel.Text = "Nombre receptor:";
             // 
             // txtNombreReceptor
             // 
-            this.txtNombreReceptor.Location = new System.Drawing.Point(397, 62);
+            this.txtNombreReceptor.Location = new System.Drawing.Point(285, 54);
+            this.txtNombreReceptor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreReceptor.Name = "txtNombreReceptor";
-            this.txtNombreReceptor.Size = new System.Drawing.Size(200, 26);
+            this.txtNombreReceptor.Size = new System.Drawing.Size(135, 20);
             this.txtNombreReceptor.TabIndex = 6;
             // 
             // lblMotivoLabel
             // 
             this.lblMotivoLabel.AutoSize = true;
-            this.lblMotivoLabel.Location = new System.Drawing.Point(10, 103);
+            this.lblMotivoLabel.Location = new System.Drawing.Point(27, 81);
+            this.lblMotivoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMotivoLabel.Name = "lblMotivoLabel";
-            this.lblMotivoLabel.Size = new System.Drawing.Size(157, 20);
+            this.lblMotivoLabel.Size = new System.Drawing.Size(107, 13);
             this.lblMotivoLabel.TabIndex = 7;
             this.lblMotivoLabel.Text = "Motivo intento fallido:";
             // 
             // txtMotivo
             // 
             this.txtMotivo.Enabled = false;
-            this.txtMotivo.Location = new System.Drawing.Point(171, 100);
+            this.txtMotivo.Location = new System.Drawing.Point(134, 79);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(427, 26);
+            this.txtMotivo.Size = new System.Drawing.Size(286, 20);
             this.txtMotivo.TabIndex = 7;
             // 
             // btnRegistrarHDR
             // 
-            this.btnRegistrarHDR.Location = new System.Drawing.Point(582, 130);
+            this.btnRegistrarHDR.Location = new System.Drawing.Point(357, 107);
+            this.btnRegistrarHDR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrarHDR.Name = "btnRegistrarHDR";
-            this.btnRegistrarHDR.Size = new System.Drawing.Size(120, 30);
+            this.btnRegistrarHDR.Size = new System.Drawing.Size(80, 20);
             this.btnRegistrarHDR.TabIndex = 8;
             this.btnRegistrarHDR.Text = "Registrar HDR";
             this.btnRegistrarHDR.UseVisualStyleBackColor = true;
@@ -222,9 +241,11 @@
             // grpGuias
             // 
             this.grpGuias.Controls.Add(this.dgvGuias);
-            this.grpGuias.Location = new System.Drawing.Point(12, 259);
+            this.grpGuias.Location = new System.Drawing.Point(8, 244);
+            this.grpGuias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpGuias.Name = "grpGuias";
-            this.grpGuias.Size = new System.Drawing.Size(711, 200);
+            this.grpGuias.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpGuias.Size = new System.Drawing.Size(540, 259);
             this.grpGuias.TabIndex = 2;
             this.grpGuias.TabStop = false;
             this.grpGuias.Text = "Hojas de ruta registradas en esta sesión";
@@ -243,13 +264,14 @@
             this.colResultado,
             this.colReceptor,
             this.colEstado});
-            this.dgvGuias.Location = new System.Drawing.Point(9, 24);
+            this.dgvGuias.Location = new System.Drawing.Point(30, 32);
+            this.dgvGuias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGuias.Name = "dgvGuias";
             this.dgvGuias.ReadOnly = true;
             this.dgvGuias.RowHeadersVisible = false;
             this.dgvGuias.RowHeadersWidth = 62;
             this.dgvGuias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGuias.Size = new System.Drawing.Size(678, 165);
+            this.dgvGuias.Size = new System.Drawing.Size(464, 195);
             this.dgvGuias.TabIndex = 0;
             // 
             // colNroHDR
@@ -294,42 +316,36 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(490, 466);
+            this.btnFinalizar.Location = new System.Drawing.Point(402, 553);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
+            this.btnFinalizar.Size = new System.Drawing.Size(80, 20);
             this.btnFinalizar.TabIndex = 10;
             this.btnFinalizar.Text = "Finalizar rendición";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(620, 467);
+            this.btnCancelar.Location = new System.Drawing.Point(488, 554);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(60, 20);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 498);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(735, 22);
-            this.statusStrip1.TabIndex = 12;
-            // 
             // frmRendiciónHDR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 520);
+            this.ClientSize = new System.Drawing.Size(588, 601);
             this.Controls.Add(this.grpFletero);
             this.Controls.Add(this.grpHDR);
             this.Controls.Add(this.grpGuias);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frmRendiciónHDR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -341,7 +357,6 @@
             this.grpGuias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuias)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -375,6 +390,5 @@
 
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

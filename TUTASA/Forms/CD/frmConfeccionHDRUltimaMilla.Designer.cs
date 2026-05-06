@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grpFletero = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFletero = new System.Windows.Forms.TextBox();
-            this.btnBuscarFletero = new System.Windows.Forms.Button();
             this.lblNombreFletero = new System.Windows.Forms.Label();
+            this.btnBuscarFletero = new System.Windows.Forms.Button();
+            this.txtFletero = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpEncomiendas = new System.Windows.Forms.GroupBox();
             this.dgvEncomiendas = new System.Windows.Forms.DataGridView();
             this.colGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,8 +41,8 @@
             this.colTipoOp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpZona = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblZona = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnGenerarHDR = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grpFletero.SuspendLayout();
@@ -58,57 +58,65 @@
             this.grpFletero.Controls.Add(this.btnBuscarFletero);
             this.grpFletero.Controls.Add(this.txtFletero);
             this.grpFletero.Controls.Add(this.label1);
-            this.grpFletero.Location = new System.Drawing.Point(12, 12);
+            this.grpFletero.Location = new System.Drawing.Point(9, 10);
+            this.grpFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpFletero.Name = "grpFletero";
-            this.grpFletero.Size = new System.Drawing.Size(700, 60);
+            this.grpFletero.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFletero.Size = new System.Drawing.Size(525, 49);
             this.grpFletero.TabIndex = 0;
             this.grpFletero.TabStop = false;
             this.grpFletero.Text = "Selección del fletero";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código / DNI:";
-            // 
-            // txtFletero
-            // 
-            this.txtFletero.AccessibleName = "txtFletero";
-            this.txtFletero.Location = new System.Drawing.Point(100, 23);
-            this.txtFletero.Name = "txtFletero";
-            this.txtFletero.Size = new System.Drawing.Size(150, 22);
-            this.txtFletero.TabIndex = 1;
-            // 
-            // btnBuscarFletero
-            // 
-            this.btnBuscarFletero.AccessibleName = "btnBuscarFletero";
-            this.btnBuscarFletero.Location = new System.Drawing.Point(260, 22);
-            this.btnBuscarFletero.Name = "btnBuscarFletero";
-            this.btnBuscarFletero.Size = new System.Drawing.Size(100, 25);
-            this.btnBuscarFletero.TabIndex = 2;
-            this.btnBuscarFletero.Text = "Buscar fletero";
-            this.btnBuscarFletero.UseVisualStyleBackColor = true;
             // 
             // lblNombreFletero
             // 
             this.lblNombreFletero.AccessibleName = "lblNombreFletero";
             this.lblNombreFletero.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombreFletero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNombreFletero.Location = new System.Drawing.Point(370, 23);
+            this.lblNombreFletero.Location = new System.Drawing.Point(278, 19);
+            this.lblNombreFletero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreFletero.Name = "lblNombreFletero";
-            this.lblNombreFletero.Size = new System.Drawing.Size(280, 22);
+            this.lblNombreFletero.Size = new System.Drawing.Size(210, 18);
             this.lblNombreFletero.TabIndex = 3;
+            // 
+            // btnBuscarFletero
+            // 
+            this.btnBuscarFletero.AccessibleName = "btnBuscarFletero";
+            this.btnBuscarFletero.Location = new System.Drawing.Point(195, 18);
+            this.btnBuscarFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarFletero.Name = "btnBuscarFletero";
+            this.btnBuscarFletero.Size = new System.Drawing.Size(75, 20);
+            this.btnBuscarFletero.TabIndex = 2;
+            this.btnBuscarFletero.Text = "Buscar fletero";
+            this.btnBuscarFletero.UseVisualStyleBackColor = true;
+            // 
+            // txtFletero
+            // 
+            this.txtFletero.AccessibleName = "txtFletero";
+            this.txtFletero.Location = new System.Drawing.Point(75, 19);
+            this.txtFletero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFletero.Name = "txtFletero";
+            this.txtFletero.Size = new System.Drawing.Size(114, 20);
+            this.txtFletero.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código / DNI:";
             // 
             // grpEncomiendas
             // 
             this.grpEncomiendas.AccessibleName = "grpEncomiendas";
             this.grpEncomiendas.Controls.Add(this.dgvEncomiendas);
-            this.grpEncomiendas.Location = new System.Drawing.Point(12, 82);
+            this.grpEncomiendas.Location = new System.Drawing.Point(9, 67);
+            this.grpEncomiendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpEncomiendas.Name = "grpEncomiendas";
-            this.grpEncomiendas.Size = new System.Drawing.Size(700, 200);
+            this.grpEncomiendas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEncomiendas.Size = new System.Drawing.Size(525, 162);
             this.grpEncomiendas.TabIndex = 1;
             this.grpEncomiendas.TabStop = false;
             this.grpEncomiendas.Text = "Encomiendas pendientes de asignación";
@@ -125,14 +133,15 @@
             this.colCategoria,
             this.colTipoOp,
             this.colPrioridad});
-            this.dgvEncomiendas.Location = new System.Drawing.Point(10, 22);
+            this.dgvEncomiendas.Location = new System.Drawing.Point(13, 28);
+            this.dgvEncomiendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvEncomiendas.Name = "dgvEncomiendas";
             this.dgvEncomiendas.ReadOnly = true;
             this.dgvEncomiendas.RowHeadersVisible = false;
             this.dgvEncomiendas.RowHeadersWidth = 51;
             this.dgvEncomiendas.RowTemplate.Height = 24;
             this.dgvEncomiendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEncomiendas.Size = new System.Drawing.Size(678, 165);
+            this.dgvEncomiendas.Size = new System.Drawing.Size(508, 134);
             this.dgvEncomiendas.TabIndex = 0;
             // 
             // colGuia
@@ -175,39 +184,44 @@
             this.grpZona.AccessibleName = "grpZona";
             this.grpZona.Controls.Add(this.lblZona);
             this.grpZona.Controls.Add(this.label2);
-            this.grpZona.Location = new System.Drawing.Point(12, 292);
+            this.grpZona.Location = new System.Drawing.Point(9, 237);
+            this.grpZona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpZona.Name = "grpZona";
-            this.grpZona.Size = new System.Drawing.Size(700, 60);
+            this.grpZona.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpZona.Size = new System.Drawing.Size(525, 49);
             this.grpZona.TabIndex = 2;
             this.grpZona.TabStop = false;
             this.grpZona.Text = "Zona de cobertura del fletero";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Zona asignada:";
             // 
             // lblZona
             // 
             this.lblZona.AccessibleName = "lblZona";
             this.lblZona.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblZona.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblZona.Location = new System.Drawing.Point(117, 26);
+            this.lblZona.Location = new System.Drawing.Point(88, 21);
+            this.lblZona.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZona.Name = "lblZona";
-            this.lblZona.Size = new System.Drawing.Size(500, 22);
+            this.lblZona.Size = new System.Drawing.Size(376, 18);
             this.lblZona.TabIndex = 1;
             this.lblZona.Click += new System.EventHandler(this.lblZona_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Zona asignada:";
             // 
             // btnGenerarHDR
             // 
             this.btnGenerarHDR.AccessibleName = "btnGenerarHDR";
-            this.btnGenerarHDR.Location = new System.Drawing.Point(450, 370);
+            this.btnGenerarHDR.Location = new System.Drawing.Point(278, 301);
+            this.btnGenerarHDR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerarHDR.Name = "btnGenerarHDR";
-            this.btnGenerarHDR.Size = new System.Drawing.Size(150, 30);
+            this.btnGenerarHDR.Size = new System.Drawing.Size(172, 24);
             this.btnGenerarHDR.TabIndex = 3;
             this.btnGenerarHDR.Text = "Generar hojas de ruta";
             this.btnGenerarHDR.UseVisualStyleBackColor = true;
@@ -215,24 +229,26 @@
             // btnCancelar
             // 
             this.btnCancelar.AccessibleName = "btnCancelar";
-            this.btnCancelar.Location = new System.Drawing.Point(610, 370);
+            this.btnCancelar.Location = new System.Drawing.Point(458, 301);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(68, 24);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // frmConfeccionHDRUltimaMilla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 473);
+            this.ClientSize = new System.Drawing.Size(585, 384);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGenerarHDR);
             this.Controls.Add(this.grpZona);
             this.Controls.Add(this.grpEncomiendas);
             this.Controls.Add(this.grpFletero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frmConfeccionHDRUltimaMilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
