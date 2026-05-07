@@ -16,5 +16,10 @@ namespace TUTASA.Forms.CD
         {
             InitializeComponent();
         }
+
+        private void lvBultos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

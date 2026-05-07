@@ -16,5 +16,20 @@ namespace TUTASA.Forms.CallCenter
         {
             InitializeComponent();
         }
+
+        private void rbAgencia_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAgencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
