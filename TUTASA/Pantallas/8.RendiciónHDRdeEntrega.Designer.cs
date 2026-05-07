@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CD
 {
-    partial class frmRendiciónHDR
+    partial class RendiciónHDRdeEntrega
     {
         private System.ComponentModel.IContainer components = null;
 

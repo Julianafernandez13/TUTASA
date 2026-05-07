@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.Forms.Agencia
+namespace TUTASA.Pantallas
 {
-    public partial class frmRecepcionHDRAgencia : Form
+    public partial class _3 : Form
     {
-        public frmRecepcionHDRAgencia()
+        public _3()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

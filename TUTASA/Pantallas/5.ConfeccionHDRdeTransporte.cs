@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.Forms.Agencia
+namespace TUTASA.Pantallas
 {
-    public partial class frmEntregaAgencia : Form
+    public partial class _5 : Form
     {
-        public frmEntregaAgencia()
+        public _5()
         {
             InitializeComponent();
-        }
-        private void frmEntregaAgencia_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

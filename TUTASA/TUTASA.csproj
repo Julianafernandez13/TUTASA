@@ -46,35 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pantallas\Administracion\frmEmitirFactura.cs">
+    <Compile Include="Pantallas\2.ConfeccionHDRdeRetiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Administracion\frmEmitirFactura.Designer.cs">
+    <Compile Include="Pantallas\2.ConfeccionHDRdeRetiro.Designer.cs">
+      <DependentUpon>2.ConfeccionHDRdeRetiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\3.RendicionHDRdeRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\3.RendicionHDRdeRetiro.Designer.cs">
+      <DependentUpon>3.RendicionHDRdeRetiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\5.ConfeccionHDRdeTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\5.ConfeccionHDRdeTransporte.Designer.cs">
+      <DependentUpon>5.ConfeccionHDRdeTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\frmEmitirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmEmitirFactura.Designer.cs">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Administracion\frmCostovsVentas.cs">
+    <Compile Include="Pantallas\frmCostovsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Administracion\frmCostovsVentas.Designer.cs">
+    <Compile Include="Pantallas\frmCostovsVentas.Designer.cs">
       <DependentUpon>frmCostovsVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Agencia\frmEntregaAgencia.cs">
+    <Compile Include="Pantallas\1.b.ImposicionAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Agencia\frmEntregaAgencia.Designer.cs">
-      <DependentUpon>frmEntregaAgencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\1.b. ImposicionAgencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\1.b. ImposicionAgencia.Designer.cs">
-      <DependentUpon>1.b. ImposicionAgencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\Agencia\frmRecepcionHDRAgencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\Agencia\frmRecepcionHDRAgencia.Designer.cs">
-      <DependentUpon>frmRecepcionHDRAgencia.cs</DependentUpon>
+    <Compile Include="Pantallas\1.b.ImposicionAgencia.Designer.cs">
+      <DependentUpon>1.b.ImposicionAgencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\frmConsultaTracking.cs">
       <SubType>Form</SubType>
@@ -82,53 +88,47 @@
     <Compile Include="Pantallas\frmConsultaTracking.Designer.cs">
       <DependentUpon>frmConsultaTracking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\1.a. SolicitudRetiro %28Imposición call%29.cs">
+    <Compile Include="Pantallas\1.a.ImposiciónCallCenter%28SolicitudRetiro%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\1.a. SolicitudRetiro %28Imposición call%29.Designer.cs">
-      <DependentUpon>1.a. SolicitudRetiro %28Imposición call%29.cs</DependentUpon>
+    <Compile Include="Pantallas\1.a.ImposiciónCallCenter%28SolicitudRetiro%29.Designer.cs">
+      <DependentUpon>1.a.ImposiciónCallCenter%28SolicitudRetiro%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\2. Admision CD.cs">
+    <Compile Include="Pantallas\4.Admision CD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\2. Admision CD.Designer.cs">
-      <DependentUpon>2. Admision CD.cs</DependentUpon>
+    <Compile Include="Pantallas\4.Admision CD.Designer.cs">
+      <DependentUpon>4.Admision CD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\CD\frmConfeccionHDRUltimaMilla.cs">
+    <Compile Include="Pantallas\7.b.ConfeccionHDRdeEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CD\frmConfeccionHDRUltimaMilla.Designer.cs">
-      <DependentUpon>frmConfeccionHDRUltimaMilla.cs</DependentUpon>
+    <Compile Include="Pantallas\7.b.ConfeccionHDRdeEntrega.Designer.cs">
+      <DependentUpon>7.b.ConfeccionHDRdeEntrega.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\CD\frmDespacho.cs">
+    <Compile Include="Pantallas\7.a.EntregaCD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CD\frmDespacho.Designer.cs">
-      <DependentUpon>frmDespacho.cs</DependentUpon>
+    <Compile Include="Pantallas\7.a.EntregaCD.Designer.cs">
+      <DependentUpon>7.a.EntregaCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\CD\frmEntregaCD.cs">
+    <Compile Include="Pantallas\1.c.ImposicionCD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CD\frmEntregaCD.Designer.cs">
-      <DependentUpon>frmEntregaCD.cs</DependentUpon>
+    <Compile Include="Pantallas\1.c.ImposicionCD.Designer.cs">
+      <DependentUpon>1.c.ImposicionCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\1.c. ImposicionCD.cs">
+    <Compile Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\1.c. ImposicionCD.Designer.cs">
-      <DependentUpon>1.c. ImposicionCD.cs</DependentUpon>
+    <Compile Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.Designer.cs">
+      <DependentUpon>6.RecepcionHDRTransporte%28EN DUDA%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\CD\frmRecepcionHDRTransporte.cs">
+    <Compile Include="Pantallas\8.RendiciónHDRdeEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CD\frmRecepcionHDRTransporte.Designer.cs">
-      <DependentUpon>frmRecepcionHDRTransporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\CD\frmRendiciónHDR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\CD\frmRendiciónHDR.Designer.cs">
-      <DependentUpon>frmRendiciónHDR.cs</DependentUpon>
+    <Compile Include="Pantallas\8.RendiciónHDRdeEntrega.Designer.cs">
+      <DependentUpon>8.RendiciónHDRdeEntrega.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -168,41 +168,35 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantallas\Administracion\frmEmitirFactura.resx">
+    <EmbeddedResource Include="Pantallas\frmEmitirFactura.resx">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\1.b. ImposicionAgencia.resx">
-      <DependentUpon>1.b. ImposicionAgencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Agencia\frmRecepcionHDRAgencia.resx">
-      <DependentUpon>frmRecepcionHDRAgencia.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\1.b.ImposicionAgencia.resx">
+      <DependentUpon>1.b.ImposicionAgencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmConsultaTracking.resx">
       <DependentUpon>frmConsultaTracking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\1.a. SolicitudRetiro %28Imposición call%29.resx">
-      <DependentUpon>1.a. SolicitudRetiro %28Imposición call%29.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\1.a.ImposiciónCallCenter%28SolicitudRetiro%29.resx">
+      <DependentUpon>1.a.ImposiciónCallCenter%28SolicitudRetiro%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\2. Admision CD.resx">
-      <DependentUpon>2. Admision CD.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\4.Admision CD.resx">
+      <DependentUpon>4.Admision CD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CD\frmConfeccionHDRUltimaMilla.resx">
-      <DependentUpon>frmConfeccionHDRUltimaMilla.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\7.b.ConfeccionHDRdeEntrega.resx">
+      <DependentUpon>7.b.ConfeccionHDRdeEntrega.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CD\frmDespacho.resx">
-      <DependentUpon>frmDespacho.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\7.a.EntregaCD.resx">
+      <DependentUpon>7.a.EntregaCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CD\frmEntregaCD.resx">
-      <DependentUpon>frmEntregaCD.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\1.c.ImposicionCD.resx">
+      <DependentUpon>1.c.ImposicionCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\1.c. ImposicionCD.resx">
-      <DependentUpon>1.c. ImposicionCD.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.resx">
+      <DependentUpon>6.RecepcionHDRTransporte%28EN DUDA%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CD\frmRecepcionHDRTransporte.resx">
-      <DependentUpon>frmRecepcionHDRTransporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CD\frmRendiciónHDR.resx">
-      <DependentUpon>frmRendiciónHDR.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\8.RendiciónHDRdeEntrega.resx">
+      <DependentUpon>8.RendiciónHDRdeEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

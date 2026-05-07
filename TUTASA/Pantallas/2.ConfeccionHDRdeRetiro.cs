@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.Forms.CD
+namespace TUTASA.Pantallas
 {
-    public partial class frmDespacho : Form
+    public partial class _2 : Form
     {
-        public frmDespacho()
+        public _2()
         {
             InitializeComponent();
-        }
-
-        private void frmDespacho_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

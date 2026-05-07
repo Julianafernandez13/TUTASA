@@ -2,9 +2,9 @@
 
 namespace TUTASA.Forms.CD
 {
-    public partial class frmRendiciónHDR : Form
+    public partial class RendiciónHDRdeEntrega : Form
     {
-        public frmRendiciónHDR()
+        public RendiciónHDRdeEntrega()
         {
             InitializeComponent();
         }
