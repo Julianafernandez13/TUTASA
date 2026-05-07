@@ -21,5 +21,15 @@ namespace TUTASA.Forms.CD
         {
 
         }
+
+        private void frmConfeccionHDRUltimaMilla_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

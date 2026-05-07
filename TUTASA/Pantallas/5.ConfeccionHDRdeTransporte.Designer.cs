@@ -66,23 +66,19 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -240,16 +236,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.numericUpDown4);
-            this.groupBox3.Controls.Add(this.numericUpDown3);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox5);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.textBox4);
@@ -436,82 +432,82 @@
             this.columnHeader6.Text = "Agencia/CD destino";
             this.columnHeader6.Width = 134;
             // 
-            // numericUpDown4
+            // label9
             // 
-            this.numericUpDown4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericUpDown4.Location = new System.Drawing.Point(400, 124);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(35, 22);
-            this.numericUpDown4.TabIndex = 36;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(259, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Bultos tipos";
             // 
-            // numericUpDown3
+            // textBox8
             // 
-            this.numericUpDown3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericUpDown3.Location = new System.Drawing.Point(291, 125);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(35, 22);
-            this.numericUpDown3.TabIndex = 35;
+            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox8.Location = new System.Drawing.Point(385, 124);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(41, 22);
+            this.textBox8.TabIndex = 46;
             // 
-            // numericUpDown2
+            // textBox7
             // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericUpDown2.Location = new System.Drawing.Point(291, 91);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(35, 22);
-            this.numericUpDown2.TabIndex = 34;
+            this.textBox7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox7.Location = new System.Drawing.Point(385, 88);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(41, 22);
+            this.textBox7.TabIndex = 45;
             // 
-            // numericUpDown1
+            // textBox9
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericUpDown1.Location = new System.Drawing.Point(400, 88);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(35, 22);
-            this.numericUpDown1.TabIndex = 33;
+            this.textBox9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox9.Location = new System.Drawing.Point(286, 124);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(41, 22);
+            this.textBox9.TabIndex = 44;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(358, 91);
+            this.label13.Location = new System.Drawing.Point(363, 91);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 16);
-            this.label13.TabIndex = 32;
+            this.label13.TabIndex = 43;
             this.label13.Text = "L";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(358, 127);
+            this.label12.Location = new System.Drawing.Point(363, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(22, 16);
-            this.label12.TabIndex = 31;
+            this.label12.TabIndex = 42;
             this.label12.Text = "XL";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(257, 127);
+            this.label5.Location = new System.Drawing.Point(262, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 16);
-            this.label5.TabIndex = 30;
+            this.label5.TabIndex = 41;
             this.label5.Text = "M";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(259, 91);
+            this.label10.Location = new System.Drawing.Point(264, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 16);
-            this.label10.TabIndex = 29;
+            this.label10.TabIndex = 40;
             this.label10.Text = "S";
             // 
-            // label9
+            // textBox10
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(259, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 16);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Bultos tipos";
+            this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox10.Location = new System.Drawing.Point(286, 88);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(41, 22);
+            this.textBox10.TabIndex = 39;
             // 
             // _5
             // 
@@ -535,10 +531,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,13 +576,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }
