@@ -94,11 +94,11 @@
     <Compile Include="Pantallas\1.a.ImposiciónCallCenter%28SolicitudRetiro%29.Designer.cs">
       <DependentUpon>1.a.ImposiciónCallCenter%28SolicitudRetiro%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\4.Admision CD.cs">
+    <Compile Include="Pantallas\AdmisionCD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\4.Admision CD.Designer.cs">
-      <DependentUpon>4.Admision CD.cs</DependentUpon>
+    <Compile Include="Pantallas\AdmisionCD.Designer.cs">
+      <DependentUpon>AdmisionCD.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\7.b.ConfeccionHDRdeEntrega.cs">
       <SubType>Form</SubType>
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="Pantallas\1.a.ImposiciónCallCenter%28SolicitudRetiro%29.resx">
       <DependentUpon>1.a.ImposiciónCallCenter%28SolicitudRetiro%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\4.Admision CD.resx">
-      <DependentUpon>4.Admision CD.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\AdmisionCD.resx">
+      <DependentUpon>AdmisionCD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\7.b.ConfeccionHDRdeEntrega.resx">
       <DependentUpon>7.b.ConfeccionHDRdeEntrega.cs</DependentUpon>

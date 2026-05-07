@@ -78,7 +78,7 @@
             this.txtCUIT.Location = new System.Drawing.Point(55, 25);
             this.txtCUIT.MaxLength = 11;
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(150, 20);
+            this.txtCUIT.Size = new System.Drawing.Size(150, 26);
             this.txtCUIT.TabIndex = 1;
             // 
             // btnBuscarCliente
@@ -103,7 +103,7 @@
             this.txtNombreRemitente.Location = new System.Drawing.Point(145, 55);
             this.txtNombreRemitente.Name = "txtNombreRemitente";
             this.txtNombreRemitente.ReadOnly = true;
-            this.txtNombreRemitente.Size = new System.Drawing.Size(400, 20);
+            this.txtNombreRemitente.Size = new System.Drawing.Size(400, 26);
             this.txtNombreRemitente.TabIndex = 4;
             // 
             // grpEncomienda
@@ -120,7 +120,7 @@
             this.grpEncomienda.Controls.Add(this.rbAgenciaCD);
             this.grpEncomienda.Location = new System.Drawing.Point(12, 115);
             this.grpEncomienda.Name = "grpEncomienda";
-            this.grpEncomienda.Size = new System.Drawing.Size(560, 130);
+            this.grpEncomienda.Size = new System.Drawing.Size(560, 137);
             this.grpEncomienda.TabIndex = 1;
             this.grpEncomienda.TabStop = false;
             this.grpEncomienda.Text = "Datos de la Encomienda";
@@ -189,7 +189,7 @@
             0,
             0});
             this.nudCantidadBultos.Name = "nudCantidadBultos";
-            this.nudCantidadBultos.Size = new System.Drawing.Size(60, 20);
+            this.nudCantidadBultos.Size = new System.Drawing.Size(60, 26);
             this.nudCantidadBultos.TabIndex = 6;
             this.nudCantidadBultos.Value = new decimal(new int[] {
             1,
@@ -256,7 +256,7 @@
             // 
             this.txtNombreDestinatario.Location = new System.Drawing.Point(135, 25);
             this.txtNombreDestinatario.Name = "txtNombreDestinatario";
-            this.txtNombreDestinatario.Size = new System.Drawing.Size(410, 20);
+            this.txtNombreDestinatario.Size = new System.Drawing.Size(410, 26);
             this.txtNombreDestinatario.TabIndex = 1;
             // 
             // lblDNI
@@ -272,7 +272,7 @@
             this.txtDNI.Location = new System.Drawing.Point(55, 60);
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(150, 20);
+            this.txtDNI.Size = new System.Drawing.Size(150, 26);
             this.txtDNI.TabIndex = 3;
             // 
             // lblDomicilioEntrega
@@ -287,7 +287,7 @@
             // 
             this.txtDomicilioEntrega.Location = new System.Drawing.Point(145, 95);
             this.txtDomicilioEntrega.Name = "txtDomicilioEntrega";
-            this.txtDomicilioEntrega.Size = new System.Drawing.Size(400, 20);
+            this.txtDomicilioEntrega.Size = new System.Drawing.Size(400, 26);
             this.txtDomicilioEntrega.TabIndex = 5;
             // 
             // lblLocalidad
@@ -302,7 +302,7 @@
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(80, 130);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(200, 20);
+            this.txtLocalidad.Size = new System.Drawing.Size(200, 26);
             this.txtLocalidad.TabIndex = 7;
             // 
             // lblCodigoPostal
@@ -318,7 +318,7 @@
             this.txtCodigoPostal.Location = new System.Drawing.Point(390, 130);
             this.txtCodigoPostal.MaxLength = 8;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(155, 20);
+            this.txtCodigoPostal.Size = new System.Drawing.Size(155, 26);
             this.txtCodigoPostal.TabIndex = 9;
             // 
             // lblTelefono
@@ -334,7 +334,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(150, 165);
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(200, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(200, 26);
             this.txtTelefono.TabIndex = 11;
             // 
             // btnConfirmar
