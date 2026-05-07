@@ -168,6 +168,12 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantallas\2.ConfeccionHDRdeRetiro.resx">
+      <DependentUpon>2.ConfeccionHDRdeRetiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\5.ConfeccionHDRdeTransporte.resx">
+      <DependentUpon>5.ConfeccionHDRdeTransporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEmitirFactura.resx">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </EmbeddedResource>
