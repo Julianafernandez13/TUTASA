@@ -31,5 +31,10 @@ namespace TUTASA.Forms.CD
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
