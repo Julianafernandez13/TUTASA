@@ -21,5 +21,10 @@ namespace TUTASA.Forms.CD
         {
 
         }
+
+        private void txtNombreRemitente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

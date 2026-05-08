@@ -14,11 +14,13 @@
         private void InitializeComponent()
         {
             this.grpCliente = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.grpRetiro = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDNIRemitente = new System.Windows.Forms.Label();
             this.txtDNIRemitente = new System.Windows.Forms.TextBox();
             this.lblDomicilioRetiro = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.lblCPDom = new System.Windows.Forms.Label();
             this.txtCPDom = new System.Windows.Forms.TextBox();
             this.btnBuscarLocalidadDom = new System.Windows.Forms.Button();
-            this.lblProvinciaDom = new System.Windows.Forms.Label();
-            this.txtProvinciaDom = new System.Windows.Forms.TextBox();
             this.btnAgencia = new System.Windows.Forms.Button();
             this.grpAgencia = new System.Windows.Forms.GroupBox();
             this.lblNombreAg = new System.Windows.Forms.Label();
@@ -82,11 +82,11 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDestino = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpRetiro.SuspendLayout();
             this.grpBultos.SuspendLayout();
@@ -108,6 +108,15 @@
             this.grpCliente.TabIndex = 0;
             this.grpCliente.TabStop = false;
             this.grpCliente.Text = "Datos del Cliente";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(72, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "[muestra nombre del cliente]";
             // 
             // lblCUIT
             // 
@@ -159,6 +168,15 @@
             this.grpRetiro.TabIndex = 1;
             this.grpRetiro.TabStop = false;
             this.grpRetiro.Text = "Datos del Retiro";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(433, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "[muestra Localidaad / Provincia]";
             // 
             // lblDNIRemitente
             // 
@@ -342,6 +360,8 @@
             // 
             // grpDomicilio
             // 
+            this.grpDomicilio.Controls.Add(this.label3);
+            this.grpDomicilio.Controls.Add(this.label4);
             this.grpDomicilio.Controls.Add(this.lblNombreDom);
             this.grpDomicilio.Controls.Add(this.txtNombreDom);
             this.grpDomicilio.Controls.Add(this.lblDNIDom);
@@ -353,8 +373,6 @@
             this.grpDomicilio.Controls.Add(this.lblCPDom);
             this.grpDomicilio.Controls.Add(this.txtCPDom);
             this.grpDomicilio.Controls.Add(this.btnBuscarLocalidadDom);
-            this.grpDomicilio.Controls.Add(this.lblProvinciaDom);
-            this.grpDomicilio.Controls.Add(this.txtProvinciaDom);
             this.grpDomicilio.Location = new System.Drawing.Point(10, 347);
             this.grpDomicilio.Name = "grpDomicilio";
             this.grpDomicilio.Size = new System.Drawing.Size(651, 121);
@@ -448,24 +466,6 @@
             this.btnBuscarLocalidadDom.Size = new System.Drawing.Size(103, 22);
             this.btnBuscarLocalidadDom.TabIndex = 10;
             this.btnBuscarLocalidadDom.Text = "Buscar localidad";
-            // 
-            // lblProvinciaDom
-            // 
-            this.lblProvinciaDom.AutoSize = true;
-            this.lblProvinciaDom.Location = new System.Drawing.Point(326, 94);
-            this.lblProvinciaDom.Name = "lblProvinciaDom";
-            this.lblProvinciaDom.Size = new System.Drawing.Size(54, 13);
-            this.lblProvinciaDom.TabIndex = 11;
-            this.lblProvinciaDom.Text = "Provincia:";
-            // 
-            // txtProvinciaDom
-            // 
-            this.txtProvinciaDom.BackColor = System.Drawing.SystemColors.Control;
-            this.txtProvinciaDom.Location = new System.Drawing.Point(377, 91);
-            this.txtProvinciaDom.Name = "txtProvinciaDom";
-            this.txtProvinciaDom.ReadOnly = true;
-            this.txtProvinciaDom.Size = new System.Drawing.Size(258, 20);
-            this.txtProvinciaDom.TabIndex = 12;
             // 
             // btnAgencia
             // 
@@ -739,63 +739,65 @@
             this.lblDestino.TabIndex = 11;
             this.lblDestino.Text = "Tipo de entrega:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(433, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "[muestra Localidaad / Provincia]";
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(101, 294);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.Size = new System.Drawing.Size(67, 17);
             this.radioButton1.TabIndex = 12;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "Domicilio";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(223, 294);
+            this.radioButton2.Location = new System.Drawing.Point(190, 294);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.Size = new System.Drawing.Size(64, 17);
             this.radioButton2.TabIndex = 13;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.Text = "Agencia";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(330, 293);
+            this.radioButton3.Location = new System.Drawing.Point(272, 294);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.Size = new System.Drawing.Size(40, 17);
             this.radioButton3.TabIndex = 14;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.Text = "CD";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "[muestra nombre del cliente]";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(460, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "[muestra Localidaad / Provincia]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(344, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Localidad / Provincia:";
             // 
             // frmSolicitudRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(701, 776);
+            this.ClientSize = new System.Drawing.Size(718, 749);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -878,8 +880,6 @@
         private System.Windows.Forms.Label lblCPDom;
         private System.Windows.Forms.TextBox txtCPDom;
         private System.Windows.Forms.Button btnBuscarLocalidadDom;
-        private System.Windows.Forms.Label lblProvinciaDom;
-        private System.Windows.Forms.TextBox txtProvinciaDom;
 
         // Bloque agencia
         private System.Windows.Forms.Button btnAgencia;
@@ -920,5 +920,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
