@@ -36,15 +36,14 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.dgvReporte = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotales = new System.Windows.Forms.Label();
+            this.lvBultos = new System.Windows.Forms.ListView();
+            this.Empresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Clasificación = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -53,7 +52,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.Location = new System.Drawing.Point(200, 15);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(247, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(356, 29);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Costo vs Ventas por Empresa";
             // 
@@ -78,7 +77,7 @@
             "Empresa C"});
             this.cmbEmpresa.Location = new System.Drawing.Point(80, 68);
             this.cmbEmpresa.Name = "cmbEmpresa";
-            this.cmbEmpresa.Size = new System.Drawing.Size(200, 21);
+            this.cmbEmpresa.Size = new System.Drawing.Size(200, 28);
             this.cmbEmpresa.TabIndex = 0;
             // 
             // lblEmpresa
@@ -121,67 +120,66 @@
             this.btnLimpiar.TabIndex = 2;
             this.btnLimpiar.Text = "Limpiar";
             // 
-            // dgvReporte
-            // 
-            this.dgvReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dgvReporte.Location = new System.Drawing.Point(63, 230);
-            this.dgvReporte.Name = "dgvReporte";
-            this.dgvReporte.RowHeadersWidth = 51;
-            this.dgvReporte.Size = new System.Drawing.Size(660, 250);
-            this.dgvReporte.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Empresa";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Clasificación";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ingresos";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Costos";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Margen Neto";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
             // lblTotales
             // 
             this.lblTotales.AutoSize = true;
             this.lblTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotales.Location = new System.Drawing.Point(60, 500);
+            this.lblTotales.Location = new System.Drawing.Point(55, 457);
             this.lblTotales.Name = "lblTotales";
-            this.lblTotales.Size = new System.Drawing.Size(267, 17);
+            this.lblTotales.Size = new System.Drawing.Size(359, 25);
             this.lblTotales.TabIndex = 0;
             this.lblTotales.Text = "Totales: Ingresos / Costos / Margen";
+            // 
+            // lvBultos
+            // 
+            this.lvBultos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Empresa,
+            this.Clasificación,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvBultos.FullRowSelect = true;
+            this.lvBultos.GridLines = true;
+            this.lvBultos.HideSelection = false;
+            this.lvBultos.Location = new System.Drawing.Point(60, 287);
+            this.lvBultos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lvBultos.Name = "lvBultos";
+            this.lvBultos.Size = new System.Drawing.Size(531, 99);
+            this.lvBultos.TabIndex = 7;
+            this.lvBultos.UseCompatibleStateImageBehavior = false;
+            this.lvBultos.View = System.Windows.Forms.View.Details;
+            this.lvBultos.SelectedIndexChanged += new System.EventHandler(this.lvBultos_SelectedIndexChanged);
+            // 
+            // Empresa
+            // 
+            this.Empresa.Text = "Empresa";
+            this.Empresa.Width = 90;
+            // 
+            // Clasificación
+            // 
+            this.Clasificación.Text = "Clasificación";
+            this.Clasificación.Width = 120;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Ingresos";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Costos";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Margen Neto";
+            this.columnHeader3.Width = 120;
             // 
             // frmCostovsVentas
             // 
             this.ClientSize = new System.Drawing.Size(800, 550);
+            this.Controls.Add(this.lvBultos);
             this.Controls.Add(this.lblTotales);
-            this.Controls.Add(this.dgvReporte);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnGenerar);
@@ -191,7 +189,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Costo vs Ventas";
             this.gbFiltros.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,12 +203,12 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.DataGridView dgvReporte;
         private System.Windows.Forms.Label lblTotales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ListView lvBultos;
+        private System.Windows.Forms.ColumnHeader Empresa;
+        private System.Windows.Forms.ColumnHeader Clasificación;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
