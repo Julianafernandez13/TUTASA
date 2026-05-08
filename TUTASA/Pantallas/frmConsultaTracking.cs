@@ -66,5 +66,10 @@ namespace TUTASA.Forms.CallCenter
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
