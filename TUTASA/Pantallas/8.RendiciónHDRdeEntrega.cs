@@ -8,5 +8,10 @@ namespace TUTASA.Forms.CD
         {
             InitializeComponent();
         }
+
+        private void RendiciónHDRdeEntrega_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

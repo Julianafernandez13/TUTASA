@@ -32,7 +32,6 @@
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.lblDestino = new System.Windows.Forms.Label();
             this.btnSelDomicilio = new System.Windows.Forms.Button();
-            this.btnSelAgencia = new System.Windows.Forms.Button();
             this.btnSelCD = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
@@ -77,6 +76,7 @@
             this.cmbCD = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSelAgencia = new System.Windows.Forms.Button();
             this.grpRemitente.SuspendLayout();
             this.grpBultos.SuspendLayout();
             this.grpDomicilio.SuspendLayout();
@@ -262,19 +262,6 @@
             this.btnSelDomicilio.TabIndex = 3;
             this.btnSelDomicilio.Text = "A domicilio";
             this.btnSelDomicilio.UseVisualStyleBackColor = false;
-            // 
-            // btnSelAgencia
-            // 
-            this.btnSelAgencia.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSelAgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelAgencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelAgencia.ForeColor = System.Drawing.Color.White;
-            this.btnSelAgencia.Location = new System.Drawing.Point(283, 221);
-            this.btnSelAgencia.Name = "btnSelAgencia";
-            this.btnSelAgencia.Size = new System.Drawing.Size(171, 26);
-            this.btnSelAgencia.TabIndex = 4;
-            this.btnSelAgencia.Text = "En agencia";
-            this.btnSelAgencia.UseVisualStyleBackColor = false;
             // 
             // btnSelCD
             // 
@@ -690,6 +677,19 @@
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             // 
+            // btnSelAgencia
+            // 
+            this.btnSelAgencia.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSelAgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelAgencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSelAgencia.ForeColor = System.Drawing.Color.White;
+            this.btnSelAgencia.Location = new System.Drawing.Point(283, 221);
+            this.btnSelAgencia.Name = "btnSelAgencia";
+            this.btnSelAgencia.Size = new System.Drawing.Size(171, 26);
+            this.btnSelAgencia.TabIndex = 4;
+            this.btnSelAgencia.Text = "En agencia";
+            this.btnSelAgencia.UseVisualStyleBackColor = false;
+            // 
             // frmImposicionAgencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -754,7 +754,6 @@
         // Selector de destino
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.Button btnSelDomicilio;
-        private System.Windows.Forms.Button btnSelAgencia;
         private System.Windows.Forms.Button btnSelCD;
 
         // Bloque domicilio
@@ -807,5 +806,6 @@
         // Botones
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSelAgencia;
     }
 }

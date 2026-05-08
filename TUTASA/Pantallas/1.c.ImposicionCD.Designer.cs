@@ -19,10 +19,6 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblNombreRemitente = new System.Windows.Forms.Label();
             this.txtNombreRemitente = new System.Windows.Forms.TextBox();
-            this.grpDevoluciones = new System.Windows.Forms.GroupBox();
-            this.btnActivarDevolucion = new System.Windows.Forms.Button();
-            this.lblNroGuia = new System.Windows.Forms.Label();
-            this.txtNroGuia = new System.Windows.Forms.TextBox();
             this.grpBultos = new System.Windows.Forms.GroupBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.rbS = new System.Windows.Forms.RadioButton();
@@ -82,7 +78,6 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grpRemitente.SuspendLayout();
-            this.grpDevoluciones.SuspendLayout();
             this.grpBultos.SuspendLayout();
             this.grpDomicilio.SuspendLayout();
             this.grpAgencia.SuspendLayout();
@@ -144,46 +139,6 @@
             this.txtNombreRemitente.ReadOnly = true;
             this.txtNombreRemitente.Size = new System.Drawing.Size(253, 20);
             this.txtNombreRemitente.TabIndex = 4;
-            // 
-            // grpDevoluciones
-            // 
-            this.grpDevoluciones.Controls.Add(this.btnActivarDevolucion);
-            this.grpDevoluciones.Controls.Add(this.lblNroGuia);
-            this.grpDevoluciones.Controls.Add(this.txtNroGuia);
-            this.grpDevoluciones.Location = new System.Drawing.Point(343, 10);
-            this.grpDevoluciones.Name = "grpDevoluciones";
-            this.grpDevoluciones.Size = new System.Drawing.Size(319, 69);
-            this.grpDevoluciones.TabIndex = 1;
-            this.grpDevoluciones.TabStop = false;
-            this.grpDevoluciones.Text = "Devoluciones";
-            // 
-            // btnActivarDevolucion
-            // 
-            this.btnActivarDevolucion.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnActivarDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActivarDevolucion.ForeColor = System.Drawing.Color.White;
-            this.btnActivarDevolucion.Location = new System.Drawing.Point(9, 18);
-            this.btnActivarDevolucion.Name = "btnActivarDevolucion";
-            this.btnActivarDevolucion.Size = new System.Drawing.Size(94, 22);
-            this.btnActivarDevolucion.TabIndex = 0;
-            this.btnActivarDevolucion.Text = "Es devolución";
-            this.btnActivarDevolucion.UseVisualStyleBackColor = false;
-            // 
-            // lblNroGuia
-            // 
-            this.lblNroGuia.AutoSize = true;
-            this.lblNroGuia.Location = new System.Drawing.Point(9, 45);
-            this.lblNroGuia.Name = "lblNroGuia";
-            this.lblNroGuia.Size = new System.Drawing.Size(87, 13);
-            this.lblNroGuia.TabIndex = 1;
-            this.lblNroGuia.Text = "Número de guía:";
-            // 
-            // txtNroGuia
-            // 
-            this.txtNroGuia.Location = new System.Drawing.Point(103, 42);
-            this.txtNroGuia.Name = "txtNroGuia";
-            this.txtNroGuia.Size = new System.Drawing.Size(202, 20);
-            this.txtNroGuia.TabIndex = 2;
             // 
             // grpBultos
             // 
@@ -722,7 +677,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(489, 693);
+            this.btnConfirmar.Location = new System.Drawing.Point(469, 722);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(129, 26);
             this.btnConfirmar.TabIndex = 13;
@@ -730,7 +685,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(625, 693);
+            this.btnCancelar.Location = new System.Drawing.Point(605, 722);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 26);
             this.btnCancelar.TabIndex = 14;
@@ -741,9 +696,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(701, 649);
+            this.ClientSize = new System.Drawing.Size(701, 823);
             this.Controls.Add(this.grpRemitente);
-            this.Controls.Add(this.grpDevoluciones);
             this.Controls.Add(this.grpBultos);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.btnSelDomicilio);
@@ -764,8 +718,6 @@
             this.Text = "Imposición en CD";
             this.grpRemitente.ResumeLayout(false);
             this.grpRemitente.PerformLayout();
-            this.grpDevoluciones.ResumeLayout(false);
-            this.grpDevoluciones.PerformLayout();
             this.grpBultos.ResumeLayout(false);
             this.grpBultos.PerformLayout();
             this.grpDomicilio.ResumeLayout(false);
@@ -786,12 +738,6 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lblNombreRemitente;
         private System.Windows.Forms.TextBox txtNombreRemitente;
-
-        // Devoluciones
-        private System.Windows.Forms.GroupBox grpDevoluciones;
-        private System.Windows.Forms.Button btnActivarDevolucion;
-        private System.Windows.Forms.Label lblNroGuia;
-        private System.Windows.Forms.TextBox txtNroGuia;
 
         // Bultos
         private System.Windows.Forms.GroupBox grpBultos;

@@ -18,7 +18,6 @@
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.grpRetiro = new System.Windows.Forms.GroupBox();
             this.lblDNIRemitente = new System.Windows.Forms.Label();
             this.txtDNIRemitente = new System.Windows.Forms.TextBox();
@@ -28,7 +27,6 @@
             this.txtCPRetiro = new System.Windows.Forms.TextBox();
             this.btnBuscarLocalidadRetiro = new System.Windows.Forms.Button();
             this.lblProvinciaRetiro = new System.Windows.Forms.Label();
-            this.txtProvinciaRetiro = new System.Windows.Forms.TextBox();
             this.grpBultos = new System.Windows.Forms.GroupBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.rbS = new System.Windows.Forms.RadioButton();
@@ -84,9 +82,11 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDestino = new System.Windows.Forms.Label();
-            this.btnSelDomicilio = new System.Windows.Forms.Button();
-            this.btnSelAgencia = new System.Windows.Forms.Button();
-            this.btnSelCD = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpRetiro.SuspendLayout();
             this.grpBultos.SuspendLayout();
@@ -97,11 +97,11 @@
             // 
             // grpCliente
             // 
+            this.grpCliente.Controls.Add(this.label2);
             this.grpCliente.Controls.Add(this.lblCUIT);
             this.grpCliente.Controls.Add(this.txtCUIT);
             this.grpCliente.Controls.Add(this.btnBuscarCliente);
             this.grpCliente.Controls.Add(this.lblNombreCliente);
-            this.grpCliente.Controls.Add(this.txtNombreCliente);
             this.grpCliente.Location = new System.Drawing.Point(10, 1);
             this.grpCliente.Name = "grpCliente";
             this.grpCliente.Size = new System.Drawing.Size(651, 69);
@@ -142,18 +142,9 @@
             this.lblNombreCliente.TabIndex = 3;
             this.lblNombreCliente.Text = "Nombre:";
             // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombreCliente.Location = new System.Drawing.Point(69, 42);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.ReadOnly = true;
-            this.txtNombreCliente.Size = new System.Drawing.Size(566, 20);
-            this.txtNombreCliente.TabIndex = 4;
-            this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
-            // 
             // grpRetiro
             // 
+            this.grpRetiro.Controls.Add(this.label1);
             this.grpRetiro.Controls.Add(this.lblDNIRemitente);
             this.grpRetiro.Controls.Add(this.txtDNIRemitente);
             this.grpRetiro.Controls.Add(this.lblDomicilioRetiro);
@@ -162,7 +153,6 @@
             this.grpRetiro.Controls.Add(this.txtCPRetiro);
             this.grpRetiro.Controls.Add(this.btnBuscarLocalidadRetiro);
             this.grpRetiro.Controls.Add(this.lblProvinciaRetiro);
-            this.grpRetiro.Controls.Add(this.txtProvinciaRetiro);
             this.grpRetiro.Location = new System.Drawing.Point(10, 71);
             this.grpRetiro.Name = "grpRetiro";
             this.grpRetiro.Size = new System.Drawing.Size(651, 95);
@@ -231,18 +221,9 @@
             this.lblProvinciaRetiro.AutoSize = true;
             this.lblProvinciaRetiro.Location = new System.Drawing.Point(317, 72);
             this.lblProvinciaRetiro.Name = "lblProvinciaRetiro";
-            this.lblProvinciaRetiro.Size = new System.Drawing.Size(54, 13);
+            this.lblProvinciaRetiro.Size = new System.Drawing.Size(111, 13);
             this.lblProvinciaRetiro.TabIndex = 7;
-            this.lblProvinciaRetiro.Text = "Provincia:";
-            // 
-            // txtProvinciaRetiro
-            // 
-            this.txtProvinciaRetiro.BackColor = System.Drawing.SystemColors.Control;
-            this.txtProvinciaRetiro.Location = new System.Drawing.Point(369, 69);
-            this.txtProvinciaRetiro.Name = "txtProvinciaRetiro";
-            this.txtProvinciaRetiro.ReadOnly = true;
-            this.txtProvinciaRetiro.Size = new System.Drawing.Size(172, 20);
-            this.txtProvinciaRetiro.TabIndex = 8;
+            this.lblProvinciaRetiro.Text = "Localidad / Provincia:";
             // 
             // grpBultos
             // 
@@ -733,19 +714,21 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(504, 712);
+            this.btnConfirmar.Location = new System.Drawing.Point(473, 738);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(111, 26);
             this.btnConfirmar.TabIndex = 9;
             this.btnConfirmar.Text = "Confirmar solicitud";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(622, 712);
+            this.btnCancelar.Location = new System.Drawing.Point(591, 738);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 26);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblDestino
             // 
@@ -756,55 +739,67 @@
             this.lblDestino.TabIndex = 11;
             this.lblDestino.Text = "Tipo de entrega:";
             // 
-            // btnSelDomicilio
+            // label1
             // 
-            this.btnSelDomicilio.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSelDomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelDomicilio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelDomicilio.ForeColor = System.Drawing.Color.White;
-            this.btnSelDomicilio.Location = new System.Drawing.Point(103, 292);
-            this.btnSelDomicilio.Name = "btnSelDomicilio";
-            this.btnSelDomicilio.Size = new System.Drawing.Size(171, 26);
-            this.btnSelDomicilio.TabIndex = 12;
-            this.btnSelDomicilio.Text = "A domicilio";
-            this.btnSelDomicilio.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(433, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "[muestra Localidaad / Provincia]";
             // 
-            // btnSelAgencia
+            // radioButton1
             // 
-            this.btnSelAgencia.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSelAgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelAgencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelAgencia.ForeColor = System.Drawing.Color.White;
-            this.btnSelAgencia.Location = new System.Drawing.Point(283, 292);
-            this.btnSelAgencia.Name = "btnSelAgencia";
-            this.btnSelAgencia.Size = new System.Drawing.Size(171, 26);
-            this.btnSelAgencia.TabIndex = 13;
-            this.btnSelAgencia.Text = "En agencia";
-            this.btnSelAgencia.UseVisualStyleBackColor = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(101, 294);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // btnSelCD
+            // radioButton2
             // 
-            this.btnSelCD.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSelCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelCD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelCD.ForeColor = System.Drawing.Color.White;
-            this.btnSelCD.Location = new System.Drawing.Point(463, 292);
-            this.btnSelCD.Name = "btnSelCD";
-            this.btnSelCD.Size = new System.Drawing.Size(171, 26);
-            this.btnSelCD.TabIndex = 14;
-            this.btnSelCD.Text = "En CD";
-            this.btnSelCD.UseVisualStyleBackColor = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(223, 294);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(330, 293);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 14;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(72, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "[muestra nombre del cliente]";
             // 
             // frmSolicitudRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(701, 649);
+            this.ClientSize = new System.Drawing.Size(701, 776);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lblDestino);
-            this.Controls.Add(this.btnSelDomicilio);
-            this.Controls.Add(this.btnSelAgencia);
-            this.Controls.Add(this.btnSelCD);
             this.Controls.Add(this.grpCliente);
             this.Controls.Add(this.grpRetiro);
             this.Controls.Add(this.grpBultos);
@@ -844,7 +839,6 @@
         private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lblNombreCliente;
-        private System.Windows.Forms.TextBox txtNombreCliente;
 
         // Datos del retiro
         private System.Windows.Forms.GroupBox grpRetiro;
@@ -856,7 +850,6 @@
         private System.Windows.Forms.TextBox txtCPRetiro;
         private System.Windows.Forms.Button btnBuscarLocalidadRetiro;
         private System.Windows.Forms.Label lblProvinciaRetiro;
-        private System.Windows.Forms.TextBox txtProvinciaRetiro;
 
         // Bultos
         private System.Windows.Forms.GroupBox grpBultos;
@@ -922,8 +915,10 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblDestino;
-        private System.Windows.Forms.Button btnSelDomicilio;
-        private System.Windows.Forms.Button btnSelAgencia;
-        private System.Windows.Forms.Button btnSelCD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label2;
     }
 }

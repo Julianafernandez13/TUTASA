@@ -177,6 +177,9 @@
     <EmbeddedResource Include="Pantallas\5.ConfeccionHDRdeTransporte.resx">
       <DependentUpon>5.ConfeccionHDRdeTransporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\frmCostovsVentas.resx">
+      <DependentUpon>frmCostovsVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\frmEmitirFactura.resx">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </EmbeddedResource>
