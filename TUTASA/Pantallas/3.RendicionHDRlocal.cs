@@ -21,5 +21,10 @@ namespace TUTASA.Pantallas
         {
 
         }
+
+        private void lblFleteroLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

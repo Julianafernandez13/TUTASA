@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pantallas\2.ConfeccionHDRdeRetiro.cs">
+    <Compile Include="Pantallas\2.ConfeccionHDRlocal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\2.ConfeccionHDRdeRetiro.Designer.cs">
-      <DependentUpon>2.ConfeccionHDRdeRetiro.cs</DependentUpon>
+    <Compile Include="Pantallas\2.ConfeccionHDRlocal.Designer.cs">
+      <DependentUpon>2.ConfeccionHDRlocal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\3.RendicionHDRdeRetiro.cs">
+    <Compile Include="Pantallas\3.RendicionHDRlocal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\3.RendicionHDRdeRetiro.Designer.cs">
-      <DependentUpon>3.RendicionHDRdeRetiro.cs</DependentUpon>
+    <Compile Include="Pantallas\3.RendicionHDRlocal.Designer.cs">
+      <DependentUpon>3.RendicionHDRlocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\5.ConfeccionHDRdeTransporte.cs">
       <SubType>Form</SubType>
@@ -100,12 +100,6 @@
     <Compile Include="Pantallas\4.AdmisionCD.Designer.cs">
       <DependentUpon>4.AdmisionCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\7.b.ConfeccionHDRdeEntrega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\7.b.ConfeccionHDRdeEntrega.Designer.cs">
-      <DependentUpon>7.b.ConfeccionHDRdeEntrega.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pantallas\7.a.EntregaCD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,17 +112,11 @@
     <Compile Include="Pantallas\1.c.ImposicionCD.Designer.cs">
       <DependentUpon>1.c.ImposicionCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.cs">
+    <Compile Include="Pantallas\6.RendiciónHDRTransporte%28EN DUDA%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.Designer.cs">
-      <DependentUpon>6.RecepcionHDRTransporte%28EN DUDA%29.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\8.RendiciónHDRdeEntrega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\8.RendiciónHDRdeEntrega.Designer.cs">
-      <DependentUpon>8.RendiciónHDRdeEntrega.cs</DependentUpon>
+    <Compile Include="Pantallas\6.RendiciónHDRTransporte%28EN DUDA%29.Designer.cs">
+      <DependentUpon>6.RendiciónHDRTransporte%28EN DUDA%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -168,11 +156,11 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantallas\2.ConfeccionHDRdeRetiro.resx">
-      <DependentUpon>2.ConfeccionHDRdeRetiro.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\2.ConfeccionHDRlocal.resx">
+      <DependentUpon>2.ConfeccionHDRlocal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\3.RendicionHDRdeRetiro.resx">
-      <DependentUpon>3.RendicionHDRdeRetiro.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\3.RendicionHDRlocal.resx">
+      <DependentUpon>3.RendicionHDRlocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\5.ConfeccionHDRdeTransporte.resx">
       <DependentUpon>5.ConfeccionHDRdeTransporte.cs</DependentUpon>
@@ -195,20 +183,14 @@
     <EmbeddedResource Include="Pantallas\4.AdmisionCD.resx">
       <DependentUpon>4.AdmisionCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\7.b.ConfeccionHDRdeEntrega.resx">
-      <DependentUpon>7.b.ConfeccionHDRdeEntrega.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\7.a.EntregaCD.resx">
       <DependentUpon>7.a.EntregaCD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\1.c.ImposicionCD.resx">
       <DependentUpon>1.c.ImposicionCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\6.RecepcionHDRTransporte%28EN DUDA%29.resx">
-      <DependentUpon>6.RecepcionHDRTransporte%28EN DUDA%29.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\8.RendiciónHDRdeEntrega.resx">
-      <DependentUpon>8.RendiciónHDRdeEntrega.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\6.RendiciónHDRTransporte%28EN DUDA%29.resx">
+      <DependentUpon>6.RendiciónHDRTransporte%28EN DUDA%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

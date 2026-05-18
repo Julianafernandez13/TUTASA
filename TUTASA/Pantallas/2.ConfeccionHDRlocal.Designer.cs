@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda de Guías";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Items.AddRange(new object[] {
+            "Todas",
+            "Empresa A",
+            "Empresa B",
+            "Empresa C"});
+            this.comboBox1.Location = new System.Drawing.Point(543, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(266, 28);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(461, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Domicilio:";
+            // 
+            // cmbEmpresa
+            // 
+            this.cmbEmpresa.Items.AddRange(new object[] {
+            "Todas",
+            "Empresa A",
+            "Empresa B",
+            "Empresa C"});
+            this.cmbEmpresa.Location = new System.Drawing.Point(124, 56);
+            this.cmbEmpresa.Name = "cmbEmpresa";
+            this.cmbEmpresa.Size = new System.Drawing.Size(266, 28);
+            this.cmbEmpresa.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Localidad:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -91,6 +134,27 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Seleccionar fletero disponible";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Items.AddRange(new object[] {
+            "Todas",
+            "Empresa A",
+            "Empresa B",
+            "Empresa C"});
+            this.comboBox2.Location = new System.Drawing.Point(124, 68);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(266, 28);
+            this.comboBox2.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Fletero:";
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(806, 642);
@@ -111,39 +175,17 @@
             this.button5.Text = "Cancelar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Localidad:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cmbEmpresa
-            // 
-            this.cmbEmpresa.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
-            this.cmbEmpresa.Location = new System.Drawing.Point(124, 56);
-            this.cmbEmpresa.Name = "cmbEmpresa";
-            this.cmbEmpresa.Size = new System.Drawing.Size(266, 28);
-            this.cmbEmpresa.TabIndex = 10;
-            // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader8,
-            this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11,
-            this.columnHeader12});
+            this.columnHeader12,
+            this.columnHeader1});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(14, 237);
+            this.listView2.Location = new System.Drawing.Point(14, 228);
             this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(1104, 163);
@@ -159,47 +201,27 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Cliente";
-            this.columnHeader8.Width = 100;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Agencia Retiro";
-            this.columnHeader9.Width = 130;
+            this.columnHeader8.Width = 171;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Domicilio Retiro";
-            this.columnHeader10.Width = 120;
+            this.columnHeader10.Text = "Domicilio";
+            this.columnHeader10.Width = 206;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Localidad";
-            this.columnHeader11.Width = 90;
+            this.columnHeader11.Width = 189;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Categoria";
+            this.columnHeader12.Width = 151;
             // 
-            // label2
+            // columnHeader1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(461, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Domicilio:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
-            this.comboBox1.Location = new System.Drawing.Point(543, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(266, 28);
-            this.comboBox1.TabIndex = 12;
+            this.columnHeader1.Text = "Entrega/Retiro";
+            this.columnHeader1.Width = 335;
             // 
             // label4
             // 
@@ -210,27 +232,6 @@
             this.label4.TabIndex = 37;
             this.label4.Text = "Seleccionar Guías a rutear:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Fletero:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
-            this.comboBox2.Location = new System.Drawing.Point(124, 68);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(266, 28);
-            this.comboBox2.TabIndex = 13;
             // 
             // _2
             // 
@@ -248,7 +249,7 @@
             this.MaximizeBox = false;
             this.Name = "_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TUTASA – Confección de Hoja de Ruta de Retiro";
+            this.Text = "TUTASA – Confección de Hoja de Ruta ";
             this.Load += new System.EventHandler(this._2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -271,7 +272,6 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
@@ -280,5 +280,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
