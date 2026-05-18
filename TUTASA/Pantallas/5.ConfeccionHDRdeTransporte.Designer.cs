@@ -260,7 +260,7 @@
             this.listView2.Location = new System.Drawing.Point(24, 27);
             this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(596, 139);
+            this.listView2.Size = new System.Drawing.Size(614, 139);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.UseWaitCursor = true;

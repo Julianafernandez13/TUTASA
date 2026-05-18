@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pantallas\2.ConfeccionHDRlocal.cs">
+    <Compile Include="Pantallas\2.ConfeccionHDRUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\2.ConfeccionHDRlocal.Designer.cs">
-      <DependentUpon>2.ConfeccionHDRlocal.cs</DependentUpon>
+    <Compile Include="Pantallas\2.ConfeccionHDRUltMilla.Designer.cs">
+      <DependentUpon>2.ConfeccionHDRUltMilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\3.RendicionHDRlocal.cs">
+    <Compile Include="Pantallas\3.RendicionHDRUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\3.RendicionHDRlocal.Designer.cs">
-      <DependentUpon>3.RendicionHDRlocal.cs</DependentUpon>
+    <Compile Include="Pantallas\3.RendicionHDRUltMilla.Designer.cs">
+      <DependentUpon>3.RendicionHDRUltMilla.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\5.ConfeccionHDRdeTransporte.cs">
       <SubType>Form</SubType>
@@ -156,11 +156,11 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantallas\2.ConfeccionHDRlocal.resx">
-      <DependentUpon>2.ConfeccionHDRlocal.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\2.ConfeccionHDRUltMilla.resx">
+      <DependentUpon>2.ConfeccionHDRUltMilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\3.RendicionHDRlocal.resx">
-      <DependentUpon>3.RendicionHDRlocal.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\3.RendicionHDRUltMilla.resx">
+      <DependentUpon>3.RendicionHDRUltMilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\5.ConfeccionHDRdeTransporte.resx">
       <DependentUpon>5.ConfeccionHDRdeTransporte.cs</DependentUpon>

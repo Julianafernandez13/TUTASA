@@ -205,7 +205,7 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Domicilio";
+            this.columnHeader10.Text = "Dirección";
             this.columnHeader10.Width = 206;
             // 
             // columnHeader11
@@ -220,7 +220,7 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Entrega/Retiro";
+            this.columnHeader1.Text = "Agencia";
             this.columnHeader1.Width = 335;
             // 
             // label4

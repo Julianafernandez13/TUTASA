@@ -59,6 +59,8 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpEncomiendas.SuspendLayout();
             this.grpFletero.SuspendLayout();
@@ -76,7 +78,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox1.Size = new System.Drawing.Size(759, 216);
+            this.groupBox1.Size = new System.Drawing.Size(759, 183);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rendicion";
@@ -95,7 +97,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(346, 127);
+            this.button1.Location = new System.Drawing.Point(346, 112);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 49);
             this.button1.TabIndex = 25;
@@ -134,12 +136,12 @@
             // 
             this.grpEncomiendas.Controls.Add(this.button5);
             this.grpEncomiendas.Controls.Add(this.lvGuias);
-            this.grpEncomiendas.Location = new System.Drawing.Point(22, 431);
+            this.grpEncomiendas.Location = new System.Drawing.Point(12, 395);
             this.grpEncomiendas.Name = "grpEncomiendas";
-            this.grpEncomiendas.Size = new System.Drawing.Size(749, 269);
+            this.grpEncomiendas.Size = new System.Drawing.Size(759, 269);
             this.grpEncomiendas.TabIndex = 22;
             this.grpEncomiendas.TabStop = false;
-            this.grpEncomiendas.Text = "Resumen de HDR";
+            this.grpEncomiendas.Text = "Resumen de HDR rendidas";
             // 
             // button5
             // 
@@ -165,7 +167,7 @@
             this.lvGuias.Location = new System.Drawing.Point(14, 27);
             this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(702, 153);
+            this.lvGuias.Size = new System.Drawing.Size(719, 153);
             this.lvGuias.TabIndex = 2;
             this.lvGuias.UseCompatibleStateImageBehavior = false;
             this.lvGuias.View = System.Windows.Forms.View.Details;
@@ -287,7 +289,7 @@
             // 
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 741);
+            this.groupBox2.Location = new System.Drawing.Point(12, 682);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(759, 275);
             this.groupBox2.TabIndex = 31;
@@ -348,11 +350,31 @@
             this.columnHeader10.Text = "Entrega/Retiro";
             this.columnHeader10.Width = 135;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(492, 1001);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(112, 37);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "Confirmar";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(659, 1001);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(112, 37);
+            this.button8.TabIndex = 33;
+            this.button8.Text = "Cancelar";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // _3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 1139);
+            this.ClientSize = new System.Drawing.Size(813, 1050);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -407,5 +429,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
