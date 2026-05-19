@@ -61,6 +61,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.grpEncomiendas.SuspendLayout();
             this.grpFletero.SuspendLayout();
@@ -78,7 +79,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox1.Size = new System.Drawing.Size(759, 183);
+            this.groupBox1.Size = new System.Drawing.Size(819, 183);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rendicion";
@@ -138,14 +139,14 @@
             this.grpEncomiendas.Controls.Add(this.lvGuias);
             this.grpEncomiendas.Location = new System.Drawing.Point(12, 395);
             this.grpEncomiendas.Name = "grpEncomiendas";
-            this.grpEncomiendas.Size = new System.Drawing.Size(759, 269);
+            this.grpEncomiendas.Size = new System.Drawing.Size(819, 269);
             this.grpEncomiendas.TabIndex = 22;
             this.grpEncomiendas.TabStop = false;
             this.grpEncomiendas.Text = "Resumen de HDR rendidas";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(600, 201);
+            this.button5.Location = new System.Drawing.Point(687, 203);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(112, 49);
             this.button5.TabIndex = 30;
@@ -159,7 +160,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader11});
+            this.columnHeader11,
+            this.columnHeader2});
             this.lvGuias.Enabled = false;
             this.lvGuias.FullRowSelect = true;
             this.lvGuias.GridLines = true;
@@ -167,7 +169,7 @@
             this.lvGuias.Location = new System.Drawing.Point(14, 27);
             this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(719, 153);
+            this.lvGuias.Size = new System.Drawing.Size(785, 153);
             this.lvGuias.TabIndex = 2;
             this.lvGuias.UseCompatibleStateImageBehavior = false;
             this.lvGuias.View = System.Windows.Forms.View.Details;
@@ -195,7 +197,7 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "Cumplida S/N";
-            this.columnHeader11.Width = 175;
+            this.columnHeader11.Width = 111;
             // 
             // grpFletero
             // 
@@ -205,7 +207,7 @@
             this.grpFletero.Controls.Add(this.txtFletero);
             this.grpFletero.Location = new System.Drawing.Point(22, 11);
             this.grpFletero.Name = "grpFletero";
-            this.grpFletero.Size = new System.Drawing.Size(749, 98);
+            this.grpFletero.Size = new System.Drawing.Size(809, 98);
             this.grpFletero.TabIndex = 23;
             this.grpFletero.TabStop = false;
             this.grpFletero.Text = "Identificación del fletero";
@@ -291,14 +293,14 @@
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 682);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(759, 275);
+            this.groupBox2.Size = new System.Drawing.Size(819, 275);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hojas de ruta a entregar al fletero (informativo)";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(610, 220);
+            this.button6.Location = new System.Drawing.Point(687, 220);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(112, 49);
             this.button6.TabIndex = 30;
@@ -317,10 +319,10 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(27, 44);
+            this.listView1.Location = new System.Drawing.Point(14, 27);
             this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(695, 153);
+            this.listView1.Size = new System.Drawing.Size(785, 153);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -328,22 +330,22 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Nro HDR";
-            this.columnHeader6.Width = 100;
+            this.columnHeader6.Width = 145;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Cliente";
-            this.columnHeader7.Width = 120;
+            this.columnHeader7.Width = 159;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Localidad";
-            this.columnHeader8.Width = 120;
+            this.columnHeader8.Width = 161;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Direccion";
-            this.columnHeader9.Width = 120;
+            this.columnHeader9.Width = 180;
             // 
             // columnHeader10
             // 
@@ -352,7 +354,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(492, 1001);
+            this.button7.Location = new System.Drawing.Point(555, 1001);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 37);
             this.button7.TabIndex = 32;
@@ -361,18 +363,23 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(659, 1001);
+            this.button8.Location = new System.Drawing.Point(719, 1001);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(112, 37);
             this.button8.TabIndex = 33;
             this.button8.Text = "Cancelar";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Entrega / Retiro";
+            this.columnHeader2.Width = 132;
+            // 
             // _3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 1050);
+            this.ClientSize = new System.Drawing.Size(848, 1050);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox2);
@@ -431,5 +438,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
