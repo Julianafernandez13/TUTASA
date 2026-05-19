@@ -36,5 +36,10 @@ namespace TUTASA.Forms.CD
         {
 
         }
+
+        private void gbDatosHdr_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
