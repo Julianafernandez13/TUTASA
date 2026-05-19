@@ -100,11 +100,11 @@
     <Compile Include="Pantallas\4.AdmisionCD.Designer.cs">
       <DependentUpon>4.AdmisionCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\7.a.EntregaCD.cs">
+    <Compile Include="Pantallas\7.RegistrarEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\7.a.EntregaCD.Designer.cs">
-      <DependentUpon>7.a.EntregaCD.cs</DependentUpon>
+    <Compile Include="Pantallas\7.RegistrarEntrega.Designer.cs">
+      <DependentUpon>7.RegistrarEntrega.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\1.c.ImposicionCD.cs">
       <SubType>Form</SubType>
@@ -183,8 +183,8 @@
     <EmbeddedResource Include="Pantallas\4.AdmisionCD.resx">
       <DependentUpon>4.AdmisionCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\7.a.EntregaCD.resx">
-      <DependentUpon>7.a.EntregaCD.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\7.RegistrarEntrega.resx">
+      <DependentUpon>7.RegistrarEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\1.c.ImposicionCD.resx">
       <DependentUpon>1.c.ImposicionCD.cs</DependentUpon>
