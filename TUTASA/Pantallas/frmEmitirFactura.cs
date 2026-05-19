@@ -26,5 +26,10 @@ namespace TUTASA.Forms.Administracion
         {
 
         }
+
+        private void lvGuias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

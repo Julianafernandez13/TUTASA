@@ -34,7 +34,19 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lvGuias = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,22 +55,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvGuias = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblDesde = new System.Windows.Forms.Label();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,6 +134,53 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Movimientos a Facturar";
             // 
+            // lvGuias
+            // 
+            this.lvGuias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader4});
+            this.lvGuias.Enabled = false;
+            this.lvGuias.FullRowSelect = true;
+            this.lvGuias.GridLines = true;
+            this.lvGuias.HideSelection = false;
+            this.lvGuias.Location = new System.Drawing.Point(8, 29);
+            this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lvGuias.Name = "lvGuias";
+            this.lvGuias.Size = new System.Drawing.Size(854, 108);
+            this.lvGuias.TabIndex = 1;
+            this.lvGuias.UseCompatibleStateImageBehavior = false;
+            this.lvGuias.View = System.Windows.Forms.View.Details;
+            this.lvGuias.SelectedIndexChanged += new System.EventHandler(this.lvGuias_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Número Guía";
+            this.columnHeader1.Width = 160;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Fecha";
+            this.columnHeader2.Width = 179;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Origen";
+            this.columnHeader3.Width = 191;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Destino";
+            this.columnHeader5.Width = 181;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Categoria";
+            this.columnHeader6.Width = 170;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -141,6 +189,86 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.lblDesde);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(28, 218);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(366, 91);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Periodo";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.comboBox2.Location = new System.Drawing.Point(234, 27);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(96, 28);
+            this.comboBox2.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.comboBox1.Location = new System.Drawing.Point(81, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(67, 28);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(185, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 23);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Año:";
+            // 
+            // lblDesde
+            // 
+            this.lblDesde.Location = new System.Drawing.Point(23, 32);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(52, 23);
+            this.lblDesde.TabIndex = 9;
+            this.lblDesde.Text = "Mes:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(534, 380);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -227,130 +355,9 @@
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             // 
-            // lvGuias
+            // columnHeader4
             // 
-            this.lvGuias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lvGuias.Enabled = false;
-            this.lvGuias.FullRowSelect = true;
-            this.lvGuias.GridLines = true;
-            this.lvGuias.HideSelection = false;
-            this.lvGuias.Location = new System.Drawing.Point(13, 29);
-            this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(845, 122);
-            this.lvGuias.TabIndex = 1;
-            this.lvGuias.UseCompatibleStateImageBehavior = false;
-            this.lvGuias.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Hoja";
-            this.columnHeader1.Width = 160;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Remitente";
-            this.columnHeader2.Width = 179;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Destinatario";
-            this.columnHeader3.Width = 191;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Categoría";
-            this.columnHeader5.Width = 181;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "";
-            this.columnHeader6.Width = 170;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(534, 380);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 20);
-            this.label3.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.lblDesde);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(28, 218);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(366, 91);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Periodo";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Items.AddRange(new object[] {
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026"});
-            this.comboBox2.Location = new System.Drawing.Point(234, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(96, 28);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.comboBox1.Location = new System.Drawing.Point(81, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 28);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(185, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 23);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Año:";
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.Location = new System.Drawing.Point(23, 32);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(52, 23);
-            this.lblDesde.TabIndex = 9;
-            this.lblDesde.Text = "Mes:";
+            this.columnHeader4.Text = "Total";
             // 
             // frmEmitirFactura
             // 
@@ -365,10 +372,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -402,5 +409,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDesde;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
