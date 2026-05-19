@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.gbDatosHdr = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblCantBultos = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,7 +46,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbObservaciones = new System.Windows.Forms.GroupBox();
@@ -50,10 +53,6 @@
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbBusqueda.SuspendLayout();
             this.gbDatosHdr.SuspendLayout();
             this.gbGuias.SuspendLayout();
@@ -69,10 +68,30 @@
             this.gbBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbBusqueda.Name = "gbBusqueda";
             this.gbBusqueda.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbBusqueda.Size = new System.Drawing.Size(1050, 108);
+            this.gbBusqueda.Size = new System.Drawing.Size(876, 108);
             this.gbBusqueda.TabIndex = 0;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda de servicio";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(180, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Empresa de Transporte:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(415, 47);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(167, 28);
+            this.comboBox5.TabIndex = 11;
+            this.comboBox5.UseWaitCursor = true;
             // 
             // button1
             // 
@@ -98,11 +117,31 @@
             this.gbDatosHdr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbDatosHdr.Name = "gbDatosHdr";
             this.gbDatosHdr.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbDatosHdr.Size = new System.Drawing.Size(1050, 193);
+            this.gbDatosHdr.Size = new System.Drawing.Size(876, 193);
             this.gbDatosHdr.TabIndex = 1;
             this.gbDatosHdr.TabStop = false;
             this.gbDatosHdr.Text = "Datos de la HDR:";
             this.gbDatosHdr.Enter += new System.EventHandler(this.gbDatosHdr_Enter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(415, 43);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 28);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.UseWaitCursor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(219, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Selecciona N° de HDR:";
             // 
             // textBox2
             // 
@@ -170,7 +209,7 @@
             this.gbGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbGuias.Name = "gbGuias";
             this.gbGuias.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbGuias.Size = new System.Drawing.Size(1050, 277);
+            this.gbGuias.Size = new System.Drawing.Size(876, 277);
             this.gbGuias.TabIndex = 2;
             this.gbGuias.TabStop = false;
             this.gbGuias.Text = "Detalle de Guias incluidas";
@@ -181,17 +220,16 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
             this.lvGuias.Enabled = false;
             this.lvGuias.FullRowSelect = true;
             this.lvGuias.GridLines = true;
             this.lvGuias.HideSelection = false;
-            this.lvGuias.Location = new System.Drawing.Point(20, 29);
+            this.lvGuias.Location = new System.Drawing.Point(71, 31);
             this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(996, 236);
+            this.lvGuias.Size = new System.Drawing.Size(715, 236);
             this.lvGuias.TabIndex = 0;
             this.lvGuias.UseCompatibleStateImageBehavior = false;
             this.lvGuias.View = System.Windows.Forms.View.Details;
@@ -199,31 +237,26 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Nº Guía";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 160;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Remitente";
-            this.columnHeader2.Width = 120;
+            this.columnHeader2.Width = 179;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Destinatario";
-            this.columnHeader3.Width = 130;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Bultos";
-            this.columnHeader4.Width = 55;
+            this.columnHeader3.Width = 191;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Categoría";
-            this.columnHeader5.Width = 85;
+            this.columnHeader5.Width = 181;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Estado";
+            this.columnHeader6.Text = "";
             this.columnHeader6.Width = 170;
             // 
             // gbObservaciones
@@ -234,19 +267,19 @@
             this.gbObservaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbObservaciones.Name = "gbObservaciones";
             this.gbObservaciones.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbObservaciones.Size = new System.Drawing.Size(1050, 138);
+            this.gbObservaciones.Size = new System.Drawing.Size(876, 138);
             this.gbObservaciones.TabIndex = 3;
             this.gbObservaciones.TabStop = false;
             this.gbObservaciones.Text = "Observaciones";
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(249, 43);
+            this.txtObservaciones.Location = new System.Drawing.Point(216, 43);
             this.txtObservaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservaciones.Size = new System.Drawing.Size(763, 82);
+            this.txtObservaciones.Size = new System.Drawing.Size(570, 82);
             this.txtObservaciones.TabIndex = 1;
             // 
             // lblObservaciones
@@ -260,7 +293,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(649, 771);
+            this.btnConfirmar.Location = new System.Drawing.Point(495, 787);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(225, 46);
@@ -270,7 +303,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(896, 771);
+            this.btnCancelar.Location = new System.Drawing.Point(756, 787);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(135, 46);
@@ -278,51 +311,11 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(415, 47);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(167, 28);
-            this.comboBox5.TabIndex = 11;
-            this.comboBox5.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Empresa de Transporte:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Selecciona N° de HDR:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(415, 43);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 28);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.UseWaitCursor = true;
-            // 
             // btnBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 831);
+            this.ClientSize = new System.Drawing.Size(917, 847);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.gbObservaciones);
@@ -359,7 +352,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.GroupBox gbObservaciones;
