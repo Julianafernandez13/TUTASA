@@ -42,34 +42,34 @@
             this.btnImposicionCD.Name = "btnImposicionCD";
             this.btnImposicionCD.Size = new System.Drawing.Size(352, 35);
             this.btnImposicionCD.TabIndex = 0;
-            this.btnImposicionCD.Text = "Registrar imposición en CD";
+            this.btnImposicionCD.Text = "Imposición";
             this.btnImposicionCD.UseVisualStyleBackColor = true;
             // 
             // btnAdmision
             // 
-            this.btnAdmision.Location = new System.Drawing.Point(30, 115);
+            this.btnAdmision.Location = new System.Drawing.Point(30, 206);
             this.btnAdmision.Name = "btnAdmision";
             this.btnAdmision.Size = new System.Drawing.Size(352, 35);
             this.btnAdmision.TabIndex = 1;
-            this.btnAdmision.Text = "Registrar admisión de encomiendas";
+            this.btnAdmision.Text = "Admisión";
             this.btnAdmision.UseVisualStyleBackColor = true;
             // 
             // btnConfeccionHDR
             // 
-            this.btnConfeccionHDR.Location = new System.Drawing.Point(30, 160);
+            this.btnConfeccionHDR.Location = new System.Drawing.Point(30, 114);
             this.btnConfeccionHDR.Name = "btnConfeccionHDR";
             this.btnConfeccionHDR.Size = new System.Drawing.Size(352, 35);
             this.btnConfeccionHDR.TabIndex = 2;
-            this.btnConfeccionHDR.Text = "Confeccionar hojas de ruta última milla";
+            this.btnConfeccionHDR.Text = "HDR de Retiro";
             this.btnConfeccionHDR.UseVisualStyleBackColor = true;
             // 
             // btnRendicionHDR
             // 
-            this.btnRendicionHDR.Location = new System.Drawing.Point(30, 205);
+            this.btnRendicionHDR.Location = new System.Drawing.Point(30, 161);
             this.btnRendicionHDR.Name = "btnRendicionHDR";
             this.btnRendicionHDR.Size = new System.Drawing.Size(352, 35);
             this.btnRendicionHDR.TabIndex = 3;
-            this.btnRendicionHDR.Text = "Recepcionar y rendir hojas de ruta";
+            this.btnRendicionHDR.Text = "Rendición HDR de Retiro";
             this.btnRendicionHDR.UseVisualStyleBackColor = true;
             // 
             // btnDespacho
@@ -78,7 +78,7 @@
             this.btnDespacho.Name = "btnDespacho";
             this.btnDespacho.Size = new System.Drawing.Size(352, 35);
             this.btnDespacho.TabIndex = 4;
-            this.btnDespacho.Text = "Confeccionar HDR de transporte y despachar";
+            this.btnDespacho.Text = "HDR de transporte";
             this.btnDespacho.UseVisualStyleBackColor = true;
             // 
             // btnRecepcionTransporte
@@ -87,7 +87,7 @@
             this.btnRecepcionTransporte.Name = "btnRecepcionTransporte";
             this.btnRecepcionTransporte.Size = new System.Drawing.Size(352, 35);
             this.btnRecepcionTransporte.TabIndex = 5;
-            this.btnRecepcionTransporte.Text = "Recepcionar HDR y bultos de media distancia";
+            this.btnRecepcionTransporte.Text = "Rendición HDR de Transporte";
             this.btnRecepcionTransporte.UseVisualStyleBackColor = true;
             // 
             // btnEntregaCD
@@ -96,7 +96,7 @@
             this.btnEntregaCD.Name = "btnEntregaCD";
             this.btnEntregaCD.Size = new System.Drawing.Size(352, 35);
             this.btnEntregaCD.TabIndex = 6;
-            this.btnEntregaCD.Text = "Registrar entrega en CD";
+            this.btnEntregaCD.Text = "Entrega en CD";
             this.btnEntregaCD.UseVisualStyleBackColor = true;
             // 
             // btnTracking

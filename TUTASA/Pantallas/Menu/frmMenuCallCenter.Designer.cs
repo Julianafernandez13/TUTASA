@@ -51,7 +51,8 @@
             this.btnSolicitudRetiro.Name = "btnSolicitudRetiro";
             this.btnSolicitudRetiro.Size = new System.Drawing.Size(280, 40);
             this.btnSolicitudRetiro.TabIndex = 1;
-            this.btnSolicitudRetiro.Text = "Registrar solicitud de retiro";
+            this.btnSolicitudRetiro.Text = "Solicitud de Retiro";
+            this.btnSolicitudRetiro.Click += new System.EventHandler(this.btnSolicitudRetiro_Click);
             // 
             // btnConsultaTracking
             // 

@@ -195,6 +195,12 @@
     <EmbeddedResource Include="Pantallas\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Menu\frmMenuAgencia.resx">
+      <DependentUpon>frmMenuAgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Menu\frmMenuCallCenter.resx">
+      <DependentUpon>frmMenuCallCenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Menu\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>

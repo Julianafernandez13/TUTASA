@@ -21,5 +21,10 @@ namespace TUTASA.Forms.Menu
         {
 
         }
+
+        private void btnImposicion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

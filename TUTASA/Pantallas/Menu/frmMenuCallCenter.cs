@@ -21,5 +21,10 @@ namespace TUTASA.Forms.Menu
         {
 
         }
+
+        private void btnSolicitudRetiro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

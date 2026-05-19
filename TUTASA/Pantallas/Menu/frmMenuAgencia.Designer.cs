@@ -38,8 +38,9 @@
             this.btnImposicion.Name = "btnImposicion";
             this.btnImposicion.Size = new System.Drawing.Size(280, 40);
             this.btnImposicion.TabIndex = 0;
-            this.btnImposicion.Text = "Registrar imposición";
+            this.btnImposicion.Text = "Imposición";
             this.btnImposicion.UseVisualStyleBackColor = true;
+            this.btnImposicion.Click += new System.EventHandler(this.btnImposicion_Click);
             // 
             // btnEntrega
             // 
