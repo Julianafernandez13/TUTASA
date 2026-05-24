@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.Menu
 {
-    partial class frmMenuPrincipal
+    partial class frmMenuCD
     {
         private System.ComponentModel.IContainer components = null;
 

@@ -148,11 +148,11 @@
     <Compile Include="Pantallas\Menu\frmMenuGerencial.Designer.cs">
       <DependentUpon>frmMenuGerencial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Menu\frmMenuPrincipal.cs">
+    <Compile Include="Pantallas\Menu\frmMenuCD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Menu\frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <Compile Include="Pantallas\Menu\frmMenuCD.Designer.cs">
+      <DependentUpon>frmMenuCD.cs</DependentUpon>
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="Pantallas\Menu\frmMenuCallCenter.resx">
       <DependentUpon>frmMenuCallCenter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Menu\frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\Menu\frmMenuCD.resx">
+      <DependentUpon>frmMenuCD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

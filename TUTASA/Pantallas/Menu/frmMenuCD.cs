@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TUTASA.Forms.Menu
 {
-    public partial class frmMenuPrincipal : Form
+    public partial class frmMenuCD : Form
     {
-        public frmMenuPrincipal()
+        public frmMenuCD()
         {
             InitializeComponent();
         }
