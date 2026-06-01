@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Pantallas
 {
-    partial class _5
+    partial class ConfeccionHDRdeTransporte
     {
         /// <summary>
         /// Required designer variable.
@@ -28,198 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.groupDatosDespacho = new System.Windows.Forms.GroupBox();
+            this.labelMuestraCDOrigen = new System.Windows.Forms.Label();
+            this.labelCDDestino = new System.Windows.Forms.Label();
+            this.cmbLocalidadDestino = new System.Windows.Forms.ComboBox();
+            this.labelLocalidadDestino = new System.Windows.Forms.Label();
+            this.cmbCDDestino = new System.Windows.Forms.ComboBox();
+            this.labelCDOrigen = new System.Windows.Forms.Label();
+            this.groupServicioTransporte = new System.Windows.Forms.GroupBox();
+            this.labelMuestraTipoArrendamiento = new System.Windows.Forms.Label();
+            this.cmbServicio = new System.Windows.Forms.ComboBox();
+            this.labelTipoArrendamiento = new System.Windows.Forms.Label();
+            this.labelServicio = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.groupListadoEncomiendas = new System.Windows.Forms.GroupBox();
+            this.listViewEncomiendas = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label15 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupDatosDespacho.SuspendLayout();
+            this.groupServicioTransporte.SuspendLayout();
+            this.groupListadoEncomiendas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupDatosDespacho
             // 
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox5);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(14, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(691, 163);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Despacho";
-            this.groupBox1.UseWaitCursor = true;
+            this.groupDatosDespacho.Controls.Add(this.labelMuestraCDOrigen);
+            this.groupDatosDespacho.Controls.Add(this.labelCDDestino);
+            this.groupDatosDespacho.Controls.Add(this.cmbLocalidadDestino);
+            this.groupDatosDespacho.Controls.Add(this.labelLocalidadDestino);
+            this.groupDatosDespacho.Controls.Add(this.cmbCDDestino);
+            this.groupDatosDespacho.Controls.Add(this.labelCDOrigen);
+            this.groupDatosDespacho.Location = new System.Drawing.Point(14, 15);
+            this.groupDatosDespacho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupDatosDespacho.Name = "groupDatosDespacho";
+            this.groupDatosDespacho.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupDatosDespacho.Size = new System.Drawing.Size(691, 163);
+            this.groupDatosDespacho.TabIndex = 0;
+            this.groupDatosDespacho.TabStop = false;
+            this.groupDatosDespacho.Text = "Datos Despacho";
+            this.groupDatosDespacho.UseWaitCursor = true;
+            this.groupDatosDespacho.Enter += new System.EventHandler(this.groupDatosDespacho_Enter);
             // 
-            // label2
+            // labelMuestraCDOrigen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(405, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "CD Destino:";
-            this.label2.UseWaitCursor = true;
+            this.labelMuestraCDOrigen.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.labelMuestraCDOrigen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelMuestraCDOrigen.Location = new System.Drawing.Point(195, 47);
+            this.labelMuestraCDOrigen.Name = "labelMuestraCDOrigen";
+            this.labelMuestraCDOrigen.Size = new System.Drawing.Size(167, 27);
+            this.labelMuestraCDOrigen.TabIndex = 16;
+            this.labelMuestraCDOrigen.UseWaitCursor = true;
+            this.labelMuestraCDOrigen.Click += new System.EventHandler(this.labelMuestraCDOrigen_Click);
             // 
-            // comboBox5
+            // labelCDDestino
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(195, 107);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(167, 28);
-            this.comboBox5.TabIndex = 10;
-            this.comboBox5.UseWaitCursor = true;
+            this.labelCDDestino.AutoSize = true;
+            this.labelCDDestino.Location = new System.Drawing.Point(405, 110);
+            this.labelCDDestino.Name = "labelCDDestino";
+            this.labelCDDestino.Size = new System.Drawing.Size(95, 20);
+            this.labelCDDestino.TabIndex = 11;
+            this.labelCDDestino.Text = "CD Destino:";
+            this.labelCDDestino.UseWaitCursor = true;
+            this.labelCDDestino.Click += new System.EventHandler(this.labelCDDestino_Click);
             // 
-            // label1
+            // cmbLocalidadDestino
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Localidad Destino:";
-            this.label1.UseWaitCursor = true;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.cmbLocalidadDestino.FormattingEnabled = true;
+            this.cmbLocalidadDestino.Location = new System.Drawing.Point(195, 107);
+            this.cmbLocalidadDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbLocalidadDestino.Name = "cmbLocalidadDestino";
+            this.cmbLocalidadDestino.Size = new System.Drawing.Size(167, 28);
+            this.cmbLocalidadDestino.TabIndex = 10;
+            this.cmbLocalidadDestino.UseWaitCursor = true;
+            this.cmbLocalidadDestino.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidadDestino_SelectedIndexChanged);
             // 
-            // comboBox2
+            // labelLocalidadDestino
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(506, 107);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(132, 28);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.UseWaitCursor = true;
+            this.labelLocalidadDestino.AutoSize = true;
+            this.labelLocalidadDestino.Location = new System.Drawing.Point(45, 110);
+            this.labelLocalidadDestino.Name = "labelLocalidadDestino";
+            this.labelLocalidadDestino.Size = new System.Drawing.Size(140, 20);
+            this.labelLocalidadDestino.TabIndex = 9;
+            this.labelLocalidadDestino.Text = "Localidad Destino:";
+            this.labelLocalidadDestino.UseWaitCursor = true;
+            this.labelLocalidadDestino.Click += new System.EventHandler(this.labelLocalidadDestino_Click);
             // 
-            // label4
+            // cmbCDDestino
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "CD Origen:";
-            this.label4.UseWaitCursor = true;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.cmbCDDestino.FormattingEnabled = true;
+            this.cmbCDDestino.Location = new System.Drawing.Point(506, 107);
+            this.cmbCDDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCDDestino.Name = "cmbCDDestino";
+            this.cmbCDDestino.Size = new System.Drawing.Size(132, 28);
+            this.cmbCDDestino.TabIndex = 8;
+            this.cmbCDDestino.UseWaitCursor = true;
+            this.cmbCDDestino.SelectedIndexChanged += new System.EventHandler(this.cmbCDDestino_SelectedIndexChanged);
             // 
-            // groupBox2
+            // labelCDOrigen
             // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(14, 404);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(691, 87);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Servicio de Transporte";
-            this.groupBox2.UseWaitCursor = true;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.labelCDOrigen.AutoSize = true;
+            this.labelCDOrigen.Location = new System.Drawing.Point(98, 49);
+            this.labelCDOrigen.Name = "labelCDOrigen";
+            this.labelCDOrigen.Size = new System.Drawing.Size(87, 20);
+            this.labelCDOrigen.TabIndex = 6;
+            this.labelCDOrigen.Text = "CD Origen:";
+            this.labelCDOrigen.UseWaitCursor = true;
+            this.labelCDOrigen.Click += new System.EventHandler(this.labelCDOrigen_Click);
             // 
-            // comboBox4
+            // groupServicioTransporte
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(159, 35);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(134, 28);
-            this.comboBox4.TabIndex = 7;
-            this.comboBox4.UseWaitCursor = true;
+            this.groupServicioTransporte.Controls.Add(this.labelMuestraTipoArrendamiento);
+            this.groupServicioTransporte.Controls.Add(this.cmbServicio);
+            this.groupServicioTransporte.Controls.Add(this.labelTipoArrendamiento);
+            this.groupServicioTransporte.Controls.Add(this.labelServicio);
+            this.groupServicioTransporte.Location = new System.Drawing.Point(14, 404);
+            this.groupServicioTransporte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupServicioTransporte.Name = "groupServicioTransporte";
+            this.groupServicioTransporte.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupServicioTransporte.Size = new System.Drawing.Size(691, 87);
+            this.groupServicioTransporte.TabIndex = 9;
+            this.groupServicioTransporte.TabStop = false;
+            this.groupServicioTransporte.Text = "Servicio de Transporte";
+            this.groupServicioTransporte.UseWaitCursor = true;
+            this.groupServicioTransporte.Enter += new System.EventHandler(this.groupServicioTransporte_Enter);
             // 
-            // label7
+            // labelMuestraTipoArrendamiento
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(320, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Tipo de arrendamiento:";
-            this.label7.UseWaitCursor = true;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.labelMuestraTipoArrendamiento.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.labelMuestraTipoArrendamiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelMuestraTipoArrendamiento.Location = new System.Drawing.Point(498, 36);
+            this.labelMuestraTipoArrendamiento.Name = "labelMuestraTipoArrendamiento";
+            this.labelMuestraTipoArrendamiento.Size = new System.Drawing.Size(140, 27);
+            this.labelMuestraTipoArrendamiento.TabIndex = 17;
+            this.labelMuestraTipoArrendamiento.UseWaitCursor = true;
+            this.labelMuestraTipoArrendamiento.Click += new System.EventHandler(this.labelMuestraTipoArrendamiento_Click);
             // 
-            // label8
+            // cmbServicio
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(78, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Empresa:";
-            this.label8.UseWaitCursor = true;
+            this.cmbServicio.FormattingEnabled = true;
+            this.cmbServicio.Location = new System.Drawing.Point(159, 35);
+            this.cmbServicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbServicio.Name = "cmbServicio";
+            this.cmbServicio.Size = new System.Drawing.Size(134, 28);
+            this.cmbServicio.TabIndex = 7;
+            this.cmbServicio.UseWaitCursor = true;
+            this.cmbServicio.SelectedIndexChanged += new System.EventHandler(this.cmbServicio_SelectedIndexChanged);
             // 
-            // button5
+            // labelTipoArrendamiento
             // 
-            this.button5.Location = new System.Drawing.Point(596, 527);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 31);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.UseWaitCursor = true;
+            this.labelTipoArrendamiento.AutoSize = true;
+            this.labelTipoArrendamiento.Location = new System.Drawing.Point(320, 38);
+            this.labelTipoArrendamiento.Name = "labelTipoArrendamiento";
+            this.labelTipoArrendamiento.Size = new System.Drawing.Size(172, 20);
+            this.labelTipoArrendamiento.TabIndex = 3;
+            this.labelTipoArrendamiento.Text = "Tipo de arrendamiento:";
+            this.labelTipoArrendamiento.UseWaitCursor = true;
+            this.labelTipoArrendamiento.Click += new System.EventHandler(this.labelTipoArrendamiento_Click);
             // 
-            // button3
+            // labelServicio
             // 
-            this.button3.Location = new System.Drawing.Point(443, 527);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 31);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.UseWaitCursor = true;
+            this.labelServicio.AutoSize = true;
+            this.labelServicio.Location = new System.Drawing.Point(78, 38);
+            this.labelServicio.Name = "labelServicio";
+            this.labelServicio.Size = new System.Drawing.Size(68, 20);
+            this.labelServicio.TabIndex = 1;
+            this.labelServicio.Text = "Servicio:";
+            this.labelServicio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelServicio.UseWaitCursor = true;
+            this.labelServicio.Click += new System.EventHandler(this.labelServicio_Click);
             // 
-            // groupBox3
+            // btnCancelar
             // 
-            this.groupBox3.Controls.Add(this.listView2);
-            this.groupBox3.Location = new System.Drawing.Point(14, 195);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(691, 174);
-            this.groupBox3.TabIndex = 29;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Listado de encomiendas";
-            this.groupBox3.UseWaitCursor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(596, 527);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 31);
+            this.btnCancelar.TabIndex = 28;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseWaitCursor = true;
             // 
-            // listView2
+            // btnGuardar
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.btnGuardar.Location = new System.Drawing.Point(443, 527);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(109, 31);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseWaitCursor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // groupListadoEncomiendas
+            // 
+            this.groupListadoEncomiendas.Controls.Add(this.listViewEncomiendas);
+            this.groupListadoEncomiendas.Location = new System.Drawing.Point(14, 195);
+            this.groupListadoEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupListadoEncomiendas.Name = "groupListadoEncomiendas";
+            this.groupListadoEncomiendas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupListadoEncomiendas.Size = new System.Drawing.Size(691, 174);
+            this.groupListadoEncomiendas.TabIndex = 29;
+            this.groupListadoEncomiendas.TabStop = false;
+            this.groupListadoEncomiendas.Text = "Listado de encomiendas";
+            this.groupListadoEncomiendas.UseWaitCursor = true;
+            this.groupListadoEncomiendas.Enter += new System.EventHandler(this.groupListadoEncomiendas_Enter);
+            // 
+            // listViewEncomiendas
+            // 
+            this.listViewEncomiendas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader11,
             this.columnHeader12});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(24, 27);
-            this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(649, 139);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.UseWaitCursor = true;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listViewEncomiendas.HideSelection = false;
+            this.listViewEncomiendas.Location = new System.Drawing.Point(24, 27);
+            this.listViewEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listViewEncomiendas.Name = "listViewEncomiendas";
+            this.listViewEncomiendas.Size = new System.Drawing.Size(649, 139);
+            this.listViewEncomiendas.TabIndex = 2;
+            this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
+            this.listViewEncomiendas.UseWaitCursor = true;
+            this.listViewEncomiendas.View = System.Windows.Forms.View.Details;
+            this.listViewEncomiendas.SelectedIndexChanged += new System.EventHandler(this.listViewEncomiendas_SelectedIndexChanged);
             // 
             // columnHeader7
             // 
@@ -236,67 +268,50 @@
             this.columnHeader12.Text = "Localidad Destino";
             this.columnHeader12.Width = 491;
             // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(195, 47);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(167, 27);
-            this.label15.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(498, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 27);
-            this.label3.TabIndex = 17;
-            // 
-            // _5
+            // ConfeccionHDRdeTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 597);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupListadoEncomiendas);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.groupServicioTransporte);
+            this.Controls.Add(this.groupDatosDespacho);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "_5";
+            this.Name = "ConfeccionHDRdeTransporte";
             this.Text = "TUTASA – Confección de Hoja de Ruta de Transporte";
             this.UseWaitCursor = true;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.ConfeccionHDRdeTransporte_Load);
+            this.groupDatosDespacho.ResumeLayout(false);
+            this.groupDatosDespacho.PerformLayout();
+            this.groupServicioTransporte.ResumeLayout(false);
+            this.groupServicioTransporte.PerformLayout();
+            this.groupListadoEncomiendas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.GroupBox groupDatosDespacho;
+        private System.Windows.Forms.ComboBox cmbCDDestino;
+        private System.Windows.Forms.Label labelCDOrigen;
+        private System.Windows.Forms.GroupBox groupServicioTransporte;
+        private System.Windows.Forms.ComboBox cmbServicio;
+        private System.Windows.Forms.Label labelTipoArrendamiento;
+        private System.Windows.Forms.Label labelServicio;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label labelLocalidadDestino;
+        private System.Windows.Forms.Label labelCDDestino;
+        private System.Windows.Forms.ComboBox cmbLocalidadDestino;
+        private System.Windows.Forms.GroupBox groupListadoEncomiendas;
+        private System.Windows.Forms.ListView listViewEncomiendas;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelMuestraCDOrigen;
+        private System.Windows.Forms.Label labelMuestraTipoArrendamiento;
     }
 }

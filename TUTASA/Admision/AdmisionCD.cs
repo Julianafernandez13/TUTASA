@@ -19,9 +19,6 @@ namespace TUTASA.Forms.CD
         {
             InitializeComponent();
         }
-
-        
-
         private void frmAdmision_Load(object sender, EventArgs e)
         {
 
