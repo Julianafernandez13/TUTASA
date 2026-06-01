@@ -40,6 +40,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,7 +76,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(922, 652);
+            this.groupBox1.Size = new System.Drawing.Size(997, 652);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TUTASA - Emitir Factura";
@@ -129,7 +129,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(870, 175);
+            this.groupBox4.Size = new System.Drawing.Size(961, 175);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Movimientos a Facturar";
@@ -150,7 +150,7 @@
             this.lvGuias.Location = new System.Drawing.Point(8, 29);
             this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(854, 108);
+            this.lvGuias.Size = new System.Drawing.Size(945, 108);
             this.lvGuias.TabIndex = 1;
             this.lvGuias.UseCompatibleStateImageBehavior = false;
             this.lvGuias.View = System.Windows.Forms.View.Details;
@@ -164,7 +164,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Fecha";
-            this.columnHeader2.Width = 179;
+            this.columnHeader2.Width = 136;
             // 
             // columnHeader3
             // 
@@ -174,12 +174,17 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Destino";
-            this.columnHeader5.Width = 181;
+            this.columnHeader5.Width = 169;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Categoria";
             this.columnHeader6.Width = 170;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Total";
+            this.columnHeader4.Width = 118;
             // 
             // label4
             // 
@@ -282,7 +287,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(870, 137);
+            this.groupBox2.Size = new System.Drawing.Size(953, 137);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Cliente";
@@ -355,15 +360,11 @@
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Total";
-            // 
             // frmEmitirFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 689);
+            this.ClientSize = new System.Drawing.Size(1044, 689);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEmitirFactura";

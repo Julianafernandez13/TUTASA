@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TUTASA.Forms.CallCenter
 {
-    public partial class frmConsultaTracking : Form
+    public partial class ConsultaTracking : Form
     {
-        public frmConsultaTracking()
+        public ConsultaTracking()
         {
             InitializeComponent();
         }

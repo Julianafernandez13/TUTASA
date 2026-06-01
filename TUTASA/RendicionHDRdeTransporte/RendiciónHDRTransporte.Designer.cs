@@ -48,15 +48,11 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.gbObservaciones = new System.Windows.Forms.GroupBox();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.lblObservaciones = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.gbBusqueda.SuspendLayout();
             this.gbDatosHdr.SuspendLayout();
             this.gbGuias.SuspendLayout();
-            this.gbObservaciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBusqueda
@@ -259,41 +255,9 @@
             this.columnHeader6.Text = "";
             this.columnHeader6.Width = 170;
             // 
-            // gbObservaciones
-            // 
-            this.gbObservaciones.Controls.Add(this.txtObservaciones);
-            this.gbObservaciones.Controls.Add(this.lblObservaciones);
-            this.gbObservaciones.Location = new System.Drawing.Point(15, 623);
-            this.gbObservaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbObservaciones.Name = "gbObservaciones";
-            this.gbObservaciones.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbObservaciones.Size = new System.Drawing.Size(876, 138);
-            this.gbObservaciones.TabIndex = 3;
-            this.gbObservaciones.TabStop = false;
-            this.gbObservaciones.Text = "Observaciones";
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(216, 43);
-            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservaciones.Size = new System.Drawing.Size(570, 82);
-            this.txtObservaciones.TabIndex = 1;
-            // 
-            // lblObservaciones
-            // 
-            this.lblObservaciones.Location = new System.Drawing.Point(15, 46);
-            this.lblObservaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(225, 31);
-            this.lblObservaciones.TabIndex = 0;
-            this.lblObservaciones.Text = "Detalle de discrepancias:";
-            // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(495, 787);
+            this.btnConfirmar.Location = new System.Drawing.Point(484, 689);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(225, 46);
@@ -303,7 +267,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(756, 787);
+            this.btnCancelar.Location = new System.Drawing.Point(756, 689);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(135, 46);
@@ -315,10 +279,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 847);
+            this.ClientSize = new System.Drawing.Size(917, 745);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.gbObservaciones);
             this.Controls.Add(this.gbGuias);
             this.Controls.Add(this.gbDatosHdr);
             this.Controls.Add(this.gbBusqueda);
@@ -330,8 +293,6 @@
             this.gbDatosHdr.ResumeLayout(false);
             this.gbDatosHdr.PerformLayout();
             this.gbGuias.ResumeLayout(false);
-            this.gbObservaciones.ResumeLayout(false);
-            this.gbObservaciones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,9 +315,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.GroupBox gbObservaciones;
-        private System.Windows.Forms.Label lblObservaciones;
-        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;

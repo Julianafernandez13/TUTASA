@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.Administracion
 {
-    partial class frmCostovsVentas
+    partial class CostovsVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,13 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTotales = new System.Windows.Forms.Label();
             this.lvBultos = new System.Windows.Forms.ListView();
@@ -43,9 +45,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.gbFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +72,54 @@
             this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros de Consulta";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.comboBox2.Location = new System.Drawing.Point(279, 27);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(96, 28);
+            this.comboBox2.TabIndex = 8;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.comboBox1.Location = new System.Drawing.Point(126, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(67, 28);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(230, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 23);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Año:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbEmpresa
             // 
@@ -109,14 +156,6 @@
             this.btnGenerar.Size = new System.Drawing.Size(140, 35);
             this.btnGenerar.TabIndex = 4;
             this.btnGenerar.Text = "Generar";
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Location = new System.Drawing.Point(314, 233);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(100, 35);
-            this.btnExportar.TabIndex = 3;
-            this.btnExportar.Text = "Exportar";
             // 
             // btnLimpiar
             // 
@@ -181,61 +220,12 @@
             this.columnHeader3.Text = "Margen Neto";
             this.columnHeader3.Width = 120;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(230, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 23);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Año:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 28);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Items.AddRange(new object[] {
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026"});
-            this.comboBox2.Location = new System.Drawing.Point(279, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(96, 28);
-            this.comboBox2.TabIndex = 8;
-            // 
             // frmCostovsVentas
             // 
             this.ClientSize = new System.Drawing.Size(800, 626);
             this.Controls.Add(this.lvBultos);
             this.Controls.Add(this.lblTotales);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.lblTitulo);
@@ -255,7 +245,6 @@
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.ComboBox cmbEmpresa;
         private System.Windows.Forms.Button btnGenerar;
-        private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblTotales;
         private System.Windows.Forms.ListView lvBultos;

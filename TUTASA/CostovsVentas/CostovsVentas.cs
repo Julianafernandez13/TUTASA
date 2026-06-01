@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TUTASA.Forms.Administracion
 {
-    public partial class frmCostovsVentas : Form
+    public partial class CostovsVentas : Form
     {
-        public frmCostovsVentas()
+        public CostovsVentas()
         {
             InitializeComponent();
         }
