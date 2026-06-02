@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
+    <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +69,11 @@
     <Compile Include="ConfeccionHDRdeTransporte\ConfeccionHDRdeTransporte.Designer.cs">
       <DependentUpon>ConfeccionHDRdeTransporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmitirFactura\frmEmitirFactura.cs">
+    <Compile Include="EmitirFactura\EmitirFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmitirFactura\frmEmitirFactura.Designer.cs">
-      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    <Compile Include="EmitirFactura\EmitirFactura.Designer.cs">
+      <DependentUpon>EmitirFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="CostovsVentas\CostovsVentas.cs">
       <SubType>Form</SubType>
@@ -172,8 +173,8 @@
     <EmbeddedResource Include="CostovsVentas\CostovsVentas.resx">
       <DependentUpon>CostovsVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmitirFactura\frmEmitirFactura.resx">
-      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    <EmbeddedResource Include="EmitirFactura\EmitirFactura.resx">
+      <DependentUpon>EmitirFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionAgencia\ImposicionAgencia.resx">
       <DependentUpon>ImposicionAgencia.cs</DependentUpon>

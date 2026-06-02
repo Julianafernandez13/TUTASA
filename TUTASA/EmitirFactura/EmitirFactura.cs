@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.EmitirFactura;
 
 namespace TUTASA.Forms.Administracion
 {
-    public partial class frmEmitirFactura : Form
+    public partial class EmitirFactura : Form
     {
-        public frmEmitirFactura()
+        //instancia del modelo de EmitirFactura
+        private EmitirFacturaModelo modelo = new EmitirFacturaModelo();
+        public EmitirFactura()
         {
             InitializeComponent();
         }
@@ -28,6 +31,11 @@ namespace TUTASA.Forms.Administracion
         }
 
         private void lvGuias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmitirFactura_Load(object sender, EventArgs e)
         {
 
         }
