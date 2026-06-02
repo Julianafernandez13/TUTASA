@@ -28,175 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.groupBusquedaGuias = new System.Windows.Forms.GroupBox();
+            this.cmbDomicilio = new System.Windows.Forms.ComboBox();
+            this.labelDomicilio = new System.Windows.Forms.Label();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.labelLocalidad = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.groupSeleccionFletero = new System.Windows.Forms.GroupBox();
+            this.cmbFleteros = new System.Windows.Forms.ComboBox();
+            this.labelFletero = new System.Windows.Forms.Label();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.listViewGuiasARutear = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelSeleccionarGuiasRuteo = new System.Windows.Forms.Label();
             this.groupTipoConfeccion = new System.Windows.Forms.GroupBox();
             this.labelSeleccionaTipoHDR = new System.Windows.Forms.Label();
-            this.rbM = new System.Windows.Forms.RadioButton();
-            this.rbL = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.radioBtnEntrega = new System.Windows.Forms.RadioButton();
+            this.radioBtnRetiro = new System.Windows.Forms.RadioButton();
+            this.groupBusquedaGuias.SuspendLayout();
+            this.groupSeleccionFletero.SuspendLayout();
             this.groupTipoConfeccion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBusquedaGuias
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbEmpresa);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 144);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1104, 123);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda de Guías";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBusquedaGuias.Controls.Add(this.cmbDomicilio);
+            this.groupBusquedaGuias.Controls.Add(this.labelDomicilio);
+            this.groupBusquedaGuias.Controls.Add(this.cmbLocalidad);
+            this.groupBusquedaGuias.Controls.Add(this.labelLocalidad);
+            this.groupBusquedaGuias.Controls.Add(this.btnBuscar);
+            this.groupBusquedaGuias.Location = new System.Drawing.Point(16, 144);
+            this.groupBusquedaGuias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBusquedaGuias.Name = "groupBusquedaGuias";
+            this.groupBusquedaGuias.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBusquedaGuias.Size = new System.Drawing.Size(1104, 123);
+            this.groupBusquedaGuias.TabIndex = 0;
+            this.groupBusquedaGuias.TabStop = false;
+            this.groupBusquedaGuias.Text = "Busqueda de Guías";
+            this.groupBusquedaGuias.Enter += new System.EventHandler(this.groupBusquedaGuias_Enter);
             // 
-            // comboBox1
+            // cmbDomicilio
             // 
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbDomicilio.Items.AddRange(new object[] {
             "Todas",
             "Empresa A",
             "Empresa B",
             "Empresa C"});
-            this.comboBox1.Location = new System.Drawing.Point(543, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(266, 28);
-            this.comboBox1.TabIndex = 12;
+            this.cmbDomicilio.Location = new System.Drawing.Point(543, 56);
+            this.cmbDomicilio.Name = "cmbDomicilio";
+            this.cmbDomicilio.Size = new System.Drawing.Size(266, 28);
+            this.cmbDomicilio.TabIndex = 12;
+            this.cmbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cmbDomicilio_SelectedIndexChanged);
             // 
-            // label2
+            // labelDomicilio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(461, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Domicilio:";
+            this.labelDomicilio.AutoSize = true;
+            this.labelDomicilio.Location = new System.Drawing.Point(461, 56);
+            this.labelDomicilio.Name = "labelDomicilio";
+            this.labelDomicilio.Size = new System.Drawing.Size(76, 20);
+            this.labelDomicilio.TabIndex = 11;
+            this.labelDomicilio.Text = "Domicilio:";
+            this.labelDomicilio.Click += new System.EventHandler(this.labelDomicilio_Click);
             // 
-            // cmbEmpresa
+            // cmbLocalidad
             // 
-            this.cmbEmpresa.Items.AddRange(new object[] {
+            this.cmbLocalidad.Items.AddRange(new object[] {
             "Todas",
             "Empresa A",
             "Empresa B",
             "Empresa C"});
-            this.cmbEmpresa.Location = new System.Drawing.Point(124, 56);
-            this.cmbEmpresa.Name = "cmbEmpresa";
-            this.cmbEmpresa.Size = new System.Drawing.Size(266, 28);
-            this.cmbEmpresa.TabIndex = 10;
+            this.cmbLocalidad.Location = new System.Drawing.Point(124, 56);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(266, 28);
+            this.cmbLocalidad.TabIndex = 10;
+            this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
-            // label1
+            // labelLocalidad
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Localidad:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelLocalidad.AutoSize = true;
+            this.labelLocalidad.Location = new System.Drawing.Point(37, 56);
+            this.labelLocalidad.Name = "labelLocalidad";
+            this.labelLocalidad.Size = new System.Drawing.Size(81, 20);
+            this.labelLocalidad.TabIndex = 9;
+            this.labelLocalidad.Text = "Localidad:";
+            this.labelLocalidad.Click += new System.EventHandler(this.labelLocalidad_Click);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(917, 55);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(917, 55);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(109, 29);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // groupBox4
+            // groupSeleccionFletero
             // 
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(16, 505);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(1104, 149);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Seleccionar fletero disponible";
+            this.groupSeleccionFletero.Controls.Add(this.cmbFleteros);
+            this.groupSeleccionFletero.Controls.Add(this.labelFletero);
+            this.groupSeleccionFletero.Location = new System.Drawing.Point(16, 505);
+            this.groupSeleccionFletero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupSeleccionFletero.Name = "groupSeleccionFletero";
+            this.groupSeleccionFletero.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupSeleccionFletero.Size = new System.Drawing.Size(1104, 149);
+            this.groupSeleccionFletero.TabIndex = 11;
+            this.groupSeleccionFletero.TabStop = false;
+            this.groupSeleccionFletero.Text = "Seleccionar fletero disponible";
+            this.groupSeleccionFletero.Enter += new System.EventHandler(this.groupSeleccionFletero_Enter);
             // 
-            // comboBox2
+            // cmbFleteros
             // 
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbFleteros.Items.AddRange(new object[] {
             "Todas",
             "Empresa A",
             "Empresa B",
             "Empresa C"});
-            this.comboBox2.Location = new System.Drawing.Point(124, 68);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(266, 28);
-            this.comboBox2.TabIndex = 13;
+            this.cmbFleteros.Location = new System.Drawing.Point(124, 68);
+            this.cmbFleteros.Name = "cmbFleteros";
+            this.cmbFleteros.Size = new System.Drawing.Size(266, 28);
+            this.cmbFleteros.TabIndex = 13;
+            this.cmbFleteros.SelectedIndexChanged += new System.EventHandler(this.cmbFleteros_SelectedIndexChanged);
             // 
-            // label3
+            // labelFletero
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Fletero:";
+            this.labelFletero.AutoSize = true;
+            this.labelFletero.Location = new System.Drawing.Point(37, 71);
+            this.labelFletero.Name = "labelFletero";
+            this.labelFletero.Size = new System.Drawing.Size(63, 20);
+            this.labelFletero.TabIndex = 10;
+            this.labelFletero.Text = "Fletero:";
+            this.labelFletero.Click += new System.EventHandler(this.labelFletero_Click);
             // 
-            // button3
+            // btnConfirmar
             // 
-            this.button3.Location = new System.Drawing.Point(810, 662);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 31);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Confirmar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Location = new System.Drawing.Point(810, 662);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(109, 31);
+            this.btnConfirmar.TabIndex = 23;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // button5
+            // btnCancelar
             // 
-            this.button5.Location = new System.Drawing.Point(966, 662);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 31);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(966, 662);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 31);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // listView2
+            // listViewGuiasARutear
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewGuiasARutear.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader8,
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader1});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(16, 313);
-            this.listView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1104, 163);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listViewGuiasARutear.HideSelection = false;
+            this.listViewGuiasARutear.Location = new System.Drawing.Point(16, 313);
+            this.listViewGuiasARutear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listViewGuiasARutear.Name = "listViewGuiasARutear";
+            this.listViewGuiasARutear.Size = new System.Drawing.Size(1104, 163);
+            this.listViewGuiasARutear.TabIndex = 3;
+            this.listViewGuiasARutear.UseCompatibleStateImageBehavior = false;
+            this.listViewGuiasARutear.View = System.Windows.Forms.View.Details;
+            this.listViewGuiasARutear.SelectedIndexChanged += new System.EventHandler(this.listViewGuiasARutear_SelectedIndexChanged);
             // 
             // columnHeader6
             // 
@@ -228,21 +238,21 @@
             this.columnHeader1.Text = "Agencia";
             this.columnHeader1.Width = 335;
             // 
-            // label4
+            // labelSeleccionarGuiasRuteo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 289);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 20);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Seleccionar Guías a rutear:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.labelSeleccionarGuiasRuteo.AutoSize = true;
+            this.labelSeleccionarGuiasRuteo.Location = new System.Drawing.Point(17, 289);
+            this.labelSeleccionarGuiasRuteo.Name = "labelSeleccionarGuiasRuteo";
+            this.labelSeleccionarGuiasRuteo.Size = new System.Drawing.Size(201, 20);
+            this.labelSeleccionarGuiasRuteo.TabIndex = 37;
+            this.labelSeleccionarGuiasRuteo.Text = "Seleccionar Guías a rutear:";
+            this.labelSeleccionarGuiasRuteo.Click += new System.EventHandler(this.labelSeleccionarGuiasRuteo_Click);
             // 
             // groupTipoConfeccion
             // 
             this.groupTipoConfeccion.Controls.Add(this.labelSeleccionaTipoHDR);
-            this.groupTipoConfeccion.Controls.Add(this.rbM);
-            this.groupTipoConfeccion.Controls.Add(this.rbL);
+            this.groupTipoConfeccion.Controls.Add(this.radioBtnEntrega);
+            this.groupTipoConfeccion.Controls.Add(this.radioBtnRetiro);
             this.groupTipoConfeccion.Location = new System.Drawing.Point(21, 13);
             this.groupTipoConfeccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupTipoConfeccion.Name = "groupTipoConfeccion";
@@ -263,23 +273,25 @@
             this.labelSeleccionaTipoHDR.Text = "Selecciona tipo de HDR a confeccionar:";
             this.labelSeleccionaTipoHDR.Click += new System.EventHandler(this.labelSeleccionaTipoHDR_Click);
             // 
-            // rbM
+            // radioBtnEntrega
             // 
-            this.rbM.Location = new System.Drawing.Point(406, 48);
-            this.rbM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbM.Name = "rbM";
-            this.rbM.Size = new System.Drawing.Size(126, 26);
-            this.rbM.TabIndex = 10;
-            this.rbM.Text = "Entrega";
+            this.radioBtnEntrega.Location = new System.Drawing.Point(406, 48);
+            this.radioBtnEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnEntrega.Name = "radioBtnEntrega";
+            this.radioBtnEntrega.Size = new System.Drawing.Size(126, 26);
+            this.radioBtnEntrega.TabIndex = 10;
+            this.radioBtnEntrega.Text = "Entrega";
+            this.radioBtnEntrega.CheckedChanged += new System.EventHandler(this.radioBtnEntrega_CheckedChanged);
             // 
-            // rbL
+            // radioBtnRetiro
             // 
-            this.rbL.Location = new System.Drawing.Point(577, 48);
-            this.rbL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbL.Name = "rbL";
-            this.rbL.Size = new System.Drawing.Size(113, 26);
-            this.rbL.TabIndex = 11;
-            this.rbL.Text = "Retiro";
+            this.radioBtnRetiro.Location = new System.Drawing.Point(577, 48);
+            this.radioBtnRetiro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnRetiro.Name = "radioBtnRetiro";
+            this.radioBtnRetiro.Size = new System.Drawing.Size(113, 26);
+            this.radioBtnRetiro.TabIndex = 11;
+            this.radioBtnRetiro.Text = "Retiro";
+            this.radioBtnRetiro.CheckedChanged += new System.EventHandler(this.radioBtnRetiro_CheckedChanged);
             // 
             // ConfeccionHDRdeUltMilla
             // 
@@ -287,12 +299,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 706);
             this.Controls.Add(this.groupTipoConfeccion);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelSeleccionarGuiasRuteo);
+            this.Controls.Add(this.listViewGuiasARutear);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.groupSeleccionFletero);
+            this.Controls.Add(this.groupBusquedaGuias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -300,10 +312,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TUTASA – Confección de Hoja de Ruta ";
             this.Load += new System.EventHandler(this.ConfeccionHDRdeUltMilla_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupBusquedaGuias.ResumeLayout(false);
+            this.groupBusquedaGuias.PerformLayout();
+            this.groupSeleccionFletero.ResumeLayout(false);
+            this.groupSeleccionFletero.PerformLayout();
             this.groupTipoConfeccion.ResumeLayout(false);
             this.groupTipoConfeccion.PerformLayout();
             this.ResumeLayout(false);
@@ -313,28 +325,28 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbEmpresa;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.GroupBox groupBusquedaGuias;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.GroupBox groupSeleccionFletero;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label labelLocalidad;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
+        private System.Windows.Forms.ListView listViewGuiasARutear;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbDomicilio;
+        private System.Windows.Forms.Label labelDomicilio;
+        private System.Windows.Forms.Label labelSeleccionarGuiasRuteo;
+        private System.Windows.Forms.ComboBox cmbFleteros;
+        private System.Windows.Forms.Label labelFletero;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.GroupBox groupTipoConfeccion;
         private System.Windows.Forms.Label labelSeleccionaTipoHDR;
-        private System.Windows.Forms.RadioButton rbM;
-        private System.Windows.Forms.RadioButton rbL;
+        private System.Windows.Forms.RadioButton radioBtnEntrega;
+        private System.Windows.Forms.RadioButton radioBtnRetiro;
     }
 }
