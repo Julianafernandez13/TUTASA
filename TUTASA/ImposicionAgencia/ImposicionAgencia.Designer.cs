@@ -32,7 +32,7 @@
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textLocProvDom = new System.Windows.Forms.TextBox();
             this.lblProvinciaRetiro = new System.Windows.Forms.Label();
             this.lblNombreDom = new System.Windows.Forms.Label();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
@@ -73,9 +73,9 @@
             this.cmbCD = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioBtnCD = new System.Windows.Forms.RadioButton();
+            this.radioBtnAgencia = new System.Windows.Forms.RadioButton();
+            this.radioBtnDomicilio = new System.Windows.Forms.RadioButton();
             this.lblDestino = new System.Windows.Forms.Label();
             this.groupRemitente.SuspendLayout();
             this.grpBultos.SuspendLayout();
@@ -99,7 +99,6 @@
             this.groupRemitente.TabIndex = 0;
             this.groupRemitente.TabStop = false;
             this.groupRemitente.Text = "Datos del Remitente";
-           
             // 
             // txtMuestraNombre
             // 
@@ -120,7 +119,6 @@
             this.lblCUIT.Size = new System.Drawing.Size(50, 20);
             this.lblCUIT.TabIndex = 0;
             this.lblCUIT.Text = "CUIT:";
-            
             // 
             // txtCUIT
             // 
@@ -150,7 +148,6 @@
             this.lblNombreRemitente.Size = new System.Drawing.Size(69, 20);
             this.lblNombreRemitente.TabIndex = 3;
             this.lblNombreRemitente.Text = "Nombre:";
-            
             // 
             // grpBultos
             // 
@@ -268,6 +265,7 @@
             this.btnQuitarBulto.Size = new System.Drawing.Size(129, 54);
             this.btnQuitarBulto.TabIndex = 7;
             this.btnQuitarBulto.Text = "Quitar seleccionado";
+            this.btnQuitarBulto.Click += new System.EventHandler(this.btnQuitarBulto_Click);
             // 
             // btnDomicilio
             // 
@@ -286,7 +284,7 @@
             // 
             // grpDomicilio
             // 
-            this.grpDomicilio.Controls.Add(this.textBox1);
+            this.grpDomicilio.Controls.Add(this.textLocProvDom);
             this.grpDomicilio.Controls.Add(this.lblProvinciaRetiro);
             this.grpDomicilio.Controls.Add(this.lblNombreDom);
             this.grpDomicilio.Controls.Add(this.txtNombreDom);
@@ -307,14 +305,15 @@
             this.grpDomicilio.TabIndex = 7;
             this.grpDomicilio.TabStop = false;
             // 
-            // textBox1
+            // textLocProvDom
             // 
-            this.textBox1.Location = new System.Drawing.Point(665, 143);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(223, 26);
-            this.textBox1.TabIndex = 12;
+            this.textLocProvDom.Location = new System.Drawing.Point(665, 143);
+            this.textLocProvDom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textLocProvDom.Name = "textLocProvDom";
+            this.textLocProvDom.ReadOnly = true;
+            this.textLocProvDom.Size = new System.Drawing.Size(223, 26);
+            this.textLocProvDom.TabIndex = 12;
+            this.textLocProvDom.TextChanged += new System.EventHandler(this.textLocProvDom_TextChanged);
             // 
             // lblProvinciaRetiro
             // 
@@ -343,6 +342,7 @@
             this.txtNombreDom.Name = "txtNombreDom";
             this.txtNombreDom.Size = new System.Drawing.Size(770, 26);
             this.txtNombreDom.TabIndex = 1;
+            this.txtNombreDom.TextChanged += new System.EventHandler(this.txtNombreDom_TextChanged);
             // 
             // lblDNIDom
             // 
@@ -361,6 +361,7 @@
             this.txtDNIDom.Name = "txtDNIDom";
             this.txtDNIDom.Size = new System.Drawing.Size(180, 26);
             this.txtDNIDom.TabIndex = 3;
+            this.txtDNIDom.TextChanged += new System.EventHandler(this.txtDNIDom_TextChanged);
             // 
             // lblTelefonoDom
             // 
@@ -379,6 +380,7 @@
             this.txtTelefonoDom.Name = "txtTelefonoDom";
             this.txtTelefonoDom.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoDom.TabIndex = 5;
+            this.txtTelefonoDom.TextChanged += new System.EventHandler(this.txtTelefonoDom_TextChanged);
             // 
             // lblDomicilioEntrega
             // 
@@ -397,6 +399,7 @@
             this.txtDomicilioEntrega.Name = "txtDomicilioEntrega";
             this.txtDomicilioEntrega.Size = new System.Drawing.Size(770, 26);
             this.txtDomicilioEntrega.TabIndex = 7;
+            this.txtDomicilioEntrega.TextChanged += new System.EventHandler(this.txtDomicilioEntrega_TextChanged);
             // 
             // lblCPDom
             // 
@@ -415,6 +418,7 @@
             this.txtCPDom.Name = "txtCPDom";
             this.txtCPDom.Size = new System.Drawing.Size(127, 26);
             this.txtCPDom.TabIndex = 9;
+            this.txtCPDom.TextChanged += new System.EventHandler(this.txtCPDom_TextChanged);
             // 
             // btnBuscarLocalidadDom
             // 
@@ -424,6 +428,7 @@
             this.btnBuscarLocalidadDom.Size = new System.Drawing.Size(154, 34);
             this.btnBuscarLocalidadDom.TabIndex = 10;
             this.btnBuscarLocalidadDom.Text = "Buscar localidad";
+            this.btnBuscarLocalidadDom.Click += new System.EventHandler(this.btnBuscarLocalidadDom_Click);
             // 
             // btnAgencia
             // 
@@ -478,6 +483,7 @@
             this.txtNombreAg.Name = "txtNombreAg";
             this.txtNombreAg.Size = new System.Drawing.Size(770, 26);
             this.txtNombreAg.TabIndex = 1;
+            this.txtNombreAg.TextChanged += new System.EventHandler(this.txtNombreAg_TextChanged);
             // 
             // lblDNIAg
             // 
@@ -496,6 +502,7 @@
             this.txtDNIAg.Name = "txtDNIAg";
             this.txtDNIAg.Size = new System.Drawing.Size(180, 26);
             this.txtDNIAg.TabIndex = 3;
+            this.txtDNIAg.TextChanged += new System.EventHandler(this.txtDNIAg_TextChanged);
             // 
             // lblTelefonoAg
             // 
@@ -514,6 +521,7 @@
             this.txtTelefonoAg.Name = "txtTelefonoAg";
             this.txtTelefonoAg.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoAg.TabIndex = 5;
+            this.txtTelefonoAg.TextChanged += new System.EventHandler(this.txtTelefonoAg_TextChanged);
             // 
             // lblCPAg
             // 
@@ -532,6 +540,7 @@
             this.txtCPAg.Name = "txtCPAg";
             this.txtCPAg.Size = new System.Drawing.Size(127, 26);
             this.txtCPAg.TabIndex = 7;
+            this.txtCPAg.TextChanged += new System.EventHandler(this.txtCPAg_TextChanged);
             // 
             // btnBuscarLocalidadAg
             // 
@@ -541,6 +550,7 @@
             this.btnBuscarLocalidadAg.Size = new System.Drawing.Size(154, 34);
             this.btnBuscarLocalidadAg.TabIndex = 8;
             this.btnBuscarLocalidadAg.Text = "Buscar localidad";
+            this.btnBuscarLocalidadAg.Click += new System.EventHandler(this.btnBuscarLocalidadAg_Click);
             // 
             // lblAgencia
             // 
@@ -560,6 +570,7 @@
             this.cmbAgencia.Name = "cmbAgencia";
             this.cmbAgencia.Size = new System.Drawing.Size(372, 28);
             this.cmbAgencia.TabIndex = 10;
+            this.cmbAgencia.SelectedIndexChanged += new System.EventHandler(this.cmbAgencia_SelectedIndexChanged);
             // 
             // btnCD
             // 
@@ -614,6 +625,7 @@
             this.txtNombreCD.Name = "txtNombreCD";
             this.txtNombreCD.Size = new System.Drawing.Size(770, 26);
             this.txtNombreCD.TabIndex = 1;
+            this.txtNombreCD.TextChanged += new System.EventHandler(this.txtNombreCD_TextChanged);
             // 
             // lblDNICD
             // 
@@ -632,6 +644,7 @@
             this.txtDNICD.Name = "txtDNICD";
             this.txtDNICD.Size = new System.Drawing.Size(180, 26);
             this.txtDNICD.TabIndex = 3;
+            this.txtDNICD.TextChanged += new System.EventHandler(this.txtDNICD_TextChanged);
             // 
             // lblTelefonoCD
             // 
@@ -650,6 +663,7 @@
             this.txtTelefonoCD.Name = "txtTelefonoCD";
             this.txtTelefonoCD.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoCD.TabIndex = 5;
+            this.txtTelefonoCD.TextChanged += new System.EventHandler(this.txtTelefonoCD_TextChanged);
             // 
             // lblCPCD
             // 
@@ -668,6 +682,7 @@
             this.txtCPCD.Name = "txtCPCD";
             this.txtCPCD.Size = new System.Drawing.Size(127, 26);
             this.txtCPCD.TabIndex = 7;
+            this.txtCPCD.TextChanged += new System.EventHandler(this.txtCPCD_TextChanged);
             // 
             // btnBuscarLocalidadCD
             // 
@@ -677,6 +692,7 @@
             this.btnBuscarLocalidadCD.Size = new System.Drawing.Size(154, 34);
             this.btnBuscarLocalidadCD.TabIndex = 8;
             this.btnBuscarLocalidadCD.Text = "Buscar localidad";
+            this.btnBuscarLocalidadCD.Click += new System.EventHandler(this.btnBuscarLocalidadCD_Click);
             // 
             // lblCD
             // 
@@ -696,60 +712,66 @@
             this.cmbCD.Name = "cmbCD";
             this.cmbCD.Size = new System.Drawing.Size(372, 28);
             this.cmbCD.TabIndex = 10;
+            this.cmbCD.SelectedIndexChanged += new System.EventHandler(this.cmbCD_SelectedIndexChanged);
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(735, 1049);
+            this.btnConfirmar.Location = new System.Drawing.Point(666, 1049);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(194, 40);
             this.btnConfirmar.TabIndex = 12;
             this.btnConfirmar.Text = "Confirmar imposición";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(938, 1049);
+            this.btnCancelar.Location = new System.Drawing.Point(887, 1049);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 40);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // radioButton3
+            // radioBtnCD
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(412, 346);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 24);
-            this.radioButton3.TabIndex = 22;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "CD";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioBtnCD.AutoSize = true;
+            this.radioBtnCD.Location = new System.Drawing.Point(412, 346);
+            this.radioBtnCD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnCD.Name = "radioBtnCD";
+            this.radioBtnCD.Size = new System.Drawing.Size(57, 24);
+            this.radioBtnCD.TabIndex = 22;
+            this.radioBtnCD.TabStop = true;
+            this.radioBtnCD.Text = "CD";
+            this.radioBtnCD.UseVisualStyleBackColor = true;
+            this.radioBtnCD.CheckedChanged += new System.EventHandler(this.radioBtnCD_CheckedChanged);
             // 
-            // radioButton2
+            // radioBtnAgencia
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(290, 346);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 24);
-            this.radioButton2.TabIndex = 21;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Agencia";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBtnAgencia.AutoSize = true;
+            this.radioBtnAgencia.Location = new System.Drawing.Point(290, 346);
+            this.radioBtnAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnAgencia.Name = "radioBtnAgencia";
+            this.radioBtnAgencia.Size = new System.Drawing.Size(92, 24);
+            this.radioBtnAgencia.TabIndex = 21;
+            this.radioBtnAgencia.TabStop = true;
+            this.radioBtnAgencia.Text = "Agencia";
+            this.radioBtnAgencia.UseVisualStyleBackColor = true;
+            this.radioBtnAgencia.CheckedChanged += new System.EventHandler(this.radioBtnAgencia_CheckedChanged);
             // 
-            // radioButton1
+            // radioBtnDomicilio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(156, 346);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 24);
-            this.radioButton1.TabIndex = 20;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Domicilio";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioBtnDomicilio.AutoSize = true;
+            this.radioBtnDomicilio.Location = new System.Drawing.Point(156, 346);
+            this.radioBtnDomicilio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnDomicilio.Name = "radioBtnDomicilio";
+            this.radioBtnDomicilio.Size = new System.Drawing.Size(97, 24);
+            this.radioBtnDomicilio.TabIndex = 20;
+            this.radioBtnDomicilio.TabStop = true;
+            this.radioBtnDomicilio.Text = "Domicilio";
+            this.radioBtnDomicilio.UseVisualStyleBackColor = true;
+            this.radioBtnDomicilio.CheckedChanged += new System.EventHandler(this.radioBtnDomicilio_CheckedChanged);
             // 
             // lblDestino
             // 
@@ -767,9 +789,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1052, 1050);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioBtnCD);
+            this.Controls.Add(this.radioBtnAgencia);
+            this.Controls.Add(this.radioBtnDomicilio);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.groupRemitente);
             this.Controls.Add(this.grpBultos);
@@ -872,11 +894,11 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblProvinciaRetiro;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioBtnCD;
+        private System.Windows.Forms.RadioButton radioBtnAgencia;
+        private System.Windows.Forms.RadioButton radioBtnDomicilio;
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.TextBox txtMuestraNombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textLocProvDom;
     }
 }
