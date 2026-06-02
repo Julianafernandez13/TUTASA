@@ -54,6 +54,7 @@
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla.Designer.cs">
       <DependentUpon>ConfeccionHDRdeUltMilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>

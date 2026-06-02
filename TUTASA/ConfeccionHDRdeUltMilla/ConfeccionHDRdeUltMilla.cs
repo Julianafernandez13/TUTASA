@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.ConfeccionHDRdeTransporte;
+using TUTASA.ConfeccionHDRdeUltMilla;
 
 namespace TUTASA.Pantallas
 {
-    public partial class _2 : Form
+    public partial class ConfeccionHDRdeUltMilla : Form
     {
-        public _2()
+        private ConfeccionHDRdeUltMillaModelo modelo = new ConfeccionHDRdeUltMillaModelo();
+        public ConfeccionHDRdeUltMilla()
         {
             InitializeComponent();
         }
@@ -22,72 +25,28 @@ namespace TUTASA.Pantallas
 
         }
 
-        private void _2_Load(object sender, EventArgs e)
+        private void ConfeccionHDRdeUltMilla_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupTipoConfeccion_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSeleccionaTipoHDR_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Pantallas
 {
-    partial class _2
+    partial class ConfeccionHDRdeUltMilla
     {
         /// <summary>
         /// Required designer variable.
@@ -47,13 +47,13 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupTipoConfeccion = new System.Windows.Forms.GroupBox();
+            this.labelSeleccionaTipoHDR = new System.Windows.Forms.Label();
             this.rbM = new System.Windows.Forms.RadioButton();
             this.rbL = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupTipoConfeccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -238,19 +238,30 @@
             this.label4.Text = "Seleccionar Guías a rutear:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // groupBox2
+            // groupTipoConfeccion
             // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.rbM);
-            this.groupBox2.Controls.Add(this.rbL);
-            this.groupBox2.Location = new System.Drawing.Point(21, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1104, 106);
-            this.groupBox2.TabIndex = 38;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tipo de Confección";
+            this.groupTipoConfeccion.Controls.Add(this.labelSeleccionaTipoHDR);
+            this.groupTipoConfeccion.Controls.Add(this.rbM);
+            this.groupTipoConfeccion.Controls.Add(this.rbL);
+            this.groupTipoConfeccion.Location = new System.Drawing.Point(21, 13);
+            this.groupTipoConfeccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupTipoConfeccion.Name = "groupTipoConfeccion";
+            this.groupTipoConfeccion.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupTipoConfeccion.Size = new System.Drawing.Size(1104, 106);
+            this.groupTipoConfeccion.TabIndex = 38;
+            this.groupTipoConfeccion.TabStop = false;
+            this.groupTipoConfeccion.Text = "Tipo de Confección";
+            this.groupTipoConfeccion.Enter += new System.EventHandler(this.groupTipoConfeccion_Enter);
+            // 
+            // labelSeleccionaTipoHDR
+            // 
+            this.labelSeleccionaTipoHDR.AutoSize = true;
+            this.labelSeleccionaTipoHDR.Location = new System.Drawing.Point(74, 51);
+            this.labelSeleccionaTipoHDR.Name = "labelSeleccionaTipoHDR";
+            this.labelSeleccionaTipoHDR.Size = new System.Drawing.Size(291, 20);
+            this.labelSeleccionaTipoHDR.TabIndex = 12;
+            this.labelSeleccionaTipoHDR.Text = "Selecciona tipo de HDR a confeccionar:";
+            this.labelSeleccionaTipoHDR.Click += new System.EventHandler(this.labelSeleccionaTipoHDR_Click);
             // 
             // rbM
             // 
@@ -270,21 +281,12 @@
             this.rbL.TabIndex = 11;
             this.rbL.Text = "Retiro";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Selecciona tipo de HDR a confeccionar:";
-            // 
-            // _2
+            // ConfeccionHDRdeUltMilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 706);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupTipoConfeccion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.button5);
@@ -294,16 +296,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "_2";
+            this.Name = "ConfeccionHDRdeUltMilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TUTASA – Confección de Hoja de Ruta ";
-            this.Load += new System.EventHandler(this._2_Load);
+            this.Load += new System.EventHandler(this.ConfeccionHDRdeUltMilla_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupTipoConfeccion.ResumeLayout(false);
+            this.groupTipoConfeccion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,8 +332,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupTipoConfeccion;
+        private System.Windows.Forms.Label labelSeleccionaTipoHDR;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.RadioButton rbL;
     }
