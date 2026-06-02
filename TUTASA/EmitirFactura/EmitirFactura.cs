@@ -30,7 +30,7 @@ namespace TUTASA.Forms.Administracion
 
         }
 
-        private void lvGuias_SelectedIndexChanged(object sender, EventArgs e)
+        private void listViewMovimientos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -61,6 +61,56 @@ namespace TUTASA.Forms.Administracion
         }
 
         private void lblMostrarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupPeriodo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAño_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbAño_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupMovimientos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMostrarTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEmitirFactura_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
 
         }
