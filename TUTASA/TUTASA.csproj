@@ -55,6 +55,7 @@
       <DependentUpon>ConfeccionHDRdeUltMilla.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
+    <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
