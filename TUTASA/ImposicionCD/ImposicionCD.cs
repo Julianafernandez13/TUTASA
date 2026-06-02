@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.ImposicionCD;
 
 namespace TUTASA.Forms.CD
 {
     public partial class frmImposicionCD : Form
     {
+        //instancia del modelo de ImposicionCD
+        private ImposicionCDModelo modelo = new ImposicionCDModelo();
         public frmImposicionCD()
         {
             InitializeComponent();
@@ -23,6 +26,11 @@ namespace TUTASA.Forms.CD
         }
 
         private void txtNombreRemitente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmImposicionCD_Load(object sender, EventArgs e)
         {
 
         }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.RendicionHDRdeTransporte;
+using TUTASA.RendicionHDRdeUltMilla;
 
 namespace TUTASA.Pantallas
 {
     public partial class _3 : Form
     {
+        private RendicionHDRUltMillaModelo modelo = new RendicionHDRUltMillaModelo();
         public _3()
         {
             InitializeComponent();
@@ -23,6 +26,11 @@ namespace TUTASA.Pantallas
         }
 
         private void lblFleteroLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _3_Load(object sender, EventArgs e)
         {
 
         }
