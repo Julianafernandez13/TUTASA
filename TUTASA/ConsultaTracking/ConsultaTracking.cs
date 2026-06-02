@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.ConsultaTracking;
 
 namespace TUTASA.Forms.CallCenter
 {
     public partial class ConsultaTracking : Form
     {
+        //Instancia del modelo de ConsultaTracking
+        private ConsultaTrackingModelo modelo = new ConsultaTrackingModelo();
+
         public ConsultaTracking()
         {
             InitializeComponent();
@@ -22,7 +26,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblNroGuia_Click(object sender, EventArgs e)
         {
 
         }
@@ -47,7 +51,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void lblNroGuiaTitulo_Click(object sender, EventArgs e)
         {
 
         }
@@ -68,6 +72,41 @@ namespace TUTASA.Forms.CallCenter
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBusquedaGuia_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEstadoTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGuia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCDOrigenTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCDOrigen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCDDestinoTitulo_Click(object sender, EventArgs e)
         {
 
         }
