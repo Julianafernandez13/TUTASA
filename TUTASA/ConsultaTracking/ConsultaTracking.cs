@@ -26,17 +26,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void lblNroGuia_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpEstado_Enter(object sender, EventArgs e)
         {
 
         }
@@ -51,12 +41,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void lblNroGuiaTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
+        private void lblCategoriaTitulo_Click(object sender, EventArgs e)
         {
 
         }
@@ -71,22 +56,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBusquedaGuia_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConsultar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEstadoTitulo_Click(object sender, EventArgs e)
         {
 
         }
@@ -96,17 +66,32 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void lblCDOrigenTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblCDOrigen_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblCDDestinoTitulo_Click(object sender, EventArgs e)
+        private void lblCDDestino_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDestinario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewHistorial_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

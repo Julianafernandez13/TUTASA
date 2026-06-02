@@ -34,16 +34,16 @@
             this.txtNroGuia = new System.Windows.Forms.TextBox();
             this.lblNroGuia = new System.Windows.Forms.Label();
             this.grpEstado = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblCDDestino = new System.Windows.Forms.Label();
             this.lblCDDestinoTitulo = new System.Windows.Forms.Label();
             this.lblCDOrigen = new System.Windows.Forms.Label();
             this.lblCDOrigenTitulo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDestinario = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCategoriaTitulo = new System.Windows.Forms.Label();
             this.lblGuia = new System.Windows.Forms.Label();
             this.lblNroGuiaTitulo = new System.Windows.Forms.Label();
             this.lblFechaUltimo = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.lblEstadoActual = new System.Windows.Forms.Label();
             this.btnNuevaConsulta = new System.Windows.Forms.Button();
             this.grpHistorial = new System.Windows.Forms.GroupBox();
-            this.lvGuias = new System.Windows.Forms.ListView();
+            this.listViewHistorial = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,7 +77,6 @@
             this.groupBusquedaGuia.TabIndex = 0;
             this.groupBusquedaGuia.TabStop = false;
             this.groupBusquedaGuia.Text = "Busqueda de guia";
-            this.groupBusquedaGuia.Enter += new System.EventHandler(this.groupBusquedaGuia_Enter);
             // 
             // btnLimpiar
             // 
@@ -120,20 +119,19 @@
             this.lblNroGuia.Size = new System.Drawing.Size(123, 13);
             this.lblNroGuia.TabIndex = 0;
             this.lblNroGuia.Text = "N° de guía (tracking ID):";
-            this.lblNroGuia.Click += new System.EventHandler(this.lblNroGuia_Click);
             // 
             // grpEstado
             // 
-            this.grpEstado.Controls.Add(this.label11);
+            this.grpEstado.Controls.Add(this.lblCDDestino);
             this.grpEstado.Controls.Add(this.lblCDDestinoTitulo);
             this.grpEstado.Controls.Add(this.lblCDOrigen);
             this.grpEstado.Controls.Add(this.lblCDOrigenTitulo);
             this.grpEstado.Controls.Add(this.label6);
-            this.grpEstado.Controls.Add(this.label8);
-            this.grpEstado.Controls.Add(this.label7);
+            this.grpEstado.Controls.Add(this.lblDestinario);
+            this.grpEstado.Controls.Add(this.lblCliente);
             this.grpEstado.Controls.Add(this.label5);
             this.grpEstado.Controls.Add(this.lblCategoria);
-            this.grpEstado.Controls.Add(this.label4);
+            this.grpEstado.Controls.Add(this.lblCategoriaTitulo);
             this.grpEstado.Controls.Add(this.lblGuia);
             this.grpEstado.Controls.Add(this.lblNroGuiaTitulo);
             this.grpEstado.Controls.Add(this.lblFechaUltimo);
@@ -147,17 +145,17 @@
             this.grpEstado.TabIndex = 0;
             this.grpEstado.TabStop = false;
             this.grpEstado.Text = "Estado actual de la guía";
-            this.grpEstado.Enter += new System.EventHandler(this.grpEstado_Enter);
             // 
-            // label11
+            // lblCDDestino
             // 
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(344, 98);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(165, 18);
-            this.label11.TabIndex = 14;
+            this.lblCDDestino.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCDDestino.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCDDestino.Location = new System.Drawing.Point(344, 98);
+            this.lblCDDestino.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCDDestino.Name = "lblCDDestino";
+            this.lblCDDestino.Size = new System.Drawing.Size(165, 18);
+            this.lblCDDestino.TabIndex = 14;
+            this.lblCDDestino.Click += new System.EventHandler(this.lblCDDestino_Click);
             // 
             // lblCDDestinoTitulo
             // 
@@ -168,7 +166,6 @@
             this.lblCDDestinoTitulo.Size = new System.Drawing.Size(43, 13);
             this.lblCDDestinoTitulo.TabIndex = 13;
             this.lblCDDestinoTitulo.Text = "Destino";
-            this.lblCDDestinoTitulo.Click += new System.EventHandler(this.lblCDDestinoTitulo_Click);
             // 
             // lblCDOrigen
             // 
@@ -190,7 +187,6 @@
             this.lblCDOrigenTitulo.Size = new System.Drawing.Size(38, 13);
             this.lblCDOrigenTitulo.TabIndex = 11;
             this.lblCDOrigenTitulo.Text = "Origen";
-            this.lblCDOrigenTitulo.Click += new System.EventHandler(this.lblCDOrigenTitulo_Click);
             // 
             // label6
             // 
@@ -202,25 +198,26 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Destinatario";
             // 
-            // label8
+            // lblDestinario
             // 
-            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(76, 178);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 18);
-            this.label8.TabIndex = 10;
+            this.lblDestinario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblDestinario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDestinario.Location = new System.Drawing.Point(76, 178);
+            this.lblDestinario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDestinario.Name = "lblDestinario";
+            this.lblDestinario.Size = new System.Drawing.Size(165, 18);
+            this.lblDestinario.TabIndex = 10;
+            this.lblDestinario.Click += new System.EventHandler(this.lblDestinario_Click);
             // 
-            // label7
+            // lblCliente
             // 
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(76, 138);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 18);
-            this.label7.TabIndex = 9;
+            this.lblCliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCliente.Location = new System.Drawing.Point(76, 138);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(165, 18);
+            this.lblCliente.TabIndex = 9;
             // 
             // label5
             // 
@@ -231,7 +228,6 @@
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Cliente";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblCategoria
             // 
@@ -242,17 +238,18 @@
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(165, 18);
             this.lblCategoria.TabIndex = 7;
+            this.lblCategoria.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
-            // label4
+            // lblCategoriaTitulo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 99);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Categoria";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblCategoriaTitulo.AutoSize = true;
+            this.lblCategoriaTitulo.Location = new System.Drawing.Point(13, 99);
+            this.lblCategoriaTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategoriaTitulo.Name = "lblCategoriaTitulo";
+            this.lblCategoriaTitulo.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoriaTitulo.TabIndex = 6;
+            this.lblCategoriaTitulo.Text = "Categoria";
+            this.lblCategoriaTitulo.Click += new System.EventHandler(this.lblCategoriaTitulo_Click);
             // 
             // lblGuia
             // 
@@ -274,7 +271,6 @@
             this.lblNroGuiaTitulo.Size = new System.Drawing.Size(59, 13);
             this.lblNroGuiaTitulo.TabIndex = 4;
             this.lblNroGuiaTitulo.Text = "N° de guía";
-            this.lblNroGuiaTitulo.Click += new System.EventHandler(this.lblNroGuiaTitulo_Click);
             // 
             // lblFechaUltimo
             // 
@@ -294,7 +290,6 @@
             this.lblEstadoTitulo.Size = new System.Drawing.Size(43, 13);
             this.lblEstadoTitulo.TabIndex = 1;
             this.lblEstadoTitulo.Text = "Estado:";
-            this.lblEstadoTitulo.Click += new System.EventHandler(this.lblEstadoTitulo_Click);
             // 
             // lblEstadoActual
             // 
@@ -322,7 +317,7 @@
             // 
             // grpHistorial
             // 
-            this.grpHistorial.Controls.Add(this.lvGuias);
+            this.grpHistorial.Controls.Add(this.listViewHistorial);
             this.grpHistorial.Location = new System.Drawing.Point(11, 309);
             this.grpHistorial.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpHistorial.Name = "grpHistorial";
@@ -332,23 +327,24 @@
             this.grpHistorial.TabStop = false;
             this.grpHistorial.Text = "Historial de eventos";
             // 
-            // lvGuias
+            // listViewHistorial
             // 
-            this.lvGuias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewHistorial.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.lvGuias.Enabled = false;
-            this.lvGuias.FullRowSelect = true;
-            this.lvGuias.GridLines = true;
-            this.lvGuias.HideSelection = false;
-            this.lvGuias.Location = new System.Drawing.Point(16, 33);
-            this.lvGuias.Name = "lvGuias";
-            this.lvGuias.Size = new System.Drawing.Size(560, 88);
-            this.lvGuias.TabIndex = 3;
-            this.lvGuias.UseCompatibleStateImageBehavior = false;
-            this.lvGuias.View = System.Windows.Forms.View.Details;
+            this.listViewHistorial.Enabled = false;
+            this.listViewHistorial.FullRowSelect = true;
+            this.listViewHistorial.GridLines = true;
+            this.listViewHistorial.HideSelection = false;
+            this.listViewHistorial.Location = new System.Drawing.Point(16, 33);
+            this.listViewHistorial.Name = "listViewHistorial";
+            this.listViewHistorial.Size = new System.Drawing.Size(560, 88);
+            this.listViewHistorial.TabIndex = 3;
+            this.listViewHistorial.UseCompatibleStateImageBehavior = false;
+            this.listViewHistorial.View = System.Windows.Forms.View.Details;
+            this.listViewHistorial.SelectedIndexChanged += new System.EventHandler(this.listViewHistorial_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -415,23 +411,23 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.GroupBox grpEstado;
         private System.Windows.Forms.Button btnNuevaConsulta;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCDDestino;
         private System.Windows.Forms.Label lblCDDestinoTitulo;
         private System.Windows.Forms.Label lblCDOrigen;
         private System.Windows.Forms.Label lblCDOrigenTitulo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDestinario;
+        private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCategoriaTitulo;
         private System.Windows.Forms.Label lblGuia;
         private System.Windows.Forms.Label lblNroGuiaTitulo;
         private System.Windows.Forms.Label lblFechaUltimo;
         private System.Windows.Forms.Label lblEstadoTitulo;
         private System.Windows.Forms.Label lblEstadoActual;
         private System.Windows.Forms.GroupBox grpHistorial;
-        private System.Windows.Forms.ListView lvGuias;
+        private System.Windows.Forms.ListView listViewHistorial;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
