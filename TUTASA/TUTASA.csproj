@@ -57,6 +57,7 @@
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
+    <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
