@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.RendicionHDRdeTransporte;
 
 namespace TUTASA.Forms.CD
 {
     public partial class btnBuscar : Form
     {
+        //instancia del modelo de Rendicion HDR Transporte
+        private RendicionHDRTransporteModelo modelo = RendicionHDRTransporteModelo();
         public btnBuscar()
         {
             InitializeComponent();
@@ -38,6 +41,11 @@ namespace TUTASA.Forms.CD
         }
 
         private void gbDatosHdr_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Load(object sender, EventArgs e)
         {
 
         }

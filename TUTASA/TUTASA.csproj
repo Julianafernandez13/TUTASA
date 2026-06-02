@@ -59,6 +59,10 @@
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
+    <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
+    <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
+    <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />
+    <Compile Include="RendicionHDRdeTransporte\RendicionHDRTransporteModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +111,11 @@
     <Compile Include="Admision\AdmisionCD.Designer.cs">
       <DependentUpon>AdmisionCD.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarEntrega\7.RegistrarEntrega.cs">
+    <Compile Include="RegistrarEntrega\RegistrarEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarEntrega\7.RegistrarEntrega.Designer.cs">
-      <DependentUpon>7.RegistrarEntrega.cs</DependentUpon>
+    <Compile Include="RegistrarEntrega\RegistrarEntrega.Designer.cs">
+      <DependentUpon>RegistrarEntrega.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionCD\ImposicionCD.cs">
       <SubType>Form</SubType>
@@ -125,6 +129,7 @@
     <Compile Include="RendicionHDRdeTransporte\RendiciónHDRTransporte.Designer.cs">
       <DependentUpon>RendiciónHDRTransporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="RendicionHDRdeUltMilla\RendicionHDRUltMillaModelo.cs" />
     <Compile Include="Z.EXTRAS\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,8 +195,8 @@
     <EmbeddedResource Include="Admision\AdmisionCD.resx">
       <DependentUpon>AdmisionCD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarEntrega\7.RegistrarEntrega.resx">
-      <DependentUpon>7.RegistrarEntrega.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarEntrega\RegistrarEntrega.resx">
+      <DependentUpon>RegistrarEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
