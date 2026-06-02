@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupEmitirFactura = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,43 +48,44 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBuscarCliente = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblMostrarCliente = new System.Windows.Forms.Label();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblCUIT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupEmitirFactura.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBuscarCliente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupEmitirFactura
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(886, 522);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TUTASA - Emitir Factura";
+            this.groupEmitirFactura.Controls.Add(this.button3);
+            this.groupEmitirFactura.Controls.Add(this.button2);
+            this.groupEmitirFactura.Controls.Add(this.label11);
+            this.groupEmitirFactura.Controls.Add(this.label9);
+            this.groupEmitirFactura.Controls.Add(this.groupBox4);
+            this.groupEmitirFactura.Controls.Add(this.groupBox3);
+            this.groupEmitirFactura.Controls.Add(this.groupBuscarCliente);
+            this.groupEmitirFactura.Controls.Add(this.label1);
+            this.groupEmitirFactura.Location = new System.Drawing.Point(16, 14);
+            this.groupEmitirFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.groupEmitirFactura.Name = "groupEmitirFactura";
+            this.groupEmitirFactura.Padding = new System.Windows.Forms.Padding(4);
+            this.groupEmitirFactura.Size = new System.Drawing.Size(886, 522);
+            this.groupEmitirFactura.TabIndex = 0;
+            this.groupEmitirFactura.TabStop = false;
+            this.groupEmitirFactura.Text = "TUTASA - Emitir Factura";
+            this.groupEmitirFactura.Enter += new System.EventHandler(this.groupEmitirFactura_Enter);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(418, 486);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 7;
@@ -94,7 +95,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(286, 486);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 28);
             this.button2.TabIndex = 6;
@@ -126,9 +127,9 @@
             this.groupBox4.Controls.Add(this.lvGuias);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(25, 270);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(854, 140);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
@@ -148,7 +149,7 @@
             this.lvGuias.GridLines = true;
             this.lvGuias.HideSelection = false;
             this.lvGuias.Location = new System.Drawing.Point(7, 23);
-            this.lvGuias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvGuias.Margin = new System.Windows.Forms.Padding(4);
             this.lvGuias.Name = "lvGuias";
             this.lvGuias.Size = new System.Drawing.Size(840, 87);
             this.lvGuias.TabIndex = 1;
@@ -203,9 +204,9 @@
             this.groupBox3.Controls.Add(this.lblDesde);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(25, 174);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(325, 73);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -277,72 +278,76 @@
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 0;
             // 
-            // groupBox2
+            // groupBuscarCliente
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(25, 41);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(847, 110);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar Cliente";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.groupBuscarCliente.Controls.Add(this.btnBuscar);
+            this.groupBuscarCliente.Controls.Add(this.lblMostrarCliente);
+            this.groupBuscarCliente.Controls.Add(this.txtCUIT);
+            this.groupBuscarCliente.Controls.Add(this.lblCliente);
+            this.groupBuscarCliente.Controls.Add(this.lblCUIT);
+            this.groupBuscarCliente.Controls.Add(this.label2);
+            this.groupBuscarCliente.Location = new System.Drawing.Point(25, 41);
+            this.groupBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBuscarCliente.Name = "groupBuscarCliente";
+            this.groupBuscarCliente.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBuscarCliente.Size = new System.Drawing.Size(847, 110);
+            this.groupBuscarCliente.TabIndex = 1;
+            this.groupBuscarCliente.TabStop = false;
+            this.groupBuscarCliente.Text = "Buscar Cliente";
+            this.groupBuscarCliente.Enter += new System.EventHandler(this.groupBuscarCliente_Enter);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(328, 27);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(328, 27);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label10
+            // lblMostrarCliente
             // 
-            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(72, 70);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(373, 27);
-            this.label10.TabIndex = 4;
+            this.lblMostrarCliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblMostrarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMostrarCliente.Location = new System.Drawing.Point(72, 70);
+            this.lblMostrarCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMostrarCliente.Name = "lblMostrarCliente";
+            this.lblMostrarCliente.Size = new System.Drawing.Size(373, 27);
+            this.lblMostrarCliente.TabIndex = 4;
+            this.lblMostrarCliente.Click += new System.EventHandler(this.lblMostrarCliente_Click);
             // 
-            // textBox1
+            // txtCUIT
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.MaxLength = 11;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 22);
-            this.textBox1.TabIndex = 3;
+            this.txtCUIT.Location = new System.Drawing.Point(62, 30);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCUIT.MaxLength = 11;
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(230, 22);
+            this.txtCUIT.TabIndex = 3;
             // 
-            // label6
+            // lblCliente
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 71);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Cliente:";
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(8, 71);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(51, 16);
+            this.lblCliente.TabIndex = 2;
+            this.lblCliente.Text = "Cliente:";
+            this.lblCliente.Click += new System.EventHandler(this.lblCliente_Click);
             // 
-            // label5
+            // lblCUIT
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 34);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "CUIT:";
+            this.lblCUIT.AutoSize = true;
+            this.lblCUIT.Location = new System.Drawing.Point(8, 34);
+            this.lblCUIT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCUIT.Name = "lblCUIT";
+            this.lblCUIT.Size = new System.Drawing.Size(41, 16);
+            this.lblCUIT.TabIndex = 1;
+            this.lblCUIT.Text = "CUIT:";
+            this.lblCUIT.Click += new System.EventHandler(this.lblCUIT_Click);
             // 
             // label2
             // 
@@ -366,41 +371,41 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 551);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(1041, 720);
+            this.Controls.Add(this.groupEmitirFactura);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmitirFactura";
             this.Text = "Emitir Factura";
             this.Load += new System.EventHandler(this.EmitirFactura_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupEmitirFactura.ResumeLayout(false);
+            this.groupEmitirFactura.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBuscarCliente.ResumeLayout(false);
+            this.groupBuscarCliente.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupEmitirFactura;
+        private System.Windows.Forms.GroupBox groupBuscarCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMostrarCliente;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ListView lvGuias;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
