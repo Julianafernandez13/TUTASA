@@ -4,21 +4,16 @@ using TUTASA.ImposicionCallCenter;
 
 namespace TUTASA.Forms.CallCenter
 {
-    public partial class frmSolicitudRetiro : Form
+    public partial class ImposicionCallCenter : Form
     {
         //instancia del modelo de ImposicionCallCenter
         private ImposicionCallCenterModelo modelo = new ImposicionCallCenterModelo();
-        public frmSolicitudRetiro()
+        public ImposicionCallCenter()
         {
             InitializeComponent();
         }
 
-        private void rbAgencia_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreCliente_TextChanged(object sender, EventArgs e)
+        private void ImposicionCallCenter_Load(object sender, EventArgs e)
         {
 
         }
@@ -43,7 +38,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void txtCdOrigen_TextChanged(object sender, EventArgs e)
+        private void txtMuestraNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -227,5 +222,7 @@ namespace TUTASA.Forms.CallCenter
         {
 
         }
+
+       
     }
 }

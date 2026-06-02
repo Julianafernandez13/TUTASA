@@ -20,11 +20,7 @@ namespace TUTASA.Forms.Administracion
             InitializeComponent();
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void groupBuscarCliente_Enter(object sender, EventArgs e)
         {
 

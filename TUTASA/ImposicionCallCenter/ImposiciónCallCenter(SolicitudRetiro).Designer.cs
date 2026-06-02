@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CallCenter
 {
-    partial class frmSolicitudRetiro
+    partial class ImposicionCallCenter
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -14,7 +14,7 @@
         private void InitializeComponent()
         {
             this.grpCliente = new System.Windows.Forms.GroupBox();
-            this.txtCdOrigen = new System.Windows.Forms.TextBox();
+            this.txtMuestraNombre = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             // 
             // grpCliente
             // 
-            this.grpCliente.Controls.Add(this.txtCdOrigen);
+            this.grpCliente.Controls.Add(this.txtMuestraNombre);
             this.grpCliente.Controls.Add(this.lblCUIT);
             this.grpCliente.Controls.Add(this.txtCUIT);
             this.grpCliente.Controls.Add(this.btnBuscarCliente);
@@ -112,15 +112,15 @@
             this.grpCliente.Text = "Datos del Cliente";
             this.grpCliente.Enter += new System.EventHandler(this.grpCliente_Enter);
             // 
-            // txtCdOrigen
+            // txtMuestraNombre
             // 
-            this.txtCdOrigen.Location = new System.Drawing.Point(104, 62);
-            this.txtCdOrigen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCdOrigen.Name = "txtCdOrigen";
-            this.txtCdOrigen.ReadOnly = true;
-            this.txtCdOrigen.Size = new System.Drawing.Size(223, 26);
-            this.txtCdOrigen.TabIndex = 4;
-            this.txtCdOrigen.TextChanged += new System.EventHandler(this.txtCdOrigen_TextChanged);
+            this.txtMuestraNombre.Location = new System.Drawing.Point(104, 62);
+            this.txtMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMuestraNombre.Name = "txtMuestraNombre";
+            this.txtMuestraNombre.ReadOnly = true;
+            this.txtMuestraNombre.Size = new System.Drawing.Size(223, 26);
+            this.txtMuestraNombre.TabIndex = 4;
+            this.txtMuestraNombre.TextChanged += new System.EventHandler(this.txtMuestraNombre_TextChanged);
             // 
             // lblCUIT
             // 
@@ -904,7 +904,7 @@
             this.radioBtnCD.UseVisualStyleBackColor = true;
             this.radioBtnCD.CheckedChanged += new System.EventHandler(this.radioBtnCD_CheckedChanged);
             // 
-            // frmSolicitudRetiro
+            // ImposicionCallCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -928,9 +928,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmSolicitudRetiro";
+            this.Name = "ImposicionCallCenter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitud de Retiro a Domicilio";
+            this.Load += new System.EventHandler(this.ImposicionCallCenter_Load);
             this.grpCliente.ResumeLayout(false);
             this.grpCliente.PerformLayout();
             this.grpRetiro.ResumeLayout(false);
@@ -1033,7 +1034,7 @@
         private System.Windows.Forms.RadioButton radioBtnAgencia;
         private System.Windows.Forms.RadioButton radioBtnCD;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCdOrigen;
+        private System.Windows.Forms.TextBox txtMuestraNombre;
         private System.Windows.Forms.TextBox txtMuestraLocProvDom;
     }
 }
