@@ -13,24 +13,26 @@
 
         private void InitializeComponent()
         {
-            this.grpRemitente = new System.Windows.Forms.GroupBox();
+            this.groupRemitente = new System.Windows.Forms.GroupBox();
+            this.txtMuestraNombre = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblNombreRemitente = new System.Windows.Forms.Label();
             this.grpBultos = new System.Windows.Forms.GroupBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.rbS = new System.Windows.Forms.RadioButton();
-            this.rbM = new System.Windows.Forms.RadioButton();
-            this.rbL = new System.Windows.Forms.RadioButton();
-            this.rbXL = new System.Windows.Forms.RadioButton();
+            this.radioBtnS = new System.Windows.Forms.RadioButton();
+            this.radioBtnM = new System.Windows.Forms.RadioButton();
+            this.radioBtnL = new System.Windows.Forms.RadioButton();
+            this.radioBtnXL = new System.Windows.Forms.RadioButton();
             this.btnAgregarBulto = new System.Windows.Forms.Button();
-            this.lvBultos = new System.Windows.Forms.ListView();
+            this.listViewBultos = new System.Windows.Forms.ListView();
             this.colNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblProvinciaRetiro = new System.Windows.Forms.Label();
             this.lblNombreDom = new System.Windows.Forms.Label();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
@@ -75,30 +77,39 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblDestino = new System.Windows.Forms.Label();
-            this.txtCdOrigen = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.grpRemitente.SuspendLayout();
+            this.groupRemitente.SuspendLayout();
             this.grpBultos.SuspendLayout();
             this.grpDomicilio.SuspendLayout();
             this.grpAgencia.SuspendLayout();
             this.grpCD.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grpRemitente
+            // groupRemitente
             // 
-            this.grpRemitente.Controls.Add(this.txtCdOrigen);
-            this.grpRemitente.Controls.Add(this.lblCUIT);
-            this.grpRemitente.Controls.Add(this.txtCUIT);
-            this.grpRemitente.Controls.Add(this.btnBuscarCliente);
-            this.grpRemitente.Controls.Add(this.lblNombreRemitente);
-            this.grpRemitente.Location = new System.Drawing.Point(15, 15);
-            this.grpRemitente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpRemitente.Name = "grpRemitente";
-            this.grpRemitente.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpRemitente.Size = new System.Drawing.Size(976, 106);
-            this.grpRemitente.TabIndex = 0;
-            this.grpRemitente.TabStop = false;
-            this.grpRemitente.Text = "Datos del Remitente";
+            this.groupRemitente.Controls.Add(this.txtMuestraNombre);
+            this.groupRemitente.Controls.Add(this.lblCUIT);
+            this.groupRemitente.Controls.Add(this.txtCUIT);
+            this.groupRemitente.Controls.Add(this.btnBuscarCliente);
+            this.groupRemitente.Controls.Add(this.lblNombreRemitente);
+            this.groupRemitente.Location = new System.Drawing.Point(15, 15);
+            this.groupRemitente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupRemitente.Name = "groupRemitente";
+            this.groupRemitente.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupRemitente.Size = new System.Drawing.Size(976, 106);
+            this.groupRemitente.TabIndex = 0;
+            this.groupRemitente.TabStop = false;
+            this.groupRemitente.Text = "Datos del Remitente";
+           
+            // 
+            // txtMuestraNombre
+            // 
+            this.txtMuestraNombre.Location = new System.Drawing.Point(104, 72);
+            this.txtMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMuestraNombre.Name = "txtMuestraNombre";
+            this.txtMuestraNombre.ReadOnly = true;
+            this.txtMuestraNombre.Size = new System.Drawing.Size(223, 26);
+            this.txtMuestraNombre.TabIndex = 4;
+            this.txtMuestraNombre.TextChanged += new System.EventHandler(this.txtMuestraNombre_TextChanged);
             // 
             // lblCUIT
             // 
@@ -109,6 +120,7 @@
             this.lblCUIT.Size = new System.Drawing.Size(50, 20);
             this.lblCUIT.TabIndex = 0;
             this.lblCUIT.Text = "CUIT:";
+            
             // 
             // txtCUIT
             // 
@@ -117,6 +129,7 @@
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(205, 26);
             this.txtCUIT.TabIndex = 1;
+            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
             // 
             // btnBuscarCliente
             // 
@@ -126,6 +139,7 @@
             this.btnBuscarCliente.Size = new System.Drawing.Size(141, 34);
             this.btnBuscarCliente.TabIndex = 2;
             this.btnBuscarCliente.Text = "Buscar cliente";
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // lblNombreRemitente
             // 
@@ -136,16 +150,17 @@
             this.lblNombreRemitente.Size = new System.Drawing.Size(69, 20);
             this.lblNombreRemitente.TabIndex = 3;
             this.lblNombreRemitente.Text = "Nombre:";
+            
             // 
             // grpBultos
             // 
             this.grpBultos.Controls.Add(this.lblCategoria);
-            this.grpBultos.Controls.Add(this.rbS);
-            this.grpBultos.Controls.Add(this.rbM);
-            this.grpBultos.Controls.Add(this.rbL);
-            this.grpBultos.Controls.Add(this.rbXL);
+            this.grpBultos.Controls.Add(this.radioBtnS);
+            this.grpBultos.Controls.Add(this.radioBtnM);
+            this.grpBultos.Controls.Add(this.radioBtnL);
+            this.grpBultos.Controls.Add(this.radioBtnXL);
             this.grpBultos.Controls.Add(this.btnAgregarBulto);
-            this.grpBultos.Controls.Add(this.lvBultos);
+            this.grpBultos.Controls.Add(this.listViewBultos);
             this.grpBultos.Controls.Add(this.btnQuitarBulto);
             this.grpBultos.Location = new System.Drawing.Point(15, 140);
             this.grpBultos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -166,43 +181,47 @@
             this.lblCategoria.TabIndex = 0;
             this.lblCategoria.Text = "Categoría:";
             // 
-            // rbS
+            // radioBtnS
             // 
-            this.rbS.Checked = true;
-            this.rbS.Location = new System.Drawing.Point(104, 31);
-            this.rbS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbS.Name = "rbS";
-            this.rbS.Size = new System.Drawing.Size(58, 26);
-            this.rbS.TabIndex = 1;
-            this.rbS.TabStop = true;
-            this.rbS.Text = "S";
+            this.radioBtnS.Checked = true;
+            this.radioBtnS.Location = new System.Drawing.Point(104, 31);
+            this.radioBtnS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnS.Name = "radioBtnS";
+            this.radioBtnS.Size = new System.Drawing.Size(58, 26);
+            this.radioBtnS.TabIndex = 1;
+            this.radioBtnS.TabStop = true;
+            this.radioBtnS.Text = "S";
+            this.radioBtnS.CheckedChanged += new System.EventHandler(this.radioBtnS_CheckedChanged);
             // 
-            // rbM
+            // radioBtnM
             // 
-            this.rbM.Location = new System.Drawing.Point(166, 31);
-            this.rbM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbM.Name = "rbM";
-            this.rbM.Size = new System.Drawing.Size(58, 26);
-            this.rbM.TabIndex = 2;
-            this.rbM.Text = "M";
+            this.radioBtnM.Location = new System.Drawing.Point(166, 31);
+            this.radioBtnM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnM.Name = "radioBtnM";
+            this.radioBtnM.Size = new System.Drawing.Size(58, 26);
+            this.radioBtnM.TabIndex = 2;
+            this.radioBtnM.Text = "M";
+            this.radioBtnM.CheckedChanged += new System.EventHandler(this.radioBtnM_CheckedChanged);
             // 
-            // rbL
+            // radioBtnL
             // 
-            this.rbL.Location = new System.Drawing.Point(231, 31);
-            this.rbL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbL.Name = "rbL";
-            this.rbL.Size = new System.Drawing.Size(58, 26);
-            this.rbL.TabIndex = 3;
-            this.rbL.Text = "L";
+            this.radioBtnL.Location = new System.Drawing.Point(231, 31);
+            this.radioBtnL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnL.Name = "radioBtnL";
+            this.radioBtnL.Size = new System.Drawing.Size(58, 26);
+            this.radioBtnL.TabIndex = 3;
+            this.radioBtnL.Text = "L";
+            this.radioBtnL.CheckedChanged += new System.EventHandler(this.radioBtnL_CheckedChanged);
             // 
-            // rbXL
+            // radioBtnXL
             // 
-            this.rbXL.Location = new System.Drawing.Point(296, 31);
-            this.rbXL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbXL.Name = "rbXL";
-            this.rbXL.Size = new System.Drawing.Size(64, 26);
-            this.rbXL.TabIndex = 4;
-            this.rbXL.Text = "XL";
+            this.radioBtnXL.Location = new System.Drawing.Point(296, 31);
+            this.radioBtnXL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBtnXL.Name = "radioBtnXL";
+            this.radioBtnXL.Size = new System.Drawing.Size(64, 26);
+            this.radioBtnXL.TabIndex = 4;
+            this.radioBtnXL.Text = "XL";
+            this.radioBtnXL.CheckedChanged += new System.EventHandler(this.radioBtnXL_CheckedChanged);
             // 
             // btnAgregarBulto
             // 
@@ -212,22 +231,24 @@
             this.btnAgregarBulto.Size = new System.Drawing.Size(141, 34);
             this.btnAgregarBulto.TabIndex = 5;
             this.btnAgregarBulto.Text = "Agregar bulto";
+            this.btnAgregarBulto.Click += new System.EventHandler(this.btnAgregarBulto_Click);
             // 
-            // lvBultos
+            // listViewBultos
             // 
-            this.lvBultos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewBultos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colNum,
             this.colCategoria});
-            this.lvBultos.FullRowSelect = true;
-            this.lvBultos.GridLines = true;
-            this.lvBultos.HideSelection = false;
-            this.lvBultos.Location = new System.Drawing.Point(14, 74);
-            this.lvBultos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lvBultos.Name = "lvBultos";
-            this.lvBultos.Size = new System.Drawing.Size(810, 99);
-            this.lvBultos.TabIndex = 6;
-            this.lvBultos.UseCompatibleStateImageBehavior = false;
-            this.lvBultos.View = System.Windows.Forms.View.Details;
+            this.listViewBultos.FullRowSelect = true;
+            this.listViewBultos.GridLines = true;
+            this.listViewBultos.HideSelection = false;
+            this.listViewBultos.Location = new System.Drawing.Point(14, 74);
+            this.listViewBultos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewBultos.Name = "listViewBultos";
+            this.listViewBultos.Size = new System.Drawing.Size(810, 99);
+            this.listViewBultos.TabIndex = 6;
+            this.listViewBultos.UseCompatibleStateImageBehavior = false;
+            this.listViewBultos.View = System.Windows.Forms.View.Details;
+            this.listViewBultos.SelectedIndexChanged += new System.EventHandler(this.listViewBultos_SelectedIndexChanged);
             // 
             // colNum
             // 
@@ -285,6 +306,15 @@
             this.grpDomicilio.Size = new System.Drawing.Size(976, 186);
             this.grpDomicilio.TabIndex = 7;
             this.grpDomicilio.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(665, 143);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(223, 26);
+            this.textBox1.TabIndex = 12;
             // 
             // lblProvinciaRetiro
             // 
@@ -731,35 +761,17 @@
             this.lblDestino.TabIndex = 19;
             this.lblDestino.Text = "Tipo de entrega:";
             // 
-            // txtCdOrigen
-            // 
-            this.txtCdOrigen.Location = new System.Drawing.Point(104, 72);
-            this.txtCdOrigen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCdOrigen.Name = "txtCdOrigen";
-            this.txtCdOrigen.ReadOnly = true;
-            this.txtCdOrigen.Size = new System.Drawing.Size(223, 26);
-            this.txtCdOrigen.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(665, 143);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(223, 26);
-            this.textBox1.TabIndex = 12;
-            // 
             // frmImposicionAgencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1052, 1125);
+            this.ClientSize = new System.Drawing.Size(1052, 1050);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lblDestino);
-            this.Controls.Add(this.grpRemitente);
+            this.Controls.Add(this.groupRemitente);
             this.Controls.Add(this.grpBultos);
             this.Controls.Add(this.btnDomicilio);
             this.Controls.Add(this.grpDomicilio);
@@ -775,8 +787,9 @@
             this.Name = "frmImposicionAgencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imposición en Agencia";
-            this.grpRemitente.ResumeLayout(false);
-            this.grpRemitente.PerformLayout();
+            this.Load += new System.EventHandler(this.frmImposicionAgencia_Load);
+            this.groupRemitente.ResumeLayout(false);
+            this.groupRemitente.PerformLayout();
             this.grpBultos.ResumeLayout(false);
             this.grpBultos.PerformLayout();
             this.grpDomicilio.ResumeLayout(false);
@@ -791,7 +804,7 @@
         }
 
         // Datos del remitente
-        private System.Windows.Forms.GroupBox grpRemitente;
+        private System.Windows.Forms.GroupBox groupRemitente;
         private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Button btnBuscarCliente;
@@ -800,12 +813,12 @@
         // Bultos
         private System.Windows.Forms.GroupBox grpBultos;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.RadioButton rbS;
-        private System.Windows.Forms.RadioButton rbM;
-        private System.Windows.Forms.RadioButton rbL;
-        private System.Windows.Forms.RadioButton rbXL;
+        private System.Windows.Forms.RadioButton radioBtnS;
+        private System.Windows.Forms.RadioButton radioBtnM;
+        private System.Windows.Forms.RadioButton radioBtnL;
+        private System.Windows.Forms.RadioButton radioBtnXL;
         private System.Windows.Forms.Button btnAgregarBulto;
-        private System.Windows.Forms.ListView lvBultos;
+        private System.Windows.Forms.ListView listViewBultos;
         private System.Windows.Forms.ColumnHeader colNum;
         private System.Windows.Forms.ColumnHeader colCategoria;
         private System.Windows.Forms.Button btnQuitarBulto;
@@ -863,7 +876,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label lblDestino;
-        private System.Windows.Forms.TextBox txtCdOrigen;
+        private System.Windows.Forms.TextBox txtMuestraNombre;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
