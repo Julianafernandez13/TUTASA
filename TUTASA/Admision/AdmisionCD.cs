@@ -21,7 +21,13 @@ namespace TUTASA.Forms.CD
         }
         private void frmAdmision_Load(object sender, EventArgs e)
         {
-
+            var categorias = modelo.Categorias;
+            cmbCategoria.DisplayMember = "Descripcion";
+            cmbCategoria.Items.Clear();
+            foreach (var categoria in categorias)
+            {
+                cmbCategoria.Items.Add(categoria);
+            }
         }
         private void lblCategoriaLabel_Click(object sender, EventArgs e)
         {
