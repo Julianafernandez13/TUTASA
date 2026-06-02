@@ -36,17 +36,7 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblCategoriaTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlResultado_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -81,17 +71,17 @@ namespace TUTASA.Forms.CallCenter
 
         }
 
-        private void lblCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblDestinario_Click(object sender, EventArgs e)
         {
 
         }
 
         private void listViewHistorial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCliente_Click(object sender, EventArgs e)
         {
 
         }

@@ -218,6 +218,7 @@
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(165, 18);
             this.lblCliente.TabIndex = 9;
+            this.lblCliente.Click += new System.EventHandler(this.lblCliente_Click);
             // 
             // label5
             // 
