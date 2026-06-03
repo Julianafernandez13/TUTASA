@@ -39,18 +39,7 @@ namespace TUTASA.Forms.CallCenter
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
-        }
-
-        private void lblEstadoActual_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCategoriaTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        }        
         private void btnNuevaConsulta_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();

@@ -245,7 +245,6 @@
             this.lblCategoriaTitulo.Size = new System.Drawing.Size(55, 13);
             this.lblCategoriaTitulo.TabIndex = 6;
             this.lblCategoriaTitulo.Text = "Categoria:";
-            this.lblCategoriaTitulo.Click += new System.EventHandler(this.lblCategoriaTitulo_Click);
             // 
             // lblGuia
             // 
@@ -297,7 +296,6 @@
             this.lblEstadoActual.Size = new System.Drawing.Size(165, 27);
             this.lblEstadoActual.TabIndex = 0;
             this.lblEstadoActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEstadoActual.Click += new System.EventHandler(this.lblEstadoActual_Click);
             // 
             // btnNuevaConsulta
             // 
