@@ -28,27 +28,29 @@
             // 
             // txtNroDeGuia
             // 
-            this.txtNroDeGuia.Location = new System.Drawing.Point(374, 32);
+            this.txtNroDeGuia.Location = new System.Drawing.Point(249, 21);
+            this.txtNroDeGuia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNroDeGuia.Name = "txtNroDeGuia";
-            this.txtNroDeGuia.Size = new System.Drawing.Size(198, 26);
+            this.txtNroDeGuia.Size = new System.Drawing.Size(133, 20);
             this.txtNroDeGuia.TabIndex = 0;
             this.txtNroDeGuia.TextChanged += new System.EventHandler(this.txtNroDeGuia_TextChanged);
             // 
             // lblBuscarNrodeGuia
             // 
             this.lblBuscarNrodeGuia.AutoSize = true;
-            this.lblBuscarNrodeGuia.Location = new System.Drawing.Point(198, 35);
+            this.lblBuscarNrodeGuia.Location = new System.Drawing.Point(132, 23);
+            this.lblBuscarNrodeGuia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscarNrodeGuia.Name = "lblBuscarNrodeGuia";
-            this.lblBuscarNrodeGuia.Size = new System.Drawing.Size(125, 20);
+            this.lblBuscarNrodeGuia.Size = new System.Drawing.Size(87, 13);
             this.lblBuscarNrodeGuia.TabIndex = 0;
             this.lblBuscarNrodeGuia.Text = "Número de guía:";
-            this.lblBuscarNrodeGuia.Click += new System.EventHandler(this.lblBuscarNrodeGuia_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(636, 30);
+            this.btnBuscar.Location = new System.Drawing.Point(424, 20);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(120, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(80, 20);
             this.btnBuscar.TabIndex = 20;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // btnAdmitir
             // 
-            this.btnAdmitir.Location = new System.Drawing.Point(398, 111);
+            this.btnAdmitir.Location = new System.Drawing.Point(265, 72);
+            this.btnAdmitir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdmitir.Name = "btnAdmitir";
-            this.btnAdmitir.Size = new System.Drawing.Size(120, 31);
+            this.btnAdmitir.Size = new System.Drawing.Size(80, 20);
             this.btnAdmitir.TabIndex = 6;
             this.btnAdmitir.Text = "Admitir";
             this.btnAdmitir.UseVisualStyleBackColor = true;
@@ -72,39 +75,41 @@
             "M",
             "L",
             "XL"});
-            this.cmbCategoria.Location = new System.Drawing.Point(669, 43);
+            this.cmbCategoria.Location = new System.Drawing.Point(446, 28);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(80, 28);
+            this.cmbCategoria.Size = new System.Drawing.Size(55, 21);
             this.cmbCategoria.TabIndex = 7;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // lblCategoriaLabel
             // 
             this.lblCategoriaLabel.AutoSize = true;
-            this.lblCategoriaLabel.Location = new System.Drawing.Point(510, 46);
+            this.lblCategoriaLabel.Location = new System.Drawing.Point(340, 30);
+            this.lblCategoriaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoriaLabel.Name = "lblCategoriaLabel";
-            this.lblCategoriaLabel.Size = new System.Drawing.Size(153, 20);
+            this.lblCategoriaLabel.Size = new System.Drawing.Size(106, 13);
             this.lblCategoriaLabel.TabIndex = 3;
             this.lblCategoriaLabel.Text = "Categoría verificada:";
-            this.lblCategoriaLabel.Click += new System.EventHandler(this.lblCategoriaLabel_Click);
             // 
             // lblNroGuiaLabel
             // 
             this.lblNroGuiaLabel.AutoSize = true;
-            this.lblNroGuiaLabel.Location = new System.Drawing.Point(93, 44);
+            this.lblNroGuiaLabel.Location = new System.Drawing.Point(62, 29);
+            this.lblNroGuiaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroGuiaLabel.Name = "lblNroGuiaLabel";
-            this.lblNroGuiaLabel.Size = new System.Drawing.Size(125, 20);
+            this.lblNroGuiaLabel.Size = new System.Drawing.Size(87, 13);
             this.lblNroGuiaLabel.TabIndex = 0;
             this.lblNroGuiaLabel.Text = "Número de guía:";
-            this.lblNroGuiaLabel.Click += new System.EventHandler(this.lblNroGuiaLabel_Click);
             // 
             // labelNrodeGuia
             // 
             this.labelNrodeGuia.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelNrodeGuia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNrodeGuia.Location = new System.Drawing.Point(224, 43);
+            this.labelNrodeGuia.Location = new System.Drawing.Point(149, 28);
+            this.labelNrodeGuia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNrodeGuia.Name = "labelNrodeGuia";
-            this.labelNrodeGuia.Size = new System.Drawing.Size(167, 22);
+            this.labelNrodeGuia.Size = new System.Drawing.Size(112, 15);
             this.labelNrodeGuia.TabIndex = 15;
             this.labelNrodeGuia.Click += new System.EventHandler(this.labelNrodeGuia_Click);
             // 
@@ -116,9 +121,11 @@
             this.grpAdmision.Controls.Add(this.cmbCategoria);
             this.grpAdmision.Controls.Add(this.btnAdmitir);
             this.grpAdmision.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.grpAdmision.Location = new System.Drawing.Point(16, 111);
+            this.grpAdmision.Location = new System.Drawing.Point(11, 72);
+            this.grpAdmision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAdmision.Name = "grpAdmision";
-            this.grpAdmision.Size = new System.Drawing.Size(920, 165);
+            this.grpAdmision.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAdmision.Size = new System.Drawing.Size(613, 107);
             this.grpAdmision.TabIndex = 1;
             this.grpAdmision.TabStop = false;
             this.grpAdmision.Text = "Admision ";
@@ -126,9 +133,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(816, 328);
+            this.btnCancelar.Location = new System.Drawing.Point(544, 213);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 20);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -136,16 +144,17 @@
             // 
             // frmAdmision
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(958, 371);
+            this.ClientSize = new System.Drawing.Size(639, 241);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNroDeGuia);
             this.Controls.Add(this.lblBuscarNrodeGuia);
             this.Controls.Add(this.grpAdmision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frmAdmision";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

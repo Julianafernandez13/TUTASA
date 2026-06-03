@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Admision\AdmisionModelo.cs" />
     <Compile Include="Admision\Categoria.cs" />
+    <Compile Include="Admision\Guia.cs" />
     <Compile Include="ConfeccionHDRdeTransporte\ConfeccionHDRdeTransporteModelo.cs" />
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla.cs">
       <SubType>Form</SubType>
