@@ -31,17 +31,17 @@
             this.groupBusquedaGuia = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtNroGuia = new System.Windows.Forms.TextBox();
+            this.txtNroDeGuia = new System.Windows.Forms.TextBox();
             this.lblNroGuia = new System.Windows.Forms.Label();
             this.grpEstado = new System.Windows.Forms.GroupBox();
             this.lblCDDestino = new System.Windows.Forms.Label();
             this.lblCDDestinoTitulo = new System.Windows.Forms.Label();
             this.lblCDOrigen = new System.Windows.Forms.Label();
             this.lblCDOrigenTitulo = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblDestinario = new System.Windows.Forms.Label();
+            this.lblDestinatarioTitulo = new System.Windows.Forms.Label();
+            this.lblDestinatario = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblClienteTitulo = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblCategoriaTitulo = new System.Windows.Forms.Label();
             this.lblGuia = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBusquedaGuia.SuspendLayout();
             this.grpEstado.SuspendLayout();
             this.grpHistorial.SuspendLayout();
@@ -67,23 +67,23 @@
             this.groupBusquedaGuia.AccessibleName = "grpBusqueda";
             this.groupBusquedaGuia.Controls.Add(this.btnLimpiar);
             this.groupBusquedaGuia.Controls.Add(this.btnConsultar);
-            this.groupBusquedaGuia.Controls.Add(this.txtNroGuia);
+            this.groupBusquedaGuia.Controls.Add(this.txtNroDeGuia);
             this.groupBusquedaGuia.Controls.Add(this.lblNroGuia);
-            this.groupBusquedaGuia.Location = new System.Drawing.Point(15, 15);
-            this.groupBusquedaGuia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBusquedaGuia.Location = new System.Drawing.Point(11, 12);
+            this.groupBusquedaGuia.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBusquedaGuia.Name = "groupBusquedaGuia";
-            this.groupBusquedaGuia.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBusquedaGuia.Size = new System.Drawing.Size(791, 75);
+            this.groupBusquedaGuia.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBusquedaGuia.Size = new System.Drawing.Size(593, 61);
             this.groupBusquedaGuia.TabIndex = 0;
             this.groupBusquedaGuia.TabStop = false;
             this.groupBusquedaGuia.Text = "Busqueda de guia";
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(651, 28);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLimpiar.Location = new System.Drawing.Point(488, 23);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(100, 31);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 25);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -91,31 +91,32 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(532, 28);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnConsultar.Location = new System.Drawing.Point(399, 23);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(113, 31);
+            this.btnConsultar.Size = new System.Drawing.Size(85, 25);
             this.btnConsultar.TabIndex = 2;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // txtNroGuia
+            // txtNroDeGuia
             // 
-            this.txtNroGuia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNroGuia.Location = new System.Drawing.Point(191, 31);
-            this.txtNroGuia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNroGuia.MaxLength = 20;
-            this.txtNroGuia.Name = "txtNroGuia";
-            this.txtNroGuia.Size = new System.Drawing.Size(313, 22);
-            this.txtNroGuia.TabIndex = 1;
+            this.txtNroDeGuia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNroDeGuia.Location = new System.Drawing.Point(143, 25);
+            this.txtNroDeGuia.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtNroDeGuia.MaxLength = 20;
+            this.txtNroDeGuia.Name = "txtNroDeGuia";
+            this.txtNroDeGuia.Size = new System.Drawing.Size(236, 20);
+            this.txtNroDeGuia.TabIndex = 1;
             // 
             // lblNroGuia
             // 
             this.lblNroGuia.AutoSize = true;
-            this.lblNroGuia.Location = new System.Drawing.Point(13, 33);
+            this.lblNroGuia.Location = new System.Drawing.Point(10, 27);
+            this.lblNroGuia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroGuia.Name = "lblNroGuia";
-            this.lblNroGuia.Size = new System.Drawing.Size(146, 16);
+            this.lblNroGuia.Size = new System.Drawing.Size(123, 13);
             this.lblNroGuia.TabIndex = 0;
             this.lblNroGuia.Text = "N° de guía (tracking ID):";
             // 
@@ -125,10 +126,10 @@
             this.grpEstado.Controls.Add(this.lblCDDestinoTitulo);
             this.grpEstado.Controls.Add(this.lblCDOrigen);
             this.grpEstado.Controls.Add(this.lblCDOrigenTitulo);
-            this.grpEstado.Controls.Add(this.label6);
-            this.grpEstado.Controls.Add(this.lblDestinario);
+            this.grpEstado.Controls.Add(this.lblDestinatarioTitulo);
+            this.grpEstado.Controls.Add(this.lblDestinatario);
             this.grpEstado.Controls.Add(this.lblCliente);
-            this.grpEstado.Controls.Add(this.label5);
+            this.grpEstado.Controls.Add(this.lblClienteTitulo);
             this.grpEstado.Controls.Add(this.lblCategoria);
             this.grpEstado.Controls.Add(this.lblCategoriaTitulo);
             this.grpEstado.Controls.Add(this.lblGuia);
@@ -136,11 +137,11 @@
             this.grpEstado.Controls.Add(this.lblFechaUltimo);
             this.grpEstado.Controls.Add(this.lblEstadoTitulo);
             this.grpEstado.Controls.Add(this.lblEstadoActual);
-            this.grpEstado.Location = new System.Drawing.Point(15, 108);
-            this.grpEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpEstado.Location = new System.Drawing.Point(11, 88);
+            this.grpEstado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpEstado.Name = "grpEstado";
-            this.grpEstado.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpEstado.Size = new System.Drawing.Size(791, 255);
+            this.grpEstado.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.grpEstado.Size = new System.Drawing.Size(593, 207);
             this.grpEstado.TabIndex = 0;
             this.grpEstado.TabStop = false;
             this.grpEstado.Text = "Estado actual de la guía";
@@ -149,131 +150,139 @@
             // 
             this.lblCDDestino.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCDDestino.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCDDestino.Location = new System.Drawing.Point(459, 121);
+            this.lblCDDestino.Location = new System.Drawing.Point(344, 98);
+            this.lblCDDestino.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCDDestino.Name = "lblCDDestino";
-            this.lblCDDestino.Size = new System.Drawing.Size(219, 22);
+            this.lblCDDestino.Size = new System.Drawing.Size(165, 18);
             this.lblCDDestino.TabIndex = 14;
-            this.lblCDDestino.Click += new System.EventHandler(this.lblCDDestino_Click);
             // 
             // lblCDDestinoTitulo
             // 
             this.lblCDDestinoTitulo.AutoSize = true;
-            this.lblCDDestinoTitulo.Location = new System.Drawing.Point(375, 122);
+            this.lblCDDestinoTitulo.Location = new System.Drawing.Point(286, 98);
+            this.lblCDDestinoTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCDDestinoTitulo.Name = "lblCDDestinoTitulo";
-            this.lblCDDestinoTitulo.Size = new System.Drawing.Size(53, 16);
+            this.lblCDDestinoTitulo.Size = new System.Drawing.Size(46, 13);
             this.lblCDDestinoTitulo.TabIndex = 13;
-            this.lblCDDestinoTitulo.Text = "Destino";
+            this.lblCDDestinoTitulo.Text = "Destino:";
             // 
             // lblCDOrigen
             // 
             this.lblCDOrigen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCDOrigen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCDOrigen.Location = new System.Drawing.Point(459, 74);
+            this.lblCDOrigen.Location = new System.Drawing.Point(344, 60);
+            this.lblCDOrigen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCDOrigen.Name = "lblCDOrigen";
-            this.lblCDOrigen.Size = new System.Drawing.Size(219, 22);
+            this.lblCDOrigen.Size = new System.Drawing.Size(165, 18);
             this.lblCDOrigen.TabIndex = 12;
-            this.lblCDOrigen.Click += new System.EventHandler(this.lblCDOrigen_Click);
             // 
             // lblCDOrigenTitulo
             // 
             this.lblCDOrigenTitulo.AutoSize = true;
-            this.lblCDOrigenTitulo.Location = new System.Drawing.Point(375, 75);
+            this.lblCDOrigenTitulo.Location = new System.Drawing.Point(286, 61);
+            this.lblCDOrigenTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCDOrigenTitulo.Name = "lblCDOrigenTitulo";
-            this.lblCDOrigenTitulo.Size = new System.Drawing.Size(47, 16);
+            this.lblCDOrigenTitulo.Size = new System.Drawing.Size(41, 13);
             this.lblCDOrigenTitulo.TabIndex = 11;
-            this.lblCDOrigenTitulo.Text = "Origen";
+            this.lblCDOrigenTitulo.Text = "Origen:";
             // 
-            // label6
+            // lblDestinatarioTitulo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 220);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Destinatario";
+            this.lblDestinatarioTitulo.AutoSize = true;
+            this.lblDestinatarioTitulo.Location = new System.Drawing.Point(13, 179);
+            this.lblDestinatarioTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDestinatarioTitulo.Name = "lblDestinatarioTitulo";
+            this.lblDestinatarioTitulo.Size = new System.Drawing.Size(66, 13);
+            this.lblDestinatarioTitulo.TabIndex = 9;
+            this.lblDestinatarioTitulo.Text = "Destinatario:";
             // 
-            // lblDestinario
+            // lblDestinatario
             // 
-            this.lblDestinario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDestinario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDestinario.Location = new System.Drawing.Point(101, 219);
-            this.lblDestinario.Name = "lblDestinario";
-            this.lblDestinario.Size = new System.Drawing.Size(219, 22);
-            this.lblDestinario.TabIndex = 10;
-            this.lblDestinario.Click += new System.EventHandler(this.lblDestinario_Click);
+            this.lblDestinatario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDestinatario.Location = new System.Drawing.Point(91, 178);
+            this.lblDestinatario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDestinatario.Name = "lblDestinatario";
+            this.lblDestinatario.Size = new System.Drawing.Size(165, 18);
+            this.lblDestinatario.TabIndex = 10;
             // 
             // lblCliente
             // 
             this.lblCliente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCliente.Location = new System.Drawing.Point(101, 170);
+            this.lblCliente.Location = new System.Drawing.Point(91, 139);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(219, 22);
+            this.lblCliente.Size = new System.Drawing.Size(165, 18);
             this.lblCliente.TabIndex = 9;
-            this.lblCliente.Click += new System.EventHandler(this.lblCliente_Click);
             // 
-            // label5
+            // lblClienteTitulo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 171);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Cliente";
+            this.lblClienteTitulo.AutoSize = true;
+            this.lblClienteTitulo.Location = new System.Drawing.Point(13, 139);
+            this.lblClienteTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblClienteTitulo.Name = "lblClienteTitulo";
+            this.lblClienteTitulo.Size = new System.Drawing.Size(42, 13);
+            this.lblClienteTitulo.TabIndex = 8;
+            this.lblClienteTitulo.Text = "Cliente:";
             // 
             // lblCategoria
             // 
             this.lblCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCategoria.Location = new System.Drawing.Point(101, 121);
+            this.lblCategoria.Location = new System.Drawing.Point(91, 98);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(219, 22);
+            this.lblCategoria.Size = new System.Drawing.Size(165, 18);
             this.lblCategoria.TabIndex = 7;
-            this.lblCategoria.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
             // lblCategoriaTitulo
             // 
             this.lblCategoriaTitulo.AutoSize = true;
-            this.lblCategoriaTitulo.Location = new System.Drawing.Point(17, 122);
+            this.lblCategoriaTitulo.Location = new System.Drawing.Point(13, 99);
+            this.lblCategoriaTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoriaTitulo.Name = "lblCategoriaTitulo";
-            this.lblCategoriaTitulo.Size = new System.Drawing.Size(66, 16);
+            this.lblCategoriaTitulo.Size = new System.Drawing.Size(55, 13);
             this.lblCategoriaTitulo.TabIndex = 6;
-            this.lblCategoriaTitulo.Text = "Categoria";
+            this.lblCategoriaTitulo.Text = "Categoria:";
             this.lblCategoriaTitulo.Click += new System.EventHandler(this.lblCategoriaTitulo_Click);
             // 
             // lblGuia
             // 
             this.lblGuia.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblGuia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGuia.Location = new System.Drawing.Point(101, 74);
+            this.lblGuia.Location = new System.Drawing.Point(91, 61);
+            this.lblGuia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGuia.Name = "lblGuia";
-            this.lblGuia.Size = new System.Drawing.Size(219, 22);
+            this.lblGuia.Size = new System.Drawing.Size(165, 18);
             this.lblGuia.TabIndex = 5;
-            this.lblGuia.Click += new System.EventHandler(this.lblGuia_Click);
             // 
             // lblNroGuiaTitulo
             // 
             this.lblNroGuiaTitulo.AutoSize = true;
-            this.lblNroGuiaTitulo.Location = new System.Drawing.Point(17, 75);
+            this.lblNroGuiaTitulo.Location = new System.Drawing.Point(13, 61);
+            this.lblNroGuiaTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroGuiaTitulo.Name = "lblNroGuiaTitulo";
-            this.lblNroGuiaTitulo.Size = new System.Drawing.Size(69, 16);
+            this.lblNroGuiaTitulo.Size = new System.Drawing.Size(62, 13);
             this.lblNroGuiaTitulo.TabIndex = 4;
-            this.lblNroGuiaTitulo.Text = "N° de guía";
+            this.lblNroGuiaTitulo.Text = "N° de guía:";
             // 
             // lblFechaUltimo
             // 
             this.lblFechaUltimo.AutoSize = true;
-            this.lblFechaUltimo.Location = new System.Drawing.Point(413, 28);
+            this.lblFechaUltimo.Location = new System.Drawing.Point(310, 23);
+            this.lblFechaUltimo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaUltimo.Name = "lblFechaUltimo";
-            this.lblFechaUltimo.Size = new System.Drawing.Size(0, 16);
+            this.lblFechaUltimo.Size = new System.Drawing.Size(0, 13);
             this.lblFechaUltimo.TabIndex = 3;
             // 
             // lblEstadoTitulo
             // 
             this.lblEstadoTitulo.AutoSize = true;
-            this.lblEstadoTitulo.Location = new System.Drawing.Point(13, 28);
+            this.lblEstadoTitulo.Location = new System.Drawing.Point(10, 23);
+            this.lblEstadoTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoTitulo.Name = "lblEstadoTitulo";
-            this.lblEstadoTitulo.Size = new System.Drawing.Size(53, 16);
+            this.lblEstadoTitulo.Size = new System.Drawing.Size(43, 13);
             this.lblEstadoTitulo.TabIndex = 1;
             this.lblEstadoTitulo.Text = "Estado:";
             // 
@@ -282,19 +291,20 @@
             this.lblEstadoActual.BackColor = System.Drawing.Color.LightGreen;
             this.lblEstadoActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEstadoActual.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoActual.Location = new System.Drawing.Point(101, 28);
+            this.lblEstadoActual.Location = new System.Drawing.Point(91, 23);
+            this.lblEstadoActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoActual.Name = "lblEstadoActual";
-            this.lblEstadoActual.Size = new System.Drawing.Size(219, 33);
+            this.lblEstadoActual.Size = new System.Drawing.Size(165, 27);
             this.lblEstadoActual.TabIndex = 0;
             this.lblEstadoActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEstadoActual.Click += new System.EventHandler(this.lblEstadoActual_Click);
             // 
             // btnNuevaConsulta
             // 
-            this.btnNuevaConsulta.Location = new System.Drawing.Point(355, 559);
-            this.btnNuevaConsulta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(253, 467);
+            this.btnNuevaConsulta.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNuevaConsulta.Name = "btnNuevaConsulta";
-            this.btnNuevaConsulta.Size = new System.Drawing.Size(164, 50);
+            this.btnNuevaConsulta.Size = new System.Drawing.Size(123, 28);
             this.btnNuevaConsulta.TabIndex = 2;
             this.btnNuevaConsulta.Text = "Nueva Consulta";
             this.btnNuevaConsulta.UseVisualStyleBackColor = true;
@@ -303,11 +313,11 @@
             // grpHistorial
             // 
             this.grpHistorial.Controls.Add(this.listViewHistorial);
-            this.grpHistorial.Location = new System.Drawing.Point(15, 380);
-            this.grpHistorial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpHistorial.Location = new System.Drawing.Point(11, 309);
+            this.grpHistorial.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpHistorial.Name = "grpHistorial";
-            this.grpHistorial.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpHistorial.Size = new System.Drawing.Size(791, 172);
+            this.grpHistorial.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.grpHistorial.Size = new System.Drawing.Size(593, 140);
             this.grpHistorial.TabIndex = 1;
             this.grpHistorial.TabStop = false;
             this.grpHistorial.Text = "Historial de eventos";
@@ -323,14 +333,12 @@
             this.listViewHistorial.FullRowSelect = true;
             this.listViewHistorial.GridLines = true;
             this.listViewHistorial.HideSelection = false;
-            this.listViewHistorial.Location = new System.Drawing.Point(21, 41);
-            this.listViewHistorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewHistorial.Location = new System.Drawing.Point(16, 33);
             this.listViewHistorial.Name = "listViewHistorial";
-            this.listViewHistorial.Size = new System.Drawing.Size(745, 107);
+            this.listViewHistorial.Size = new System.Drawing.Size(560, 88);
             this.listViewHistorial.TabIndex = 3;
             this.listViewHistorial.UseCompatibleStateImageBehavior = false;
             this.listViewHistorial.View = System.Windows.Forms.View.Details;
-            this.listViewHistorial.SelectedIndexChanged += new System.EventHandler(this.listViewHistorial_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -352,28 +360,29 @@
             this.columnHeader4.Text = "Estado";
             this.columnHeader4.Width = 200;
             // 
-            // button1
+            // btnSalir
             // 
-            this.button1.Location = new System.Drawing.Point(720, 559);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(539, 467);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(65, 28);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // ConsultaTracking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 682);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(619, 503);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevaConsulta);
             this.Controls.Add(this.grpHistorial);
             this.Controls.Add(this.grpEstado);
             this.Controls.Add(this.groupBusquedaGuia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimizeBox = false;
             this.Name = "ConsultaTracking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -392,7 +401,7 @@
 
         private System.Windows.Forms.GroupBox groupBusquedaGuia;
         private System.Windows.Forms.Label lblNroGuia;
-        private System.Windows.Forms.TextBox txtNroGuia;
+        private System.Windows.Forms.TextBox txtNroDeGuia;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.GroupBox grpEstado;
@@ -401,10 +410,10 @@
         private System.Windows.Forms.Label lblCDDestinoTitulo;
         private System.Windows.Forms.Label lblCDOrigen;
         private System.Windows.Forms.Label lblCDOrigenTitulo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDestinario;
+        private System.Windows.Forms.Label lblDestinatarioTitulo;
+        private System.Windows.Forms.Label lblDestinatario;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblClienteTitulo;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblCategoriaTitulo;
         private System.Windows.Forms.Label lblGuia;
@@ -418,6 +427,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

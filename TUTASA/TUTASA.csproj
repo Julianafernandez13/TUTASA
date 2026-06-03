@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
     <Compile Include="ConsultaTracking\ConsultaTrackingModelo.cs" />
+    <Compile Include="ConsultaTracking\EventoHistorial.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
