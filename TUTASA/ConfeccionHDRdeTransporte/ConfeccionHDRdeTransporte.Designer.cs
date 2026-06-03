@@ -60,11 +60,9 @@
             this.groupDatosDespacho.Controls.Add(this.labelLocalidadDestino);
             this.groupDatosDespacho.Controls.Add(this.cmbCDDestino);
             this.groupDatosDespacho.Controls.Add(this.labelCDOrigen);
-            this.groupDatosDespacho.Location = new System.Drawing.Point(14, 15);
-            this.groupDatosDespacho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupDatosDespacho.Location = new System.Drawing.Point(12, 12);
             this.groupDatosDespacho.Name = "groupDatosDespacho";
-            this.groupDatosDespacho.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupDatosDespacho.Size = new System.Drawing.Size(691, 163);
+            this.groupDatosDespacho.Size = new System.Drawing.Size(614, 130);
             this.groupDatosDespacho.TabIndex = 0;
             this.groupDatosDespacho.TabStop = false;
             this.groupDatosDespacho.Text = "Datos Despacho";
@@ -75,9 +73,9 @@
             // 
             this.labelMuestraCDOrigen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelMuestraCDOrigen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelMuestraCDOrigen.Location = new System.Drawing.Point(195, 47);
+            this.labelMuestraCDOrigen.Location = new System.Drawing.Point(173, 38);
             this.labelMuestraCDOrigen.Name = "labelMuestraCDOrigen";
-            this.labelMuestraCDOrigen.Size = new System.Drawing.Size(167, 27);
+            this.labelMuestraCDOrigen.Size = new System.Drawing.Size(149, 22);
             this.labelMuestraCDOrigen.TabIndex = 16;
             this.labelMuestraCDOrigen.UseWaitCursor = true;
             this.labelMuestraCDOrigen.Click += new System.EventHandler(this.labelMuestraCDOrigen_Click);
@@ -85,9 +83,9 @@
             // labelCDDestino
             // 
             this.labelCDDestino.AutoSize = true;
-            this.labelCDDestino.Location = new System.Drawing.Point(405, 110);
+            this.labelCDDestino.Location = new System.Drawing.Point(360, 88);
             this.labelCDDestino.Name = "labelCDDestino";
-            this.labelCDDestino.Size = new System.Drawing.Size(95, 20);
+            this.labelCDDestino.Size = new System.Drawing.Size(78, 16);
             this.labelCDDestino.TabIndex = 11;
             this.labelCDDestino.Text = "CD Destino:";
             this.labelCDDestino.UseWaitCursor = true;
@@ -96,10 +94,9 @@
             // cmbLocalidadDestino
             // 
             this.cmbLocalidadDestino.FormattingEnabled = true;
-            this.cmbLocalidadDestino.Location = new System.Drawing.Point(195, 107);
-            this.cmbLocalidadDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbLocalidadDestino.Location = new System.Drawing.Point(173, 86);
             this.cmbLocalidadDestino.Name = "cmbLocalidadDestino";
-            this.cmbLocalidadDestino.Size = new System.Drawing.Size(167, 28);
+            this.cmbLocalidadDestino.Size = new System.Drawing.Size(149, 24);
             this.cmbLocalidadDestino.TabIndex = 10;
             this.cmbLocalidadDestino.UseWaitCursor = true;
             this.cmbLocalidadDestino.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidadDestino_SelectedIndexChanged);
@@ -107,9 +104,9 @@
             // labelLocalidadDestino
             // 
             this.labelLocalidadDestino.AutoSize = true;
-            this.labelLocalidadDestino.Location = new System.Drawing.Point(45, 110);
+            this.labelLocalidadDestino.Location = new System.Drawing.Point(40, 88);
             this.labelLocalidadDestino.Name = "labelLocalidadDestino";
-            this.labelLocalidadDestino.Size = new System.Drawing.Size(140, 20);
+            this.labelLocalidadDestino.Size = new System.Drawing.Size(119, 16);
             this.labelLocalidadDestino.TabIndex = 9;
             this.labelLocalidadDestino.Text = "Localidad Destino:";
             this.labelLocalidadDestino.UseWaitCursor = true;
@@ -118,10 +115,9 @@
             // cmbCDDestino
             // 
             this.cmbCDDestino.FormattingEnabled = true;
-            this.cmbCDDestino.Location = new System.Drawing.Point(506, 107);
-            this.cmbCDDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCDDestino.Location = new System.Drawing.Point(450, 86);
             this.cmbCDDestino.Name = "cmbCDDestino";
-            this.cmbCDDestino.Size = new System.Drawing.Size(132, 28);
+            this.cmbCDDestino.Size = new System.Drawing.Size(118, 24);
             this.cmbCDDestino.TabIndex = 8;
             this.cmbCDDestino.UseWaitCursor = true;
             this.cmbCDDestino.SelectedIndexChanged += new System.EventHandler(this.cmbCDDestino_SelectedIndexChanged);
@@ -129,9 +125,9 @@
             // labelCDOrigen
             // 
             this.labelCDOrigen.AutoSize = true;
-            this.labelCDOrigen.Location = new System.Drawing.Point(98, 49);
+            this.labelCDOrigen.Location = new System.Drawing.Point(87, 39);
             this.labelCDOrigen.Name = "labelCDOrigen";
-            this.labelCDOrigen.Size = new System.Drawing.Size(87, 20);
+            this.labelCDOrigen.Size = new System.Drawing.Size(72, 16);
             this.labelCDOrigen.TabIndex = 6;
             this.labelCDOrigen.Text = "CD Origen:";
             this.labelCDOrigen.UseWaitCursor = true;
@@ -143,11 +139,9 @@
             this.groupServicioTransporte.Controls.Add(this.cmbServicio);
             this.groupServicioTransporte.Controls.Add(this.labelTipoArrendamiento);
             this.groupServicioTransporte.Controls.Add(this.labelServicio);
-            this.groupServicioTransporte.Location = new System.Drawing.Point(14, 404);
-            this.groupServicioTransporte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupServicioTransporte.Location = new System.Drawing.Point(12, 323);
             this.groupServicioTransporte.Name = "groupServicioTransporte";
-            this.groupServicioTransporte.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupServicioTransporte.Size = new System.Drawing.Size(691, 87);
+            this.groupServicioTransporte.Size = new System.Drawing.Size(614, 70);
             this.groupServicioTransporte.TabIndex = 9;
             this.groupServicioTransporte.TabStop = false;
             this.groupServicioTransporte.Text = "Servicio de Transporte";
@@ -158,9 +152,9 @@
             // 
             this.labelMuestraTipoArrendamiento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelMuestraTipoArrendamiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelMuestraTipoArrendamiento.Location = new System.Drawing.Point(498, 36);
+            this.labelMuestraTipoArrendamiento.Location = new System.Drawing.Point(443, 29);
             this.labelMuestraTipoArrendamiento.Name = "labelMuestraTipoArrendamiento";
-            this.labelMuestraTipoArrendamiento.Size = new System.Drawing.Size(140, 27);
+            this.labelMuestraTipoArrendamiento.Size = new System.Drawing.Size(125, 22);
             this.labelMuestraTipoArrendamiento.TabIndex = 17;
             this.labelMuestraTipoArrendamiento.UseWaitCursor = true;
             this.labelMuestraTipoArrendamiento.Click += new System.EventHandler(this.labelMuestraTipoArrendamiento_Click);
@@ -168,10 +162,9 @@
             // cmbServicio
             // 
             this.cmbServicio.FormattingEnabled = true;
-            this.cmbServicio.Location = new System.Drawing.Point(159, 35);
-            this.cmbServicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbServicio.Location = new System.Drawing.Point(141, 28);
             this.cmbServicio.Name = "cmbServicio";
-            this.cmbServicio.Size = new System.Drawing.Size(134, 28);
+            this.cmbServicio.Size = new System.Drawing.Size(120, 24);
             this.cmbServicio.TabIndex = 7;
             this.cmbServicio.UseWaitCursor = true;
             this.cmbServicio.SelectedIndexChanged += new System.EventHandler(this.cmbServicio_SelectedIndexChanged);
@@ -179,9 +172,9 @@
             // labelTipoArrendamiento
             // 
             this.labelTipoArrendamiento.AutoSize = true;
-            this.labelTipoArrendamiento.Location = new System.Drawing.Point(320, 38);
+            this.labelTipoArrendamiento.Location = new System.Drawing.Point(284, 30);
             this.labelTipoArrendamiento.Name = "labelTipoArrendamiento";
-            this.labelTipoArrendamiento.Size = new System.Drawing.Size(172, 20);
+            this.labelTipoArrendamiento.Size = new System.Drawing.Size(147, 16);
             this.labelTipoArrendamiento.TabIndex = 3;
             this.labelTipoArrendamiento.Text = "Tipo de arrendamiento:";
             this.labelTipoArrendamiento.UseWaitCursor = true;
@@ -190,9 +183,9 @@
             // labelServicio
             // 
             this.labelServicio.AutoSize = true;
-            this.labelServicio.Location = new System.Drawing.Point(78, 38);
+            this.labelServicio.Location = new System.Drawing.Point(69, 30);
             this.labelServicio.Name = "labelServicio";
-            this.labelServicio.Size = new System.Drawing.Size(68, 20);
+            this.labelServicio.Size = new System.Drawing.Size(59, 16);
             this.labelServicio.TabIndex = 1;
             this.labelServicio.Text = "Servicio:";
             this.labelServicio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,10 +194,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(596, 527);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(530, 422);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(109, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(97, 25);
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -212,10 +204,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(443, 527);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(394, 422);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(109, 31);
+            this.btnGuardar.Size = new System.Drawing.Size(97, 25);
             this.btnGuardar.TabIndex = 27;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -225,11 +216,9 @@
             // groupListadoEncomiendas
             // 
             this.groupListadoEncomiendas.Controls.Add(this.listViewEncomiendas);
-            this.groupListadoEncomiendas.Location = new System.Drawing.Point(14, 195);
-            this.groupListadoEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupListadoEncomiendas.Location = new System.Drawing.Point(12, 156);
             this.groupListadoEncomiendas.Name = "groupListadoEncomiendas";
-            this.groupListadoEncomiendas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupListadoEncomiendas.Size = new System.Drawing.Size(691, 174);
+            this.groupListadoEncomiendas.Size = new System.Drawing.Size(614, 139);
             this.groupListadoEncomiendas.TabIndex = 29;
             this.groupListadoEncomiendas.TabStop = false;
             this.groupListadoEncomiendas.Text = "Listado de encomiendas";
@@ -243,10 +232,9 @@
             this.columnHeader11,
             this.columnHeader12});
             this.listViewEncomiendas.HideSelection = false;
-            this.listViewEncomiendas.Location = new System.Drawing.Point(24, 27);
-            this.listViewEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listViewEncomiendas.Location = new System.Drawing.Point(21, 22);
             this.listViewEncomiendas.Name = "listViewEncomiendas";
-            this.listViewEncomiendas.Size = new System.Drawing.Size(649, 139);
+            this.listViewEncomiendas.Size = new System.Drawing.Size(577, 112);
             this.listViewEncomiendas.TabIndex = 2;
             this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
             this.listViewEncomiendas.UseWaitCursor = true;
@@ -270,15 +258,14 @@
             // 
             // ConfeccionHDRdeTransporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 597);
+            this.ClientSize = new System.Drawing.Size(727, 541);
             this.Controls.Add(this.groupListadoEncomiendas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupServicioTransporte);
             this.Controls.Add(this.groupDatosDespacho);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ConfeccionHDRdeTransporte";
             this.Text = "TUTASA – Confección de Hoja de Ruta de Transporte";
             this.UseWaitCursor = true;
