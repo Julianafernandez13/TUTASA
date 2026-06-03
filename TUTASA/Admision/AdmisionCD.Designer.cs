@@ -33,7 +33,6 @@
             this.txtNroDeGuia.Name = "txtNroDeGuia";
             this.txtNroDeGuia.Size = new System.Drawing.Size(133, 20);
             this.txtNroDeGuia.TabIndex = 0;
-            this.txtNroDeGuia.TextChanged += new System.EventHandler(this.txtNroDeGuia_TextChanged);
             // 
             // lblBuscarNrodeGuia
             // 
@@ -80,7 +79,6 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(55, 21);
             this.cmbCategoria.TabIndex = 7;
-            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // lblCategoriaLabel
             // 
@@ -111,7 +109,6 @@
             this.labelNrodeGuia.Name = "labelNrodeGuia";
             this.labelNrodeGuia.Size = new System.Drawing.Size(112, 15);
             this.labelNrodeGuia.TabIndex = 15;
-            this.labelNrodeGuia.Click += new System.EventHandler(this.labelNrodeGuia_Click);
             // 
             // grpAdmision
             // 
@@ -129,7 +126,6 @@
             this.grpAdmision.TabIndex = 1;
             this.grpAdmision.TabStop = false;
             this.grpAdmision.Text = "Admision ";
-            this.grpAdmision.Enter += new System.EventHandler(this.grpAdmision_Enter);
             // 
             // btnCancelar
             // 

@@ -13,8 +13,9 @@ namespace TUTASA.Forms.CD
 {
     public partial class frmAdmision : Form
     {
-        //instancia del modelo de admision
+        // Instancia del modelo de admision
         private AdmisionModelo modelo = new AdmisionModelo();
+        private Guia guiaSeleccionada;
         public frmAdmision()
         {
             InitializeComponent();
@@ -46,19 +47,19 @@ namespace TUTASA.Forms.CD
 
             // 2) Buscar la guía en el modelo
             var guias = modelo.Guias;
-            Guia guiaEncontrada = null;
+            guiaSeleccionada = null;
 
             foreach (var guia in guias)
             {
                 if (guia.NroTracking == txtNroDeGuia.Text.Trim().ToUpper())
                 {
-                    guiaEncontrada = guia;
+                    guiaSeleccionada = guia;
                     break;
                 }
             }
 
             // 3) Si no existe mostrar error
-            if (guiaEncontrada == null)
+            if (guiaSeleccionada == null)
             {
                 MessageBox.Show(
                     "La guía ingresada no corresponde a ninguna solicitud registrada.",
@@ -70,38 +71,68 @@ namespace TUTASA.Forms.CD
                 return;
             }
 
-            // 4) Autorrellenar los campos con los datos de la guía
-            labelNrodeGuia.Text = guiaEncontrada.NroTracking;
-        }
-
-        private void grpAdmision_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNroDeGuia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNrodeGuia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            // 4) Autorrellenar los campos con los datos de la guía (nro de tracking)
+            labelNrodeGuia.Text = guiaSeleccionada.NroTracking;
         }
 
         private void btnAdmitir_Click(object sender, EventArgs e)
         {
+            // 1) Pasa por aca cuando no se busco ninguna guia.
+            if (guiaSeleccionada == null)
+            {
+                MessageBox.Show(
+                    "Debe buscar una guía.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
+                return;
+            }
+
+            // 2) Pasa por aca cuando validar que se seleccionó una categoría, esto con una guia ya buscada.
+            if (cmbCategoria.SelectedItem == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar una categoría.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            var categoria = (Categoria)cmbCategoria.SelectedItem;
+
+            if (!modelo.Admitir(guiaSeleccionada, categoria))
+            {
+                return;
+            }
+
+            MessageBox.Show(
+                "La guía fue admitida correctamente.",
+                "Admisión",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtNroDeGuia.Clear();
+
+            labelNrodeGuia.Text = "";
+
+            cmbCategoria.SelectedIndex = -1;
+
+            guiaSeleccionada = null;
+
+            txtNroDeGuia.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            LimpiarFormulario();
         }
     }
 }
