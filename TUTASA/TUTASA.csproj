@@ -61,6 +61,7 @@
     <Compile Include="ConsultaTracking\EventoHistorial.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
+    <Compile Include="ImposicionAgencia\Cliente.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
     <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
