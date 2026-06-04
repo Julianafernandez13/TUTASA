@@ -15,6 +15,7 @@ namespace TUTASA.Forms.Agencia
     public partial class frmImposicionAgencia : Form
     {
         private ImposicionAgenciaModelo modelo = new ImposicionAgenciaModelo();
+       
         public frmImposicionAgencia()
         {
             InitializeComponent();
@@ -22,12 +23,40 @@ namespace TUTASA.Forms.Agencia
 
         private void frmImposicionAgencia_Load(object sender, EventArgs e)
         {
-
+            // Los combos cmbAgencia y cmbCD se cargan dinámicamente
+            // al buscar por código postal, no al abrir el formulario
         }
 
 
         private void txtCUIT_TextChanged(object sender, EventArgs e)
         {
+            //1) Validar que se ingresó un número de CUIT
+            string input = txtCUIT.Text?.Trim();
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un numero de CUIT.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            //2) Validar que el CUIT sea numérico y no contenga espacios
+            if (!long.TryParse(input, out _))
+            {
+                MessageBox.Show(
+                    "El CUIT debe ser numerico y no puede contener espacios.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            
+
+
 
         }
 
@@ -118,6 +147,19 @@ namespace TUTASA.Forms.Agencia
 
         private void btnBuscarLocalidadDom_Click(object sender, EventArgs e)
         {
+            string cp = txtCPAg.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cp))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un código postal para buscar la agencia.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            
 
         }
 
@@ -148,7 +190,54 @@ namespace TUTASA.Forms.Agencia
 
         private void btnBuscarLocalidadAg_Click(object sender, EventArgs e)
         {
+            // Limpiamos resultado anterior siempre, antes de cualquier validación
+            cmbAgencia.DataSource = null;
+            cmbAgencia.Items.Clear();
 
+            string cp = txtCPAg.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cp))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un código postal para buscar la agencia.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verificamos que el CP existe
+            var localidad = modelo.ObtenerCodigosPostales().FirstOrDefault(c => c.idCodPostal == cp);
+
+            if (localidad == null)
+            {
+                MessageBox.Show(
+                    "No se encontró el código postal ingresado.",
+                    "Sin resultados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                
+                return;
+            }
+
+            // Filtramos agencias que pertenecen a ese CP
+            var agencias = modelo.ObtenerAgencias().Where(a => a.CodigoPostal == cp).ToList();
+
+            if (agencias.Count == 0)
+            {
+                MessageBox.Show(
+                    $"No hay agencias registradas para el código postal {cp}.",
+                    "Sin resultados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                
+                return;
+            }
+
+            cmbAgencia.DataSource = agencias;
+            cmbAgencia.DisplayMember = "nombreAgencia";
+            cmbAgencia.ValueMember = "idAgencia";
+            cmbAgencia.SelectedIndex = -1;
         }
 
         private void cmbAgencia_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,8 +267,56 @@ namespace TUTASA.Forms.Agencia
 
         private void btnBuscarLocalidadCD_Click(object sender, EventArgs e)
         {
+            // Limpiamos resultado anterior siempre, antes de cualquier validación
+            cmbCD.DataSource = null;
+            cmbCD.Items.Clear();
 
+            string cp = txtCPCD.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cp))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un código postal para buscar el CD.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verificamos que el CP existe
+            var localidad = modelo.ObtenerCodigosPostales().FirstOrDefault(c => c.idCodPostal == cp);
+
+            if (localidad == null)
+            {
+                MessageBox.Show(
+                    "No se encontró el código postal ingresado.",
+                    "Sin resultados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                
+                return;
+            }
+
+            // Filtramos CDs que tienen ese CP bajo su jurisdicción
+            var cds = modelo.ObtenerCentrosDeDistribucion().Where(cd => cd.CodigosPostales.Contains(cp)).ToList();
+
+            if (cds.Count == 0)
+            {
+                MessageBox.Show(
+                    $"No hay centros de distribución para el código postal {cp}.",
+                    "Sin resultados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            cmbCD.DataSource = cds;
+            cmbCD.DisplayMember = "nombreCD";
+            cmbCD.ValueMember = "idCD";
+            cmbCD.SelectedIndex = -1;
         }
+
+        
 
         private void cmbCD_SelectedIndexChanged(object sender, EventArgs e)
         {
