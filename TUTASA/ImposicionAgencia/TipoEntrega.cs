@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace TUTASA.ImposicionAgencia
 {
-    internal class Cliente
+    internal enum TipoEntrega
     {
-        public int Id { get; set; }
-        public string NombreCompleto { get; set; }
-        public string CUIT { get; set; }
-
+        Domicilio,
+        Agencia,
+        CD
     }
 }

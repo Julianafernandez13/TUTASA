@@ -30,6 +30,11 @@ namespace TUTASA.Forms.Agencia
 
         private void txtCUIT_TextChanged(object sender, EventArgs e)
         {
+         
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
             //1) Validar que se ingresó un número de CUIT
             string input = txtCUIT.Text?.Trim();
 
@@ -54,15 +59,23 @@ namespace TUTASA.Forms.Agencia
                 return;
             }
 
-            
+            // 3) Buscar el cliente por CUIT
+            var cliente = modelo.ObtenerClientes().FirstOrDefault(c => c.CUIT == input);
 
 
+            if (cliente == null)
+            {
+                MessageBox.Show(
+                    $"No se encontró ningún cliente con CUIT {input}.",
+                    "Sin resultados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtMuestraNombre.Clear();
+                return;
+            }
 
-        }
-
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
-        {
-
+            // 4) Mostrar el nombre en el campo de solo lectura
+            txtMuestraNombre.Text = cliente.NombreCompleto;
         }
 
         private void txtMuestraNombre_TextChanged(object sender, EventArgs e)
@@ -92,6 +105,35 @@ namespace TUTASA.Forms.Agencia
 
         private void btnAgregarBulto_Click(object sender, EventArgs e)
         {
+            // Validamos que se haya seleccionado un cliente remitente antes de agregar bultos
+            if (modelo.GetClienteSeleccionado() == null)
+            {
+                MessageBox.Show("Debe buscar un cliente remitente antes de agregar bultos.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validamos que se haya seleccionado una categoría de bulto
+            CategoriaBulto categoria;
+            if (radioBtnS.Checked) categoria = CategoriaBulto.S;
+            else if (radioBtnM.Checked) categoria = CategoriaBulto.M;
+            else if (radioBtnL.Checked) categoria = CategoriaBulto.L;
+            else if (radioBtnXL.Checked) categoria = CategoriaBulto.XL;
+            else
+            {
+                MessageBox.Show("Debe seleccionar una categoría de bulto.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Agregamos el bulto al modelo
+            modelo.AgregarBulto(categoria);
+
+            // Actualizamos la lista de bultos en la interfaz
+            var bulto = modelo.GetBultos().Last();
+            var item = new ListViewItem(bulto.idGuia.ToString());
+            item.SubItems.Add(bulto.Categoria.ToString());
+            listViewBultos.Items.Add(item);
 
         }
 
@@ -102,7 +144,22 @@ namespace TUTASA.Forms.Agencia
 
         private void btnQuitarBulto_Click(object sender, EventArgs e)
         {
+            // Validamos que se haya seleccionado un bulto para quitar
+            if (listViewBultos.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un bulto para quitar.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // Obtenemos el índice del bulto seleccionado
+            int indice = listViewBultos.SelectedIndices[0];
+            modelo.QuitarBulto(indice);
+            listViewBultos.Items.RemoveAt(indice);
+
+            // Actualizamos los números de guía en la lista después de quitar
+            for (int i = 0; i < listViewBultos.Items.Count; i++)
+                listViewBultos.Items[i].Text = (i + 1).ToString();
         }
 
         private void radioBtnDomicilio_CheckedChanged(object sender, EventArgs e)

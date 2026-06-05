@@ -6,8 +6,43 @@ using System.Threading.Tasks;
 
 namespace TUTASA.ImposicionAgencia
 {
+    
     internal class ImposicionAgenciaModelo
     {
+        private List<Guia> guias = new List<Guia>();
+        private Cliente? clienteSeleccionado = null;
+
+        internal void SetClienteSeleccionado(Cliente cliente)
+        {
+            clienteSeleccionado = cliente;
+        }
+
+        internal Cliente? GetClienteSeleccionado()
+        {
+            return clienteSeleccionado;
+        }
+
+        internal void AgregarBulto(CategoriaBulto categoria)
+        {
+            guias.Add(new Guia
+            {
+                idGuia = guias.Count + 1,
+                Categoria = categoria,
+                Remitente = clienteSeleccionado
+            });
+        }
+
+        internal void QuitarBulto(int indice)
+        {
+            guias.RemoveAt(indice);
+            for (int i = 0; i < guias.Count; i++)
+                guias[i].idGuia = i + 1;
+        }
+
+        internal List<Guia> GetBultos()
+        {
+            return guias;
+        }
         internal List<Agencias> ObtenerAgencias()
         {
             return new List<Agencias>()
@@ -24,26 +59,26 @@ namespace TUTASA.ImposicionAgencia
 
         internal List<CentrosDeDistribucion> ObtenerCentrosDeDistribucion()
         {
-            return new List<CentrosDeDistribucion>();
+            return new List<CentrosDeDistribucion>()
             {
                 new CentrosDeDistribucion
                 {
                     idCD = 1,
                     nombreCD = "CD Gran Buenos Aires",
                     CodigosPostales = new List<string> { "1900", "1800", "1700" }
-                };
+                },
                 new CentrosDeDistribucion
                 {
                     idCD = 2,
                     nombreCD = "CD CABA",
                     CodigosPostales = new List<string> { "1000" }
-                };
+                },
                 new CentrosDeDistribucion
                 {
                     idCD = 3,
                     nombreCD = "CD Centro",
                     CodigosPostales = new List<string> { "5000", "1900" } // 1900 cae en dos CDs
-                };
+                },
             };
         }
 
@@ -58,6 +93,18 @@ namespace TUTASA.ImposicionAgencia
                 new CodigoPostal { idCodPostal = "5000", DescripcionLocalidad = "Córdoba", DescripcionProvincia = "Córdoba" },
             };
             
+        }
+
+        internal List<Cliente> ObtenerClientes()
+        {
+            
+            return new List<Cliente>()
+            {
+                new Cliente { Id = 1, NombreCompleto = "Juan Pérez", CUIT = "20304050607" },
+                new Cliente { Id = 2, NombreCompleto = "María González", CUIT = "27333311122" },
+                new Cliente { Id = 3, NombreCompleto = "Carlos Sosa", CUIT = "20111222333" },
+                new Cliente { Id = 4, NombreCompleto = "Lucía Fernández", CUIT = "27222333444" }
+            };
         }
     }
 }

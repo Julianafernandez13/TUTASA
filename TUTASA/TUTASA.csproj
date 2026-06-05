@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,10 +66,14 @@
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
     <Compile Include="ImposicionAgencia\Agencias.cs" />
+    <Compile Include="ImposicionAgencia\CategoriaBulto.cs" />
     <Compile Include="ImposicionAgencia\CentrosDeDistribucion.cs" />
     <Compile Include="ImposicionAgencia\Cliente.cs" />
     <Compile Include="ImposicionAgencia\CodigoPostal.cs" />
+    <Compile Include="ImposicionAgencia\Destinatario.cs" />
+    <Compile Include="ImposicionAgencia\Guia.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
+    <Compile Include="ImposicionAgencia\TipoEntrega.cs" />
     <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
     <Compile Include="RegistrarEntrega\Receptor.cs" />
