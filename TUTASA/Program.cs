@@ -15,8 +15,8 @@ namespace TUTASA
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TUTASA.Forms.Agencia.frmImposicionAgencia());
+            Application.SetCompatibleTextRenderingDefault(fals
+            Application.Run(new TUTASA.Forms.Administracion.EmitirFactura());
         }
     }
 }
