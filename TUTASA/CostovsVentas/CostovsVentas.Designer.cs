@@ -57,7 +57,7 @@
             this.lblTitulo.Size = new System.Drawing.Size(528, 29);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Costo vs Ventas por Empresa de Transporte";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
+            
             // 
             // gbFiltros
             // 
@@ -73,7 +73,7 @@
             this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros de Consulta";
-            this.gbFiltros.Enter += new System.EventHandler(this.gbFiltros_Enter);
+            
             // 
             // cmbAño
             // 
@@ -93,7 +93,7 @@
             this.cmbAño.Name = "cmbAño";
             this.cmbAño.Size = new System.Drawing.Size(96, 28);
             this.cmbAño.TabIndex = 8;
-            this.cmbAño.SelectedIndexChanged += new System.EventHandler(this.cmbAño_SelectedIndexChanged);
+           
             // 
             // cmbMes
             // 
@@ -114,7 +114,7 @@
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.Size = new System.Drawing.Size(67, 28);
             this.cmbMes.TabIndex = 7;
-            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.cmbMes_SelectedIndexChanged);
+           
             // 
             // labelAño
             // 
@@ -123,7 +123,7 @@
             this.labelAño.Size = new System.Drawing.Size(43, 23);
             this.labelAño.TabIndex = 6;
             this.labelAño.Text = "Año:";
-            this.labelAño.Click += new System.EventHandler(this.labelAño_Click);
+            
             // 
             // cmbEmpresa
             // 
@@ -136,7 +136,7 @@
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(200, 28);
             this.cmbEmpresa.TabIndex = 0;
-            this.cmbEmpresa.SelectedIndexChanged += new System.EventHandler(this.cmbEmpresa_SelectedIndexChanged);
+            
             // 
             // labelEmpresa
             // 
@@ -145,7 +145,7 @@
             this.labelEmpresa.Size = new System.Drawing.Size(84, 23);
             this.labelEmpresa.TabIndex = 1;
             this.labelEmpresa.Text = "Empresa:";
-            this.labelEmpresa.Click += new System.EventHandler(this.labelEmpresa_Click);
+            
             // 
             // lblMes
             // 
@@ -154,7 +154,7 @@
             this.lblMes.Size = new System.Drawing.Size(52, 23);
             this.lblMes.TabIndex = 5;
             this.lblMes.Text = "Mes:";
-            this.lblMes.Click += new System.EventHandler(this.lblMes_Click);
+           
             // 
             // btnGenerar
             // 
@@ -183,7 +183,7 @@
             this.lblTotales.Size = new System.Drawing.Size(359, 25);
             this.lblTotales.TabIndex = 0;
             this.lblTotales.Text = "Totales: Ingresos / Costos / Margen";
-            this.lblTotales.Click += new System.EventHandler(this.lblTotales_Click);
+            
             // 
             // listViewResultados
             // 
@@ -202,7 +202,7 @@
             this.listViewResultados.TabIndex = 7;
             this.listViewResultados.UseCompatibleStateImageBehavior = false;
             this.listViewResultados.View = System.Windows.Forms.View.Details;
-            this.listViewResultados.SelectedIndexChanged += new System.EventHandler(this.listViewResultados_SelectedIndexChanged);
+            
             // 
             // Clasificación
             // 

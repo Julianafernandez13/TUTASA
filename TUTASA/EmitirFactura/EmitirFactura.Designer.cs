@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupEmitirFactura = new System.Windows.Forms.GroupBox();
+            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEmitirFactura = new System.Windows.Forms.Button();
             this.lblMostrarTotal = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.lblCUIT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.groupEmitirFactura.SuspendLayout();
             this.groupMovimientos.SuspendLayout();
             this.groupPeriodo.SuspendLayout();
@@ -82,6 +82,16 @@
             this.groupEmitirFactura.TabIndex = 0;
             this.groupEmitirFactura.TabStop = false;
             this.groupEmitirFactura.Text = "TUTASA - Emitir Factura";
+            // 
+            // btnBuscarPeriodo
+            // 
+            this.btnBuscarPeriodo.Location = new System.Drawing.Point(380, 193);
+            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
+            this.btnBuscarPeriodo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarPeriodo.TabIndex = 0;
+            this.btnBuscarPeriodo.Text = "Buscar";
+            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
+            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
             // 
             // btnCancelar
             // 
@@ -133,7 +143,7 @@
             this.groupMovimientos.Margin = new System.Windows.Forms.Padding(4);
             this.groupMovimientos.Name = "groupMovimientos";
             this.groupMovimientos.Padding = new System.Windows.Forms.Padding(4);
-            this.groupMovimientos.Size = new System.Drawing.Size(854, 140);
+            this.groupMovimientos.Size = new System.Drawing.Size(854, 175);
             this.groupMovimientos.TabIndex = 3;
             this.groupMovimientos.TabStop = false;
             this.groupMovimientos.Text = "Movimientos a Facturar";
@@ -154,7 +164,7 @@
             this.listViewMovimientos.Location = new System.Drawing.Point(13, 23);
             this.listViewMovimientos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMovimientos.Name = "listViewMovimientos";
-            this.listViewMovimientos.Size = new System.Drawing.Size(841, 85);
+            this.listViewMovimientos.Size = new System.Drawing.Size(841, 120);
             this.listViewMovimientos.TabIndex = 1;
             this.listViewMovimientos.UseCompatibleStateImageBehavior = false;
             this.listViewMovimientos.View = System.Windows.Forms.View.Details;
@@ -209,7 +219,7 @@
             this.groupPeriodo.Margin = new System.Windows.Forms.Padding(4);
             this.groupPeriodo.Name = "groupPeriodo";
             this.groupPeriodo.Padding = new System.Windows.Forms.Padding(4);
-            this.groupPeriodo.Size = new System.Drawing.Size(325, 73);
+            this.groupPeriodo.Size = new System.Drawing.Size(420, 73);
             this.groupPeriodo.TabIndex = 2;
             this.groupPeriodo.TabStop = false;
             this.groupPeriodo.Text = "Periodo";
@@ -233,7 +243,6 @@
             this.cmbAño.Name = "cmbAño";
             this.cmbAño.Size = new System.Drawing.Size(86, 24);
             this.cmbAño.TabIndex = 12;
-          
             // 
             // cmbMes
             // 
@@ -255,7 +264,6 @@
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.Size = new System.Drawing.Size(60, 24);
             this.cmbMes.TabIndex = 11;
-           
             // 
             // lblAño
             // 
@@ -366,16 +374,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 0;
-            // 
-            // btnBuscarPeriodo
-           
-            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
-            this.btnBuscarPeriodo.Location = new System.Drawing.Point(290, 14); // ajustá X,Y según donde quede bien
-            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
-            this.btnBuscarPeriodo.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarPeriodo.Text = "Buscar";
-            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
-            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
             // 
             // EmitirFactura
             // 
