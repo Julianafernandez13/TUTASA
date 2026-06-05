@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TUTASA.ConfeccionHDRdeTransporte
+namespace TUTASA.ConfeccionHDRdeUltMilla
 {
     internal class Guia
     {

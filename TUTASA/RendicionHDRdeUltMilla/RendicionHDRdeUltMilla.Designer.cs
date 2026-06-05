@@ -94,7 +94,7 @@
             this.cmbNroHDR.Name = "cmbNroHDR";
             this.cmbNroHDR.Size = new System.Drawing.Size(321, 28);
             this.cmbNroHDR.TabIndex = 27;
-            this.cmbNroHDR.SelectedIndexChanged += new System.EventHandler(this.cmbNroHDR_SelectedIndexChanged);
+            
             // 
             // btnAceptar
             // 
@@ -116,7 +116,7 @@
             this.radioBtnNoCumplida.Size = new System.Drawing.Size(121, 24);
             this.radioBtnNoCumplida.TabIndex = 21;
             this.radioBtnNoCumplida.Text = "No cumplida";
-            this.radioBtnNoCumplida.CheckedChanged += new System.EventHandler(this.radioBtnNoCumplida_CheckedChanged);
+            
             // 
             // radioBtnCumplida
             // 
@@ -127,7 +127,7 @@
             this.radioBtnCumplida.Size = new System.Drawing.Size(100, 24);
             this.radioBtnCumplida.TabIndex = 20;
             this.radioBtnCumplida.Text = "Cumplida";
-            this.radioBtnCumplida.CheckedChanged += new System.EventHandler(this.radioBtnCumplida_CheckedChanged);
+            
             // 
             // lblNroHDR
             // 
@@ -171,7 +171,7 @@
             this.columnHeader5,
             this.columnHeader11,
             this.columnHeader2});
-            this.listViewHDRRendidas.Enabled = false;
+            this.listViewHDRRendidas.Enabled = true;
             this.listViewHDRRendidas.FullRowSelect = true;
             this.listViewHDRRendidas.GridLines = true;
             this.listViewHDRRendidas.HideSelection = false;
@@ -182,7 +182,7 @@
             this.listViewHDRRendidas.TabIndex = 2;
             this.listViewHDRRendidas.UseCompatibleStateImageBehavior = false;
             this.listViewHDRRendidas.View = System.Windows.Forms.View.Details;
-            this.listViewHDRRendidas.SelectedIndexChanged += new System.EventHandler(this.listViewHDRRendidas_SelectedIndexChanged);
+            
             // 
             // columnHeader1
             // 
@@ -256,7 +256,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(223, 26);
             this.txtDNI.TabIndex = 0;
-            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            
             // 
             // lblMuestraFletero
             // 
@@ -266,7 +266,7 @@
             this.lblMuestraFletero.Name = "lblMuestraFletero";
             this.lblMuestraFletero.Size = new System.Drawing.Size(260, 22);
             this.lblMuestraFletero.TabIndex = 26;
-            this.lblMuestraFletero.Click += new System.EventHandler(this.lblMuestraFletero_Click);
+            
             // 
             // lblFleteroSeleccionado
             // 
@@ -328,8 +328,7 @@
             this.listViewHDRaEntregar.TabIndex = 2;
             this.listViewHDRaEntregar.UseCompatibleStateImageBehavior = false;
             this.listViewHDRaEntregar.View = System.Windows.Forms.View.Details;
-            this.listViewHDRaEntregar.SelectedIndexChanged += new System.EventHandler(this.listViewHDRaEntregar_SelectedIndexChanged);
-            // 
+           
             // columnHeader6
             // 
             this.columnHeader6.Text = "Nro HDR";

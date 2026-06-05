@@ -67,7 +67,7 @@
             this.groupDatosDespacho.TabStop = false;
             this.groupDatosDespacho.Text = "Datos Despacho";
             this.groupDatosDespacho.UseWaitCursor = true;
-            this.groupDatosDespacho.Enter += new System.EventHandler(this.groupDatosDespacho_Enter);
+           
             // 
             // labelMuestraCDOrigen
             // 
@@ -78,7 +78,7 @@
             this.labelMuestraCDOrigen.Size = new System.Drawing.Size(149, 22);
             this.labelMuestraCDOrigen.TabIndex = 16;
             this.labelMuestraCDOrigen.UseWaitCursor = true;
-            this.labelMuestraCDOrigen.Click += new System.EventHandler(this.labelMuestraCDOrigen_Click);
+           
             // 
             // labelCDDestino
             // 
@@ -89,7 +89,7 @@
             this.labelCDDestino.TabIndex = 11;
             this.labelCDDestino.Text = "CD Destino:";
             this.labelCDDestino.UseWaitCursor = true;
-            this.labelCDDestino.Click += new System.EventHandler(this.labelCDDestino_Click);
+           
             // 
             // cmbLocalidadDestino
             // 
@@ -110,7 +110,7 @@
             this.labelLocalidadDestino.TabIndex = 9;
             this.labelLocalidadDestino.Text = "Localidad Destino:";
             this.labelLocalidadDestino.UseWaitCursor = true;
-            this.labelLocalidadDestino.Click += new System.EventHandler(this.labelLocalidadDestino_Click);
+            
             // 
             // cmbCDDestino
             // 
@@ -120,7 +120,7 @@
             this.cmbCDDestino.Size = new System.Drawing.Size(118, 24);
             this.cmbCDDestino.TabIndex = 8;
             this.cmbCDDestino.UseWaitCursor = true;
-            this.cmbCDDestino.SelectedIndexChanged += new System.EventHandler(this.cmbCDDestino_SelectedIndexChanged);
+     
             // 
             // labelCDOrigen
             // 
@@ -131,7 +131,7 @@
             this.labelCDOrigen.TabIndex = 6;
             this.labelCDOrigen.Text = "CD Origen:";
             this.labelCDOrigen.UseWaitCursor = true;
-            this.labelCDOrigen.Click += new System.EventHandler(this.labelCDOrigen_Click);
+           
             // 
             // groupServicioTransporte
             // 
@@ -146,7 +146,7 @@
             this.groupServicioTransporte.TabStop = false;
             this.groupServicioTransporte.Text = "Servicio de Transporte";
             this.groupServicioTransporte.UseWaitCursor = true;
-            this.groupServicioTransporte.Enter += new System.EventHandler(this.groupServicioTransporte_Enter);
+           
             // 
             // labelMuestraTipoArrendamiento
             // 
@@ -157,7 +157,7 @@
             this.labelMuestraTipoArrendamiento.Size = new System.Drawing.Size(125, 22);
             this.labelMuestraTipoArrendamiento.TabIndex = 17;
             this.labelMuestraTipoArrendamiento.UseWaitCursor = true;
-            this.labelMuestraTipoArrendamiento.Click += new System.EventHandler(this.labelMuestraTipoArrendamiento_Click);
+            
             // 
             // cmbServicio
             // 
@@ -178,7 +178,7 @@
             this.labelTipoArrendamiento.TabIndex = 3;
             this.labelTipoArrendamiento.Text = "Tipo de arrendamiento:";
             this.labelTipoArrendamiento.UseWaitCursor = true;
-            this.labelTipoArrendamiento.Click += new System.EventHandler(this.labelTipoArrendamiento_Click);
+            
             // 
             // labelServicio
             // 
@@ -190,7 +190,7 @@
             this.labelServicio.Text = "Servicio:";
             this.labelServicio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelServicio.UseWaitCursor = true;
-            this.labelServicio.Click += new System.EventHandler(this.labelServicio_Click);
+           
             // 
             // btnCancelar
             // 
@@ -201,6 +201,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.UseWaitCursor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -223,7 +224,7 @@
             this.groupListadoEncomiendas.TabStop = false;
             this.groupListadoEncomiendas.Text = "Listado de encomiendas";
             this.groupListadoEncomiendas.UseWaitCursor = true;
-            this.groupListadoEncomiendas.Enter += new System.EventHandler(this.groupListadoEncomiendas_Enter);
+           
             // 
             // listViewEncomiendas
             // 
