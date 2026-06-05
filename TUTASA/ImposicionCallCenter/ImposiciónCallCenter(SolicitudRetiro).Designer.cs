@@ -14,7 +14,6 @@
         private void InitializeComponent()
         {
             this.grpCliente = new System.Windows.Forms.GroupBox();
-            this.txtMuestraNombre = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
-            this.txtMuestraLocProvDom = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNombreDom = new System.Windows.Forms.Label();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
@@ -87,6 +85,8 @@
             this.radioBtnDomicilio = new System.Windows.Forms.RadioButton();
             this.radioBtnAgencia = new System.Windows.Forms.RadioButton();
             this.radioBtnCD = new System.Windows.Forms.RadioButton();
+            this.lblMuestraNombre = new System.Windows.Forms.Label();
+            this.lblMuestraLocProvDom = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpRetiro.SuspendLayout();
             this.grpBultos.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             // grpCliente
             // 
-            this.grpCliente.Controls.Add(this.txtMuestraNombre);
+            this.grpCliente.Controls.Add(this.lblMuestraNombre);
             this.grpCliente.Controls.Add(this.lblCUIT);
             this.grpCliente.Controls.Add(this.txtCUIT);
             this.grpCliente.Controls.Add(this.btnBuscarCliente);
@@ -111,16 +111,6 @@
             this.grpCliente.TabStop = false;
             this.grpCliente.Text = "Datos del Cliente";
             this.grpCliente.Enter += new System.EventHandler(this.grpCliente_Enter);
-            // 
-            // txtMuestraNombre
-            // 
-            this.txtMuestraNombre.Location = new System.Drawing.Point(104, 62);
-            this.txtMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMuestraNombre.Name = "txtMuestraNombre";
-            this.txtMuestraNombre.ReadOnly = true;
-            this.txtMuestraNombre.Size = new System.Drawing.Size(223, 26);
-            this.txtMuestraNombre.TabIndex = 4;
-            this.txtMuestraNombre.TextChanged += new System.EventHandler(this.txtMuestraNombre_TextChanged);
             // 
             // lblCUIT
             // 
@@ -404,7 +394,7 @@
             // 
             // grpDomicilio
             // 
-            this.grpDomicilio.Controls.Add(this.txtMuestraLocProvDom);
+            this.grpDomicilio.Controls.Add(this.lblMuestraLocProvDom);
             this.grpDomicilio.Controls.Add(this.label4);
             this.grpDomicilio.Controls.Add(this.lblNombreDom);
             this.grpDomicilio.Controls.Add(this.txtNombreDom);
@@ -424,16 +414,6 @@
             this.grpDomicilio.Size = new System.Drawing.Size(976, 186);
             this.grpDomicilio.TabIndex = 4;
             this.grpDomicilio.TabStop = false;
-            // 
-            // txtMuestraLocProvDom
-            // 
-            this.txtMuestraLocProvDom.Location = new System.Drawing.Point(680, 142);
-            this.txtMuestraLocProvDom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMuestraLocProvDom.Name = "txtMuestraLocProvDom";
-            this.txtMuestraLocProvDom.ReadOnly = true;
-            this.txtMuestraLocProvDom.Size = new System.Drawing.Size(223, 26);
-            this.txtMuestraLocProvDom.TabIndex = 12;
-            this.txtMuestraLocProvDom.TextChanged += new System.EventHandler(this.txtMuestraLocProvDom_TextChanged);
             // 
             // label4
             // 
@@ -837,7 +817,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(710, 1135);
+            this.btnConfirmar.Location = new System.Drawing.Point(712, 1124);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(166, 40);
@@ -847,7 +827,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(886, 1135);
+            this.btnCancelar.Location = new System.Drawing.Point(886, 1121);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 40);
@@ -903,6 +883,27 @@
             this.radioBtnCD.Text = "CD";
             this.radioBtnCD.UseVisualStyleBackColor = true;
             this.radioBtnCD.CheckedChanged += new System.EventHandler(this.radioBtnCD_CheckedChanged);
+            // 
+            // lblMuestraNombre
+            // 
+            this.lblMuestraNombre.AutoSize = true;
+            this.lblMuestraNombre.Location = new System.Drawing.Point(100, 69);
+            this.lblMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraNombre.Name = "lblMuestraNombre";
+            this.lblMuestraNombre.Size = new System.Drawing.Size(135, 20);
+            this.lblMuestraNombre.TabIndex = 9;
+            this.lblMuestraNombre.Text = "[muestra Nombre]";
+           
+            // 
+            // lblMuestraLocProvDom
+            // 
+            this.lblMuestraLocProvDom.AutoSize = true;
+            this.lblMuestraLocProvDom.Location = new System.Drawing.Point(680, 145);
+            this.lblMuestraLocProvDom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraLocProvDom.Name = "lblMuestraLocProvDom";
+            this.lblMuestraLocProvDom.Size = new System.Drawing.Size(231, 20);
+            this.lblMuestraLocProvDom.TabIndex = 12;
+            this.lblMuestraLocProvDom.Text = "[muestra Localidaad / Provincia]";
             // 
             // ImposicionCallCenter
             // 
@@ -1034,7 +1035,7 @@
         private System.Windows.Forms.RadioButton radioBtnAgencia;
         private System.Windows.Forms.RadioButton radioBtnCD;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMuestraNombre;
-        private System.Windows.Forms.TextBox txtMuestraLocProvDom;
+        private System.Windows.Forms.Label lblMuestraNombre;
+        private System.Windows.Forms.Label lblMuestraLocProvDom;
     }
 }

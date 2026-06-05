@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUTASA.ImposicionCD
 {
-    internal class Clientes
+    internal class Cliente
     {
         public int Id { get; set; }
         public string NombreCompleto { get; set; }

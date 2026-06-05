@@ -31,6 +31,9 @@ namespace TUTASA.Forms.CD
             grpDomicilio.Enabled = false;
             grpAgencia.Enabled = false;
             grpCD.Enabled = false;
+
+            lblMuestraNombre.Text = "";
+            lblMuestraLocProv.Text = "";
         }
 
         private void listViewBultos_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +73,15 @@ namespace TUTASA.Forms.CD
                 return;
             }
 
-            // 3) Buscar el cliente por CUIT
+            // 3) Validar que el CUIT tenga exactamente 11 dígitos
+            if (input.Length != 11)
+            {
+                MessageBox.Show("El CUIT debe tener exactamente 11 dígitos.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4) Buscar el cliente por CUIT
             var cliente = modelo.ObtenerClientes().FirstOrDefault(c => c.CUIT == input);
 
 
@@ -81,13 +92,13 @@ namespace TUTASA.Forms.CD
                     "Sin resultados",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                txtMuestraNombre.Clear();
+                lblMuestraNombre.Text = "";
                 return;
             }
 
-            // 4) Mostrar el nombre en el campo de solo lectura
+            // 5) Mostrar el nombre en el campo de solo lectura
             modelo.SetClienteSeleccionado(cliente);
-            txtMuestraNombre.Text = cliente.NombreCompleto;
+            lblMuestraNombre.Text = cliente.NombreCompleto;
         }
 
         private void txtMuestraNombre_TextChanged(object sender, EventArgs e)
@@ -244,11 +255,11 @@ namespace TUTASA.Forms.CD
             {
                 MessageBox.Show("No se encontró el código postal ingresado.", "Sin resultados",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMuestraLocProvDom.Clear();
+                lblMuestraLocProv.Text = "";
                 return;
             }
 
-            txtMuestraLocProvDom.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
+            lblMuestraLocProv.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
         }
 
         private void txtMuestraLocProvDom_TextChanged(object sender, EventArgs e)
@@ -463,7 +474,7 @@ namespace TUTASA.Forms.CD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtMuestraLocProvDom.Text))
+                if (string.IsNullOrWhiteSpace(lblMuestraLocProv.Text))
                 {
                     MessageBox.Show("Debe buscar el código postal del destinatario.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);

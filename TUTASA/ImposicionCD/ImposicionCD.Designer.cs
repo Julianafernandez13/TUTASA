@@ -14,7 +14,6 @@
         private void InitializeComponent()
         {
             this.grpRemitente = new System.Windows.Forms.GroupBox();
-            this.txtMuestraNombre = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -32,7 +31,6 @@
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
-            this.txtMuestraLocProvDom = new System.Windows.Forms.TextBox();
             this.lblProvinciaRetiro = new System.Windows.Forms.Label();
             this.lblNombreDom = new System.Windows.Forms.Label();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
@@ -77,6 +75,8 @@
             this.radioBtnAgencia = new System.Windows.Forms.RadioButton();
             this.radioBtnDomicilio = new System.Windows.Forms.RadioButton();
             this.lblDestino = new System.Windows.Forms.Label();
+            this.lblMuestraLocProv = new System.Windows.Forms.Label();
+            this.lblMuestraNombre = new System.Windows.Forms.Label();
             this.grpRemitente.SuspendLayout();
             this.grpBultos.SuspendLayout();
             this.grpDomicilio.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             // grpRemitente
             // 
-            this.grpRemitente.Controls.Add(this.txtMuestraNombre);
+            this.grpRemitente.Controls.Add(this.lblMuestraNombre);
             this.grpRemitente.Controls.Add(this.lblCUIT);
             this.grpRemitente.Controls.Add(this.txtCUIT);
             this.grpRemitente.Controls.Add(this.btnBuscarCliente);
@@ -99,16 +99,6 @@
             this.grpRemitente.TabIndex = 0;
             this.grpRemitente.TabStop = false;
             this.grpRemitente.Text = "Datos del Remitente";
-            // 
-            // txtMuestraNombre
-            // 
-            this.txtMuestraNombre.Location = new System.Drawing.Point(91, 66);
-            this.txtMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMuestraNombre.Name = "txtMuestraNombre";
-            this.txtMuestraNombre.ReadOnly = true;
-            this.txtMuestraNombre.Size = new System.Drawing.Size(223, 26);
-            this.txtMuestraNombre.TabIndex = 4;
-            this.txtMuestraNombre.TextChanged += new System.EventHandler(this.txtMuestraNombre_TextChanged);
             // 
             // lblCUIT
             // 
@@ -284,7 +274,7 @@
             // 
             // grpDomicilio
             // 
-            this.grpDomicilio.Controls.Add(this.txtMuestraLocProvDom);
+            this.grpDomicilio.Controls.Add(this.lblMuestraLocProv);
             this.grpDomicilio.Controls.Add(this.lblProvinciaRetiro);
             this.grpDomicilio.Controls.Add(this.lblNombreDom);
             this.grpDomicilio.Controls.Add(this.txtNombreDom);
@@ -304,16 +294,6 @@
             this.grpDomicilio.Size = new System.Drawing.Size(976, 186);
             this.grpDomicilio.TabIndex = 8;
             this.grpDomicilio.TabStop = false;
-            // 
-            // txtMuestraLocProvDom
-            // 
-            this.txtMuestraLocProvDom.Location = new System.Drawing.Point(652, 149);
-            this.txtMuestraLocProvDom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMuestraLocProvDom.Name = "txtMuestraLocProvDom";
-            this.txtMuestraLocProvDom.ReadOnly = true;
-            this.txtMuestraLocProvDom.Size = new System.Drawing.Size(223, 26);
-            this.txtMuestraLocProvDom.TabIndex = 12;
-            this.txtMuestraLocProvDom.TextChanged += new System.EventHandler(this.txtMuestraLocProvDom_TextChanged);
             // 
             // lblProvinciaRetiro
             // 
@@ -783,6 +763,26 @@
             this.lblDestino.TabIndex = 15;
             this.lblDestino.Text = "Tipo de entrega:";
             // 
+            // lblMuestraLocProv
+            // 
+            this.lblMuestraLocProv.AutoSize = true;
+            this.lblMuestraLocProv.Location = new System.Drawing.Point(653, 149);
+            this.lblMuestraLocProv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraLocProv.Name = "lblMuestraLocProv";
+            this.lblMuestraLocProv.Size = new System.Drawing.Size(231, 20);
+            this.lblMuestraLocProv.TabIndex = 13;
+            this.lblMuestraLocProv.Text = "[muestra Localidaad / Provincia]";
+            // 
+            // lblMuestraNombre
+            // 
+            this.lblMuestraNombre.AutoSize = true;
+            this.lblMuestraNombre.Location = new System.Drawing.Point(89, 69);
+            this.lblMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraNombre.Name = "lblMuestraNombre";
+            this.lblMuestraNombre.Size = new System.Drawing.Size(135, 20);
+            this.lblMuestraNombre.TabIndex = 11;
+            this.lblMuestraNombre.Text = "[muestra Nombre]";
+            // 
             // frmImposicionCD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -898,7 +898,7 @@
         private System.Windows.Forms.RadioButton radioBtnDomicilio;
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.Label lblProvinciaRetiro;
-        private System.Windows.Forms.TextBox txtMuestraNombre;
-        private System.Windows.Forms.TextBox txtMuestraLocProvDom;
+        private System.Windows.Forms.Label lblMuestraLocProv;
+        private System.Windows.Forms.Label lblMuestraNombre;
     }
 }

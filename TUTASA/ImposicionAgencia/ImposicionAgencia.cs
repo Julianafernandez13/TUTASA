@@ -31,6 +31,9 @@ namespace TUTASA.Forms.Agencia
             grpDomicilio.Enabled = false;
             grpAgencia.Enabled = false;
             grpCD.Enabled = false;
+
+            lblMuestraNombre.Text = "";
+            lblMuestraLocProv.Text = "";
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -59,7 +62,15 @@ namespace TUTASA.Forms.Agencia
                 return;
             }
 
-            // 3) Buscar el cliente por CUIT
+            // 3) Validar que el CUIT tenga exactamente 11 dígitos
+            if (input.Length != 11)
+            {
+                MessageBox.Show("El CUIT debe tener exactamente 11 dígitos.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4) Buscar el cliente por CUIT
             var cliente = modelo.ObtenerClientes().FirstOrDefault(c => c.CUIT == input);
 
 
@@ -70,13 +81,13 @@ namespace TUTASA.Forms.Agencia
                     "Sin resultados",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                txtMuestraNombre.Clear();
+                lblMuestraNombre.Text = "";
                 return;
             }
 
-            // 4) Mostrar el nombre en el campo de solo lectura
+            // 5) Mostrar el nombre en el campo de solo lectura
             modelo.SetClienteSeleccionado(cliente);
-            txtMuestraNombre.Text = cliente.NombreCompleto;
+            lblMuestraNombre.Text = cliente.NombreCompleto;
         }
 
         private void btnAgregarBulto_Click(object sender, EventArgs e)
@@ -183,11 +194,11 @@ namespace TUTASA.Forms.Agencia
             {
                 MessageBox.Show("No se encontró el código postal ingresado.", "Sin resultados",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textLocProvDom.Clear();
+                lblMuestraLocProv.Text = "";
                 return;
             }
 
-            textLocProvDom.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
+            lblMuestraLocProv.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
 
         }
 
@@ -347,7 +358,7 @@ namespace TUTASA.Forms.Agencia
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(textLocProvDom.Text))
+                if (string.IsNullOrWhiteSpace(lblMuestraLocProv.Text))
                 {
                     MessageBox.Show("Debe buscar el código postal del destinatario.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -423,7 +434,7 @@ namespace TUTASA.Forms.Agencia
             // 6) Armar el destinatario según tipo de entrega y asignarlo a los bultos
             Destinatario destinatario;
 
-            if (radioBtnDomicilio.Checked)
+            if (radioBtnDomicilio.Checked) //si es domicilio, se construye el destinatario con los datos del grupo de domicilio
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreDom.Text.Trim(),
@@ -434,7 +445,7 @@ namespace TUTASA.Forms.Agencia
                     codigoPostal: txtCPDom.Text.Trim()
                 );
             }
-            else if (radioBtnAgencia.Checked)
+            else if (radioBtnAgencia.Checked) //si es agencia, se construye el destinatario con los datos del grupo de agencia
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreAg.Text.Trim(),
@@ -444,7 +455,7 @@ namespace TUTASA.Forms.Agencia
                     agencia: (Agencias)cmbAgencia.SelectedItem
                 );
             }
-            else
+            else //si es CD, se construye el destinatario con los datos del grupo de CD
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreCD.Text.Trim(),
@@ -455,7 +466,10 @@ namespace TUTASA.Forms.Agencia
                 );
             }
 
-            modelo.AsignarDestinatarioAGuias(destinatario);
+            
+            modelo.SetDatosRetiro(modelo.GetDatosRetiroAgencia()); //se asignan los datos de retiro de agencia al modelo para luego asignarlos a las guías
+
+            modelo.AsignarDestinatarioAGuias(destinatario); //se asigna el destinatario construido a cada una de las guías de los bultos
 
             MessageBox.Show("Imposición registrada correctamente.", "Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
 

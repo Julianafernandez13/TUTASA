@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TUTASA.ImposicionAgencia
+namespace TUTASA.ImposicionCallCenter
 {
     internal class Agencias
     {
@@ -12,7 +12,5 @@ namespace TUTASA.ImposicionAgencia
         public string nombreAgencia { get; set; }
         // Relación: la agencia pertenece a una localidad identificada por el código postal
         public string CodigoPostal { get; set; }
-        public string Domicilio { get; set; }
-
     }
 }

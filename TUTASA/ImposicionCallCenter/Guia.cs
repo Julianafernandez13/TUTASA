@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TUTASA.Enums;
 
-
-namespace TUTASA.ImposicionCD
+namespace TUTASA.ImposicionCallCenter
 {
     internal class Guia
     {

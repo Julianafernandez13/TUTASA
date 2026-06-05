@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TUTASA.Enums;
 
+
 namespace TUTASA.ImposicionAgencia
 {
     
@@ -12,6 +13,36 @@ namespace TUTASA.ImposicionAgencia
     {
         private List<Guia> guias = new List<Guia>();
         private Cliente clienteSeleccionado = null;
+        private DatosRetiro datosRetiro = null;
+
+        // Agencia activa hardcodeada para el prototipo
+        private Agencias agenciaActiva = new Agencias
+        {
+            idAgencia = 1,
+            nombreAgencia = "Agencia La Plata Centro",
+            CodigoPostal = "1900",
+            Domicilio = "Calle 7 Nro 123"
+        };
+
+        internal Agencias GetAgenciaActiva()
+        {
+            return agenciaActiva;
+        }
+
+        internal DatosRetiro GetDatosRetiroAgencia()
+        {
+            var cp = ObtenerCodigosPostales()
+                     .FirstOrDefault(c => c.idCodPostal == agenciaActiva.CodigoPostal);
+
+            return new DatosRetiro
+            {
+                DomicilioRetiro = agenciaActiva.Domicilio,
+                CodigoPostal = agenciaActiva.CodigoPostal,
+                Localidad = cp?.DescripcionLocalidad,
+                Provincia = cp?.DescripcionProvincia
+            };
+        }
+
 
         // Métodos para manejar el cliente seleccionado y los bultos
         internal void SetClienteSeleccionado(Cliente cliente)
@@ -23,6 +54,16 @@ namespace TUTASA.ImposicionAgencia
         internal Cliente GetClienteSeleccionado()
         {
             return clienteSeleccionado;
+        }
+
+        internal void SetDatosRetiro(DatosRetiro datos)
+        {
+            datosRetiro = datos;
+        }
+
+        internal DatosRetiro GetDatosRetiro()
+        {
+            return datosRetiro;
         }
 
         // Métodos para manejar los bultos
@@ -50,6 +91,7 @@ namespace TUTASA.ImposicionAgencia
             return guias;
         }
 
+        // Método para construir un destinatario a partir de los datos ingresados
         internal Destinatario ConstruirDestinatario(string nombre, string dni, string telefono, TipoEntrega tipo,string domicilio = null, string codigoPostal = null,Agencias agencia = null, CentrosDeDistribucion cd = null)
         {
             return new Destinatario
@@ -65,6 +107,7 @@ namespace TUTASA.ImposicionAgencia
             };
         }
 
+        // Método para asignar un destinatario a todos los bultos y actualizar su estado
         internal void AsignarDestinatarioAGuias(Destinatario destinatario)
         {
             foreach (var bulto in guias)
@@ -80,12 +123,12 @@ namespace TUTASA.ImposicionAgencia
         {
             return new List<Agencias>()
             {
-                new Agencias { idAgencia = 1, nombreAgencia = "Agencia La Plata Centro", CodigoPostal = "1900" },
-                new Agencias { idAgencia = 2, nombreAgencia = "Agencia La Plata Norte",  CodigoPostal = "1900" },
-                new Agencias { idAgencia = 3, nombreAgencia = "Agencia Quilmes",         CodigoPostal = "1800" },
-                new Agencias { idAgencia = 4, nombreAgencia = "Agencia Morón",           CodigoPostal = "1700" },
-                new Agencias { idAgencia = 5, nombreAgencia = "Agencia CABA Centro",     CodigoPostal = "1000" },
-                new Agencias { idAgencia = 6, nombreAgencia = "Agencia Córdoba",         CodigoPostal = "5000" },
+                new Agencias { idAgencia = 1, nombreAgencia = "Agencia La Plata Centro", CodigoPostal = "1900", Domicilio = "Calle 7 Nro 123"        },
+                new Agencias { idAgencia = 2, nombreAgencia = "Agencia La Plata Norte",  CodigoPostal = "1900", Domicilio = "Calle 44 Nro 456"       },
+                new Agencias { idAgencia = 3, nombreAgencia = "Agencia Quilmes",         CodigoPostal = "1800", Domicilio = "Av. Mitre Nro 789"      },
+                new Agencias { idAgencia = 4, nombreAgencia = "Agencia Morón",           CodigoPostal = "1700", Domicilio = "Av. Rivadavia Nro 321"  },
+                new Agencias { idAgencia = 5, nombreAgencia = "Agencia CABA Centro",     CodigoPostal = "1000", Domicilio = "Av. Corrientes Nro 654" },
+                new Agencias { idAgencia = 6, nombreAgencia = "Agencia Córdoba",         CodigoPostal = "5000", Domicilio = "Av. Colón Nro 987"      },
             };
 
         }
