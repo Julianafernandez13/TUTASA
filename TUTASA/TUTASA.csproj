@@ -64,7 +64,9 @@
     <Compile Include="ConsultaTracking\ConsultaTrackingModelo.cs" />
     <Compile Include="ConsultaTracking\EventoHistorial.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
+    <Compile Include="EmitirFactura\Cliente.cs" />
     <Compile Include="EmitirFactura\EmitirFacturaModelo.cs" />
+    <Compile Include="EmitirFactura\MovimientoPendiente.cs" />
     <Compile Include="Enums\CategoriaBulto.cs" />
     <Compile Include="Enums\EstadoGuia.cs" />
     <Compile Include="Enums\TipoEntrega.cs" />

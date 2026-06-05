@@ -15,100 +15,200 @@ namespace TUTASA.Forms.Administracion
     {
         //instancia del modelo de EmitirFactura
         private EmitirFacturaModelo modelo = new EmitirFacturaModelo();
+        private Cliente clienteActual = null;
+        private List<MovimientoPendiente> movimientosActuales = new List<MovimientoPendiente>();
         public EmitirFactura()
         {
             InitializeComponent();
         }
 
-       
-        private void groupBuscarCliente_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewMovimientos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // ── LOAD ─────────────────────────────────────────────
         private void EmitirFactura_Load(object sender, EventArgs e)
         {
+            // Cargar meses
+            cmbMes.Items.Clear();
+            cmbMes.Items.Add("Enero");
+            cmbMes.Items.Add("Febrero");
+            cmbMes.Items.Add("Marzo");
+            cmbMes.Items.Add("Abril");
+            cmbMes.Items.Add("Mayo");
+            cmbMes.Items.Add("Junio");
+            cmbMes.Items.Add("Julio");
+            cmbMes.Items.Add("Agosto");
+            cmbMes.Items.Add("Septiembre");
+            cmbMes.Items.Add("Octubre");
+            cmbMes.Items.Add("Noviembre");
+            cmbMes.Items.Add("Diciembre");
+
+            // Cargar años
+            cmbAño.Items.Clear();
+            cmbAño.Items.Add("2025");
+            cmbAño.Items.Add("2026");
+            cmbAño.Items.Add("2027");
+
+            // Seleccionar mes y año actual por defecto
+            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+            cmbAño.SelectedItem = DateTime.Now.Year.ToString();
+
+            // Deshabilitar botón emitir hasta que haya movimientos
+            btnEmitirFactura.Enabled = false;
+
+            // Limpiar tabla y total
+            listViewMovimientos.Items.Clear();
+            lblMostrarTotal.Text = "";
 
         }
 
-        private void groupEmitirFactura_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCUIT_Click(object sender, EventArgs e)
-        {
-
-        }
+        // ── BUSCAR ───────────────────────────────────────────
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            // Validar que el CUIT no esté vacío
+            if (string.IsNullOrWhiteSpace(txtCUIT.Text))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un CUIT para buscar.",
+                    "Campo requerido",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtCUIT.Focus();
+                return;
+            }
 
+            // Validar que el CUIT tenga exactamente 11 dígitos numéricos
+            if (txtCUIT.Text.Trim().Length != 11 || !long.TryParse(txtCUIT.Text.Trim(), out _))
+            {
+                MessageBox.Show(
+                    "El CUIT ingresado es inválido. Debe contener 11 dígitos numéricos.",
+                    "CUIT inválido",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtCUIT.Clear();
+                txtCUIT.Focus();
+                return;
+            }
+
+            // Buscar cliente
+            clienteActual = modelo.BuscarClientePorCUIT(txtCUIT.Text.Trim());
+
+            if (clienteActual == null)
+            {
+                MessageBox.Show(
+                    "El CUIT ingresado no corresponde a ningún cliente registrado en el sistema.",
+                    "Cliente no encontrado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtCUIT.Clear();
+                txtCUIT.Focus();
+                lblMostrarCliente.Text = "";
+                return;
+            }
+
+            // Mostrar nombre del cliente
+            lblMostrarCliente.Text = clienteActual.NombreCompleto;
+
+            // Cargar movimientos del período seleccionado
+            CargarMovimientos();
         }
 
-        private void lblCliente_Click(object sender, EventArgs e)
+        // ── CARGAR MOVIMIENTOS ───────────────────────────────
+        private void CargarMovimientos()
         {
+            if (clienteActual == null) return;
+            if (cmbMes.SelectedIndex < 0 || cmbAño.SelectedIndex < 0) return;
 
+            int mes = cmbMes.SelectedIndex + 1;
+            int anio = int.Parse(cmbAño.SelectedItem.ToString());
+
+            movimientosActuales = modelo.ObtenerMovimientosPendientes(clienteActual.Id, mes, anio);
+
+            listViewMovimientos.Items.Clear();
+            lblMostrarTotal.Text = "";
+            btnEmitirFactura.Enabled = false;
+
+            if (movimientosActuales.Count == 0)
+            {
+                MessageBox.Show(
+                    "No existen movimientos pendientes de facturación para este cliente en el período indicado.",
+                    "Sin movimientos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            // Cargar filas en la ListView
+            foreach (var m in movimientosActuales)
+            {
+                decimal totalConIVA = modelo.CalcularTotal(
+                    new List<MovimientoPendiente> { m },
+                    clienteActual.CondicionIVA);
+
+                ListViewItem item = new ListViewItem(m.NroGuia);
+                item.SubItems.Add(m.Fecha.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(m.Origen);
+                item.SubItems.Add(m.Destino);
+                item.SubItems.Add(m.Categoria);
+                item.SubItems.Add("$" + totalConIVA.ToString("N2"));
+                item.Tag = m;
+                listViewMovimientos.Items.Add(item);
+            }
+
+            // Mostrar total general
+            decimal totalGeneral = modelo.CalcularTotal(movimientosActuales, clienteActual.CondicionIVA);
+            lblMostrarTotal.Text = "$" + totalGeneral.ToString("N2");
+
+            btnEmitirFactura.Enabled = true;
         }
 
-        private void lblMostrarCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupPeriodo_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMes_Click(object sender, EventArgs e)
-        {
-
-        }
+        // ── CAMBIO DE MES O AÑO ──────────────────────────────
 
         private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblAño_Click(object sender, EventArgs e)
-        {
-
+            CargarMovimientos();
         }
 
         private void cmbAño_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            CargarMovimientos();
         }
 
-        private void groupMovimientos_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMostrarTotal_Click(object sender, EventArgs e)
-        {
-
-        }
+        // ── EMITIR FACTURA ───────────────────────────────────
 
         private void btnEmitirFactura_Click(object sender, EventArgs e)
         {
+            // Confirmación antes de emitir
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Confirma la emisión de la factura por $" + lblMostrarTotal.Text + " para el cliente " + clienteActual.NombreCompleto + "?",
+                "Confirmar emisión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmacion != DialogResult.Yes)
+                return;
+
+            // Marcar movimientos como facturados
+            modelo.MarcarComoFacturados(movimientosActuales);
+
+            MessageBox.Show(
+                "La factura fue emitida correctamente y los movimientos quedaron registrados como facturados.",
+                "Factura emitida",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            // Limpiar pantalla
+            txtCUIT.Clear();
+            lblMostrarCliente.Text = "";
+            listViewMovimientos.Items.Clear();
+            lblMostrarTotal.Text = "";
+            btnEmitirFactura.Enabled = false;
+            clienteActual = null;
+            movimientosActuales.Clear();
 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

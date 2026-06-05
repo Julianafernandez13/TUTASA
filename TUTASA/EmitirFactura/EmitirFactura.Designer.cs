@@ -80,7 +80,6 @@
             this.groupEmitirFactura.TabIndex = 0;
             this.groupEmitirFactura.TabStop = false;
             this.groupEmitirFactura.Text = "TUTASA - Emitir Factura";
-            this.groupEmitirFactura.Enter += new System.EventHandler(this.groupEmitirFactura_Enter);
             // 
             // btnCancelar
             // 
@@ -113,7 +112,6 @@
             this.lblMostrarTotal.Name = "lblMostrarTotal";
             this.lblMostrarTotal.Size = new System.Drawing.Size(159, 27);
             this.lblMostrarTotal.TabIndex = 5;
-            this.lblMostrarTotal.Click += new System.EventHandler(this.lblMostrarTotal_Click);
             // 
             // lblTotal
             // 
@@ -124,7 +122,6 @@
             this.lblTotal.Size = new System.Drawing.Size(104, 16);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "Total a Facturar:";
-            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // groupMovimientos
             // 
@@ -138,7 +135,7 @@
             this.groupMovimientos.TabIndex = 3;
             this.groupMovimientos.TabStop = false;
             this.groupMovimientos.Text = "Movimientos a Facturar";
-            this.groupMovimientos.Enter += new System.EventHandler(this.groupMovimientos_Enter);
+           
             // 
             // listViewMovimientos
             // 
@@ -153,14 +150,14 @@
             this.listViewMovimientos.FullRowSelect = true;
             this.listViewMovimientos.GridLines = true;
             this.listViewMovimientos.HideSelection = false;
-            this.listViewMovimientos.Location = new System.Drawing.Point(7, 23);
+            this.listViewMovimientos.Location = new System.Drawing.Point(13, 23);
             this.listViewMovimientos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMovimientos.Name = "listViewMovimientos";
-            this.listViewMovimientos.Size = new System.Drawing.Size(840, 87);
+            this.listViewMovimientos.Size = new System.Drawing.Size(841, 85);
             this.listViewMovimientos.TabIndex = 1;
             this.listViewMovimientos.UseCompatibleStateImageBehavior = false;
             this.listViewMovimientos.View = System.Windows.Forms.View.Details;
-            this.listViewMovimientos.SelectedIndexChanged += new System.EventHandler(this.listViewMovimientos_SelectedIndexChanged);
+           
             // 
             // columnHeader1
             // 
@@ -216,7 +213,7 @@
             this.groupPeriodo.TabIndex = 2;
             this.groupPeriodo.TabStop = false;
             this.groupPeriodo.Text = "Periodo";
-            this.groupPeriodo.Enter += new System.EventHandler(this.groupPeriodo_Enter);
+          
             // 
             // cmbAño
             // 
@@ -268,7 +265,7 @@
             this.lblAño.Size = new System.Drawing.Size(38, 18);
             this.lblAño.TabIndex = 10;
             this.lblAño.Text = "Año:";
-            this.lblAño.Click += new System.EventHandler(this.lblAño_Click);
+            
             // 
             // lblMes
             // 
@@ -277,7 +274,7 @@
             this.lblMes.Size = new System.Drawing.Size(46, 18);
             this.lblMes.TabIndex = 9;
             this.lblMes.Text = "Mes:";
-            this.lblMes.Click += new System.EventHandler(this.lblMes_Click);
+            
             // 
             // label3
             // 
@@ -304,7 +301,7 @@
             this.groupBuscarCliente.TabIndex = 1;
             this.groupBuscarCliente.TabStop = false;
             this.groupBuscarCliente.Text = "Buscar Cliente";
-            this.groupBuscarCliente.Enter += new System.EventHandler(this.groupBuscarCliente_Enter);
+           
             // 
             // btnBuscar
             // 
@@ -326,7 +323,7 @@
             this.lblMostrarCliente.Name = "lblMostrarCliente";
             this.lblMostrarCliente.Size = new System.Drawing.Size(373, 27);
             this.lblMostrarCliente.TabIndex = 4;
-            this.lblMostrarCliente.Click += new System.EventHandler(this.lblMostrarCliente_Click);
+            
             // 
             // txtCUIT
             // 
@@ -346,7 +343,7 @@
             this.lblCliente.Size = new System.Drawing.Size(51, 16);
             this.lblCliente.TabIndex = 2;
             this.lblCliente.Text = "Cliente:";
-            this.lblCliente.Click += new System.EventHandler(this.lblCliente_Click);
+            
             // 
             // lblCUIT
             // 
@@ -357,7 +354,7 @@
             this.lblCUIT.Size = new System.Drawing.Size(41, 16);
             this.lblCUIT.TabIndex = 1;
             this.lblCUIT.Text = "CUIT:";
-            this.lblCUIT.Click += new System.EventHandler(this.lblCUIT_Click);
+            
             // 
             // label2
             // 
