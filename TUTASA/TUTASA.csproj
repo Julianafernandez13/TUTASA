@@ -68,6 +68,7 @@
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
     <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
+    <Compile Include="RegistrarEntrega\Receptor.cs" />
     <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />
     <Compile Include="RendicionHDRdeTransporte\RendicionHDRTransporteModelo.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">
