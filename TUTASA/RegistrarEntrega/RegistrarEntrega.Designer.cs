@@ -61,7 +61,6 @@
             this.groupRegistrarEntrega.TabIndex = 0;
             this.groupRegistrarEntrega.TabStop = false;
             this.groupRegistrarEntrega.Text = "TUTASA - Registrar Entrega en CD";
-            this.groupRegistrarEntrega.Enter += new System.EventHandler(this.groupRegistrarEntrega_Enter);
             // 
             // lblEncomiendasEntregar
             // 
@@ -72,7 +71,6 @@
             this.lblEncomiendasEntregar.Size = new System.Drawing.Size(157, 16);
             this.lblEncomiendasEntregar.TabIndex = 14;
             this.lblEncomiendasEntregar.Text = "Encomiendas a entregar:";
-            this.lblEncomiendasEntregar.Click += new System.EventHandler(this.lblEncomiendasEntregar_Click);
             // 
             // listViewEncomiendas
             // 
@@ -89,7 +87,6 @@
             this.listViewEncomiendas.TabIndex = 5;
             this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
             this.listViewEncomiendas.View = System.Windows.Forms.View.Details;
-            this.listViewEncomiendas.SelectedIndexChanged += new System.EventHandler(this.listViewEncomiendas_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -147,7 +144,6 @@
             this.groupReceptor.TabIndex = 2;
             this.groupReceptor.TabStop = false;
             this.groupReceptor.Text = "Datos del Receptor";
-            this.groupReceptor.Enter += new System.EventHandler(this.groupReceptor_Enter);
             // 
             // btnBuscar
             // 
@@ -169,7 +165,6 @@
             this.txtDNIReceptor.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDNIReceptor.Size = new System.Drawing.Size(159, 22);
             this.txtDNIReceptor.TabIndex = 16;
-            this.txtDNIReceptor.TextChanged += new System.EventHandler(this.txtDNIReceptor_TextChanged);
             // 
             // label9
             // 
@@ -190,7 +185,6 @@
             this.lblDNIReceptor.Size = new System.Drawing.Size(92, 16);
             this.lblDNIReceptor.TabIndex = 13;
             this.lblDNIReceptor.Text = "DNI Receptor:";
-            this.lblDNIReceptor.Click += new System.EventHandler(this.lblDNIReceptor_Click);
             // 
             // frmEntregaCD
             // 

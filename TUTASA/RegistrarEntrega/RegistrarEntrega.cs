@@ -13,7 +13,7 @@ namespace TUTASA.Forms.CD
 {
     public partial class frmEntregaCD : Form
     {
-        //instancia del modelo de Registrar Entrega
+        //Instancia del modelo de Registrar Entrega
         private RegistrarEntregaModelo modelo = new RegistrarEntregaModelo();
         public frmEntregaCD()
         {
@@ -27,52 +27,85 @@ namespace TUTASA.Forms.CD
 
         private void frmEntregaCD_Load(object sender, EventArgs e)
         {
+            listViewEncomiendas.View = View.Details;
+            listViewEncomiendas.FullRowSelect = true;
+            listViewEncomiendas.GridLines = true;
 
-        }
-
-        private void groupRegistrarEntrega_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupReceptor_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDNIReceptor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIReceptor_TextChanged(object sender, EventArgs e)
-        {
-
+            listViewEncomiendas.Columns.Add("N° de Guía", 150);
+            listViewEncomiendas.Columns.Add("Cliente", 170);
+            listViewEncomiendas.Columns.Add("Nombre del Receptor", 180);
+            listViewEncomiendas.Columns.Add("DNI del Receptor", 130);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtDNIReceptor.Text))
+            {
+                MessageBox.Show(
+                    "Debe ingresar un DNI.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
 
-        }
+            if (!modelo.BuscarReceptor(txtDNIReceptor.Text))
+            {
+                txtDNIReceptor.Clear();
+                txtDNIReceptor.Focus();
+                return;
+            }
 
-        private void lblEncomiendasEntregar_Click(object sender, EventArgs e)
-        {
+            lvEncomiendas.Items.Clear();
 
-        }
+            var guias = modelo.ObtenerGuiasDisponibles();
 
-        private void listViewEncomiendas_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            if (guias.Count == 0)
+            {
+                MessageBox.Show(
+                    "El receptor no tiene encomiendas disponibles para retiro.",
+                    "Sin encomiendas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                modelo.LimpiarSeleccion();
+                return;
+            }
 
+            foreach (var guia in guias)
+            {
+                var item = new ListViewItem(guia.NroTracking);
+                item.SubItems.Add(guia.NombreRemitente);
+                item.SubItems.Add(guia.NombreDestinatario);
+                item.SubItems.Add(modelo.ReceptorSeleccionado.Dni);
+                listViewEncomiendas.Items.Add(item);
+            }
         }
 
         private void btnConfirmarEntrega_Click(object sender, EventArgs e)
         {
+            if (!modelo.ConfirmarEntrega())
+                return;
 
+            MessageBox.Show(
+                "Las encomiendas fueron entregadas correctamente.",
+                "Entrega registrada",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtDniReceptor.Clear();
+            lvEncomiendas.Items.Clear();
+            modelo.LimpiarSeleccion();
+            txtDniReceptor.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            LimpiarFormulario();
         }
     }
 }
