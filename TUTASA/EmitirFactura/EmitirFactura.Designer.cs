@@ -56,6 +56,7 @@
             this.lblCUIT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.groupEmitirFactura.SuspendLayout();
             this.groupMovimientos.SuspendLayout();
             this.groupPeriodo.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // groupEmitirFactura
             // 
+            this.groupEmitirFactura.Controls.Add(this.btnBuscarPeriodo);
             this.groupEmitirFactura.Controls.Add(this.btnCancelar);
             this.groupEmitirFactura.Controls.Add(this.btnEmitirFactura);
             this.groupEmitirFactura.Controls.Add(this.lblMostrarTotal);
@@ -135,7 +137,6 @@
             this.groupMovimientos.TabIndex = 3;
             this.groupMovimientos.TabStop = false;
             this.groupMovimientos.Text = "Movimientos a Facturar";
-           
             // 
             // listViewMovimientos
             // 
@@ -157,7 +158,6 @@
             this.listViewMovimientos.TabIndex = 1;
             this.listViewMovimientos.UseCompatibleStateImageBehavior = false;
             this.listViewMovimientos.View = System.Windows.Forms.View.Details;
-           
             // 
             // columnHeader1
             // 
@@ -213,7 +213,6 @@
             this.groupPeriodo.TabIndex = 2;
             this.groupPeriodo.TabStop = false;
             this.groupPeriodo.Text = "Periodo";
-          
             // 
             // cmbAño
             // 
@@ -234,7 +233,7 @@
             this.cmbAño.Name = "cmbAño";
             this.cmbAño.Size = new System.Drawing.Size(86, 24);
             this.cmbAño.TabIndex = 12;
-            this.cmbAño.SelectedIndexChanged += new System.EventHandler(this.cmbAño_SelectedIndexChanged);
+          
             // 
             // cmbMes
             // 
@@ -256,7 +255,7 @@
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.Size = new System.Drawing.Size(60, 24);
             this.cmbMes.TabIndex = 11;
-            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.cmbMes_SelectedIndexChanged);
+           
             // 
             // lblAño
             // 
@@ -265,7 +264,6 @@
             this.lblAño.Size = new System.Drawing.Size(38, 18);
             this.lblAño.TabIndex = 10;
             this.lblAño.Text = "Año:";
-            
             // 
             // lblMes
             // 
@@ -274,7 +272,6 @@
             this.lblMes.Size = new System.Drawing.Size(46, 18);
             this.lblMes.TabIndex = 9;
             this.lblMes.Text = "Mes:";
-            
             // 
             // label3
             // 
@@ -301,7 +298,6 @@
             this.groupBuscarCliente.TabIndex = 1;
             this.groupBuscarCliente.TabStop = false;
             this.groupBuscarCliente.Text = "Buscar Cliente";
-           
             // 
             // btnBuscar
             // 
@@ -323,7 +319,6 @@
             this.lblMostrarCliente.Name = "lblMostrarCliente";
             this.lblMostrarCliente.Size = new System.Drawing.Size(373, 27);
             this.lblMostrarCliente.TabIndex = 4;
-            
             // 
             // txtCUIT
             // 
@@ -343,7 +338,6 @@
             this.lblCliente.Size = new System.Drawing.Size(51, 16);
             this.lblCliente.TabIndex = 2;
             this.lblCliente.Text = "Cliente:";
-            
             // 
             // lblCUIT
             // 
@@ -354,7 +348,6 @@
             this.lblCUIT.Size = new System.Drawing.Size(41, 16);
             this.lblCUIT.TabIndex = 1;
             this.lblCUIT.Text = "CUIT:";
-            
             // 
             // label2
             // 
@@ -373,6 +366,16 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 0;
+            // 
+            // btnBuscarPeriodo
+           
+            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
+            this.btnBuscarPeriodo.Location = new System.Drawing.Point(290, 14); // ajustá X,Y según donde quede bien
+            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
+            this.btnBuscarPeriodo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarPeriodo.Text = "Buscar";
+            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
+            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
             // 
             // EmitirFactura
             // 
@@ -426,5 +429,6 @@
         private System.Windows.Forms.Label lblAño;
         private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnBuscarPeriodo;
     }
 }

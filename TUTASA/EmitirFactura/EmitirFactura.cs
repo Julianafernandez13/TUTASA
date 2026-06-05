@@ -107,8 +107,7 @@ namespace TUTASA.Forms.Administracion
             // Mostrar nombre del cliente
             lblMostrarCliente.Text = clienteActual.NombreCompleto;
 
-            // Cargar movimientos del período seleccionado
-            CargarMovimientos();
+  
         }
 
         // ── CARGAR MOVIMIENTOS ───────────────────────────────
@@ -160,18 +159,6 @@ namespace TUTASA.Forms.Administracion
             btnEmitirFactura.Enabled = true;
         }
 
-        // ── CAMBIO DE MES O AÑO ──────────────────────────────
-
-        private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarMovimientos();
-        }
-
-        private void cmbAño_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarMovimientos();
-        }
-
         // ── EMITIR FACTURA ───────────────────────────────────
 
         private void btnEmitirFactura_Click(object sender, EventArgs e)
@@ -209,6 +196,32 @@ namespace TUTASA.Forms.Administracion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // ── BUSCAR PERÍODO ───────────────────────────────────
+        private void btnBuscarPeriodo_Click(object sender, EventArgs e)
+        {
+            if (clienteActual == null)
+            {
+                MessageBox.Show(
+                    "Primero debe buscar un cliente ingresando el CUIT.",
+                    "Cliente no seleccionado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cmbMes.SelectedIndex < 0 || cmbAño.SelectedIndex < 0)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar un mes y un año para buscar los movimientos.",
+                    "Período incompleto",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            CargarMovimientos();
         }
     }
 }
