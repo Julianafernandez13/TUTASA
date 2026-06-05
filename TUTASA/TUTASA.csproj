@@ -76,6 +76,12 @@
     <Compile Include="ImposicionAgencia\Guia.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
     <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
+    <Compile Include="ImposicionCD\Agencias.cs" />
+    <Compile Include="ImposicionCD\CentrosDeDistribucion.cs" />
+    <Compile Include="ImposicionCD\Clientes.cs" />
+    <Compile Include="ImposicionCD\CodigoPostal.cs" />
+    <Compile Include="ImposicionCD\Destinatario.cs" />
+    <Compile Include="ImposicionCD\Guia.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
     <Compile Include="RegistrarEntrega\Receptor.cs" />
     <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />

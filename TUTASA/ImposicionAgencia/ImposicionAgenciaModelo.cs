@@ -71,12 +71,9 @@ namespace TUTASA.ImposicionAgencia
             {
                 bulto.Destinatario = destinatario;
 
-                // CD: queda solo impuesta, no hay retiro
-                // Domicilio o Agencia: queda impuesta y pendiente de retiro
-                bulto.Estado = destinatario.TipoEntrega == TipoEntrega.CD
-                    ? EstadoGuia.Impuesta
-                    : EstadoGuia.ImpuestaPendienteDeRetiro;
+                bulto.Estado = EstadoGuia.ImpuestaPendienteDeRetiro;
             }
+        
         }
         
         internal List<Agencias> ObtenerAgencias()
