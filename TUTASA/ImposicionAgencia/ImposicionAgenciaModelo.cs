@@ -10,18 +10,21 @@ namespace TUTASA.ImposicionAgencia
     internal class ImposicionAgenciaModelo
     {
         private List<Guia> guias = new List<Guia>();
-        private Cliente? clienteSeleccionado = null;
+        private Cliente clienteSeleccionado = null;
 
+        // Métodos para manejar el cliente seleccionado y los bultos
         internal void SetClienteSeleccionado(Cliente cliente)
         {
             clienteSeleccionado = cliente;
         }
 
-        internal Cliente? GetClienteSeleccionado()
+        // Método para obtener el cliente seleccionado
+        internal Cliente GetClienteSeleccionado()
         {
             return clienteSeleccionado;
         }
 
+        // Métodos para manejar los bultos
         internal void AgregarBulto(CategoriaBulto categoria)
         {
             guias.Add(new Guia
@@ -32,6 +35,7 @@ namespace TUTASA.ImposicionAgencia
             });
         }
 
+        // Método para quitar un bulto por su índice
         internal void QuitarBulto(int indice)
         {
             guias.RemoveAt(indice);
@@ -39,6 +43,7 @@ namespace TUTASA.ImposicionAgencia
                 guias[i].idGuia = i + 1;
         }
 
+        // Método para obtener la lista de bultos
         internal List<Guia> GetBultos()
         {
             return guias;

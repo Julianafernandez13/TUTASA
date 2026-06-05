@@ -269,7 +269,7 @@
             // 
             // btnDomicilio
             // 
-            this.btnDomicilio.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDomicilio.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDomicilio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDomicilio.ForeColor = System.Drawing.Color.White;

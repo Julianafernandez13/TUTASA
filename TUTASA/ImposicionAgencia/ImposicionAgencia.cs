@@ -25,6 +25,11 @@ namespace TUTASA.Forms.Agencia
         {
             // Los combos cmbAgencia y cmbCD se cargan dinámicamente
             // al buscar por código postal, no al abrir el formulario
+
+            //al cargar la pantalla, los grupos de domicilio, agencia y CD están deshabilitados hasta que se seleccione uno
+            grpDomicilio.Enabled = false;
+            grpAgencia.Enabled = false;
+            grpCD.Enabled = false;
         }
 
 
@@ -75,6 +80,7 @@ namespace TUTASA.Forms.Agencia
             }
 
             // 4) Mostrar el nombre en el campo de solo lectura
+            modelo.SetClienteSeleccionado(cliente);
             txtMuestraNombre.Text = cliente.NombreCompleto;
         }
 
@@ -156,7 +162,7 @@ namespace TUTASA.Forms.Agencia
             int indice = listViewBultos.SelectedIndices[0];
             modelo.QuitarBulto(indice);
             listViewBultos.Items.RemoveAt(indice);
-
+        
             // Actualizamos los números de guía en la lista después de quitar
             for (int i = 0; i < listViewBultos.Items.Count; i++)
                 listViewBultos.Items[i].Text = (i + 1).ToString();
@@ -164,17 +170,35 @@ namespace TUTASA.Forms.Agencia
 
         private void radioBtnDomicilio_CheckedChanged(object sender, EventArgs e)
         {
+            grpDomicilio.Enabled = true;
+            grpAgencia.Enabled = false;
+            grpCD.Enabled = false;
 
+            btnDomicilio.BackColor = SystemColors.ActiveCaption;
+            btnAgencia.BackColor = SystemColors.ControlDark;
+            btnCD.BackColor = SystemColors.ControlDark;
         }
 
         private void radioBtnAgencia_CheckedChanged(object sender, EventArgs e)
         {
+            grpDomicilio.Enabled = false;
+            grpAgencia.Enabled = true;
+            grpCD.Enabled = false;
 
+            btnDomicilio.BackColor = SystemColors.ControlDark;
+            btnAgencia.BackColor = SystemColors.ActiveCaption;
+            btnCD.BackColor = SystemColors.ControlDark;
         }
 
         private void radioBtnCD_CheckedChanged(object sender, EventArgs e)
         {
+            grpDomicilio.Enabled = false;
+            grpAgencia.Enabled = false;
+            grpCD.Enabled = true;
 
+            btnDomicilio.BackColor = SystemColors.ControlDark;
+            btnAgencia.BackColor = SystemColors.ControlDark;
+            btnCD.BackColor = SystemColors.ActiveCaption;
         }
 
         private void txtNombreDom_TextChanged(object sender, EventArgs e)
