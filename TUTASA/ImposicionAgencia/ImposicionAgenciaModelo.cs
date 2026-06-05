@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUTASA.Enums;
 
 namespace TUTASA.ImposicionAgencia
 {
@@ -48,6 +49,36 @@ namespace TUTASA.ImposicionAgencia
         {
             return guias;
         }
+
+        internal Destinatario ConstruirDestinatario(string nombre, string dni, string telefono, TipoEntrega tipo,string domicilio = null, string codigoPostal = null,Agencias agencia = null, CentrosDeDistribucion cd = null)
+        {
+            return new Destinatario
+            {
+                NombreCompleto = nombre,
+                DNI = dni,
+                Telefono = telefono,
+                TipoEntrega = tipo,
+                DomicilioEntrega = domicilio,
+                CodigoPostal = codigoPostal,
+                AgenciaDestino = agencia,
+                CDDestino = cd
+            };
+        }
+
+        internal void AsignarDestinatarioAGuias(Destinatario destinatario)
+        {
+            foreach (var bulto in guias)
+            {
+                bulto.Destinatario = destinatario;
+
+                // CD: queda solo impuesta, no hay retiro
+                // Domicilio o Agencia: queda impuesta y pendiente de retiro
+                bulto.Estado = destinatario.TipoEntrega == TipoEntrega.CD
+                    ? EstadoGuia.Impuesta
+                    : EstadoGuia.ImpuestaPendienteDeRetiro;
+            }
+        }
+        
         internal List<Agencias> ObtenerAgencias()
         {
             return new List<Agencias>()

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.Enums;
 using TUTASA.ImposicionAgencia;
 
 namespace TUTASA.Forms.Agencia
@@ -228,19 +229,28 @@ namespace TUTASA.Forms.Agencia
 
         private void btnBuscarLocalidadDom_Click(object sender, EventArgs e)
         {
-            string cp = txtCPAg.Text.Trim();
+            string cp = txtCPDom.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(cp))
             {
-                MessageBox.Show(
-                    "Debe ingresar un código postal para buscar la agencia.",
-                    "Error de validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un código postal para buscar la localidad.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            
+            var localidad = modelo.ObtenerCodigosPostales().FirstOrDefault(c => c.idCodPostal == cp);
+
+            if (localidad == null)
+            {
+                MessageBox.Show("No se encontró el código postal ingresado.", "Sin resultados",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textLocProvDom.Clear();
+                return;
+            }
+
+            textLocProvDom.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
+
+
 
         }
 
@@ -406,12 +416,180 @@ namespace TUTASA.Forms.Agencia
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            // 1) Validar que haya un cliente seleccionado
+            if (modelo.GetClienteSeleccionado() == null)
+            {
+                MessageBox.Show("Debe buscar un cliente remitente antes de confirmar.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // 2) Validar que haya al menos un bulto
+            if (modelo.GetBultos().Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un bulto antes de confirmar.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 3) Validar que se haya seleccionado un tipo de entrega
+            if (!radioBtnDomicilio.Checked && !radioBtnAgencia.Checked && !radioBtnCD.Checked)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de entrega.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4) Validar campos según tipo de entrega
+            if (radioBtnDomicilio.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtNombreDom.Text))
+                {
+                    MessageBox.Show("Debe ingresar el nombre del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtDNIDom.Text))
+                {
+                    MessageBox.Show("Debe ingresar el DNI del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtTelefonoDom.Text))
+                {
+                    MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtDomicilioEntrega.Text))
+                {
+                    MessageBox.Show("Debe ingresar el domicilio de entrega.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textLocProvDom.Text))
+                {
+                    MessageBox.Show("Debe buscar el código postal del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else if (radioBtnAgencia.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtNombreAg.Text))
+                {
+                    MessageBox.Show("Debe ingresar el nombre del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtDNIAg.Text))
+                {
+                    MessageBox.Show("Debe ingresar el DNI del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtTelefonoAg.Text))
+                {
+                    MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (cmbAgencia.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar una agencia de destino.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else if (radioBtnCD.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtNombreCD.Text))
+                {
+                    MessageBox.Show("Debe ingresar el nombre del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtDNICD.Text))
+                {
+                    MessageBox.Show("Debe ingresar el DNI del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtTelefonoCD.Text))
+                {
+                    MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (cmbCD.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un CD de destino.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // 5) Confirmación antes de procesar
+            var resultado = MessageBox.Show(
+                $"Está por realizar una imposición de {modelo.GetBultos().Count} bulto(s) " +
+                $"a nombre de {modelo.GetClienteSeleccionado().NombreCompleto}.\n\n¿Desea confirmar?",
+                "Confirmar imposición",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Cancel)
+                return;
+
+            // 6) Armar el destinatario según tipo de entrega y asignarlo a los bultos
+            Destinatario destinatario;
+
+            if (radioBtnDomicilio.Checked)
+            {
+                destinatario = modelo.ConstruirDestinatario(
+                    nombre: txtNombreDom.Text.Trim(),
+                    dni: txtDNIDom.Text.Trim(),
+                    telefono: txtTelefonoDom.Text.Trim(),
+                    tipo: TipoEntrega.Domicilio,
+                    domicilio: txtDomicilioEntrega.Text.Trim(),
+                    codigoPostal: txtCPDom.Text.Trim()
+                );
+            }
+            else if (radioBtnAgencia.Checked)
+            {
+                destinatario = modelo.ConstruirDestinatario(
+                    nombre: txtNombreAg.Text.Trim(),
+                    dni: txtDNIAg.Text.Trim(),
+                    telefono: txtTelefonoAg.Text.Trim(),
+                    tipo: TipoEntrega.Agencia,
+                    agencia: (Agencias)cmbAgencia.SelectedItem
+                );
+            }
+            else
+            {
+                destinatario = modelo.ConstruirDestinatario(
+                    nombre: txtNombreCD.Text.Trim(),
+                    dni: txtDNICD.Text.Trim(),
+                    telefono: txtTelefonoCD.Text.Trim(),
+                    tipo: TipoEntrega.CD,
+                    cd: (CentrosDeDistribucion)cmbCD.SelectedItem
+                );
+            }
+
+            modelo.AsignarDestinatarioAGuias(destinatario);
+
+            MessageBox.Show("Imposición registrada correctamente.", "Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            var resultado = MessageBox.Show("¿Está seguro que desea cancelar la imposición? Se perderán todos los datos ingresados.","Cancelar imposición",
+                            MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Warning);
 
+            if (resultado == DialogResult.OK)
+                this.Close();
         }
     }
 }
