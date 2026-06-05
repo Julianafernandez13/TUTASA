@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using TUTASA.Admision;
 
 namespace TUTASA.RegistrarEntrega
 {
     internal class RegistrarEntregaModelo
     {
         public const string ESTADO_DISPONIBLE = "Disponible para Retiro";
+
         public Receptor ReceptorSeleccionado { get; private set; }
+
         private List<Receptor> receptores = new List<Receptor>
         {
             new Receptor
@@ -34,7 +33,7 @@ namespace TUTASA.RegistrarEntrega
                         NroTracking = "BUE-00000006",
                         NombreRemitente = "Logística del Centro SA",
                         NombreDestinatario = "Carlos Méndez",
-                        EstadoActual = "Admitida en CD"  // Esta NO debe aparecer
+                        EstadoActual = "Admitida en CD"
                     }
                 }
             },
@@ -82,29 +81,51 @@ namespace TUTASA.RegistrarEntrega
             }
         };
 
-        public Receptor BuscarReceptor(string dni)
+        internal bool BuscarReceptor(string dni)
         {
+            ReceptorSeleccionado = null;
+
             foreach (var receptor in receptores)
             {
                 if (receptor.Dni == dni.Trim())
-                    return receptor;
+                {
+                    ReceptorSeleccionado = receptor;
+                    break;
+                }
             }
-            return null;
-        }
 
-        public Receptor BuscarReceptor(string dni)
-        {
-            foreach (var receptor in receptores)
+            if (ReceptorSeleccionado == null)
             {
-                if (receptor.Dni == dni.Trim())
-                    return receptor;
+                MessageBox.Show(
+                    "No se encontró ningún receptor con el DNI ingresado.",
+                    "Receptor no encontrado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
             }
-            return null;
+
+            return true;
         }
 
-        internal bool ConfirmarEntrega(Receptor receptor)
+        public List<Guia> ObtenerGuiasDisponibles()
         {
-            if (receptor == null)
+            var disponibles = new List<Guia>();
+
+            if (ReceptorSeleccionado == null)
+                return disponibles;
+
+            foreach (var guia in ReceptorSeleccionado.Guias)
+            {
+                if (guia.EstadoActual == ESTADO_DISPONIBLE)
+                    disponibles.Add(guia);
+            }
+
+            return disponibles;
+        }
+
+        internal bool ConfirmarEntrega()
+        {
+            if (ReceptorSeleccionado == null)
             {
                 MessageBox.Show(
                     "Debe buscar un receptor primero.",
@@ -114,22 +135,31 @@ namespace TUTASA.RegistrarEntrega
                 return false;
             }
 
-            if (receptor.Guias == null || receptor.Guias.Count == 0)
+            var disponibles = ObtenerGuiasDisponibles();
+
+            if (disponibles.Count == 0)
             {
                 MessageBox.Show(
-                    "El receptor no tiene encomiendas para entregar.",
+                    "El receptor no tiene encomiendas disponibles para retiro.",
                     "Sin encomiendas",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Information);
                 return false;
             }
 
-            foreach (var guia in receptor.Guias)
+            foreach (var guia in disponibles)
             {
                 guia.EstadoActual = "Entregada en CD";
             }
 
+            ReceptorSeleccionado = null;
+
             return true;
+        }
+
+        internal void LimpiarSeleccion()
+        {
+            ReceptorSeleccionado = null;
         }
     }
 }

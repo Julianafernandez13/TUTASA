@@ -27,6 +27,7 @@ namespace TUTASA.Forms.CD
 
         private void frmEntregaCD_Load(object sender, EventArgs e)
         {
+            listViewEncomiendas.Columns.Clear();
             listViewEncomiendas.View = View.Details;
             listViewEncomiendas.FullRowSelect = true;
             listViewEncomiendas.GridLines = true;
@@ -56,7 +57,7 @@ namespace TUTASA.Forms.CD
                 return;
             }
 
-            lvEncomiendas.Items.Clear();
+            listViewEncomiendas.Items.Clear();
 
             var guias = modelo.ObtenerGuiasDisponibles();
 
@@ -97,10 +98,10 @@ namespace TUTASA.Forms.CD
 
         private void LimpiarFormulario()
         {
-            txtDniReceptor.Clear();
-            lvEncomiendas.Items.Clear();
+            txtDNIReceptor.Clear();
+            listViewEncomiendas.Items.Clear();
             modelo.LimpiarSeleccion();
-            txtDniReceptor.Focus();
+            txtDNIReceptor.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
