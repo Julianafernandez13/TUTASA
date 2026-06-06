@@ -66,6 +66,8 @@
     <Compile Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMillaModelo.cs" />
     <Compile Include="ConfeccionHDRdeUltMilla\Fletero.cs" />
     <Compile Include="ConfeccionHDRdeUltMilla\Guia.cs" />
+    <Compile Include="ConfeccionHDRdeUltMilla\HDREntrega.cs" />
+    <Compile Include="ConfeccionHDRdeUltMilla\HDRRetiro.cs" />
     <Compile Include="ConfeccionHDRdeUltMilla\Localidad.cs" />
     <Compile Include="ConsultaTracking\ConsultaTrackingModelo.cs" />
     <Compile Include="ConsultaTracking\EventoHistorial.cs" />

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TUTASA.ConfeccionHDRdeUltMilla;
 
@@ -14,8 +8,7 @@ namespace TUTASA.Pantallas
     public partial class ConfeccionHDRdeUltMilla : Form
     {
         private ConfeccionHDRdeUltMillaModelo modelo = new ConfeccionHDRdeUltMillaModelo();
-        private List<Guia> guiasEncontradas = new List<Guia>();
-        private bool limpiando = false;
+        
 
         public ConfeccionHDRdeUltMilla()
         {
@@ -24,46 +17,88 @@ namespace TUTASA.Pantallas
 
         // ── LOAD ─────────────────────────────────────────────
 
-    
+
 
         private void ConfeccionHDRdeUltMilla_Load(object sender, EventArgs e)
         {
-            // Cargar localidades en el ComboBox
             cmbLocalidad.Items.Clear();
-            foreach (var loc in modelo.ObtenerLocalidades())
-                cmbLocalidad.Items.Add(loc.Nombre);
-
-            // Limpiar domicilio y lista
             cmbDomicilio.Items.Clear();
             listViewGuiasARutear.Items.Clear();
             cmbFleteros.Items.Clear();
-
-            // Deshabilitar botón confirmar hasta que haya guías y fletero
             btnConfirmar.Enabled = false;
         }
-   
+
+        private void radioBtnEntrega_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioBtnEntrega.Checked) return;
+
+            // Limpiar controles dependientes
+            modelo.Limpiando = true;
+            cmbLocalidad.Items.Clear();
+            cmbLocalidad.SelectedIndex = -1;
+            cmbLocalidad.Text = "";
+            cmbDomicilio.Items.Clear();
+            cmbDomicilio.Text = "";
+            listViewGuiasARutear.Items.Clear();
+            cmbFleteros.Items.Clear();
+            cmbFleteros.Text = "";
+            btnConfirmar.Enabled = false;
+            modelo.Limpiando = false;
+
+            // Cargar localidades que tienen guías en estado Pendiente de Distribución
+            foreach (var loc in modelo.ObtenerLocalidadesPorTipo("Entrega"))
+                cmbLocalidad.Items.Add(loc);
+        }
+        private void radioBtnRetiro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioBtnRetiro.Checked) return;
+
+            // Limpiar controles dependientes
+            modelo.Limpiando = true;
+            cmbLocalidad.Items.Clear();
+            cmbLocalidad.SelectedIndex = -1;
+            cmbLocalidad.Text = "";
+            cmbDomicilio.Items.Clear();
+            cmbDomicilio.Text = "";
+            listViewGuiasARutear.Items.Clear();
+            cmbFleteros.Items.Clear();
+            cmbFleteros.Text = "";
+            btnConfirmar.Enabled = false;
+            modelo.Limpiando = false;
+
+            // Cargar localidades que tienen guías en estado Impuesta
+            foreach (var loc in modelo.ObtenerLocalidadesPorTipo("Retiro"))
+                cmbLocalidad.Items.Add(loc);
+        }
+
         // ── CAMBIO DE LOCALIDAD ──────────────────────────────
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (limpiando) return;
+            if (modelo.Limpiando) return;
             if (cmbLocalidad.SelectedIndex < 0) return;
+            if (!radioBtnEntrega.Checked && !radioBtnRetiro.Checked) return;
 
             string localidad = cmbLocalidad.SelectedItem.ToString();
+            string tipoHDR = radioBtnEntrega.Checked ? "Entrega" : "Retiro";
 
-            // Cargar domicilios de esa localidad
+            // Limpiar controles dependientes
+            modelo.Limpiando = true;
             cmbDomicilio.Items.Clear();
-            foreach (var dom in modelo.ObtenerDomiciliosPorLocalidad(localidad))
-                cmbDomicilio.Items.Add(dom);
-
-            // Limpiar lista y fleteros
+            cmbDomicilio.Text = "";
             listViewGuiasARutear.Items.Clear();
             cmbFleteros.Items.Clear();
+            cmbFleteros.Text = "";
             btnConfirmar.Enabled = false;
+            modelo.Limpiando = false;
+
+            // Cargar domicilios de esa localidad según el tipo de HDR
+            foreach (var dom in modelo.ObtenerDomiciliosPorLocalidadYTipo(localidad, tipoHDR))
+                cmbDomicilio.Items.Add(dom);
         }
-             
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Validar tipo de confección
+            // Validar que se haya seleccionado el tipo de HDR
             if (!radioBtnEntrega.Checked && !radioBtnRetiro.Checked)
             {
                 MessageBox.Show(
@@ -98,15 +133,17 @@ namespace TUTASA.Pantallas
 
             string localidad = cmbLocalidad.SelectedItem.ToString();
             string domicilio = cmbDomicilio.SelectedItem.ToString();
+            string tipoHDR = radioBtnEntrega.Checked ? "Entrega" : "Retiro";
 
-            // Buscar guías pendientes
-            guiasEncontradas = modelo.ObtenerGuiasPendientes(localidad, domicilio);
+            // Obtener guías pendientes y guardarlas en el modelo
+            modelo.GuiasEncontradas = modelo.ObtenerGuiasPendientes(localidad, domicilio, tipoHDR);
 
             listViewGuiasARutear.Items.Clear();
             cmbFleteros.Items.Clear();
+            cmbFleteros.Text = "";
             btnConfirmar.Enabled = false;
 
-            if (guiasEncontradas.Count == 0)
+            if (modelo.GuiasEncontradas.Count == 0)
             {
                 MessageBox.Show(
                     "No se encontraron guías pendientes para la localidad y domicilio seleccionados.",
@@ -117,7 +154,7 @@ namespace TUTASA.Pantallas
             }
 
             // Cargar guías en la ListView
-            foreach (var g in guiasEncontradas)
+            foreach (var g in modelo.GuiasEncontradas)
             {
                 ListViewItem item = new ListViewItem(g.NroTracking);
                 item.SubItems.Add(g.NombreRemitente);
@@ -134,9 +171,8 @@ namespace TUTASA.Pantallas
                 cmbFleteros.Items.Add(f.NombreCompleto);
         }
 
-      
-        // ── SELECCIÓN DE FLETERO ─────────────────────────────
 
+        // ── SELECCIÓN DE FLETERO ─────────────────────────────
         private void cmbFleteros_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Habilitar confirmar solo si hay guías y fletero seleccionado
@@ -145,11 +181,20 @@ namespace TUTASA.Pantallas
             else
                 btnConfirmar.Enabled = false;
         }
+
         // ── CONFIRMAR ────────────────────────────────────────
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            // Obtener guías seleccionadas via CheckBox
+            var guiasSeleccionadas = new List<Guia>();
+            foreach (ListViewItem item in listViewGuiasARutear.Items)
+            {
+                if (item.Checked)
+                    guiasSeleccionadas.Add((Guia)item.Tag);
+            }
+
             // Validar que haya al menos una guía seleccionada
-            if (listViewGuiasARutear.SelectedItems.Count == 0)
+            if (guiasSeleccionadas.Count == 0)
             {
                 MessageBox.Show(
                     "Debe seleccionar al menos una guía para confeccionar la HDR.",
@@ -159,43 +204,44 @@ namespace TUTASA.Pantallas
                 return;
             }
 
-            // Obtener guías seleccionadas
-            var guiasSeleccionadas = new List<Guia>();
-            foreach (ListViewItem item in listViewGuiasARutear.SelectedItems)
-                guiasSeleccionadas.Add((Guia)item.Tag);
-
             // Obtener fletero seleccionado
-            Fletero fleteroSeleccionado = modelo.ObtenerFleterosPorLocalidad(
-                cmbLocalidad.SelectedItem.ToString())[cmbFleteros.SelectedIndex];
+            string localidad = cmbLocalidad.SelectedItem.ToString();
+            string tipoHDR = radioBtnEntrega.Checked ? "Entrega" : "Retiro";
+            Fletero fleteroSeleccionado = modelo.ObtenerFleterosPorLocalidad(localidad)[cmbFleteros.SelectedIndex];
 
-            // Confirmar
-            modelo.ConfirmarHDR(guiasSeleccionadas, fleteroSeleccionado);
+            // Confirmar HDR en el modelo
+            modelo.ConfirmarHDR(guiasSeleccionadas, fleteroSeleccionado, tipoHDR);
 
             MessageBox.Show(
-                "La HDR fue confeccionada correctamente y asignada al fletero " + fleteroSeleccionado.NombreCompleto + ".",
+                "La HDR de " + tipoHDR + " fue confeccionada correctamente y asignada al fletero " + fleteroSeleccionado.NombreCompleto + ".",
                 "HDR Confeccionada",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             // Limpiar pantalla
-            limpiando = true;
+            modelo.Limpiando = true;
             radioBtnEntrega.Checked = false;
             radioBtnRetiro.Checked = false;
+            cmbLocalidad.Items.Clear();
             cmbLocalidad.SelectedIndex = -1;
+            cmbLocalidad.Text = "";
             cmbDomicilio.Items.Clear();
-            cmbDomicilio.SelectedIndex =-1;
+            cmbDomicilio.SelectedIndex = -1;
+            cmbDomicilio.Text = "";
             listViewGuiasARutear.Items.Clear();
             cmbFleteros.Items.Clear();
             cmbFleteros.SelectedIndex = -1;
-            btnConfirmar.Enabled = false;
-            limpiando = false;
-            cmbDomicilio.Text = "";
             cmbFleteros.Text = "";
+            btnConfirmar.Enabled = false;
+            modelo.Limpiando = false;
         }
-        // ── CANCELAR ─────────────────────────────────────────
+        
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
     }
 }
