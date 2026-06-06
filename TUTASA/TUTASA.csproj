@@ -71,6 +71,7 @@
     <Compile Include="ConfeccionHDRdeUltMilla\Localidad.cs" />
     <Compile Include="ConsultaTracking\ConsultaTrackingModelo.cs" />
     <Compile Include="ConsultaTracking\EventoHistorial.cs" />
+    <Compile Include="ConsultaTracking\GuiaTracking.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="CostovsVentas\ResultadoEmpresa.cs" />
     <Compile Include="EmitirFactura\Cliente.cs" />
