@@ -13,23 +13,21 @@ namespace TUTASA.Forms.CD
 {
     public partial class RendicionHDRTransporte : Form
     {
-        //instancia del modelo de Rendicion HDR Transporte
+        // ── Instancia del modelo ──────────────────────────────
         private RendicionHDRTransporteModelo modelo = new RendicionHDRTransporteModelo();
-        private HDR hdrActual = null;
-        private bool limpiando = false;
+
         public RendicionHDRTransporte()
         {
             InitializeComponent();
         }
+
         // ── LOAD ─────────────────────────────────────────────
         private void RendicionHDRTransporte_Load(object sender, EventArgs e)
         {
-            // Cargar empresas de transporte
             cmbEmpresaTransporte.Items.Clear();
             foreach (var emp in modelo.ObtenerEmpresas())
                 cmbEmpresaTransporte.Items.Add(emp.Nombre);
 
-            // Deshabilitar sección HDR hasta que se confirme empresa
             cmbNroHDR.Items.Clear();
             listViewGuias.Items.Clear();
             lblCDOrigen.Text = "";
@@ -37,59 +35,19 @@ namespace TUTASA.Forms.CD
             lblCantBultos.Text = "";
             btnConfirmarRecepcion.Enabled = false;
         }
-      
 
         // ── SELECCIÓN DE EMPRESA ─────────────────────────────
-
         private void cmbEmpresaTransporte_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Limpiar sección HDR
-            if (limpiando) return;
+            if (modelo.Limpiando) return;
+
             cmbNroHDR.Items.Clear();
             listViewGuias.Items.Clear();
             lblCDOrigen.Text = "";
             lblCDDestino.Text = "";
             lblCantBultos.Text = "";
             btnConfirmarRecepcion.Enabled = false;
-            hdrActual = null;
-        }
-        // ── CONFIRMAR RECEPCIÓN ──────────────────────────────
-
-        private void btnConfirmarRecepcion_Click(object sender, EventArgs e)
-        {
-            if (hdrActual == null) return;
-
-            DialogResult confirmacion = MessageBox.Show(
-                "¿Confirma la recepción de la HDR " + hdrActual.NroHDR + " con " + hdrActual.CantBultos + " bultos?",
-                "Confirmar recepción",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (confirmacion != DialogResult.Yes)
-                return;
-
-            modelo.ConfirmarRecepcion(hdrActual);
-
-            MessageBox.Show(
-                "La recepción de la HDR " + hdrActual.NroHDR + " fue confirmada correctamente.",
-                "Recepción confirmada",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            // Limpiar pantalla
-            limpiando = true;
-            cmbEmpresaTransporte.SelectedIndex = -1;
-            cmbNroHDR.Items.Clear();
-            cmbNroHDR.SelectedIndex = -1;
-            listViewGuias.Items.Clear();
-            lblCDOrigen.Text = "";
-            lblCDDestino.Text = "";
-            lblCantBultos.Text = "";
-            btnConfirmarRecepcion.Enabled = false;
-            hdrActual = null;
-            limpiando = false;
-            cmbNroHDR.Text = "";
-            cmbEmpresaTransporte.Text = "";
+            modelo.HdrActual = null;
         }
 
         // ── CONFIRMAR EMPRESA ────────────────────────────────
@@ -114,7 +72,7 @@ namespace TUTASA.Forms.CD
             lblCDDestino.Text = "";
             lblCantBultos.Text = "";
             btnConfirmarRecepcion.Enabled = false;
-            hdrActual = null;
+            modelo.HdrActual = null;
 
             if (hdrs.Count == 0)
             {
@@ -137,16 +95,14 @@ namespace TUTASA.Forms.CD
 
             int idEmpresa = cmbEmpresaTransporte.SelectedIndex + 1;
             var hdrs = modelo.ObtenerHDRsPorEmpresa(idEmpresa);
-            hdrActual = hdrs[cmbNroHDR.SelectedIndex];
+            modelo.HdrActual = hdrs[cmbNroHDR.SelectedIndex];
 
-            // Autorrellenar datos de la HDR
-            lblCDOrigen.Text = hdrActual.CdOrigen;
-            lblCDDestino.Text = hdrActual.CdDestino;
-            lblCantBultos.Text = hdrActual.CantBultos.ToString();
+            lblCDOrigen.Text = modelo.HdrActual.CdOrigen;
+            lblCDDestino.Text = modelo.HdrActual.CdDestino;
+            lblCantBultos.Text = modelo.HdrActual.CantBultos.ToString();
 
-            // Cargar guías en la ListView
             listViewGuias.Items.Clear();
-            foreach (var g in hdrActual.Guias)
+            foreach (var g in modelo.HdrActual.Guias)
             {
                 ListViewItem item = new ListViewItem(g.NroTracking);
                 item.SubItems.Add(g.NombreRemitente);
@@ -159,8 +115,46 @@ namespace TUTASA.Forms.CD
             btnConfirmarRecepcion.Enabled = true;
         }
 
-      
+        // ── CONFIRMAR RECEPCIÓN ──────────────────────────────
+        private void btnConfirmarRecepcion_Click(object sender, EventArgs e)
+        {
+            if (modelo.HdrActual == null) return;
 
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Confirma la recepción de la HDR " + modelo.HdrActual.NroHDR +
+                " con " + modelo.HdrActual.CantBultos + " bultos?",
+                "Confirmar recepción",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmacion != DialogResult.Yes)
+                return;
+
+            modelo.ConfirmarRecepcion(modelo.HdrActual);
+
+            MessageBox.Show(
+                "La recepción de la HDR " + modelo.HdrActual.NroHDR + " fue confirmada correctamente.",
+                "Recepción confirmada",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            // Limpiar pantalla
+            modelo.Limpiando = true;
+            cmbEmpresaTransporte.SelectedIndex = -1;
+            cmbEmpresaTransporte.Text = "";
+            cmbNroHDR.Items.Clear();
+            cmbNroHDR.SelectedIndex = -1;
+            cmbNroHDR.Text = "";
+            listViewGuias.Items.Clear();
+            lblCDOrigen.Text = "";
+            lblCDDestino.Text = "";
+            lblCantBultos.Text = "";
+            btnConfirmarRecepcion.Enabled = false;
+            modelo.HdrActual = null;
+            modelo.Limpiando = false;
+        }
+
+        // ── CANCELAR ─────────────────────────────────────────
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

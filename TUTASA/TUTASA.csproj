@@ -111,6 +111,7 @@
     <Compile Include="RendicionHDRdeTransporte\Guia.cs" />
     <Compile Include="RendicionHDRdeTransporte\HDR.cs" />
     <Compile Include="RendicionHDRdeTransporte\RendicionHDRTransporteModelo.cs" />
+    <Compile Include="RendicionHDRdeUltMilla\EstadoHDRUltMillaEnum.cs" />
     <Compile Include="RendicionHDRdeUltMilla\Fletero.cs" />
     <Compile Include="RendicionHDRdeUltMilla\HDR.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">

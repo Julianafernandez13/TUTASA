@@ -49,8 +49,6 @@
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.lblMuestraFletero = new System.Windows.Forms.Label();
             this.lblFleteroSeleccionado = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupHDRaEntregar = new System.Windows.Forms.GroupBox();
             this.listViewHDRaEntregar = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -94,7 +92,6 @@
             this.cmbNroHDR.Name = "cmbNroHDR";
             this.cmbNroHDR.Size = new System.Drawing.Size(321, 28);
             this.cmbNroHDR.TabIndex = 27;
-            
             // 
             // btnAceptar
             // 
@@ -116,7 +113,6 @@
             this.radioBtnNoCumplida.Size = new System.Drawing.Size(121, 24);
             this.radioBtnNoCumplida.TabIndex = 21;
             this.radioBtnNoCumplida.Text = "No cumplida";
-            
             // 
             // radioBtnCumplida
             // 
@@ -127,7 +123,6 @@
             this.radioBtnCumplida.Size = new System.Drawing.Size(100, 24);
             this.radioBtnCumplida.TabIndex = 20;
             this.radioBtnCumplida.Text = "Cumplida";
-            
             // 
             // lblNroHDR
             // 
@@ -171,7 +166,6 @@
             this.columnHeader5,
             this.columnHeader11,
             this.columnHeader2});
-            this.listViewHDRRendidas.Enabled = true;
             this.listViewHDRRendidas.FullRowSelect = true;
             this.listViewHDRRendidas.GridLines = true;
             this.listViewHDRRendidas.HideSelection = false;
@@ -182,7 +176,6 @@
             this.listViewHDRRendidas.TabIndex = 2;
             this.listViewHDRRendidas.UseCompatibleStateImageBehavior = false;
             this.listViewHDRRendidas.View = System.Windows.Forms.View.Details;
-            
             // 
             // columnHeader1
             // 
@@ -256,7 +249,6 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(223, 26);
             this.txtDNI.TabIndex = 0;
-            
             // 
             // lblMuestraFletero
             // 
@@ -266,7 +258,6 @@
             this.lblMuestraFletero.Name = "lblMuestraFletero";
             this.lblMuestraFletero.Size = new System.Drawing.Size(260, 22);
             this.lblMuestraFletero.TabIndex = 26;
-            
             // 
             // lblFleteroSeleccionado
             // 
@@ -276,26 +267,6 @@
             this.lblFleteroSeleccionado.Size = new System.Drawing.Size(160, 20);
             this.lblFleteroSeleccionado.TabIndex = 27;
             this.lblFleteroSeleccionado.Text = "Fletero seleccionado:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(594, 1076);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 49);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Finalizar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(456, 1076);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 49);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // groupHDRaEntregar
             // 
@@ -328,7 +299,7 @@
             this.listViewHDRaEntregar.TabIndex = 2;
             this.listViewHDRaEntregar.UseCompatibleStateImageBehavior = false;
             this.listViewHDRaEntregar.View = System.Windows.Forms.View.Details;
-           
+            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Nro HDR";
@@ -380,12 +351,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(848, 1050);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.groupHDRaEntregar);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.lblMuestraFletero);
             this.Controls.Add(this.lblFleteroSeleccionado);
             this.Controls.Add(this.grpFletero);
@@ -420,8 +390,6 @@
         private System.Windows.Forms.Label lblFleteroSeleccionado;
         private System.Windows.Forms.Label lblMuestraFletero;
         private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.GroupBox groupHDRaEntregar;
         private System.Windows.Forms.ListView listViewHDRaEntregar;

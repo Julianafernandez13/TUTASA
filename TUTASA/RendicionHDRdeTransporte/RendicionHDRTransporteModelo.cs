@@ -8,6 +8,10 @@ namespace TUTASA.RendicionHDRdeTransporte
 {
     internal class RendicionHDRTransporteModelo
     {
+        // ── Propiedades de estado ─────────────────────────────
+        public HDR HdrActual { get; set; } = null;
+        public bool Limpiando { get; set; } = false;
+
         // ── Datos de prueba: empresas de transporte ──────────
         private List<EmpresaTransporte> empresas = new List<EmpresaTransporte>
         {
