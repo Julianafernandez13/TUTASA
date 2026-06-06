@@ -15,6 +15,7 @@ namespace TUTASA.Pantallas
     {
         private ConfeccionHDRdeTransporteModelo modelo = new ConfeccionHDRdeTransporteModelo();
         private List<Guia> guiasSeleccionadas = new List<Guia>();
+
         public ConfeccionHDRdeTransporte()
         {
             InitializeComponent();

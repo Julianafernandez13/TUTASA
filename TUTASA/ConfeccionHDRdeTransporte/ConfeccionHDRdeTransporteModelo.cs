@@ -9,6 +9,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
 {
     internal class ConfeccionHDRdeTransporteModelo
     {
+
         // ── Datos de prueba: localidades ─────────────────────
         private List<Localidad> localidades = new List<Localidad>
         {
@@ -95,9 +96,16 @@ namespace TUTASA.ConfeccionHDRdeTransporte
                 }
             }
 
-            if (totalXL <= 5) return "Cuarto de bodega";
+            if (totalXL <= 5) {
+                return "Cuarto de bodega";
+                 } else if (totalXL <= 10 && totalXL >= 5) {
+                return "Media bodega";
+            } else { return "Bodega completa"; }
+            
+
+            /** if (totalXL <= 5) return "Cuarto de bodega"
             if (totalXL <= 10) return "Media bodega";
-            return "Bodega completa";
+            return "Bodega completa";*/
         }
 
         // Guarda la HDR
