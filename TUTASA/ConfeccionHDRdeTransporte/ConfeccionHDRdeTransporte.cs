@@ -13,8 +13,8 @@ namespace TUTASA.Pantallas
 {
     public partial class ConfeccionHDRdeTransporte : Form
     {
+        // ── Instancia del modelo ──────────────────────────────
         private ConfeccionHDRdeTransporteModelo modelo = new ConfeccionHDRdeTransporteModelo();
-        private List<Guia> guiasSeleccionadas = new List<Guia>();
 
         public ConfeccionHDRdeTransporte()
         {
@@ -39,11 +39,11 @@ namespace TUTASA.Pantallas
             labelMuestraTipoArrendamiento.Text = "";
             btnGuardar.Enabled = false;
         }
-       
 
         // ── CAMBIO DE LOCALIDAD DESTINO ──────────────────────
         private void cmbLocalidadDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (modelo.Limpiando) return;
             if (cmbLocalidadDestino.SelectedIndex < 0) return;
 
             string localidad = cmbLocalidadDestino.SelectedItem.ToString();
@@ -53,12 +53,16 @@ namespace TUTASA.Pantallas
             cmbCDDestino.Items.Add(modelo.ObtenerCdDestino(localidad));
             cmbCDDestino.SelectedIndex = 0;
 
-            // Cargar guías admitidas para esa localidad
+            // Limpiar selección anterior
+            modelo.GuiasSeleccionadas.Clear();
             listViewEncomiendas.Items.Clear();
-            guiasSeleccionadas.Clear();
+            cmbServicio.Items.Clear();
+            cmbServicio.SelectedIndex = -1;
+            cmbServicio.Text = "";
             labelMuestraTipoArrendamiento.Text = "";
             btnGuardar.Enabled = false;
 
+            // Buscar guías admitidas para esa localidad
             var guias = modelo.ObtenerGuiasPorLocalidad(localidad);
 
             if (guias.Count == 0)
@@ -68,10 +72,10 @@ namespace TUTASA.Pantallas
                     "Sin encomiendas",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                cmbServicio.Items.Clear();
                 return;
             }
 
+            // Cargar guías en la ListView con CheckBoxes
             foreach (var g in guias)
             {
                 ListViewItem item = new ListViewItem(g.NroTracking);
@@ -82,23 +86,24 @@ namespace TUTASA.Pantallas
             }
 
             // Cargar empresas de transporte para esa localidad
-            cmbServicio.Items.Clear();
             foreach (var emp in modelo.ObtenerEmpresasPorLocalidad(localidad))
                 cmbServicio.Items.Add(emp.Nombre);
         }
 
-  
-        // ── SELECCIÓN DE ENCOMIENDAS ─────────────────────────
-        private void listViewEncomiendas_SelectedIndexChanged(object sender, EventArgs e)
+        // ── SELECCIÓN DE ENCOMIENDAS VIA CHECKBOX ────────────
+        private void listViewEncomiendas_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            guiasSeleccionadas.Clear();
-            foreach (ListViewItem item in listViewEncomiendas.SelectedItems)
-                guiasSeleccionadas.Add((Guia)item.Tag);
-
-            if (guiasSeleccionadas.Count > 0 && cmbServicio.SelectedIndex >= 0)
+            // Recalcular guías seleccionadas
+            modelo.GuiasSeleccionadas.Clear();
+            foreach (ListViewItem item in listViewEncomiendas.Items)
             {
-                string tipoArrendamiento = modelo.CalcularTipoArrendamiento(guiasSeleccionadas);
-                labelMuestraTipoArrendamiento.Text = tipoArrendamiento;
+                if (item.Checked)
+                    modelo.GuiasSeleccionadas.Add((Guia)item.Tag);
+            }
+
+            if (modelo.GuiasSeleccionadas.Count > 0 && cmbServicio.SelectedIndex >= 0)
+            {
+                labelMuestraTipoArrendamiento.Text = modelo.CalcularTipoArrendamiento(modelo.GuiasSeleccionadas);
                 btnGuardar.Enabled = true;
             }
             else
@@ -108,25 +113,32 @@ namespace TUTASA.Pantallas
             }
         }
 
-      
         // ── CAMBIO DE SERVICIO ───────────────────────────────
         private void cmbServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbServicio.SelectedIndex < 0) return;
 
-            if (guiasSeleccionadas.Count > 0)
+            if (modelo.GuiasSeleccionadas.Count > 0)
             {
-                string tipoArrendamiento = modelo.CalcularTipoArrendamiento(guiasSeleccionadas);
-                labelMuestraTipoArrendamiento.Text = tipoArrendamiento;
+                // Recalcular tipo de arrendamiento con el nuevo servicio
+                labelMuestraTipoArrendamiento.Text = modelo.CalcularTipoArrendamiento(modelo.GuiasSeleccionadas);
                 btnGuardar.Enabled = true;
             }
         }
 
-     
         // ── GUARDAR ──────────────────────────────────────────
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (guiasSeleccionadas.Count == 0)
+            // Recalcular guías seleccionadas via CheckBox
+            modelo.GuiasSeleccionadas.Clear();
+            foreach (ListViewItem item in listViewEncomiendas.Items)
+            {
+                if (item.Checked)
+                    modelo.GuiasSeleccionadas.Add((Guia)item.Tag);
+            }
+
+            // Validar que haya al menos una encomienda seleccionada
+            if (modelo.GuiasSeleccionadas.Count == 0)
             {
                 MessageBox.Show(
                     "Debe seleccionar al menos una encomienda para confeccionar la HDR.",
@@ -136,6 +148,7 @@ namespace TUTASA.Pantallas
                 return;
             }
 
+            // Validar que se haya seleccionado un servicio
             if (cmbServicio.SelectedIndex < 0)
             {
                 MessageBox.Show(
@@ -147,12 +160,11 @@ namespace TUTASA.Pantallas
             }
 
             string localidad = cmbLocalidadDestino.SelectedItem.ToString();
-            var empresas = modelo.ObtenerEmpresasPorLocalidad(localidad);
-            EmpresaTransporte empresaSeleccionada = empresas[cmbServicio.SelectedIndex];
+            EmpresaTransporte empresaSeleccionada = modelo.ObtenerEmpresasPorLocalidad(localidad)[cmbServicio.SelectedIndex];
             string tipoArrendamiento = labelMuestraTipoArrendamiento.Text;
 
             DialogResult confirmacion = MessageBox.Show(
-                "¿Confirma la confección de la HDR de transporte con " + guiasSeleccionadas.Count + " encomienda(s) vía " + empresaSeleccionada.Nombre + "?",
+                "¿Confirma la confección de la HDR de transporte con " + modelo.GuiasSeleccionadas.Count + " encomienda(s) vía " + empresaSeleccionada.Nombre + "?",
                 "Confirmar HDR",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -160,7 +172,8 @@ namespace TUTASA.Pantallas
             if (confirmacion != DialogResult.Yes)
                 return;
 
-            modelo.GuardarHDR(guiasSeleccionadas, empresaSeleccionada, tipoArrendamiento);
+            // Guardar HDR en el modelo
+            modelo.GuardarHDR(empresaSeleccionada, tipoArrendamiento);
 
             MessageBox.Show(
                 "La HDR de transporte fue confeccionada correctamente.",
@@ -169,17 +182,20 @@ namespace TUTASA.Pantallas
                 MessageBoxIcon.Information);
 
             // Limpiar pantalla
+            modelo.Limpiando = true;
             cmbLocalidadDestino.SelectedIndex = -1;
+            cmbLocalidadDestino.Text = "";
             cmbCDDestino.Items.Clear();
             cmbCDDestino.Text = "";
             listViewEncomiendas.Items.Clear();
             cmbServicio.Items.Clear();
             cmbServicio.Text = "";
             labelMuestraTipoArrendamiento.Text = "";
-            guiasSeleccionadas.Clear();
             btnGuardar.Enabled = false;
+            modelo.Limpiando = false;
         }
 
+        // ── CANCELAR ─────────────────────────────────────────
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -66,7 +66,7 @@
             this.groupDatosDespacho.TabIndex = 0;
             this.groupDatosDespacho.TabStop = false;
             this.groupDatosDespacho.Text = "Datos Despacho";
-            this.groupDatosDespacho.UseWaitCursor = true;
+            this.groupDatosDespacho.UseWaitCursor = false;
            
             // 
             // labelMuestraCDOrigen
@@ -77,7 +77,7 @@
             this.labelMuestraCDOrigen.Name = "labelMuestraCDOrigen";
             this.labelMuestraCDOrigen.Size = new System.Drawing.Size(149, 22);
             this.labelMuestraCDOrigen.TabIndex = 16;
-            this.labelMuestraCDOrigen.UseWaitCursor = true;
+            this.labelMuestraCDOrigen.UseWaitCursor = false;
            
             // 
             // labelCDDestino
@@ -88,7 +88,7 @@
             this.labelCDDestino.Size = new System.Drawing.Size(78, 16);
             this.labelCDDestino.TabIndex = 11;
             this.labelCDDestino.Text = "CD Destino:";
-            this.labelCDDestino.UseWaitCursor = true;
+            this.labelCDDestino.UseWaitCursor = false;
            
             // 
             // cmbLocalidadDestino
@@ -98,7 +98,7 @@
             this.cmbLocalidadDestino.Name = "cmbLocalidadDestino";
             this.cmbLocalidadDestino.Size = new System.Drawing.Size(149, 24);
             this.cmbLocalidadDestino.TabIndex = 10;
-            this.cmbLocalidadDestino.UseWaitCursor = true;
+            this.cmbLocalidadDestino.UseWaitCursor = false;
             this.cmbLocalidadDestino.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidadDestino_SelectedIndexChanged);
             // 
             // labelLocalidadDestino
@@ -109,7 +109,7 @@
             this.labelLocalidadDestino.Size = new System.Drawing.Size(119, 16);
             this.labelLocalidadDestino.TabIndex = 9;
             this.labelLocalidadDestino.Text = "Localidad Destino:";
-            this.labelLocalidadDestino.UseWaitCursor = true;
+            this.labelLocalidadDestino.UseWaitCursor = false;
             
             // 
             // cmbCDDestino
@@ -119,7 +119,7 @@
             this.cmbCDDestino.Name = "cmbCDDestino";
             this.cmbCDDestino.Size = new System.Drawing.Size(118, 24);
             this.cmbCDDestino.TabIndex = 8;
-            this.cmbCDDestino.UseWaitCursor = true;
+            this.cmbCDDestino.UseWaitCursor = false;
      
             // 
             // labelCDOrigen
@@ -130,7 +130,7 @@
             this.labelCDOrigen.Size = new System.Drawing.Size(72, 16);
             this.labelCDOrigen.TabIndex = 6;
             this.labelCDOrigen.Text = "CD Origen:";
-            this.labelCDOrigen.UseWaitCursor = true;
+            this.labelCDOrigen.UseWaitCursor = false;
            
             // 
             // groupServicioTransporte
@@ -145,7 +145,7 @@
             this.groupServicioTransporte.TabIndex = 9;
             this.groupServicioTransporte.TabStop = false;
             this.groupServicioTransporte.Text = "Servicio de Transporte";
-            this.groupServicioTransporte.UseWaitCursor = true;
+            this.groupServicioTransporte.UseWaitCursor = false;
            
             // 
             // labelMuestraTipoArrendamiento
@@ -156,7 +156,7 @@
             this.labelMuestraTipoArrendamiento.Name = "labelMuestraTipoArrendamiento";
             this.labelMuestraTipoArrendamiento.Size = new System.Drawing.Size(125, 22);
             this.labelMuestraTipoArrendamiento.TabIndex = 17;
-            this.labelMuestraTipoArrendamiento.UseWaitCursor = true;
+            this.labelMuestraTipoArrendamiento.UseWaitCursor = false;
             
             // 
             // cmbServicio
@@ -166,7 +166,7 @@
             this.cmbServicio.Name = "cmbServicio";
             this.cmbServicio.Size = new System.Drawing.Size(120, 24);
             this.cmbServicio.TabIndex = 7;
-            this.cmbServicio.UseWaitCursor = true;
+            this.cmbServicio.UseWaitCursor = false;
             this.cmbServicio.SelectedIndexChanged += new System.EventHandler(this.cmbServicio_SelectedIndexChanged);
             // 
             // labelTipoArrendamiento
@@ -177,7 +177,7 @@
             this.labelTipoArrendamiento.Size = new System.Drawing.Size(147, 16);
             this.labelTipoArrendamiento.TabIndex = 3;
             this.labelTipoArrendamiento.Text = "Tipo de arrendamiento:";
-            this.labelTipoArrendamiento.UseWaitCursor = true;
+            this.labelTipoArrendamiento.UseWaitCursor = false;
             
             // 
             // labelServicio
@@ -189,7 +189,7 @@
             this.labelServicio.TabIndex = 1;
             this.labelServicio.Text = "Servicio:";
             this.labelServicio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelServicio.UseWaitCursor = true;
+            this.labelServicio.UseWaitCursor = false;
            
             // 
             // btnCancelar
@@ -200,7 +200,7 @@
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.UseWaitCursor = true;
+            this.btnCancelar.UseWaitCursor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
@@ -211,7 +211,7 @@
             this.btnGuardar.TabIndex = 27;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.UseWaitCursor = true;
+            this.btnGuardar.UseWaitCursor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupListadoEncomiendas
@@ -223,7 +223,7 @@
             this.groupListadoEncomiendas.TabIndex = 29;
             this.groupListadoEncomiendas.TabStop = false;
             this.groupListadoEncomiendas.Text = "Listado de encomiendas";
-            this.groupListadoEncomiendas.UseWaitCursor = true;
+            this.groupListadoEncomiendas.UseWaitCursor = false;
            
             // 
             // listViewEncomiendas
@@ -238,9 +238,11 @@
             this.listViewEncomiendas.Size = new System.Drawing.Size(577, 112);
             this.listViewEncomiendas.TabIndex = 2;
             this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
-            this.listViewEncomiendas.UseWaitCursor = true;
+            this.listViewEncomiendas.CheckBoxes = true;
+            this.listViewEncomiendas.FullRowSelect = true;
+            this.listViewEncomiendas.UseWaitCursor = false;
             this.listViewEncomiendas.View = System.Windows.Forms.View.Details;
-            this.listViewEncomiendas.SelectedIndexChanged += new System.EventHandler(this.listViewEncomiendas_SelectedIndexChanged);
+            this.listViewEncomiendas.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listViewEncomiendas_ItemChecked);
             // 
             // columnHeader7
             // 
@@ -261,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 541);
+            this.ClientSize = new System.Drawing.Size(650, 480);
             this.Controls.Add(this.groupListadoEncomiendas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -269,7 +271,7 @@
             this.Controls.Add(this.groupDatosDespacho);
             this.Name = "ConfeccionHDRdeTransporte";
             this.Text = "TUTASA – Confección de Hoja de Ruta de Transporte";
-            this.UseWaitCursor = true;
+            this.UseWaitCursor = false;
             this.Load += new System.EventHandler(this.ConfeccionHDRdeTransporte_Load);
             this.groupDatosDespacho.ResumeLayout(false);
             this.groupDatosDespacho.PerformLayout();
