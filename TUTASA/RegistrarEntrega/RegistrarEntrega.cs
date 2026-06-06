@@ -11,20 +11,16 @@ using TUTASA.RegistrarEntrega;
 
 namespace TUTASA.Forms.CD
 {
-    public partial class frmEntregaCD : Form
+    public partial class frmEntrega : Form
     {
         //Instancia del modelo de Registrar Entrega
         private RegistrarEntregaModelo modelo = new RegistrarEntregaModelo();
-        public frmEntregaCD()
+
+        public frmEntrega()
         {
             InitializeComponent();
         }
-
-        private void lblError_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void frmEntregaCD_Load(object sender, EventArgs e)
         {
             listViewEncomiendas.Columns.Clear();
