@@ -345,9 +345,21 @@ namespace TUTASA.Forms.CD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoDom.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -378,9 +390,21 @@ namespace TUTASA.Forms.CD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoAg.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -405,9 +429,21 @@ namespace TUTASA.Forms.CD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNICD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoCD.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoCD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -467,7 +503,8 @@ namespace TUTASA.Forms.CD
 
             modelo.AsignarDestinatarioAGuias(destinatario);
 
-            MessageBox.Show("Imposición registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Imposición registrada correctamente.", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();
         }

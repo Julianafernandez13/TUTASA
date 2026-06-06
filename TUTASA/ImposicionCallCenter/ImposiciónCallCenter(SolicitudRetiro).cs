@@ -338,29 +338,33 @@ namespace TUTASA.Forms.CallCenter
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            // 1) Validar cliente
+            // 1) Validar que haya un cliente seleccionado
             if (modelo.GetClienteSeleccionado() == null)
             {
-                MessageBox.Show("Debe buscar un cliente antes de confirmar.", "Error de validación",
+                MessageBox.Show("Debe buscar un cliente remitente antes de confirmar.", "Error de validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 2) Validar datos de retiro ← nuevo
+            // 2) Validar datos de retiro
             if (string.IsNullOrWhiteSpace(txtDNIRemitente.Text))
             {
                 MessageBox.Show("Debe ingresar el DNI del remitente.", "Error de validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (!long.TryParse(txtDNIRemitente.Text.Trim(), out _))
+            {
+                MessageBox.Show("El DNI del remitente debe ser numérico.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (string.IsNullOrWhiteSpace(txtDomicilioRetiro.Text))
             {
                 MessageBox.Show("Debe ingresar el domicilio de retiro.", "Error de validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             if (string.IsNullOrWhiteSpace(lblMuestraLocProv.Text))
             {
                 MessageBox.Show("Debe verificar el código postal de retiro.", "Error de validación",
@@ -368,7 +372,7 @@ namespace TUTASA.Forms.CallCenter
                 return;
             }
 
-            // 3) Validar bultos
+            // 3) Validar que haya al menos un bulto
             if (modelo.GetBultos().Count == 0)
             {
                 MessageBox.Show("Debe agregar al menos un bulto antes de confirmar.", "Error de validación",
@@ -376,7 +380,7 @@ namespace TUTASA.Forms.CallCenter
                 return;
             }
 
-            // 4) Validar tipo de entrega
+            // 4) Validar que se haya seleccionado un tipo de entrega
             if (!radioBtnDomicilio.Checked && !radioBtnAgencia.Checked && !radioBtnCD.Checked)
             {
                 MessageBox.Show("Debe seleccionar un tipo de entrega.", "Error de validación",
@@ -384,7 +388,7 @@ namespace TUTASA.Forms.CallCenter
                 return;
             }
 
-            // 5) Validar campos del destinatario según tipo de entrega
+            // 5) Validar campos según tipo de entrega
             if (radioBtnDomicilio.Checked)
             {
                 if (string.IsNullOrWhiteSpace(txtNombreDom.Text))
@@ -399,9 +403,21 @@ namespace TUTASA.Forms.CallCenter
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoDom.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -411,7 +427,7 @@ namespace TUTASA.Forms.CallCenter
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(lblMuestraLocProvDom.Text))
+                if (string.IsNullOrWhiteSpace(lblMuestraLocProv.Text))
                 {
                     MessageBox.Show("Debe buscar el código postal del destinatario.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -432,9 +448,21 @@ namespace TUTASA.Forms.CallCenter
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoAg.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -459,9 +487,21 @@ namespace TUTASA.Forms.CallCenter
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNICD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoCD.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoCD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -473,7 +513,7 @@ namespace TUTASA.Forms.CallCenter
                 }
             }
 
-            // 6) Confirmación
+            // 6) Confirmación antes de procesar
             var resultado = MessageBox.Show(
                 $"Está por registrar una solicitud de retiro a domicilio de {modelo.GetBultos().Count} bulto(s) " +
                 $"a nombre de {modelo.GetClienteSeleccionado().NombreCompleto}.\n\n¿Desea confirmar?",
@@ -481,12 +521,12 @@ namespace TUTASA.Forms.CallCenter
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Cancel) // El usuario decidió cancelar la operación
+            if (resultado == DialogResult.Cancel)
                 return;
 
-            // 7) Guardar datos de retiro en el modelo ← nuevo  
+            // 7) Guardar datos de retiro
             var partes = lblMuestraLocProv.Text.Split(',');
-            modelo.SetDatosRetiro(new DatosRetiro //
+            modelo.SetDatosRetiro(new DatosRetiro
             {
                 DNIRemitente = txtDNIRemitente.Text.Trim(),
                 DomicilioRetiro = txtDomicilioRetiro.Text.Trim(),
@@ -495,10 +535,10 @@ namespace TUTASA.Forms.CallCenter
                 Provincia = partes[1].Trim()
             });
 
-            // 8) Armar destinatario y asignar a bultos
+            // 8) Armar el destinatario según tipo de entrega y asignarlo a los bultos
             Destinatario destinatario;
 
-            if (radioBtnDomicilio.Checked) // Entrega a domicilio
+            if (radioBtnDomicilio.Checked)
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreDom.Text.Trim(),
@@ -509,7 +549,7 @@ namespace TUTASA.Forms.CallCenter
                     codigoPostal: txtCPDom.Text.Trim()
                 );
             }
-            else if (radioBtnAgencia.Checked) // Entrega en agencia
+            else if (radioBtnAgencia.Checked)
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreAg.Text.Trim(),
@@ -519,7 +559,7 @@ namespace TUTASA.Forms.CallCenter
                     agencia: (Agencias)cmbAgencia.SelectedItem
                 );
             }
-            else // Entrega en CD
+            else
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreCD.Text.Trim(),
@@ -530,8 +570,7 @@ namespace TUTASA.Forms.CallCenter
                 );
             }
 
-            modelo.AsignarDestinatarioAGuias(destinatario); // Asignar el mismo destinatario a todos los bultos
-
+            modelo.AsignarDestinatarioAGuias(destinatario);
 
             MessageBox.Show("Solicitud registrada correctamente.", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);

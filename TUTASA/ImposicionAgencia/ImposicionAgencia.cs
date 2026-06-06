@@ -346,9 +346,21 @@ namespace TUTASA.Forms.Agencia
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoDom.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoDom.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -379,9 +391,21 @@ namespace TUTASA.Forms.Agencia
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNIAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoAg.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoAg.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -406,9 +430,21 @@ namespace TUTASA.Forms.Agencia
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (!long.TryParse(txtDNICD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El DNI del destinatario debe ser numérico.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtTelefonoCD.Text))
                 {
                     MessageBox.Show("Debe ingresar el teléfono del destinatario.", "Error de validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!long.TryParse(txtTelefonoCD.Text.Trim(), out _))
+                {
+                    MessageBox.Show("El teléfono del destinatario debe ser numérico.", "Error de validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -431,10 +467,13 @@ namespace TUTASA.Forms.Agencia
             if (resultado == DialogResult.Cancel)
                 return;
 
-            // 6) Armar el destinatario según tipo de entrega y asignarlo a los bultos
+            // 6) Guardar datos de retiro de la agencia activa
+            modelo.SetDatosRetiro(modelo.GetDatosRetiroAgencia());
+
+            // 7) Armar el destinatario según tipo de entrega y asignarlo a las guias
             Destinatario destinatario;
 
-            if (radioBtnDomicilio.Checked) //si es domicilio, se construye el destinatario con los datos del grupo de domicilio
+            if (radioBtnDomicilio.Checked)
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreDom.Text.Trim(),
@@ -445,7 +484,7 @@ namespace TUTASA.Forms.Agencia
                     codigoPostal: txtCPDom.Text.Trim()
                 );
             }
-            else if (radioBtnAgencia.Checked) //si es agencia, se construye el destinatario con los datos del grupo de agencia
+            else if (radioBtnAgencia.Checked)
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreAg.Text.Trim(),
@@ -455,7 +494,7 @@ namespace TUTASA.Forms.Agencia
                     agencia: (Agencias)cmbAgencia.SelectedItem
                 );
             }
-            else //si es CD, se construye el destinatario con los datos del grupo de CD
+            else
             {
                 destinatario = modelo.ConstruirDestinatario(
                     nombre: txtNombreCD.Text.Trim(),
@@ -466,12 +505,10 @@ namespace TUTASA.Forms.Agencia
                 );
             }
 
-            
-            modelo.SetDatosRetiro(modelo.GetDatosRetiroAgencia()); //se asignan los datos de retiro de agencia al modelo para luego asignarlos a las guías
+            modelo.AsignarDestinatarioAGuias(destinatario);
 
-            modelo.AsignarDestinatarioAGuias(destinatario); //se asigna el destinatario construido a cada una de las guías de los bultos
-
-            MessageBox.Show("Imposición registrada correctamente.", "Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Imposición registrada correctamente.", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();
         }
