@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TUTASA.Admision;
+﻿using System.Collections.Generic;
 
 namespace TUTASA.RegistrarEntrega
 {
@@ -12,6 +7,6 @@ namespace TUTASA.RegistrarEntrega
         public int Id { get; set; }
         public string Dni { get; set; }
         public string NombreCompleto { get; set; }
-        public List<Guia> Guias { get; set; } = new List<Guia>();
+        public List<GuiaEntrega> Guias { get; set; } = new List<GuiaEntrega>();
     }
 }

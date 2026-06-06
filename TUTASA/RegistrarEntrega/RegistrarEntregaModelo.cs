@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using TUTASA.Admision;
 
 namespace TUTASA.RegistrarEntrega
 {
@@ -17,24 +16,10 @@ namespace TUTASA.RegistrarEntrega
                 Id = 1,
                 Dni = "12345678",
                 NombreCompleto = "Carlos Méndez",
-                Guias = new List<Guia>
+                Guias = new List<GuiaEntrega>
                 {
-                    new Guia
-                    {
-                        Id = 1,
-                        NroTracking = "BUE-00000001",
-                        NombreRemitente = "Industrias López SA",
-                        NombreDestinatario = "Carlos Méndez",
-                        EstadoActual = "Disponible para Retiro"
-                    },
-                    new Guia
-                    {
-                        Id = 6,
-                        NroTracking = "BUE-00000006",
-                        NombreRemitente = "Logística del Centro SA",
-                        NombreDestinatario = "Carlos Méndez",
-                        EstadoActual = "Admitida en CD"
-                    }
+                    new GuiaEntrega { Id = 1, NroTracking = "BUE-00000001", NombreRemitente = "Industrias López SA",    NombreDestinatario = "Carlos Méndez",    EstadoActual = "Disponible para Retiro" },
+                    new GuiaEntrega { Id = 6, NroTracking = "BUE-00000006", NombreRemitente = "Logística del Centro SA", NombreDestinatario = "Carlos Méndez",   EstadoActual = "Admitida en CD"         }
                 }
             },
             new Receptor
@@ -42,24 +27,10 @@ namespace TUTASA.RegistrarEntrega
                 Id = 2,
                 Dni = "87654321",
                 NombreCompleto = "Ana Rodríguez",
-                Guias = new List<Guia>
+                Guias = new List<GuiaEntrega>
                 {
-                    new Guia
-                    {
-                        Id = 2,
-                        NroTracking = "BUE-00000002",
-                        NombreRemitente = "Textiles Garmendia SRL",
-                        NombreDestinatario = "Ana Rodríguez",
-                        EstadoActual = "Disponible para Retiro"
-                    },
-                    new Guia
-                    {
-                        Id = 5,
-                        NroTracking = "BUE-00000005",
-                        NombreRemitente = "Importadora del Este SA",
-                        NombreDestinatario = "Ana Rodríguez",
-                        EstadoActual = "Disponible para Retiro"
-                    }
+                    new GuiaEntrega { Id = 2, NroTracking = "BUE-00000002", NombreRemitente = "Textiles Garmendia SRL",  NombreDestinatario = "Ana Rodríguez", EstadoActual = "Disponible para Retiro" },
+                    new GuiaEntrega { Id = 5, NroTracking = "BUE-00000005", NombreRemitente = "Importadora del Este SA", NombreDestinatario = "Ana Rodríguez", EstadoActual = "Disponible para Retiro" }
                 }
             },
             new Receptor
@@ -67,16 +38,9 @@ namespace TUTASA.RegistrarEntrega
                 Id = 3,
                 Dni = "11223344",
                 NombreCompleto = "Roberto Fernández",
-                Guias = new List<Guia>
+                Guias = new List<GuiaEntrega>
                 {
-                    new Guia
-                    {
-                        Id = 3,
-                        NroTracking = "BUE-00000003",
-                        NombreRemitente = "Distribuidora Norte SA",
-                        NombreDestinatario = "Roberto Fernández",
-                        EstadoActual = "Disponible para Retiro"
-                    }
+                    new GuiaEntrega { Id = 3, NroTracking = "BUE-00000003", NombreRemitente = "Distribuidora Norte SA", NombreDestinatario = "Roberto Fernández", EstadoActual = "Disponible para Retiro" }
                 }
             }
         };
@@ -107,9 +71,9 @@ namespace TUTASA.RegistrarEntrega
             return true;
         }
 
-        public List<Guia> ObtenerGuiasDisponibles()
+        public List<GuiaEntrega> ObtenerGuiasDisponibles()
         {
-            var disponibles = new List<Guia>();
+            var disponibles = new List<GuiaEntrega>();
 
             if (ReceptorSeleccionado == null)
                 return disponibles;

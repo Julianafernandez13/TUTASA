@@ -103,6 +103,7 @@
     <Compile Include="ImposicionCD\Destinatario.cs" />
     <Compile Include="ImposicionCD\Guia.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
+    <Compile Include="RegistrarEntrega\GuiaEntrega.cs" />
     <Compile Include="RegistrarEntrega\Receptor.cs" />
     <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />
     <Compile Include="RendicionHDRdeTransporte\EmpresaTransporte.cs" />
