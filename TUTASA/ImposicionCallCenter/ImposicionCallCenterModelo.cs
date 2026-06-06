@@ -84,7 +84,7 @@ namespace TUTASA.ImposicionCallCenter
             foreach (var bulto in guias)
             {
                 bulto.Destinatario = destinatario;
-                bulto.Estado = EstadoGuia.ImpuestaPendienteDeRetiro;  //igual que agencia
+                bulto.Estado = EstadoGuia.Impuesta;  //igual que agencia
             }
         }
 

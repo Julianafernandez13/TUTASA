@@ -1,28 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TUTASA.RegistrarEntrega;
 
 namespace TUTASA.Forms.CD
 {
-    public partial class frmEntregaCD : Form
+    public partial class frmEntrega : Form
     {
-        //Instancia del modelo de Registrar Entrega
         private RegistrarEntregaModelo modelo = new RegistrarEntregaModelo();
-        public frmEntregaCD()
+
+        public frmEntrega()
         {
             InitializeComponent();
-        }
-
-        private void lblError_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmEntregaCD_Load(object sender, EventArgs e)
@@ -96,17 +84,22 @@ namespace TUTASA.Forms.CD
             LimpiarFormulario();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("¿Está seguro que desea cancelar? Se perderán todos los datos ingresados.", "Cancelar",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.OK)
+                this.Close();
+        }
+
         private void LimpiarFormulario()
         {
             txtDNIReceptor.Clear();
             listViewEncomiendas.Items.Clear();
             modelo.LimpiarSeleccion();
             txtDNIReceptor.Focus();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario();
         }
     }
 }

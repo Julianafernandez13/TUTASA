@@ -36,17 +36,6 @@ namespace TUTASA.Forms.CD
             lblMuestraLocProv.Text = "";
         }
 
-        private void listViewBultos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-     
-        private void txtCUIT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             //1) Validar que se ingresó un número de CUIT
@@ -99,31 +88,6 @@ namespace TUTASA.Forms.CD
             // 5) Mostrar el nombre en el campo de solo lectura
             modelo.SetClienteSeleccionado(cliente);
             lblMuestraNombre.Text = cliente.NombreCompleto;
-        }
-
-        private void txtMuestraNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnS_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnM_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnL_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnXL_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAgregarBulto_Click(object sender, EventArgs e)
@@ -211,32 +175,7 @@ namespace TUTASA.Forms.CD
             btnDomicilio.BackColor = SystemColors.ControlDark;
             btnAgencia.BackColor = SystemColors.ControlDark;
             btnCD.BackColor = SystemColors.ActiveCaption;
-        }
-
-        private void txtNombreDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDomicilioEntrega_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         private void btnBuscarLocalidadDom_Click(object sender, EventArgs e)
         {
@@ -260,32 +199,7 @@ namespace TUTASA.Forms.CD
             }
 
             lblMuestraLocProv.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
-        }
-
-        private void txtMuestraLocProvDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }   
 
         private void btnBuscarLocalidadAg_Click(object sender, EventArgs e)
         {
@@ -337,32 +251,7 @@ namespace TUTASA.Forms.CD
             cmbAgencia.DisplayMember = "nombreAgencia";
             cmbAgencia.ValueMember = "idAgencia";
             cmbAgencia.SelectedIndex = -1;
-        }
-
-        private void cmbAgencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNICD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        } 
 
         private void btnBuscarLocalidadCD_Click(object sender, EventArgs e)
         {
@@ -414,12 +303,6 @@ namespace TUTASA.Forms.CD
             cmbCD.ValueMember = "idCD";
             cmbCD.SelectedIndex = -1;
         }
-
-        private void cmbCD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {

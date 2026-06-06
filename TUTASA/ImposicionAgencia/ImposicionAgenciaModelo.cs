@@ -24,11 +24,13 @@ namespace TUTASA.ImposicionAgencia
             Domicilio = "Calle 7 Nro 123"
         };
 
+       
         internal Agencias GetAgenciaActiva()
         {
             return agenciaActiva;
         }
 
+        // Método para obtener los datos de retiro de la agencia activa
         internal DatosRetiro GetDatosRetiroAgencia()
         {
             var cp = ObtenerCodigosPostales()
@@ -56,6 +58,7 @@ namespace TUTASA.ImposicionAgencia
             return clienteSeleccionado;
         }
 
+        // Métodos para manejar los datos de retiro
         internal void SetDatosRetiro(DatosRetiro datos)
         {
             datosRetiro = datos;
@@ -114,7 +117,7 @@ namespace TUTASA.ImposicionAgencia
             {
                 bulto.Destinatario = destinatario;
 
-                bulto.Estado = EstadoGuia.ImpuestaPendienteDeRetiro;
+                bulto.Estado = EstadoGuia.Impuesta;
             }
         
         }

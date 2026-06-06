@@ -16,7 +16,7 @@ namespace TUTASA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TUTASA.Pantallas.ConfeccionHDRdeTransporte());
+            Application.Run(new TUTASA.Forms.CallCenter.ConsultaTracking());
         }
     }
 }

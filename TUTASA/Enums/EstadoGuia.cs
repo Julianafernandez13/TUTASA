@@ -9,16 +9,15 @@ namespace TUTASA.Enums
     internal enum EstadoGuia
     {
         Impuesta,
-        ImpuestaPendienteDeRetiro,
         PreAdmitida,
         Retirada,
+        Cancelada,
         Admitida,
         Despachada,
         Trasladada,
         DisponibleParaRetiro,
         PendienteDeDistribucion,
         IntentoDeEntregaFallido,
-        Cancelada,
         CanceladaConDevolucion,
         Entregada
     }

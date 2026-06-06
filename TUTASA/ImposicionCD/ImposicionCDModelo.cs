@@ -71,7 +71,7 @@ namespace TUTASA.ImposicionCD
             {
                 bulto.Destinatario = destinatario;
 
-                bulto.Estado = EstadoGuia.Impuesta;
+                bulto.Estado = EstadoGuia.PreAdmitida;
                     
             }
         }

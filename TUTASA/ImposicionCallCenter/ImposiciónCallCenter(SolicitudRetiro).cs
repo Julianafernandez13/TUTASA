@@ -29,22 +29,7 @@ namespace TUTASA.Forms.CallCenter
             lblMuestraNombre.Text = "";
             lblMuestraLocProv.Text = "";
             lblMuestraLocProvDom.Text = "";
-        }
-
-        private void lblAgencia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpCliente_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCUIT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -102,26 +87,6 @@ namespace TUTASA.Forms.CallCenter
             lblMuestraNombre.Text = cliente.NombreCompleto;
         }
 
-        private void txtMuestraNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIRemitente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDomicilioRetiro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPRetiro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscarLocalidadRetiro_Click(object sender, EventArgs e) 
         {
             // Validar que el campo de código postal no esté vacío
@@ -153,32 +118,7 @@ namespace TUTASA.Forms.CallCenter
             // Si se encuentra la localidad, mostrar su descripción y provincia
             lblMuestraLocProv.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
         }
-
-        private void lblMuestraLocProv_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnS_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnM_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnL_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBtnXL_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnAgregarBulto_Click(object sender, EventArgs e)
         {
             // Validamos que se haya seleccionado un cliente remitente antes de agregar bultos
@@ -211,12 +151,7 @@ namespace TUTASA.Forms.CallCenter
             item.SubItems.Add(bulto.Categoria.ToString());
             listViewBultos.Items.Add(item);
         }
-
-        private void listViewBultos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnQuitarBulto_Click(object sender, EventArgs e)
         {
             // Validamos que se haya seleccionado un bulto para quitar
@@ -270,31 +205,6 @@ namespace TUTASA.Forms.CallCenter
             btnCD.BackColor = SystemColors.ControlDark;
         }
 
-        private void txtNombreDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDomicilioEntrega_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscarLocalidadDom_Click(object sender, EventArgs e)
         {
             // Validar que el campo de código postal no esté vacío
@@ -321,31 +231,6 @@ namespace TUTASA.Forms.CallCenter
 
             // Si se encuentra la localidad, mostrar su descripción y provincia
             lblMuestraLocProvDom.Text = $"{localidad.DescripcionLocalidad}, {localidad.DescripcionProvincia}";
-        }
-
-        private void txtMuestraLocProvDom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNIAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoAg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPAg_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBuscarLocalidadAg_Click(object sender, EventArgs e)
@@ -400,31 +285,6 @@ namespace TUTASA.Forms.CallCenter
             cmbAgencia.SelectedIndex = -1;
         }
 
-        private void cmbAgencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNICD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCPCD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscarLocalidadCD_Click(object sender, EventArgs e)
         {
             // Limpiamos resultado anterior siempre, antes de cualquier validación
@@ -474,11 +334,6 @@ namespace TUTASA.Forms.CallCenter
             cmbCD.DisplayMember = "nombreCD";
             cmbCD.ValueMember = "idCD";
             cmbCD.SelectedIndex = -1;
-        }
-
-        private void cmbCD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

@@ -117,7 +117,7 @@
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(166, 26);
             this.txtCUIT.TabIndex = 1;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
+           
             // 
             // btnBuscarCliente
             // 
@@ -178,7 +178,7 @@
             this.radioBtnS.TabIndex = 1;
             this.radioBtnS.TabStop = true;
             this.radioBtnS.Text = "S";
-            this.radioBtnS.CheckedChanged += new System.EventHandler(this.radioBtnS_CheckedChanged);
+            
             // 
             // radioBtnM
             // 
@@ -188,7 +188,7 @@
             this.radioBtnM.Size = new System.Drawing.Size(58, 26);
             this.radioBtnM.TabIndex = 2;
             this.radioBtnM.Text = "M";
-            this.radioBtnM.CheckedChanged += new System.EventHandler(this.radioBtnM_CheckedChanged);
+            
             // 
             // radioBtnL
             // 
@@ -198,7 +198,7 @@
             this.radioBtnL.Size = new System.Drawing.Size(58, 26);
             this.radioBtnL.TabIndex = 3;
             this.radioBtnL.Text = "L";
-            this.radioBtnL.CheckedChanged += new System.EventHandler(this.radioBtnL_CheckedChanged);
+            
             // 
             // radioBtnXL
             // 
@@ -208,7 +208,7 @@
             this.radioBtnXL.Size = new System.Drawing.Size(64, 26);
             this.radioBtnXL.TabIndex = 4;
             this.radioBtnXL.Text = "XL";
-            this.radioBtnXL.CheckedChanged += new System.EventHandler(this.radioBtnXL_CheckedChanged);
+            
             // 
             // btnAgregarBulto
             // 
@@ -235,7 +235,7 @@
             this.listViewBultos.TabIndex = 6;
             this.listViewBultos.UseCompatibleStateImageBehavior = false;
             this.listViewBultos.View = System.Windows.Forms.View.Details;
-            this.listViewBultos.SelectedIndexChanged += new System.EventHandler(this.listViewBultos_SelectedIndexChanged);
+            
             // 
             // colNum
             // 
@@ -322,7 +322,7 @@
             this.txtNombreDom.Name = "txtNombreDom";
             this.txtNombreDom.Size = new System.Drawing.Size(770, 26);
             this.txtNombreDom.TabIndex = 1;
-            this.txtNombreDom.TextChanged += new System.EventHandler(this.txtNombreDom_TextChanged);
+            
             // 
             // lblDNIDom
             // 
@@ -341,7 +341,7 @@
             this.txtDNIDom.Name = "txtDNIDom";
             this.txtDNIDom.Size = new System.Drawing.Size(180, 26);
             this.txtDNIDom.TabIndex = 3;
-            this.txtDNIDom.TextChanged += new System.EventHandler(this.txtDNIDom_TextChanged);
+            
             // 
             // lblTelefonoDom
             // 
@@ -360,8 +360,7 @@
             this.txtTelefonoDom.Name = "txtTelefonoDom";
             this.txtTelefonoDom.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoDom.TabIndex = 5;
-            this.txtTelefonoDom.TextChanged += new System.EventHandler(this.txtTelefonoDom_TextChanged);
-            // 
+            
             // lblDomicilioEntrega
             // 
             this.lblDomicilioEntrega.AutoSize = true;
@@ -379,7 +378,7 @@
             this.txtDomicilioEntrega.Name = "txtDomicilioEntrega";
             this.txtDomicilioEntrega.Size = new System.Drawing.Size(770, 26);
             this.txtDomicilioEntrega.TabIndex = 7;
-            this.txtDomicilioEntrega.TextChanged += new System.EventHandler(this.txtDomicilioEntrega_TextChanged);
+            
             // 
             // lblCPDom
             // 
@@ -398,7 +397,7 @@
             this.txtCPDom.Name = "txtCPDom";
             this.txtCPDom.Size = new System.Drawing.Size(127, 26);
             this.txtCPDom.TabIndex = 9;
-            this.txtCPDom.TextChanged += new System.EventHandler(this.txtCPDom_TextChanged);
+            
             // 
             // btnBuscarLocalidadDom
             // 
@@ -463,7 +462,7 @@
             this.txtNombreAg.Name = "txtNombreAg";
             this.txtNombreAg.Size = new System.Drawing.Size(770, 26);
             this.txtNombreAg.TabIndex = 1;
-            this.txtNombreAg.TextChanged += new System.EventHandler(this.txtNombreAg_TextChanged);
+            
             // 
             // lblDNIAg
             // 
@@ -482,7 +481,7 @@
             this.txtDNIAg.Name = "txtDNIAg";
             this.txtDNIAg.Size = new System.Drawing.Size(180, 26);
             this.txtDNIAg.TabIndex = 3;
-            this.txtDNIAg.TextChanged += new System.EventHandler(this.txtDNIAg_TextChanged);
+            
             // 
             // lblTelefonoAg
             // 
@@ -501,7 +500,7 @@
             this.txtTelefonoAg.Name = "txtTelefonoAg";
             this.txtTelefonoAg.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoAg.TabIndex = 5;
-            this.txtTelefonoAg.TextChanged += new System.EventHandler(this.txtTelefonoAg_TextChanged);
+            
             // 
             // lblCPAg
             // 
@@ -520,7 +519,7 @@
             this.txtCPAg.Name = "txtCPAg";
             this.txtCPAg.Size = new System.Drawing.Size(127, 26);
             this.txtCPAg.TabIndex = 7;
-            this.txtCPAg.TextChanged += new System.EventHandler(this.txtCPAg_TextChanged);
+            
             // 
             // btnBuscarLocalidadAg
             // 
@@ -550,7 +549,7 @@
             this.cmbAgencia.Name = "cmbAgencia";
             this.cmbAgencia.Size = new System.Drawing.Size(355, 28);
             this.cmbAgencia.TabIndex = 10;
-            this.cmbAgencia.SelectedIndexChanged += new System.EventHandler(this.cmbAgencia_SelectedIndexChanged);
+            
             // 
             // btnCD
             // 
@@ -605,7 +604,7 @@
             this.txtNombreCD.Name = "txtNombreCD";
             this.txtNombreCD.Size = new System.Drawing.Size(770, 26);
             this.txtNombreCD.TabIndex = 1;
-            this.txtNombreCD.TextChanged += new System.EventHandler(this.txtNombreCD_TextChanged);
+            
             // 
             // lblDNICD
             // 
@@ -624,7 +623,7 @@
             this.txtDNICD.Name = "txtDNICD";
             this.txtDNICD.Size = new System.Drawing.Size(180, 26);
             this.txtDNICD.TabIndex = 3;
-            this.txtDNICD.TextChanged += new System.EventHandler(this.txtDNICD_TextChanged);
+            
             // 
             // lblTelefonoCD
             // 
@@ -643,7 +642,7 @@
             this.txtTelefonoCD.Name = "txtTelefonoCD";
             this.txtTelefonoCD.Size = new System.Drawing.Size(372, 26);
             this.txtTelefonoCD.TabIndex = 5;
-            this.txtTelefonoCD.TextChanged += new System.EventHandler(this.txtTelefonoCD_TextChanged);
+            
             // 
             // lblCPCD
             // 
@@ -662,7 +661,7 @@
             this.txtCPCD.Name = "txtCPCD";
             this.txtCPCD.Size = new System.Drawing.Size(127, 26);
             this.txtCPCD.TabIndex = 7;
-            this.txtCPCD.TextChanged += new System.EventHandler(this.txtCPCD_TextChanged);
+            
             // 
             // btnBuscarLocalidadCD
             // 
@@ -692,7 +691,7 @@
             this.cmbCD.Name = "cmbCD";
             this.cmbCD.Size = new System.Drawing.Size(372, 28);
             this.cmbCD.TabIndex = 10;
-            this.cmbCD.SelectedIndexChanged += new System.EventHandler(this.cmbCD_SelectedIndexChanged);
+            
             // 
             // btnConfirmar
             // 

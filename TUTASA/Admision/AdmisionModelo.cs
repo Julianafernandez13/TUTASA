@@ -1,117 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TUTASA.Admision
 {
     internal class AdmisionModelo
     {
-        //Datos de Prueba para guias.    
+        public Guia GuiaSeleccionada { get; private set; }
+
         private List<Guia> guias = new List<Guia>
         {
-            new Guia
-            {
-                Id = 1,
-                NroTracking = "BUE-00000001",
-                EstadoActual = "Impuesto en agencia — pendiente de admisión en CD",
-                NombreRemitente = "Industrias López SA",
-                NombreDestinatario = "Carlos Méndez",
-                DomicilioEntrega = "Av. Pellegrini 420",
-                Localidad = "Rosario",
-                CodigoPostal = "2000",
-                Categoria = "M",
-                TipoEntrega = "Domicilio",
-                TarifaEstimativa = 1500.00m,
-                TarifaDefinitiva = 0,
-                CdOrigen = "Buenos Aires",
-                CdDestino = "Rosario"
-            },
-
-            new Guia
-            {
-                Id = 2,
-                NroTracking = "BUE-00000002",
-                EstadoActual = "Impuesto en CD — pendiente de admisión",
-                NombreRemitente = "Textiles Garmendia SRL",
-                NombreDestinatario = "Ana Rodríguez",
-                DomicilioEntrega = "Corrientes 1200",
-                Localidad = "Córdoba",
-                CodigoPostal = "5000",
-                Categoria = "L",
-                TipoEntrega = "Domicilio",
-                TarifaEstimativa = 2200.00m,
-                TarifaDefinitiva = 0,
-                CdOrigen = "Buenos Aires",
-                CdDestino = "Córdoba"
-            },
-
-            new Guia
-            {
-                Id = 3,
-                NroTracking = "BUE-00000003",
-                EstadoActual = "Impuesto en agencia — pendiente de admisión en CD",
-                NombreRemitente = "Distribuidora Norte SA",
-                NombreDestinatario = "Roberto Fernández",
-                DomicilioEntrega = "San Martín 580",
-                Localidad = "Mendoza",
-                CodigoPostal = "5500",
-                Categoria = "S",
-                TipoEntrega = "Agencia",
-                TarifaEstimativa = 900.00m,
-                TarifaDefinitiva = 0,
-                CdOrigen = "Buenos Aires",
-                CdDestino = "Mendoza"
-            },
-
-            new Guia
-            {
-                Id = 4,
-                NroTracking = "BUE-00000004",
-                EstadoActual = "Impuesto en CD — pendiente de admisión",
-                NombreRemitente = "Comercial del Sur SRL",
-                NombreDestinatario = "Laura Giménez",
-                DomicilioEntrega = "Rivadavia 340",
-                Localidad = "Tucumán",
-                CodigoPostal = "4000",
-                Categoria = "XL",
-                TipoEntrega = "Domicilio",
-                TarifaEstimativa = 3100.00m,
-                TarifaDefinitiva = 0,
-                CdOrigen = "Buenos Aires",
-                CdDestino = "Tucumán"
-            },
-
-            new Guia
-            {
-                Id = 5,
-                NroTracking = "BUE-00000005",
-                EstadoActual = "Impuesto en agencia — pendiente de admisión en CD",
-                NombreRemitente = "Importadora del Este SA",
-                NombreDestinatario = "Martín Sosa",
-                DomicilioEntrega = "Belgrano 920",
-                Localidad = "Mar del Plata",
-                CodigoPostal = "7600",
-                Categoria = "M",
-                TipoEntrega = "Domicilio",
-                TarifaEstimativa = 1800.00m,
-                TarifaDefinitiva = 0,
-                CdOrigen = "Buenos Aires",
-                CdDestino = "Mar del Plata"
-            }
+            new Guia { Id = 1, NroTracking = "BUE-00000001", EstadoActual = "Impuesto en agencia — pendiente de admisión en CD", Categoria = "M", TarifaDefinitiva = 0 },
+            new Guia { Id = 2, NroTracking = "BUE-00000002", EstadoActual = "Impuesto en CD — pendiente de admisión",            Categoria = "L", TarifaDefinitiva = 0 },
+            new Guia { Id = 3, NroTracking = "BUE-00000003", EstadoActual = "Impuesto en agencia — pendiente de admisión en CD", Categoria = "S", TarifaDefinitiva = 0 },
+            new Guia { Id = 4, NroTracking = "BUE-00000004", EstadoActual = "Impuesto en CD — pendiente de admisión",            Categoria = "XL", TarifaDefinitiva = 0 },
+            new Guia { Id = 5, NroTracking = "BUE-00000005", EstadoActual = "Impuesto en agencia — pendiente de admisión en CD", Categoria = "M", TarifaDefinitiva = 0 }
         };
 
-        public List<Guia> Guias
-        {
-            get
-            {
-                return guias;
-            }
-        }
-
-        //Datos de Prueba para categorias. 
         public List<Categoria> Categorias
         {
             get
@@ -126,16 +31,41 @@ namespace TUTASA.Admision
             }
         }
 
-        internal bool Admitir(Guia guia, Categoria categoria)
+        internal bool BuscarGuia(string nroTracking)
         {
-            if (guia == null)
+            GuiaSeleccionada = null;
+
+            foreach (var guia in guias)
+            {
+                if (guia.NroTracking == nroTracking.Trim().ToUpper())
+                {
+                    GuiaSeleccionada = guia;
+                    break;
+                }
+            }
+
+            if (GuiaSeleccionada == null)
+            {
+                MessageBox.Show(
+                    "La guía ingresada no corresponde a ninguna solicitud registrada.",
+                    "Guía no encontrada",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        internal bool Admitir(Categoria categoria)
+        {
+            if (GuiaSeleccionada == null)
             {
                 MessageBox.Show(
                     "Debe buscar una guía primero.",
-                    "Error",
+                    "Error de validación",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
                 return false;
             }
 
@@ -143,30 +73,44 @@ namespace TUTASA.Admision
             {
                 MessageBox.Show(
                     "Debe seleccionar una categoría.",
-                    "Error",
+                    "Error de validación",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
                 return false;
             }
 
-
-            if (guia.EstadoActual == "Admitida en CD")
+            if (GuiaSeleccionada.EstadoActual == "Admitida en CD")
             {
                 MessageBox.Show(
                     "La guía ya fue admitida.",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-
                 return false;
             }
 
-            guia.Categoria = categoria.Descripcion;
+            // 3) Si la categoría es diferente a la que ya tenía, pedir confirmación
+            if (GuiaSeleccionada.Categoria != categoria.Descripcion)
+            {
+                var resultado = MessageBox.Show(
+                    $"La guía tiene la categoría \"{GuiaSeleccionada.Categoria}\" asignada.\n¿Desea cambiarla a \"{categoria.Descripcion}\"?",
+                    "Confirmar cambio de categoría",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-            guia.EstadoActual = "Admitida en CD";
+                if (resultado == DialogResult.No)
+                    return false;
+            }
+
+            GuiaSeleccionada.Categoria = categoria.Descripcion;
+            GuiaSeleccionada.EstadoActual = "Admitida en CD";
 
             return true;
+        }
+
+        internal void LimpiarSeleccion()
+        {
+            GuiaSeleccionada = null;
         }
     }
 }

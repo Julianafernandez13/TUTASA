@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CD
 {
-    partial class frmEntregaCD
+    partial class frmEntrega
     {
         /// <summary>
         /// Required designer variable.
@@ -53,22 +53,22 @@
             this.groupRegistrarEntrega.Controls.Add(this.btnCancelar);
             this.groupRegistrarEntrega.Controls.Add(this.btnConfirmarEntrega);
             this.groupRegistrarEntrega.Controls.Add(this.groupReceptor);
-            this.groupRegistrarEntrega.Location = new System.Drawing.Point(16, 14);
-            this.groupRegistrarEntrega.Margin = new System.Windows.Forms.Padding(4);
+            this.groupRegistrarEntrega.Location = new System.Drawing.Point(18, 18);
+            this.groupRegistrarEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupRegistrarEntrega.Name = "groupRegistrarEntrega";
-            this.groupRegistrarEntrega.Padding = new System.Windows.Forms.Padding(4);
-            this.groupRegistrarEntrega.Size = new System.Drawing.Size(613, 518);
+            this.groupRegistrarEntrega.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupRegistrarEntrega.Size = new System.Drawing.Size(690, 648);
             this.groupRegistrarEntrega.TabIndex = 0;
             this.groupRegistrarEntrega.TabStop = false;
-            this.groupRegistrarEntrega.Text = "TUTASA - Registrar Entrega en CD";
+            this.groupRegistrarEntrega.Text = "TUTASA - Registrar Entrega";
             // 
             // lblEncomiendasEntregar
             // 
             this.lblEncomiendasEntregar.AutoSize = true;
-            this.lblEncomiendasEntregar.Location = new System.Drawing.Point(19, 161);
+            this.lblEncomiendasEntregar.Location = new System.Drawing.Point(21, 201);
             this.lblEncomiendasEntregar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEncomiendasEntregar.Name = "lblEncomiendasEntregar";
-            this.lblEncomiendasEntregar.Size = new System.Drawing.Size(157, 16);
+            this.lblEncomiendasEntregar.Size = new System.Drawing.Size(187, 20);
             this.lblEncomiendasEntregar.TabIndex = 14;
             this.lblEncomiendasEntregar.Text = "Encomiendas a entregar:";
             // 
@@ -80,10 +80,10 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listViewEncomiendas.HideSelection = false;
-            this.listViewEncomiendas.Location = new System.Drawing.Point(16, 181);
-            this.listViewEncomiendas.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewEncomiendas.Location = new System.Drawing.Point(18, 226);
+            this.listViewEncomiendas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewEncomiendas.Name = "listViewEncomiendas";
-            this.listViewEncomiendas.Size = new System.Drawing.Size(591, 250);
+            this.listViewEncomiendas.Size = new System.Drawing.Size(664, 312);
             this.listViewEncomiendas.TabIndex = 5;
             this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
             this.listViewEncomiendas.View = System.Windows.Forms.View.Details;
@@ -110,10 +110,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(486, 473);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(547, 591);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 46);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -121,10 +121,10 @@
             // 
             // btnConfirmarEntrega
             // 
-            this.btnConfirmarEntrega.Location = new System.Drawing.Point(287, 473);
-            this.btnConfirmarEntrega.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirmarEntrega.Location = new System.Drawing.Point(323, 591);
+            this.btnConfirmarEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmarEntrega.Name = "btnConfirmarEntrega";
-            this.btnConfirmarEntrega.Size = new System.Drawing.Size(173, 37);
+            this.btnConfirmarEntrega.Size = new System.Drawing.Size(195, 46);
             this.btnConfirmarEntrega.TabIndex = 3;
             this.btnConfirmarEntrega.Text = "Confirmar Entrega";
             this.btnConfirmarEntrega.UseVisualStyleBackColor = true;
@@ -136,21 +136,21 @@
             this.groupReceptor.Controls.Add(this.txtDNIReceptor);
             this.groupReceptor.Controls.Add(this.label9);
             this.groupReceptor.Controls.Add(this.lblDNIReceptor);
-            this.groupReceptor.Location = new System.Drawing.Point(16, 41);
-            this.groupReceptor.Margin = new System.Windows.Forms.Padding(4);
+            this.groupReceptor.Location = new System.Drawing.Point(18, 51);
+            this.groupReceptor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupReceptor.Name = "groupReceptor";
-            this.groupReceptor.Padding = new System.Windows.Forms.Padding(4);
-            this.groupReceptor.Size = new System.Drawing.Size(590, 87);
+            this.groupReceptor.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupReceptor.Size = new System.Drawing.Size(664, 109);
             this.groupReceptor.TabIndex = 2;
             this.groupReceptor.TabStop = false;
             this.groupReceptor.Text = "Datos del Receptor";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(391, 28);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(440, 35);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 37);
+            this.btnBuscar.Size = new System.Drawing.Size(112, 46);
             this.btnBuscar.TabIndex = 17;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -158,19 +158,19 @@
             // 
             // txtDNIReceptor
             // 
-            this.txtDNIReceptor.Location = new System.Drawing.Point(156, 34);
-            this.txtDNIReceptor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNIReceptor.Location = new System.Drawing.Point(176, 42);
+            this.txtDNIReceptor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDNIReceptor.MaxLength = 8;
             this.txtDNIReceptor.Name = "txtDNIReceptor";
             this.txtDNIReceptor.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDNIReceptor.Size = new System.Drawing.Size(159, 22);
+            this.txtDNIReceptor.Size = new System.Drawing.Size(178, 26);
             this.txtDNIReceptor.TabIndex = 16;
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(156, 27);
+            this.label9.Location = new System.Drawing.Point(176, 34);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 0);
@@ -179,21 +179,21 @@
             // lblDNIReceptor
             // 
             this.lblDNIReceptor.AutoSize = true;
-            this.lblDNIReceptor.Location = new System.Drawing.Point(23, 38);
+            this.lblDNIReceptor.Location = new System.Drawing.Point(26, 48);
             this.lblDNIReceptor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDNIReceptor.Name = "lblDNIReceptor";
-            this.lblDNIReceptor.Size = new System.Drawing.Size(92, 16);
+            this.lblDNIReceptor.Size = new System.Drawing.Size(111, 20);
             this.lblDNIReceptor.TabIndex = 13;
             this.lblDNIReceptor.Text = "DNI Receptor:";
             // 
             // frmEntregaCD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 543);
+            this.ClientSize = new System.Drawing.Size(726, 679);
             this.Controls.Add(this.groupRegistrarEntrega);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmEntregaCD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

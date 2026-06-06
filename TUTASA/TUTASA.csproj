@@ -72,6 +72,7 @@
     <Compile Include="ConfeccionHDRdeUltMilla\Localidad.cs" />
     <Compile Include="ConsultaTracking\ConsultaTrackingModelo.cs" />
     <Compile Include="ConsultaTracking\EventoHistorial.cs" />
+    <Compile Include="ConsultaTracking\GuiaTracking.cs" />
     <Compile Include="CostovsVentas\CostovsVentasModelo.cs" />
     <Compile Include="CostovsVentas\ResultadoEmpresa.cs" />
     <Compile Include="EmitirFactura\Cliente.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="ImposicionCD\Destinatario.cs" />
     <Compile Include="ImposicionCD\Guia.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
+    <Compile Include="RegistrarEntrega\GuiaEntrega.cs" />
     <Compile Include="RegistrarEntrega\Receptor.cs" />
     <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />
     <Compile Include="RendicionHDRdeTransporte\EmpresaTransporte.cs" />
