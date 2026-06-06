@@ -83,7 +83,12 @@ namespace TUTASA.Forms.CD
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            LimpiarFormulario();
+            var resultado = MessageBox.Show("¿Está seguro que desea cancelar la admisión? Se perderán todos los datos ingresados.", "Cancelar Admision",
+                   MessageBoxButtons.OKCancel,
+                   MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.OK)
+                this.Close();
         }
 
         private void LimpiarFormulario()

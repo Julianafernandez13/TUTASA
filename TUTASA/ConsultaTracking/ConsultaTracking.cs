@@ -87,7 +87,12 @@ namespace TUTASA.Forms.CallCenter
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var resultado = MessageBox.Show("¿Está seguro que desea salir? Se perderán todos los datos ingresados.", "Salir",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.OK)
+                this.Close();
         }
 
         private void LimpiarFormulario()
