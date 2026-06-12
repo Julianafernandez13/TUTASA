@@ -53,6 +53,33 @@
     <Compile Include="Admision\AdmisionModelo.cs" />
     <Compile Include="Admision\Categoria.cs" />
     <Compile Include="Admision\Guia.cs" />
+    <Compile Include="Almacenes\AgenciaAlmacen.cs" />
+    <Compile Include="Almacenes\AgenciaEntidad.cs" />
+    <Compile Include="Almacenes\CategoriaBultoEnum.cs" />
+    <Compile Include="Almacenes\CentroDistribucionAlmacen.cs" />
+    <Compile Include="Almacenes\CentroDistribucionEntidad.cs" />
+    <Compile Include="Almacenes\ClienteAlmacen.cs" />
+    <Compile Include="Almacenes\ClienteEntidad.cs" />
+    <Compile Include="Almacenes\CodigoPostalAlmacen.cs" />
+    <Compile Include="Almacenes\CodigoPostalEntidad.cs" />
+    <Compile Include="Almacenes\ComisionAgenciaAlmacen.cs" />
+    <Compile Include="Almacenes\ComisionAgenciaEntidad.cs" />
+    <Compile Include="Almacenes\ComisionFleteroAlmacen.cs" />
+    <Compile Include="Almacenes\ComisionFleteroEntidad.cs" />
+    <Compile Include="Almacenes\CtaCteAgenciaAlmacen.cs" />
+    <Compile Include="Almacenes\CtaCteAgenciaEntidad.cs" />
+    <Compile Include="Almacenes\CtaCteClienteAlmacen.cs" />
+    <Compile Include="Almacenes\CtaCteClienteEntidad.cs" />
+    <Compile Include="Almacenes\CtaCteEmpresaTransporteAlmacen.cs" />
+    <Compile Include="Almacenes\CtaCteEmpresaTransporteEntidad.cs" />
+    <Compile Include="Almacenes\CtaCteFleteroAlmacen.cs" />
+    <Compile Include="Almacenes\CtaCteFleteroEntidad.cs" />
+    <Compile Include="Almacenes\EmpresaTransporteAlmacen.cs" />
+    <Compile Include="Almacenes\EmpresaTransporteEntidad.cs" />
+    <Compile Include="Almacenes\EstadoGuiaEnum.cs" />
+    <Compile Include="Almacenes\EstadoHDRTransporteEnum.cs" />
+    <Compile Include="Almacenes\GuiaAlmacen.cs" />
+    <Compile Include="Almacenes\GuiaEntidad.cs" />
     <Compile Include="ConfeccionHDRdeTransporte\ConfeccionHDRdeTransporteModelo.cs" />
     <Compile Include="ConfeccionHDRdeTransporte\EmpresaTransporte.cs" />
     <Compile Include="ConfeccionHDRdeTransporte\Guia.cs" />
@@ -289,6 +316,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Datos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
