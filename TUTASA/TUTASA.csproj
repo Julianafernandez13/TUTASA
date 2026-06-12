@@ -78,6 +78,9 @@
     <Compile Include="Almacenes\EmpresaTransporteEntidad.cs" />
     <Compile Include="Almacenes\EstadoGuiaEnum.cs" />
     <Compile Include="Almacenes\EstadoHDRTransporteEnum.cs" />
+    <Compile Include="Almacenes\EstadoHDRUltimaMillaEnum.cs" />
+    <Compile Include="Almacenes\ExtrasAlmacen.cs" />
+    <Compile Include="Almacenes\ExtrasEntidad.cs" />
     <Compile Include="Almacenes\GuiaAlmacen.cs" />
     <Compile Include="Almacenes\GuiaEntidad.cs" />
     <Compile Include="ConfeccionHDRdeTransporte\ConfeccionHDRdeTransporteModelo.cs" />
