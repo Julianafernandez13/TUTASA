@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.Json;
+
+
+namespace TUTASA.Almacenes
+{
+    internal static class HDRRetiroAlmacen
+    {
+        private static List<HDRRetiroEntidad> hDRRetiros = new List<HDRRetiroEntidad>();
+
+        static HDRRetiroAlmacen()
+        {
+            if (File.Exists("hdr_retiro.json"))
+            {
+                string json = File.ReadAllText("hdr_retiro.json");
+                hDRRetiros = JsonSerializer.Deserialize<List<HDRRetiroEntidad>>(json);
+            }
+        }
+
+        public static List<HDRRetiroEntidad> ObtenerTodos()
+        {
+            return hDRRetiros;
+        }
+
+        public static void Guardar()
+        {
+            string json = JsonSerializer.Serialize(hDRRetiros);
+            File.WriteAllText("hdr_retiro.json", json);
+        }
+    }
+}
