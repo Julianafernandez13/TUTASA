@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.Almacenes;
 
 namespace TUTASA
 {
@@ -17,6 +18,13 @@ namespace TUTASA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TUTASA.Pantallas.ConfeccionHDRdeTransporte());
+
+            //antes de que finalice el programa, guardar todos los datos en almacenes
+            AgenciaAlmacen.Guardar();
+            CentroDistribucionAlmacen.Guardar();
+            ClienteAlmacen.Guardar();
+            CodigoPostalAlmacen.Guardar();
+            //etc...
         }
     }
 }
