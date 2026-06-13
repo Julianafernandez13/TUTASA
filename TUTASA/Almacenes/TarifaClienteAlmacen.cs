@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static TarifaClienteAlmacen()
         {
-            if (File.Exists("tarifas_cliente.json"))
+            if (File.Exists(@"datos\tarifas_cliente.json"))
             {
-                string json = File.ReadAllText("tarifas_cliente.json");
+                string json = File.ReadAllText(@"datos\tarifas_cliente.json");
                 tarifaClientes = JsonSerializer.Deserialize<List<TarifaClienteEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(tarifaClientes);
-            File.WriteAllText("tarifas_cliente.json", json);
+            File.WriteAllText(@"datos\tarifas_cliente.json", json);
         }
     }
 }

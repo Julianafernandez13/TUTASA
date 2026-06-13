@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static ExtrasAlmacen()
         {
-            if (File.Exists("extras.json"))
+            if (File.Exists(@"datos\extras.json"))
             {
-                string json = File.ReadAllText("extras.json");
+                string json = File.ReadAllText(@"datos\extras.json");
                 extrass = JsonSerializer.Deserialize<List<ExtrasEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(extrass);
-            File.WriteAllText("extras.json", json);
+            File.WriteAllText(@"datos\extras.json", json);
         }
     }
 }

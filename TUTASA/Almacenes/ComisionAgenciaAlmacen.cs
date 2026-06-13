@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static ComisionAgenciaAlmacen()
         {
-            if (File.Exists("comisiones_agencia.json"))
+            if (File.Exists(@"datos\comisiones_agencia.json"))
             {
-                string json = File.ReadAllText("comisiones_agencia.json");
+                string json = File.ReadAllText(@"datos\comisiones_agencia.json");
                 comisionAgencias = JsonSerializer.Deserialize<List<ComisionAgenciaEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(comisionAgencias);
-            File.WriteAllText("comisiones_agencia.json", json);
+            File.WriteAllText(@"datos\comisiones_agencia.json", json);
         }
     }
 }

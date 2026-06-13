@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static CtaCteAgenciaAlmacen()
         {
-            if (File.Exists("cta_cte_agencia.json"))
+            if (File.Exists(@"datos\cta_cte_agencia.json"))
             {
-                string json = File.ReadAllText("cta_cte_agencia.json");
+                string json = File.ReadAllText(@"datos\cta_cte_agencia.json");
                 ctaCteAgencias = JsonSerializer.Deserialize<List<CtaCteAgenciaEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(ctaCteAgencias);
-            File.WriteAllText("cta_cte_agencia.json", json);
+            File.WriteAllText(@"datos\cta_cte_agencia.json", json);
         }
     }
 }

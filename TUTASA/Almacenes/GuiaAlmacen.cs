@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static GuiaAlmacen()
         {
-            if (File.Exists("guias.json"))
+            if (File.Exists(@"datos\guias.json"))
             {
-                string json = File.ReadAllText("guias.json");
+                string json = File.ReadAllText(@"datos\guias.json");
                 guias = JsonSerializer.Deserialize<List<GuiaEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(guias);
-            File.WriteAllText("guias.json", json);
+            File.WriteAllText(@"datos\guias.json", json);
         }
     }
 }

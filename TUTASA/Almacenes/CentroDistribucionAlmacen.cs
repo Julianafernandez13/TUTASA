@@ -6,13 +6,13 @@ namespace TUTASA.Almacenes
 {
     internal static class CentroDistribucionAlmacen
     {
-        private static List<CentroDistribucionEntidad> centroDistribucions = new List<CentroDistribucionEntidad>();
+        public static List<CentroDistribucionEntidad> centroDistribucions = new List<CentroDistribucionEntidad>();
 
         static CentroDistribucionAlmacen()
         {
-            if (File.Exists("centros_distribucion.json"))
+            if (File.Exists(@"datos\centros_distribucion.json"))
             {
-                string json = File.ReadAllText("centros_distribucion.json");
+                string json = File.ReadAllText(@"datos\centros_distribucion.json");
                 centroDistribucions = JsonSerializer.Deserialize<List<CentroDistribucionEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(centroDistribucions);
-            File.WriteAllText("centros_distribucion.json", json);
+            File.WriteAllText(@"datos\centros_distribucion.json", json);
         }
     }
 }

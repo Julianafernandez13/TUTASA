@@ -12,9 +12,9 @@ namespace TUTASA.Almacenes
 
         static CodigoPostalAlmacen()
         {
-            if (File.Exists("codigos_postales.json"))
+            if (File.Exists(@"datos\codigos_postales.json"))
             {
-                string json = File.ReadAllText("codigos_postales.json");
+                string json = File.ReadAllText(@"datos\codigos_postales.json");
                 codigoPostals = JsonSerializer.Deserialize<List<CodigoPostalEntidad>>(json);
             }
         }
@@ -27,7 +27,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(codigoPostals);
-            File.WriteAllText("codigos_postales.json", json);
+            File.WriteAllText(@"datos\codigos_postales.json", json);
         }
     }
 }

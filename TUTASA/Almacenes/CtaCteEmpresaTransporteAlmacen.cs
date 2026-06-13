@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static CtaCteEmpresaTransporteAlmacen()
         {
-            if (File.Exists("cta_cte_empresa_transporte.json"))
+            if (File.Exists(@"datos\cta_cte_empresa_transporte.json"))
             {
-                string json = File.ReadAllText("cta_cte_empresa_transporte.json");
+                string json = File.ReadAllText(@"datos\cta_cte_empresa_transporte.json");
                 ctaCteEmpresaTransportes = JsonSerializer.Deserialize<List<CtaCteEmpresaTransporteEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(ctaCteEmpresaTransportes);
-            File.WriteAllText("cta_cte_empresa_transporte.json", json);
+            File.WriteAllText(@"datos\cta_cte_empresa_transporte.json", json);
         }
     }
 }

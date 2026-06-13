@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static HDREntregaAlmacen()
         {
-            if (File.Exists("hdr_entrega.json"))
+            if (File.Exists(@"datos\hdr_entrega.json"))
             {
-                string json = File.ReadAllText("hdr_entrega.json");
+                string json = File.ReadAllText(@"datos\hdr_entrega.json");
                 hDREntregas = JsonSerializer.Deserialize<List<HDREntregaEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(hDREntregas);
-            File.WriteAllText("hdr_entrega.json", json);
+            File.WriteAllText(@"datos\hdr_entrega.json", json);
         }
     }
 }

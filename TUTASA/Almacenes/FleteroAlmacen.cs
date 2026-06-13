@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static FleteroAlmacen()
         {
-            if (File.Exists("fleteros.json"))
+            if (File.Exists(@"datos\fleteros.json"))
             {
-                string json = File.ReadAllText("fleteros.json");
+                string json = File.ReadAllText(@"datos\fleteros.json");
                 fleteros = JsonSerializer.Deserialize<List<FleteroEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(fleteros);
-            File.WriteAllText("fleteros.json", json);
+            File.WriteAllText(@"datos\fleteros.json", json);
         }
     }
 }

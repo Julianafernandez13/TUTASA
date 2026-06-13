@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static RutasEmpresaTransporteAlmacen()
         {
-            if (File.Exists("rutas_empresa_transporte.json"))
+            if (File.Exists(@"datos\rutas_empresa_transporte.json"))
             {
-                string json = File.ReadAllText("rutas_empresa_transporte.json");
+                string json = File.ReadAllText(@"datos\rutas_empresa_transporte.json");
                 rutasEmpresaTransportes = JsonSerializer.Deserialize<List<RutasEmpresaTransporte>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(rutasEmpresaTransportes);
-            File.WriteAllText("rutas_empresa_transporte.json", json);
+            File.WriteAllText(@"datos\rutas_empresa_transporte.json", json);
         }
     }
 }

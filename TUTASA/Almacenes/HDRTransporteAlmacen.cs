@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static HDRTransporteAlmacen()
         {
-            if (File.Exists("hdr_transporte.json"))
+            if (File.Exists(@"datos\hdr_transporte.json"))
             {
-                string json = File.ReadAllText("hdr_transporte.json");
+                string json = File.ReadAllText(@"datos\hdr_transporte.json");
                 hDRTransportes = JsonSerializer.Deserialize<List<HDRTransporteEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(hDRTransportes);
-            File.WriteAllText("hdr_transporte.json", json);
+            File.WriteAllText(@"datos\hdr_transporte.json", json);
         }
     }
 }

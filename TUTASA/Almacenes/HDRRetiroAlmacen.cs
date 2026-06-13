@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static HDRRetiroAlmacen()
         {
-            if (File.Exists("hdr_retiro.json"))
+            if (File.Exists(@"datos\hdr_retiro.json"))
             {
-                string json = File.ReadAllText("hdr_retiro.json");
+                string json = File.ReadAllText(@"datos\hdr_retiro.json");
                 hDRRetiros = JsonSerializer.Deserialize<List<HDRRetiroEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(hDRRetiros);
-            File.WriteAllText("hdr_retiro.json", json);
+            File.WriteAllText(@"datos\hdr_retiro.json", json);
         }
     }
 }

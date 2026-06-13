@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static CtaCteFleteroAlmacen()
         {
-            if (File.Exists("cta_cte_fletero.json"))
+            if (File.Exists(@"datos\cta_cte_fletero.json"))
             {
-                string json = File.ReadAllText("cta_cte_fletero.json");
+                string json = File.ReadAllText(@"datos\cta_cte_fletero.json");
                 ctaCteFleteros = JsonSerializer.Deserialize<List<CtaCteFleteroEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(ctaCteFleteros);
-            File.WriteAllText("cta_cte_fletero.json", json);
+            File.WriteAllText(@"datos\cta_cte_fletero.json", json);
         }
     }
 }

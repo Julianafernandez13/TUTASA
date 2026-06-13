@@ -10,9 +10,9 @@ namespace TUTASA.Almacenes
 
         static TarifaArrendamientoAlmacen()
         {
-            if (File.Exists("tarifas_arrendamiento.json"))
+            if (File.Exists(@"datos\tarifas_arrendamiento.json"))
             {
-                string json = File.ReadAllText("tarifas_arrendamiento.json");
+                string json = File.ReadAllText(@"datos\tarifas_arrendamiento.json");
                 tarifaArrendamientos = JsonSerializer.Deserialize<List<TarifaArrendamientoEntidad>>(json);
             }
         }
@@ -25,7 +25,7 @@ namespace TUTASA.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(tarifaArrendamientos);
-            File.WriteAllText("tarifas_arrendamiento.json", json);
+            File.WriteAllText(@"datos\tarifas_arrendamiento.json", json);
         }
     }
 }
