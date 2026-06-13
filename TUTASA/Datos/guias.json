@@ -1,6 +1,7 @@
 ﻿[
   {
     "IdGuia": 1,
+    "NroTracking": "BUE-00000001",
     "IdCliente": 1,
     "FechaImposicion": "2026-05-01T09:00:00",
     "TipoEntrega": 0,
@@ -24,29 +25,30 @@
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 1,
     "IdComisionFletero": 0,
-    "EstadoGuia": 5,
+    "EstadoGuia": 4,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-01T09:00:00"
       },
       {
-        "Estado": 5,
+        "Estado": 4,
         "Fecha": "2026-05-02T10:00:00"
       }
     ]
   },
   {
     "IdGuia": 2,
-    "IdCliente": 2,
-    "FechaImposicion": "2026-05-03T11:00:00",
+    "NroTracking": "BUE-00000002",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-01T10:00:00",
     "TipoEntrega": 0,
-    "IdAgenciaOrigen": 1,
+    "IdAgenciaOrigen": 0,
     "IdCDOrigen": 1,
     "CategoriaBulto": 2,
-    "RemDni": 23456789,
-    "RemDomicilioRetiro": "Calle 7 Nro 200",
-    "RemCodPostal": "1900",
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Av. Corrientes 1234",
+    "RemCodPostal": "1000",
     "DniDestinatario": 11223344,
     "NombreApellidoDestinatario": "Roberto Fernández",
     "TelefonoDestinatario": 3544000002,
@@ -61,29 +63,26 @@
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
-    "EstadoGuia": 5,
+    "EstadoGuia": 4,
     "Historial": [
       {
-        "Estado": 0,
-        "Fecha": "2026-05-03T11:00:00"
-      },
-      {
-        "Estado": 5,
-        "Fecha": "2026-05-04T09:00:00"
+        "Estado": 4,
+        "Fecha": "2026-05-01T10:00:00"
       }
     ]
   },
   {
     "IdGuia": 3,
-    "IdCliente": 1,
-    "FechaImposicion": "2026-05-10T08:30:00",
+    "NroTracking": "BUE-00000003",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-03T11:00:00",
     "TipoEntrega": 0,
-    "IdAgenciaOrigen": 0,
+    "IdAgenciaOrigen": 1,
     "IdCDOrigen": 1,
     "CategoriaBulto": 0,
-    "RemDni": 12345678,
-    "RemDomicilioRetiro": "Av. Corrientes 1234",
-    "RemCodPostal": "1000",
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Calle 7 Nro 200",
+    "RemCodPostal": "1900",
     "DniDestinatario": 99887766,
     "NombreApellidoDestinatario": "Laura Sosa",
     "TelefonoDestinatario": 2614000003,
@@ -98,15 +97,83 @@
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 1,
-    "EstadoGuia": 5,
+    "EstadoGuia": 4,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-03T11:00:00"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2026-05-04T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 4,
+    "NroTracking": "BUE-00000004",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-10T08:30:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 3,
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Av. Corrientes 1234",
+    "RemCodPostal": "1000",
+    "DniDestinatario": 55443322,
+    "NombreApellidoDestinatario": "Pedro Díaz",
+    "TelefonoDestinatario": 1145000004,
+    "DomicilioEntrega": "Av. Rivadavia 456",
+    "DomicilioEntregaCodPostal": "1000",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 1,
+    "IdExtras": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 4,
     "Historial": [
       {
         "Estado": 4,
         "Fecha": "2026-05-10T08:30:00"
-      },
+      }
+    ]
+  },
+  {
+    "IdGuia": 5,
+    "NroTracking": "BUE-00000005",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-11T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 3,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 1,
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Av. Mitre 789",
+    "RemCodPostal": "1800",
+    "DniDestinatario": 44332211,
+    "NombreApellidoDestinatario": "Sofía Torres",
+    "TelefonoDestinatario": 2214000005,
+    "DomicilioEntrega": "Calle 50 Nro 100",
+    "DomicilioEntregaCodPostal": "1900",
+    "IdAgenciaDestino": 2,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 1,
+    "IdExtras": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": true,
+    "IdComisionAgencia": 2,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 0,
+    "Historial": [
       {
-        "Estado": 5,
-        "Fecha": "2026-05-11T10:00:00"
+        "Estado": 0,
+        "Fecha": "2026-05-11T09:00:00"
       }
     ]
   }

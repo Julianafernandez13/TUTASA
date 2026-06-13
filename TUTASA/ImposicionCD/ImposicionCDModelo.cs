@@ -13,6 +13,14 @@ namespace TUTASA.ImposicionCD
         private List<Guia> guias = new List<Guia>();
         private Cliente clienteSeleccionado = null;
 
+        // Sesion de CD activa (simulada)
+        private CentrosDeDistribucion cdActivo = new CentrosDeDistribucion
+        {
+            idCD = 1,
+            nombreCD = "CD Buenos Aires",
+            CodigosPostales = new List<string> { "1000", "1900", "1800", "1700" }
+        };
+
         // Métodos para manejar el cliente seleccionado y los bultos
         internal void SetClienteSeleccionado(Cliente cliente)
         {

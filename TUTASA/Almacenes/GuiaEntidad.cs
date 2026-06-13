@@ -9,6 +9,7 @@ namespace TUTASA.Almacenes
     public class GuiaEntidad
     {
         public int IdGuia { get; set; }
+        public string NroTracking { get; set; }
         public int IdCliente { get; set; }
         public DateTime FechaImposicion { get; set; }
         public TipoEntregaEnum TipoEntrega { get; set; }
