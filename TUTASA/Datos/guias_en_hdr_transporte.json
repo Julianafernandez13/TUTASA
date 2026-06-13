@@ -1,0 +1,14 @@
+﻿[
+  {
+    "IdHDRdeTransporte": 1,
+    "IdGuia": 1
+  },
+  {
+    "IdHDRdeTransporte": 2,
+    "IdGuia": 2
+  },
+  {
+    "IdHDRdeTransporte": 2,
+    "IdGuia": 3
+  }
+]

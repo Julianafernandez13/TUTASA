@@ -1,0 +1,113 @@
+﻿[
+  {
+    "IdGuia": 1,
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-01T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 5,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 1,
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Av. Corrientes 1234",
+    "RemCodPostal": "1000",
+    "DniDestinatario": 87654321,
+    "NombreApellidoDestinatario": "Ana García",
+    "TelefonoDestinatario": 3514000001,
+    "DomicilioEntrega": "Av. Colón 100",
+    "DomicilioEntregaCodPostal": "5000",
+    "IdAgenciaDestino": 6,
+    "IdCDDestino": 2,
+    "IdTarifaCliente": 1,
+    "IdExtras": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 1,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-01T09:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-02T10:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 2,
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-03T11:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 1,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 2,
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Calle 7 Nro 200",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 11223344,
+    "NombreApellidoDestinatario": "Roberto Fernández",
+    "TelefonoDestinatario": 3544000002,
+    "DomicilioEntrega": "Av. San Martín 50",
+    "DomicilioEntregaCodPostal": "5500",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 4,
+    "IdTarifaCliente": 2,
+    "IdExtras": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-03T11:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-04T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 3,
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-10T08:30:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 0,
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Av. Corrientes 1234",
+    "RemCodPostal": "1000",
+    "DniDestinatario": 99887766,
+    "NombreApellidoDestinatario": "Laura Sosa",
+    "TelefonoDestinatario": 2614000003,
+    "DomicilioEntrega": "Av. Las Heras 300",
+    "DomicilioEntregaCodPostal": "5500",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 4,
+    "IdTarifaCliente": 3,
+    "IdExtras": 1,
+    "TieneExtraRetiro": true,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 1,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 4,
+        "Fecha": "2026-05-10T08:30:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-11T10:00:00"
+      }
+    ]
+  }
+]

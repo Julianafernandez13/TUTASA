@@ -1,0 +1,17 @@
+﻿[
+  {
+    "IdEmpresaTransporte": 1,
+    "NombreEmpresa": "Flecha Bus",
+    "TipoArrendamiento": 2
+  },
+  {
+    "IdEmpresaTransporte": 2,
+    "NombreEmpresa": "Andesmar",
+    "TipoArrendamiento": 1
+  },
+  {
+    "IdEmpresaTransporte": 3,
+    "NombreEmpresa": "Chevallier",
+    "TipoArrendamiento": 3
+  }
+]

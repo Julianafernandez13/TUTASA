@@ -1,0 +1,26 @@
+﻿[
+  {
+    "IdComisionAgencia": 1,
+    "CategoriaBulto": 0,
+    "MontoComision": 80,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdComisionAgencia": 2,
+    "CategoriaBulto": 1,
+    "MontoComision": 150,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdComisionAgencia": 3,
+    "CategoriaBulto": 2,
+    "MontoComision": 200,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdComisionAgencia": 4,
+    "CategoriaBulto": 3,
+    "MontoComision": 300,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  }
+]

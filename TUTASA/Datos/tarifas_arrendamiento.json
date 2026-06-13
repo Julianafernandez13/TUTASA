@@ -1,0 +1,26 @@
+﻿[
+  {
+    "IdTarifaArrendamiento": 1,
+    "TipoArrendamiento": 0,
+    "MontoArrendamiento": 85000.0,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaArrendamiento": 2,
+    "TipoArrendamiento": 1,
+    "MontoArrendamiento": 60000.0,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaArrendamiento": 3,
+    "TipoArrendamiento": 2,
+    "MontoArrendamiento": 40000.0,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaArrendamiento": 4,
+    "TipoArrendamiento": 3,
+    "MontoArrendamiento": 18000.0,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  }
+]

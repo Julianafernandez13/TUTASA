@@ -1,0 +1,26 @@
+﻿[
+  {
+    "IdMovimientoCliente": 1,
+    "IdCliente": 1,
+    "IdGuia": 1,
+    "Facturado": true,
+    "Importe": 1815.0,
+    "FechaMovimiento": "2026-05-02T10:00:00"
+  },
+  {
+    "IdMovimientoCliente": 2,
+    "IdCliente": 2,
+    "IdGuia": 2,
+    "Facturado": false,
+    "Importe": 2420.0,
+    "FechaMovimiento": "2026-05-04T09:00:00"
+  },
+  {
+    "IdMovimientoCliente": 3,
+    "IdCliente": 1,
+    "IdGuia": 3,
+    "Facturado": true,
+    "Importe": 900.0,
+    "FechaMovimiento": "2026-05-11T10:00:00"
+  }
+]

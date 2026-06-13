@@ -1,0 +1,26 @@
+﻿[
+  {
+    "IdTarifaCliente": 1,
+    "CategoriaBulto": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 2,
+    "PrecioBase": 1500,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 2,
+    "CategoriaBulto": 2,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 4,
+    "PrecioBase": 2000,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 3,
+    "CategoriaBulto": 0,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 4,
+    "PrecioBase": 750,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  }
+]

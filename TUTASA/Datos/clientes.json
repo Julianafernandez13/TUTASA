@@ -1,0 +1,38 @@
+﻿[
+  {
+    "IdCliente": 1,
+    "CuitCliente": 20304050607,
+    "NombreCliente": "Juan",
+    "ApellidoCliente": "Pérez",
+    "DomicilioCliente": "Av. Corrientes 1234, CABA",
+    "TelefonoCliente": 1145678901,
+    "TipoFactura": 1
+  },
+  {
+    "IdCliente": 2,
+    "CuitCliente": 27333311122,
+    "NombreCliente": "María",
+    "ApellidoCliente": "González",
+    "DomicilioCliente": "Av. Santa Fe 567, CABA",
+    "TelefonoCliente": 1145678902,
+    "TipoFactura": 0
+  },
+  {
+    "IdCliente": 3,
+    "CuitCliente": 20111222333,
+    "NombreCliente": "Carlos",
+    "ApellidoCliente": "Sosa",
+    "DomicilioCliente": "Av. Rivadavia 890, CABA",
+    "TelefonoCliente": 1145678903,
+    "TipoFactura": 2
+  },
+  {
+    "IdCliente": 4,
+    "CuitCliente": 27222333444,
+    "NombreCliente": "Lucía",
+    "ApellidoCliente": "Fernández",
+    "DomicilioCliente": "Av. Cabildo 321, CABA",
+    "TelefonoCliente": 1145678904,
+    "TipoFactura": 0
+  }
+]

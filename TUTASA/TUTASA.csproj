@@ -326,6 +326,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Datos\centros_distribucion.json" />
+    <None Include="Datos\clientes.json" />
+    <None Include="Datos\codigos_postales.json" />
+    <None Include="Datos\comisiones_agencia.json" />
+    <None Include="Datos\comisiones_fletero.json" />
+    <None Include="Datos\cta_cte_agencia.json" />
+    <None Include="Datos\cta_cte_cliente.json" />
+    <None Include="Datos\cta_cte_empresa_transporte.json" />
+    <None Include="Datos\cta_cte_fletero.json" />
+    <None Include="Datos\empresas_transporte.json" />
+    <None Include="Datos\extras.json" />
+    <None Include="Datos\facturas.json" />
+    <None Include="Datos\fleteros.json" />
+    <None Include="Datos\guias.json" />
+    <None Include="Datos\guias_en_hdr_transporte.json" />
+    <None Include="Datos\hdr_entrega.json" />
+    <None Include="Datos\hdr_retiro.json" />
+    <None Include="Datos\hdr_transporte.json" />
+    <None Include="Datos\rutas_empresa_transporte.json" />
+    <None Include="Datos\tarifas_arrendamiento.json" />
+    <None Include="Datos\tarifas_cliente.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -339,8 +360,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Datos\" />
+    <None Include="Datos\agencias.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,22 @@
+﻿[
+  {
+    "IdEmpresaTransporte": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 2
+  },
+  {
+    "IdEmpresaTransporte": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 3
+  },
+  {
+    "IdEmpresaTransporte": 2,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 4
+  },
+  {
+    "IdEmpresaTransporte": 3,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 5
+  }
+]

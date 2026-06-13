@@ -1,0 +1,42 @@
+﻿[
+  {
+    "IdCodPostal": "1000",
+    "DescripcionProvincia": "CABA",
+    "DescripcionLocalidad": "Buenos Aires"
+  },
+  {
+    "IdCodPostal": "1900",
+    "DescripcionProvincia": "Buenos Aires",
+    "DescripcionLocalidad": "La Plata"
+  },
+  {
+    "IdCodPostal": "1800",
+    "DescripcionProvincia": "Buenos Aires",
+    "DescripcionLocalidad": "Quilmes"
+  },
+  {
+    "IdCodPostal": "1700",
+    "DescripcionProvincia": "Buenos Aires",
+    "DescripcionLocalidad": "Morón"
+  },
+  {
+    "IdCodPostal": "5000",
+    "DescripcionProvincia": "Córdoba",
+    "DescripcionLocalidad": "Córdoba"
+  },
+  {
+    "IdCodPostal": "2000",
+    "DescripcionProvincia": "Santa Fe",
+    "DescripcionLocalidad": "Rosario"
+  },
+  {
+    "IdCodPostal": "5500",
+    "DescripcionProvincia": "Mendoza",
+    "DescripcionLocalidad": "Mendoza"
+  },
+  {
+    "IdCodPostal": "7600",
+    "DescripcionProvincia": "Buenos Aires",
+    "DescripcionLocalidad": "Mar del Plata"
+  }
+]

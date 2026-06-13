@@ -1,0 +1,18 @@
+﻿[
+  {
+    "IdMovimientoTransporte": 1,
+    "IdEmpresaTransporte": 1,
+    "IdHDRdeTransporte": 1,
+    "FechaMovimiento": "2026-05-02T14:00:00",
+    "Importe": 85000.0,
+    "Pagado": true
+  },
+  {
+    "IdMovimientoTransporte": 2,
+    "IdEmpresaTransporte": 2,
+    "IdHDRdeTransporte": 2,
+    "FechaMovimiento": "2026-05-04T15:00:00",
+    "Importe": 60000.0,
+    "Pagado": false
+  }
+]

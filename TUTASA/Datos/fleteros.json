@@ -1,0 +1,31 @@
+﻿[
+  {
+    "IdFletero": 1,
+    "DniFletero": 12345678,
+    "NombreFletero": "Carlos",
+    "ApellidoFletero": "Rodríguez",
+    "IdCodPostal": [
+      "1000",
+      "1900"
+    ]
+  },
+  {
+    "IdFletero": 2,
+    "DniFletero": 23456789,
+    "NombreFletero": "Diego",
+    "ApellidoFletero": "Martínez",
+    "IdCodPostal": [
+      "1000",
+      "1800"
+    ]
+  },
+  {
+    "IdFletero": 3,
+    "DniFletero": 34567890,
+    "NombreFletero": "Juan",
+    "ApellidoFletero": "López",
+    "IdCodPostal": [
+      "5000"
+    ]
+  }
+]

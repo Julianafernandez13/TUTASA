@@ -1,0 +1,11 @@
+﻿[
+  {
+    "IdHDRdeEntrega": 1,
+    "IdFletero": 1,
+    "FechaEmisionHDR": "2026-05-05T08:00:00",
+    "EstadoHDR": 0,
+    "GuiasEntrega": [
+      1
+    ]
+  }
+]

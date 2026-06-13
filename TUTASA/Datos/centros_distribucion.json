@@ -1,0 +1,50 @@
+﻿[
+  {
+    "IdCD": 1,
+    "IdCodPostal": [
+      "1000",
+      "1900",
+      "1800",
+      "1700"
+    ],
+    "NombreCD": "CD Buenos Aires",
+    "DomicilioCD": "Av. Corrientes 1000, CABA",
+    "CapacidadAlmacenamiento": 500.0
+  },
+  {
+    "IdCD": 2,
+    "IdCodPostal": [
+      "5000"
+    ],
+    "NombreCD": "CD Córdoba",
+    "DomicilioCD": "Av. Colón 987, Córdoba",
+    "CapacidadAlmacenamiento": 300.0
+  },
+  {
+    "IdCD": 3,
+    "IdCodPostal": [
+      "2000"
+    ],
+    "NombreCD": "CD Rosario",
+    "DomicilioCD": "Av. Pellegrini 500, Rosario",
+    "CapacidadAlmacenamiento": 250.0
+  },
+  {
+    "IdCD": 4,
+    "IdCodPostal": [
+      "5500"
+    ],
+    "NombreCD": "CD Mendoza",
+    "DomicilioCD": "Av. San Martín 200, Mendoza",
+    "CapacidadAlmacenamiento": 200.0
+  },
+  {
+    "IdCD": 5,
+    "IdCodPostal": [
+      "7600"
+    ],
+    "NombreCD": "CD Mar del Plata",
+    "DomicilioCD": "Av. Colón 1500, Mar del Plata",
+    "CapacidadAlmacenamiento": 150.0
+  }
+]

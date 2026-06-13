@@ -1,0 +1,50 @@
+﻿[
+	{
+		"IdAgencia": 1,
+		"IdCD": 1,
+		"NombreAgencia": "Agencia La Plata Centro",
+		"IdCodPostal": "1900",
+		"DomicilioAgencia": "Calle 7 Nro 123, La Plata",
+		"TelefonoAgencia": 2214567890
+	},
+	{
+		"IdAgencia": 2,
+		"IdCD": 1,
+		"NombreAgencia": "Agencia La Plata Norte",
+		"IdCodPostal": "1900",
+		"DomicilioAgencia": "Calle 44 Nro 456, La Plata",
+		"TelefonoAgencia": 2214567891
+	},
+	{
+		"IdAgencia": 3,
+		"IdCD": 1,
+		"NombreAgencia": "Agencia Quilmes",
+		"IdCodPostal": "1800",
+		"DomicilioAgencia": "Av. Mitre Nro 789, Quilmes",
+		"TelefonoAgencia": 1145678910
+	},
+	{
+		"IdAgencia": 4,
+		"IdCD": 1,
+		"NombreAgencia": "Agencia Morón",
+		"IdCodPostal": "1700",
+		"DomicilioAgencia": "Av. Rivadavia Nro 321, Morón",
+		"TelefonoAgencia": 1145678911
+	},
+	{
+		"IdAgencia": 5,
+		"IdCD": 1,
+		"NombreAgencia": "Agencia CABA Centro",
+		"IdCodPostal": "1000",
+		"DomicilioAgencia": "Av. Corrientes Nro 654, CABA",
+		"TelefonoAgencia": 1145678912
+	},
+	{
+		"IdAgencia": 6,
+		"IdCD": 2,
+		"NombreAgencia": "Agencia Córdoba",
+		"IdCodPostal": "5000",
+		"DomicilioAgencia": "Av. Colón Nro 987, Córdoba",
+		"TelefonoAgencia": 3514567890
+	}
+]

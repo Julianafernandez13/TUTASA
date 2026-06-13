@@ -1,0 +1,18 @@
+﻿[
+  {
+    "IdMovimientoAgencia": 1,
+    "IdAgencia": 5,
+    "IdGuia": 1,
+    "Pagado": false,
+    "Importe": 150.0,
+    "FechaMovimiento": "2026-05-01T09:00:00"
+  },
+  {
+    "IdMovimientoAgencia": 2,
+    "IdAgencia": 1,
+    "IdGuia": 2,
+    "Pagado": false,
+    "Importe": 200.0,
+    "FechaMovimiento": "2026-05-03T11:00:00"
+  }
+]
