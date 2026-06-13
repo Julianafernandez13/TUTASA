@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class GuiaAlmacen
     {
-        private static List<GuiaEntidad> guias = new List<GuiaEntidad>();
+        public static List<GuiaEntidad> guias = new List<GuiaEntidad>();
 
         static GuiaAlmacen()
         {

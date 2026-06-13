@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class CtaCteFleteroAlmacen
     {
-        private static List<CtaCteFleteroEntidad> ctaCteFleteros = new List<CtaCteFleteroEntidad>();
+        public static List<CtaCteFleteroEntidad> ctaCteFleteros = new List<CtaCteFleteroEntidad>();
 
         static CtaCteFleteroAlmacen()
         {

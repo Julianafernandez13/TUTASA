@@ -9,7 +9,7 @@ namespace TUTASA.Almacenes
 {
     internal static class HDRTransporteAlmacen
     {
-        private static List<HDRTransporteEntidad> hDRTransportes = new List<HDRTransporteEntidad>();
+        public static List<HDRTransporteEntidad> hDRTransportes = new List<HDRTransporteEntidad>();
 
         static HDRTransporteAlmacen()
         {

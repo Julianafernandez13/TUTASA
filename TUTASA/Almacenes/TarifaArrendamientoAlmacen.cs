@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class TarifaArrendamientoAlmacen
     {
-        private static List<TarifaArrendamientoEntidad> tarifaArrendamientos = new List<TarifaArrendamientoEntidad>();
+        public static List<TarifaArrendamientoEntidad> tarifaArrendamientos = new List<TarifaArrendamientoEntidad>();
 
         static TarifaArrendamientoAlmacen()
         {

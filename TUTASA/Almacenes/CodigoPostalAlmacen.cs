@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class CodigoPostalAlmacen
     {
-        private static List<CodigoPostalEntidad> codigoPostals = new List<CodigoPostalEntidad>();
+        public static List<CodigoPostalEntidad> codigoPostals = new List<CodigoPostalEntidad>();
 
         static CodigoPostalAlmacen()
         {

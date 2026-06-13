@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class CtaCteClienteAlmacen
     {
-        private static List<CtaCteClienteEntidad> ctaCteClientes = new List<CtaCteClienteEntidad>();
+        public static List<CtaCteClienteEntidad> ctaCteClientes = new List<CtaCteClienteEntidad>();
 
         static CtaCteClienteAlmacen()
         {

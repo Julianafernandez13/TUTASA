@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class ExtrasAlmacen
     {
-        private static List<ExtrasEntidad> extrass = new List<ExtrasEntidad>();
+        public static List<ExtrasEntidad> extrass = new List<ExtrasEntidad>();
 
         static ExtrasAlmacen()
         {

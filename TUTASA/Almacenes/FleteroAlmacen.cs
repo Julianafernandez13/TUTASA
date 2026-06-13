@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class FleteroAlmacen
     {
-        private static List<FleteroEntidad> fleteros = new List<FleteroEntidad>();
+        public static List<FleteroEntidad> fleteros = new List<FleteroEntidad>();
 
         static FleteroAlmacen()
         {

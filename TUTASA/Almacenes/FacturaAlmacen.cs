@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class FacturaAlmacen
     {
-        private static List<FacturaEntidad> facturas = new List<FacturaEntidad>();
+        public static List<FacturaEntidad> facturas = new List<FacturaEntidad>();
 
         static FacturaAlmacen()
         {

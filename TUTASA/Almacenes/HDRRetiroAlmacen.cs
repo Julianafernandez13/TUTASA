@@ -10,7 +10,7 @@ namespace TUTASA.Almacenes
 {
     internal static class HDRRetiroAlmacen
     {
-        private static List<HDRRetiroEntidad> hDRRetiros = new List<HDRRetiroEntidad>();
+        public static List<HDRRetiroEntidad> hDRRetiros = new List<HDRRetiroEntidad>();
 
         static HDRRetiroAlmacen()
         {

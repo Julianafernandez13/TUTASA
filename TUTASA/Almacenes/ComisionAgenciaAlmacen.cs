@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class ComisionAgenciaAlmacen
     {
-        private static List<ComisionAgenciaEntidad> comisionAgencias = new List<ComisionAgenciaEntidad>();
+        public static List<ComisionAgenciaEntidad> comisionAgencias = new List<ComisionAgenciaEntidad>();
 
         static ComisionAgenciaAlmacen()
         {

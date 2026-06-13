@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class RutasEmpresaTransporteAlmacen
     {
-        private static List<RutasEmpresaTransporte> rutasEmpresaTransportes = new List<RutasEmpresaTransporte>();
+        public static List<RutasEmpresaTransporte> rutasEmpresaTransportes = new List<RutasEmpresaTransporte>();
 
         static RutasEmpresaTransporteAlmacen()
         {

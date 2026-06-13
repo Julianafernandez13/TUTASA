@@ -8,7 +8,7 @@ namespace TUTASA.Almacenes
 {
     internal static class HDREntregaAlmacen
     {
-        private static List<HDREntregaEntidad> hDREntregas = new List<HDREntregaEntidad>();
+        public static List<HDREntregaEntidad> hDREntregas = new List<HDREntregaEntidad>();
 
         static HDREntregaAlmacen()
         {
