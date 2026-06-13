@@ -134,11 +134,12 @@ namespace TUTASA.ImposicionCD
                         new HistorialGuia { Estado = EstadoGuiaEnum.Impuesta,  Fecha = ahora },
                         new HistorialGuia { Estado = EstadoGuiaEnum.Admitida,  Fecha = ahora }
                     }
+                    
                 };
 
                 GuiaAlmacen.guias.Add(nuevaGuia);
             }
-
+            GuiaAlmacen.Guardar();
         }
 
         internal List<Agencias> ObtenerAgencias()
