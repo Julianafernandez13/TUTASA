@@ -73,9 +73,71 @@ namespace TUTASA.ImposicionCD
             };
         }
 
+        // Calcula la tarifa definitiva para una guia
+        internal decimal CalcularTarifaDefinitiva(CategoriaBulto categoria, int idCDDestino, TipoEntrega tipoEntrega)
+        {
+            // 1) Buscar tarifa base vigente mas reciente
+            TarifaCliente tarifaVigente = null;
+            foreach (TarifaClienteEntidad t in TarifaClienteAlmacen.tarifaClientes)
+            {
+                if ((CategoriaBultoEnum)categoria == t.CategoriaBulto
+                    && t.IdCDOrigen == cdActivo.idCD
+                    && t.IdCDDestino == idCDDestino
+                    && t.FechaVigencia <= DateTime.Now)
+                {
+                    if (tarifaVigente == null || t.FechaVigencia > tarifaVigente.FechaVigencia)
+                    {
+                        tarifaVigente = new TarifaCliente
+                        {
+                            IdTarifaCliente = t.IdTarifaCliente,
+                            IdCDOrigen = t.IdCDOrigen,
+                            IdCDDestino = t.IdCDDestino,
+                            CategoriaBulto = (CategoriaBulto)t.CategoriaBulto,
+                            PrecioBase = t.PrecioBase,
+                            FechaVigencia = t.FechaVigencia
+                        };
+                    }
+                }
+            }
+
+            decimal tarifa = tarifaVigente != null ? tarifaVigente.PrecioBase : 0;
+
+            // 2) Buscar extras vigentes mas recientes
+            Extras extrasVigentes = null;
+            foreach (ExtrasEntidad e in ExtrasAlmacen.extrass)
+            {
+                if (e.FechaVigencia <= DateTime.Now)
+                {
+                    if (extrasVigentes == null || e.FechaVigencia > extrasVigentes.FechaVigencia)
+                    {
+                        extrasVigentes = new Extras
+                        {
+                            IdExtras = e.IdExtras,
+                            ExtraRetiroDomicilio = e.ExtraRetiroDomicilio,
+                            ExtraEntregaAgencia = e.ExtraEntregaAgencia,
+                            ExtraEntregaDomicilio = e.ExtraEntregaDomicilio,
+                            FechaVigencia = e.FechaVigencia
+                        };
+                    }
+                }
+            }
+
+            // 3) Sumar extras segun tipo de entrega
+            // En ImposicionCD no hay extra de retiro (el cliente trae el bulto)
+            if (extrasVigentes != null)
+            {
+                if (tipoEntrega == TipoEntrega.Domicilio)
+                    tarifa += extrasVigentes.ExtraEntregaDomicilio;
+                else if (tipoEntrega == TipoEntrega.Agencia)
+                    tarifa += extrasVigentes.ExtraEntregaAgencia;
+            }
+
+            return tarifa;
+        }
+
         internal void AsignarDestinatarioAGuias(Destinatario destinatario)
         {
-            System.DateTime ahora = System.DateTime.Now;
+            DateTime ahora = DateTime.Now;
 
             foreach (var bulto in guias)
             {
@@ -87,7 +149,12 @@ namespace TUTASA.ImposicionCD
                 bulto.Destinatario = destinatario;
                 bulto.Estado = EstadoGuia.Admitida;
 
-                // Determinar idAgenciaDestino e idCDDestino según tipo de entrega
+                // Determinar extras segun tipo de entrega
+                bool tieneExtraRetiro = false; // en ImposicionCD nunca hay retiro a domicilio
+                bool tieneExtraEntregaDomicilio = destinatario.TipoEntrega == TipoEntrega.Domicilio;
+                bool tieneExtraEntregaAgencia = destinatario.TipoEntrega == TipoEntrega.Agencia;
+
+                // Determinar idAgenciaDestino e idCDDestino segun tipo de entrega
                 int idAgenciaDestino = 0;
                 int idCDDestino = 0;
 
@@ -106,6 +173,48 @@ namespace TUTASA.ImposicionCD
                         break;
                     }
                 }
+
+                // Buscar tarifa definitiva
+                decimal tarifaDefinitiva = CalcularTarifaDefinitiva(bulto.Categoria, idCDDestino, destinatario.TipoEntrega);
+                
+
+                // Buscar idExtras vigente
+                int idExtras = 0;
+                if (tieneExtraEntregaDomicilio || tieneExtraEntregaAgencia)
+                {
+                    Extras extrasVigentes = null;
+                    foreach (ExtrasEntidad e in ExtrasAlmacen.extrass)
+                    {
+                        if (e.FechaVigencia <= ahora)
+                        {
+                            if (extrasVigentes == null || e.FechaVigencia > extrasVigentes.FechaVigencia)
+                            {
+                                extrasVigentes = new Extras { IdExtras = e.IdExtras, FechaVigencia = e.FechaVigencia };
+                            }
+                        }
+                    }
+                    if (extrasVigentes != null)
+                        idExtras = extrasVigentes.IdExtras;
+                }
+
+                // Buscar idTarifaCliente vigente
+                int idTarifaCliente = 0;
+                TarifaCliente tarifaVigente = null;
+                foreach (TarifaClienteEntidad t in TarifaClienteAlmacen.tarifaClientes)
+                {
+                    if ((CategoriaBultoEnum)bulto.Categoria == t.CategoriaBulto
+                        && t.IdCDOrigen == cdActivo.idCD
+                        && t.IdCDDestino == idCDDestino
+                        && t.FechaVigencia <= ahora)
+                    {
+                        if (tarifaVigente == null || t.FechaVigencia > tarifaVigente.FechaVigencia)
+                        {
+                            tarifaVigente = new TarifaCliente { IdTarifaCliente = t.IdTarifaCliente, FechaVigencia = t.FechaVigencia };
+                        }
+                    }
+                }
+                if (tarifaVigente != null)
+                    idTarifaCliente = tarifaVigente.IdTarifaCliente;
 
                 // Crear GuiaEntidad con estado Admitida e historial de 2 pasos
                 GuiaEntidad nuevaGuia = new GuiaEntidad
@@ -128,24 +237,29 @@ namespace TUTASA.ImposicionCD
                     DomicilioEntregaCodPostal = destinatario.CodigoPostal ?? string.Empty,
                     IdAgenciaDestino = idAgenciaDestino,
                     IdCDDestino = idCDDestino,
+                    IdTarifaCliente = idTarifaCliente,
+                    IdExtras = idExtras,
+                    TarifaDefinitiva = tarifaDefinitiva,
+                    TieneExtraRetiro = tieneExtraRetiro,
+                    TieneExtraEntregaDomicilio = tieneExtraEntregaDomicilio,
+                    TieneExtraEntregaAgencia = tieneExtraEntregaAgencia,
                     EstadoGuia = EstadoGuiaEnum.Admitida,
                     Historial = new List<HistorialGuia>
                     {
-                        new HistorialGuia { Estado = EstadoGuiaEnum.Impuesta,  Fecha = ahora },
-                        new HistorialGuia { Estado = EstadoGuiaEnum.Admitida,  Fecha = ahora }
+                        new HistorialGuia { Estado = EstadoGuiaEnum.Impuesta, Fecha = ahora },
+                        new HistorialGuia { Estado = EstadoGuiaEnum.Admitida, Fecha = ahora }
                     }
-                    
                 };
 
                 GuiaAlmacen.guias.Add(nuevaGuia);
             }
+
             GuiaAlmacen.Guardar();
         }
 
         internal List<Agencias> ObtenerAgencias()
         {
             var resultado = new List<Agencias>();
-
             foreach (AgenciaEntidad agenciaEntidad in AgenciaAlmacen.agencias)
             {
                 resultado.Add(new Agencias
@@ -155,14 +269,12 @@ namespace TUTASA.ImposicionCD
                     CodigoPostal = agenciaEntidad.IdCodPostal
                 });
             }
-
             return resultado;
         }
 
         internal List<CentrosDeDistribucion> ObtenerCentrosDeDistribucion()
         {
             var resultado = new List<CentrosDeDistribucion>();
-
             foreach (CentroDistribucionEntidad cdEntidad in CentroDistribucionAlmacen.centroDistribucions)
             {
                 resultado.Add(new CentrosDeDistribucion
@@ -172,14 +284,12 @@ namespace TUTASA.ImposicionCD
                     CodigosPostales = cdEntidad.IdCodPostal
                 });
             }
-
             return resultado;
         }
 
         internal List<CodigoPostal> ObtenerCodigosPostales()
         {
             var resultado = new List<CodigoPostal>();
-
             foreach (CodigoPostalEntidad cpEntidad in CodigoPostalAlmacen.codigoPostals)
             {
                 resultado.Add(new CodigoPostal
@@ -189,14 +299,12 @@ namespace TUTASA.ImposicionCD
                     DescripcionLocalidad = cpEntidad.DescripcionLocalidad
                 });
             }
-
             return resultado;
         }
 
         internal List<Cliente> ObtenerClientes()
         {
             var resultado = new List<Cliente>();
-
             foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
             {
                 resultado.Add(new Cliente
@@ -206,7 +314,6 @@ namespace TUTASA.ImposicionCD
                     CUIT = clienteEntidad.CuitCliente.ToString()
                 });
             }
-
             return resultado;
         }
     }

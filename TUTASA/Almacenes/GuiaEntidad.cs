@@ -28,6 +28,7 @@ namespace TUTASA.Almacenes
         public int IdCDDestino { get; set; }
         public int IdTarifaCliente { get; set; }
         public int IdExtras { get; set; }
+        public decimal TarifaDefinitiva { get; set; }
         public bool TieneExtraRetiro { get; set; }
         public bool TieneExtraEntregaDomicilio { get; set; }
         public bool TieneExtraEntregaAgencia { get; set; }

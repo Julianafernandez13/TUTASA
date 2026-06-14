@@ -183,8 +183,10 @@
     <Compile Include="ImposicionCD\Cliente.cs" />
     <Compile Include="ImposicionCD\CodigoPostal.cs" />
     <Compile Include="ImposicionCD\Destinatario.cs" />
+    <Compile Include="ImposicionCD\Extras.cs" />
     <Compile Include="ImposicionCD\Guia.cs" />
     <Compile Include="ImposicionCD\ImposicionCDModelo.cs" />
+    <Compile Include="ImposicionCD\TarifaCliente.cs" />
     <Compile Include="RegistrarEntrega\GuiaEntrega.cs" />
     <Compile Include="RegistrarEntrega\Receptor.cs" />
     <Compile Include="RegistrarEntrega\RegistrarEntregaModelo.cs" />
