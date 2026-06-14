@@ -410,9 +410,9 @@
     <None Include="Datos\hdr_retiro.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Datos\hdr_transporte.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Content Include="Datos\hdr_transporte.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Datos\rutas_empresa_transporte.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

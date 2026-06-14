@@ -182,7 +182,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
 
             HDRTransporte nuevaHDR = new HDRTransporte
             {
-                IdHDRdeTransporte = hdrsTransporte.Count + 1,
+                IdHDRdeTransporte = HDRTransporteAlmacen.hDRTransportes.Count + 1,
                 IdCDOrigen = IdCDOrigen,
                 IdCDDestino = idCDDestino,
                 IdEmpresaTransporte = empresa.IdEmpresaTransporte,
@@ -207,7 +207,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
                 GuiasDespachadas = nuevaHDR.GuiasDespachadas
             });
             HDRTransporteAlmacen.Guardar();
-            
+
 
             // Actualizar estado de las guías
             foreach (var g in GuiasSeleccionadas)
