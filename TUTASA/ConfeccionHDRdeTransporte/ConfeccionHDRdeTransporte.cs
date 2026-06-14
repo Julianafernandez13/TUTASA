@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TUTASA.Almacenes;
 using TUTASA.ConfeccionHDRdeTransporte;
 
 namespace TUTASA.Pantallas
@@ -25,33 +26,34 @@ namespace TUTASA.Pantallas
         private void ConfeccionHDRdeTransporte_Load(object sender, EventArgs e)
         {
             // CD Origen autorrelleno por sesión
-            labelMuestraCDOrigen.Text = "CD Buenos Aires";
+            labelMuestraCDOrigen.Text = CentroDistribucionAlmacen.centroDistribucions
+                .Find(cd => cd.IdCD == modelo.IdCDOrigen)?.NombreCD ?? "Sin CD";
 
-            // Cargar localidades destino
-            cmbLocalidadDestino.Items.Clear();
-            foreach (var loc in modelo.ObtenerLocalidades())
-                cmbLocalidadDestino.Items.Add(loc.Nombre);
+            // Cargar CDs destino disponibles desde el CD de sesión
+            cmbCDDestino.Items.Clear();
+            foreach (var cd in modelo.ObtenerDestinosDisponibles())
+                cmbCDDestino.Items.Add(cd.NombreCD);
 
             // Limpiar resto
-            cmbCDDestino.Items.Clear();
             listViewEncomiendas.Items.Clear();
             cmbServicio.Items.Clear();
             labelMuestraTipoArrendamiento.Text = "";
             btnGuardar.Enabled = false;
         }
 
-        // ── CAMBIO DE LOCALIDAD DESTINO ──────────────────────
-        private void cmbLocalidadDestino_SelectedIndexChanged(object sender, EventArgs e)
+        // ── CAMBIO DE CD DESTINO ──────────────────────────────
+        private void cmbCDDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (modelo.Limpiando) return;
-            if (cmbLocalidadDestino.SelectedIndex < 0) return;
+            if (cmbCDDestino.SelectedIndex < 0) return;
 
-            string localidad = cmbLocalidadDestino.SelectedItem.ToString();
+            string nombreCDDestino = cmbCDDestino.SelectedItem.ToString();
 
-            // Autorrellenar CD Destino
-            cmbCDDestino.Items.Clear();
-            cmbCDDestino.Items.Add(modelo.ObtenerCdDestino(localidad));
-            cmbCDDestino.SelectedIndex = 0;
+            // Buscar el ID del CD destino seleccionado
+            var cdDestino = CentroDistribucionAlmacen.centroDistribucions
+                .Find(cd => cd.NombreCD == nombreCDDestino);
+
+            if (cdDestino == null) return;
 
             // Limpiar selección anterior
             modelo.GuiasSeleccionadas.Clear();
@@ -62,37 +64,101 @@ namespace TUTASA.Pantallas
             labelMuestraTipoArrendamiento.Text = "";
             btnGuardar.Enabled = false;
 
-            // Buscar guías admitidas para esa localidad
-            var guias = modelo.ObtenerGuiasPorLocalidad(localidad);
+            // Cargar empresas que cubren el tramo automáticamente
+            var empresas = modelo.ObtenerEmpresasPorTramo(cdDestino.IdCD);
+
+            if (empresas.Count == 0)
+            {
+                MessageBox.Show(
+                    "No hay empresas de transporte disponibles para el destino seleccionado.",
+                    "Sin empresas disponibles",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var emp in empresas)
+                cmbServicio.Items.Add(emp.NombreEmpresa);
+        }
+
+        // ── CAMBIO DE SERVICIO ───────────────────────────────
+        private void cmbServicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbServicio.SelectedIndex < 0) return;
+
+            string nombreCDDestino = cmbCDDestino.SelectedItem.ToString();
+            var cdDestino = CentroDistribucionAlmacen.centroDistribucions
+                .Find(cd => cd.NombreCD == nombreCDDestino);
+
+            var empresas = modelo.ObtenerEmpresasPorTramo(cdDestino.IdCD);
+            EmpresaTransporte empresaSeleccionada = empresas[cmbServicio.SelectedIndex];
+
+            // Mostrar tipo de arrendamiento preacordado con la empresa
+            labelMuestraTipoArrendamiento.Text = empresaSeleccionada.TipoArrendamiento.ToString();
+
+            // Limpiar guías seleccionadas al cambiar de servicio
+            modelo.GuiasSeleccionadas.Clear();
+            listViewEncomiendas.Items.Clear();
+            btnGuardar.Enabled = false;
+
+            // Cargar guías admitidas para ese CD destino
+            var guias = modelo.ObtenerGuiasPorCDDestino(nombreCDDestino);
 
             if (guias.Count == 0)
             {
                 MessageBox.Show(
-                    "No existen encomiendas admitidas para la localidad destino seleccionada.",
+                    "No existen encomiendas admitidas para el destino seleccionado.",
                     "Sin encomiendas",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return;
             }
 
-            // Cargar guías en la ListView con CheckBoxes
+            // Cargar guías en la ListView
             foreach (var g in guias)
             {
                 ListViewItem item = new ListViewItem(g.NroTracking);
                 item.SubItems.Add(g.Categoria);
-                item.SubItems.Add(g.Localidad);
+                item.SubItems.Add(g.CdDestino);
                 item.Tag = g;
                 listViewEncomiendas.Items.Add(item);
             }
-
-            // Cargar empresas de transporte para esa localidad
-            foreach (var emp in modelo.ObtenerEmpresasPorLocalidad(localidad))
-                cmbServicio.Items.Add(emp.Nombre);
         }
 
         // ── SELECCIÓN DE ENCOMIENDAS VIA CHECKBOX ────────────
         private void listViewEncomiendas_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+            if (modelo.Limpiando) return;
+            if (cmbServicio.SelectedIndex < 0) return;
+
+            string nombreCDDestino = cmbCDDestino.SelectedItem.ToString();
+            var cdDestino = CentroDistribucionAlmacen.centroDistribucions
+                .Find(cd => cd.NombreCD == nombreCDDestino);
+            var empresas = modelo.ObtenerEmpresasPorTramo(cdDestino.IdCD);
+            EmpresaTransporte empresaSeleccionada = empresas[cmbServicio.SelectedIndex];
+
+            // Si se está tildando
+            if (e.Item.Checked)
+            {
+                Guia guiaAAgregar = (Guia)e.Item.Tag;
+
+                // Verificar si supera el límite
+                if (modelo.SuperaLimite(guiaAAgregar, empresaSeleccionada.TipoArrendamiento))
+                {
+                    modelo.Limpiando = true;
+                    e.Item.Checked = false;
+                    modelo.Limpiando = false;
+
+                    MessageBox.Show(
+                        "No se pueden agregar más guías. Se ha alcanzado el límite de capacidad del tipo de arrendamiento " +
+                        empresaSeleccionada.TipoArrendamiento.ToString() + ".",
+                        "Límite alcanzado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             // Recalcular guías seleccionadas
             modelo.GuiasSeleccionadas.Clear();
             foreach (ListViewItem item in listViewEncomiendas.Items)
@@ -101,43 +167,12 @@ namespace TUTASA.Pantallas
                     modelo.GuiasSeleccionadas.Add((Guia)item.Tag);
             }
 
-            if (modelo.GuiasSeleccionadas.Count > 0 && cmbServicio.SelectedIndex >= 0)
-            {
-                labelMuestraTipoArrendamiento.Text = modelo.CalcularTipoArrendamiento(modelo.GuiasSeleccionadas);
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                labelMuestraTipoArrendamiento.Text = "";
-                btnGuardar.Enabled = false;
-            }
-        }
-
-        // ── CAMBIO DE SERVICIO ───────────────────────────────
-        private void cmbServicio_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbServicio.SelectedIndex < 0) return;
-
-            if (modelo.GuiasSeleccionadas.Count > 0)
-            {
-                // Recalcular tipo de arrendamiento con el nuevo servicio
-                labelMuestraTipoArrendamiento.Text = modelo.CalcularTipoArrendamiento(modelo.GuiasSeleccionadas);
-                btnGuardar.Enabled = true;
-            }
+            btnGuardar.Enabled = modelo.GuiasSeleccionadas.Count > 0;
         }
 
         // ── GUARDAR ──────────────────────────────────────────
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Recalcular guías seleccionadas via CheckBox
-            modelo.GuiasSeleccionadas.Clear();
-            foreach (ListViewItem item in listViewEncomiendas.Items)
-            {
-                if (item.Checked)
-                    modelo.GuiasSeleccionadas.Add((Guia)item.Tag);
-            }
-
-            // Validar que haya al menos una encomienda seleccionada
             if (modelo.GuiasSeleccionadas.Count == 0)
             {
                 MessageBox.Show(
@@ -148,7 +183,6 @@ namespace TUTASA.Pantallas
                 return;
             }
 
-            // Validar que se haya seleccionado un servicio
             if (cmbServicio.SelectedIndex < 0)
             {
                 MessageBox.Show(
@@ -159,12 +193,15 @@ namespace TUTASA.Pantallas
                 return;
             }
 
-            string localidad = cmbLocalidadDestino.SelectedItem.ToString();
-            EmpresaTransporte empresaSeleccionada = modelo.ObtenerEmpresasPorLocalidad(localidad)[cmbServicio.SelectedIndex];
-            string tipoArrendamiento = labelMuestraTipoArrendamiento.Text;
+            string nombreCDDestino = cmbCDDestino.SelectedItem.ToString();
+            var cdDestino = CentroDistribucionAlmacen.centroDistribucions
+                .Find(cd => cd.NombreCD == nombreCDDestino);
+            var empresas = modelo.ObtenerEmpresasPorTramo(cdDestino.IdCD);
+            EmpresaTransporte empresaSeleccionada = empresas[cmbServicio.SelectedIndex];
 
             DialogResult confirmacion = MessageBox.Show(
-                "¿Confirma la confección de la HDR de transporte con " + modelo.GuiasSeleccionadas.Count + " encomienda(s) vía " + empresaSeleccionada.Nombre + "?",
+                "¿Confirma la confección de la HDR de transporte con " + modelo.GuiasSeleccionadas.Count +
+                " encomienda(s) vía " + empresaSeleccionada.NombreEmpresa + "?",
                 "Confirmar HDR",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -172,8 +209,7 @@ namespace TUTASA.Pantallas
             if (confirmacion != DialogResult.Yes)
                 return;
 
-            // Guardar HDR en el modelo
-            modelo.GuardarHDR(empresaSeleccionada, tipoArrendamiento);
+            modelo.GuardarHDR(empresaSeleccionada, cdDestino.IdCD);
 
             MessageBox.Show(
                 "La HDR de transporte fue confeccionada correctamente.",
@@ -183,9 +219,7 @@ namespace TUTASA.Pantallas
 
             // Limpiar pantalla
             modelo.Limpiando = true;
-            cmbLocalidadDestino.SelectedIndex = -1;
-            cmbLocalidadDestino.Text = "";
-            cmbCDDestino.Items.Clear();
+            cmbCDDestino.SelectedIndex = -1;
             cmbCDDestino.Text = "";
             listViewEncomiendas.Items.Clear();
             cmbServicio.Items.Clear();

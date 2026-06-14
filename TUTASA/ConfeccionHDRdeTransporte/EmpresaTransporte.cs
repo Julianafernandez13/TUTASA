@@ -8,10 +8,10 @@ using TUTASA.Almacenes;
 namespace TUTASA.ConfeccionHDRdeTransporte
 {
     internal class EmpresaTransporte
-    {
-        public int IdEmpresaTransporte { get; set; }
-        public string NombreEmpresa { get; set; }
-        public string Localidad { get; set; }
-        public TipoArrendamientoEnum TipoArrendamiento { get; set; }
-    }
+        {
+            public int IdEmpresaTransporte { get; set; }
+            public string NombreEmpresa { get; set; }
+            public TipoArrendamientoEnum TipoArrendamiento { get; set; }
+        }
+    
 }
