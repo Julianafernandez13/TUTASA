@@ -10,6 +10,7 @@ namespace TUTASA.ImposicionAgencia
     internal class Guia
     {
         public long idGuia { get; set; }
+        public string NroTracking { get; set; }
         public CategoriaBulto Categoria { get; set; }
         public Cliente Remitente { get; set; }
         public Destinatario Destinatario { get; set; }

@@ -100,7 +100,7 @@ namespace TUTASA.ImposicionCD
                 }
             }
 
-            decimal tarifa = tarifaVigente != null ? tarifaVigente.PrecioBase : 0;
+            decimal tarifa = tarifaVigente != null ? tarifaVigente.PrecioBase : 0; 
 
             // 2) Buscar extras vigentes mas recientes
             Extras extrasVigentes = null;

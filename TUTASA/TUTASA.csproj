@@ -83,7 +83,9 @@
   <ItemGroup>
     <Compile Include="Admision\AdmisionModelo.cs" />
     <Compile Include="Admision\Categoria.cs" />
+    <Compile Include="Admision\Extras.cs" />
     <Compile Include="Admision\Guia.cs" />
+    <Compile Include="Admision\TarifaCliente.cs" />
     <Compile Include="Almacenes\AgenciaAlmacen.cs" />
     <Compile Include="Almacenes\AgenciaEntidad.cs" />
     <Compile Include="Almacenes\CategoriaBultoEnum.cs" />
@@ -168,16 +170,20 @@
     <Compile Include="ImposicionAgencia\CodigoPostal.cs" />
     <Compile Include="ImposicionAgencia\DatosRetiro.cs" />
     <Compile Include="ImposicionAgencia\Destinatario.cs" />
+    <Compile Include="ImposicionAgencia\Extras.cs" />
     <Compile Include="ImposicionAgencia\Guia.cs" />
     <Compile Include="ImposicionAgencia\ImposicionAgenciaModelo.cs" />
+    <Compile Include="ImposicionAgencia\TarifaCliente.cs" />
     <Compile Include="ImposicionCallCenter\Agencias.cs" />
     <Compile Include="ImposicionCallCenter\CentrosDeDistribucion.cs" />
     <Compile Include="ImposicionCallCenter\Cliente.cs" />
     <Compile Include="ImposicionCallCenter\CodigoPostal.cs" />
     <Compile Include="ImposicionCallCenter\DatosRetiro.cs" />
     <Compile Include="ImposicionCallCenter\Destinatario.cs" />
+    <Compile Include="ImposicionCallCenter\Extras.cs" />
     <Compile Include="ImposicionCallCenter\Guia.cs" />
     <Compile Include="ImposicionCallCenter\ImposicionCallCenterModelo.cs" />
+    <Compile Include="ImposicionCallCenter\TarifaCliente.cs" />
     <Compile Include="ImposicionCD\Agencias.cs" />
     <Compile Include="ImposicionCD\CentrosDeDistribucion.cs" />
     <Compile Include="ImposicionCD\Cliente.cs" />
@@ -369,7 +375,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\guias.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Datos\guias_en_hdr_transporte.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
