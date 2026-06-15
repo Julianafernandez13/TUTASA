@@ -1,7 +1,7 @@
 ﻿[
   {
     "IdGuia": 1,
-    "NroTracking": "BUE-00000001",
+    "NroTracking": "5-00000001",
     "IdCliente": 1,
     "FechaImposicion": "2026-05-01T09:00:00",
     "TipoEntrega": 0,
@@ -40,7 +40,7 @@
   },
   {
     "IdGuia": 2,
-    "NroTracking": "BUE-00000002",
+    "NroTracking": "1-00000002",
     "IdCliente": 1,
     "FechaImposicion": "2026-05-01T10:00:00",
     "TipoEntrega": 0,
@@ -75,7 +75,7 @@
   },
   {
     "IdGuia": 3,
-    "NroTracking": "BUE-00000003",
+    "NroTracking": "1-00000003",
     "IdCliente": 2,
     "FechaImposicion": "2026-05-03T11:00:00",
     "TipoEntrega": 0,
@@ -114,7 +114,7 @@
   },
   {
     "IdGuia": 4,
-    "NroTracking": "BUE-00000004",
+    "NroTracking": "1-00000004",
     "IdCliente": 1,
     "FechaImposicion": "2026-05-10T08:30:00",
     "TipoEntrega": 0,
@@ -149,7 +149,7 @@
   },
   {
     "IdGuia": 5,
-    "NroTracking": "BUE-00000005",
+    "NroTracking": "3-00000005",
     "IdCliente": 2,
     "FechaImposicion": "2026-05-11T09:00:00",
     "TipoEntrega": 0,

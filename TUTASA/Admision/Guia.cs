@@ -8,10 +8,9 @@ namespace TUTASA.Admision
 {
     internal class Guia
     {
-        public int Id { get; set; }
+        public int IdGuia { get; set; }
         public string NroTracking { get; set; }
-        public string EstadoActual { get; set; }
         public string Categoria { get; set; }
-        public decimal TarifaDefinitiva { get; set; }
+        public string EstadoActual { get; set; }
     }
 }
