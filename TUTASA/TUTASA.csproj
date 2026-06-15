@@ -270,30 +270,6 @@
     <Compile Include="Z.EXTRAS\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuAdminFinanzas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuAdminFinanzas.Designer.cs">
-      <DependentUpon>frmMenuAdminFinanzas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuAgencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuAgencia.Designer.cs">
-      <DependentUpon>frmMenuAgencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuCallCenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuCallCenter.Designer.cs">
-      <DependentUpon>frmMenuCallCenter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuGerencial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuGerencial.Designer.cs">
-      <DependentUpon>frmMenuGerencial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Z.EXTRAS\Menu\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,12 +316,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Z.EXTRAS\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Z.EXTRAS\Menu\frmMenuAgencia.resx">
-      <DependentUpon>frmMenuAgencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Z.EXTRAS\Menu\frmMenuCallCenter.resx">
-      <DependentUpon>frmMenuCallCenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Z.EXTRAS\Menu\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
