@@ -50,7 +50,7 @@ namespace TUTASA.Forms.CD
             if (modelo.GuiaSeleccionada == null)
             {
                 MessageBox.Show(
-                    "Debe buscar una guía.",
+                    "Debe buscar una guía primero.",
                     "Error de validación",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -64,7 +64,7 @@ namespace TUTASA.Forms.CD
                     "Error de validación",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                return;
+                return ;
             }
 
             var categoria = (Categoria)cmbCategoria.SelectedItem;

@@ -1,6 +1,14 @@
 ﻿[
   {
     "IdTarifaCliente": 1,
+    "CategoriaBulto": 0,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 2,
+    "PrecioBase": 800,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 2,
     "CategoriaBulto": 1,
     "IdCDOrigen": 1,
     "IdCDDestino": 2,
@@ -8,7 +16,39 @@
     "FechaVigencia": "2026-01-01T00:00:00"
   },
   {
-    "IdTarifaCliente": 2,
+    "IdTarifaCliente": 3,
+    "CategoriaBulto": 2,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 2,
+    "PrecioBase": 2200,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 4,
+    "CategoriaBulto": 3,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 2,
+    "PrecioBase": 3000,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 5,
+    "CategoriaBulto": 0,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 4,
+    "PrecioBase": 750,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 6,
+    "CategoriaBulto": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 4,
+    "PrecioBase": 1400,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 7,
     "CategoriaBulto": 2,
     "IdCDOrigen": 1,
     "IdCDDestino": 4,
@@ -16,11 +56,43 @@
     "FechaVigencia": "2026-01-01T00:00:00"
   },
   {
-    "IdTarifaCliente": 3,
-    "CategoriaBulto": 0,
+    "IdTarifaCliente": 8,
+    "CategoriaBulto": 3,
     "IdCDOrigen": 1,
     "IdCDDestino": 4,
-    "PrecioBase": 750,
+    "PrecioBase": 2800,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 9,
+    "CategoriaBulto": 0,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 1,
+    "PrecioBase": 300,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 10,
+    "CategoriaBulto": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 1,
+    "PrecioBase": 500,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 11,
+    "CategoriaBulto": 2,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 1,
+    "PrecioBase": 700,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 12,
+    "CategoriaBulto": 3,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 1,
+    "PrecioBase": 900,
     "FechaVigencia": "2026-01-01T00:00:00"
   }
 ]

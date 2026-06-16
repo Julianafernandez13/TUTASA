@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUTASA.Almacenes;
 using TUTASA.Enums;
 
 
 namespace TUTASA.ImposicionAgencia
 {
-    
+
     internal class ImposicionAgenciaModelo
     {
         private List<Guia> guias = new List<Guia>();
         private Cliente clienteSeleccionado = null;
         private DatosRetiro datosRetiro = null;
 
-        // Agencia activa hardcodeada para el prototipo
+        // Agencia activa hardcodeada por ahora
         private Agencias agenciaActiva = new Agencias
         {
             idAgencia = 1,
@@ -24,17 +25,14 @@ namespace TUTASA.ImposicionAgencia
             Domicilio = "Calle 7 Nro 123"
         };
 
-       
         internal Agencias GetAgenciaActiva()
         {
             return agenciaActiva;
         }
 
-        // Método para obtener los datos de retiro de la agencia activa
         internal DatosRetiro GetDatosRetiroAgencia()
         {
-            var cp = ObtenerCodigosPostales()
-                     .FirstOrDefault(c => c.idCodPostal == agenciaActiva.CodigoPostal);
+            var cp = ObtenerCodigosPostales().Find(c => c.idCodPostal == agenciaActiva.CodigoPostal);
 
             return new DatosRetiro
             {
@@ -45,20 +43,16 @@ namespace TUTASA.ImposicionAgencia
             };
         }
 
-
-        // Métodos para manejar el cliente seleccionado y los bultos
         internal void SetClienteSeleccionado(Cliente cliente)
         {
             clienteSeleccionado = cliente;
         }
 
-        // Método para obtener el cliente seleccionado
         internal Cliente GetClienteSeleccionado()
         {
             return clienteSeleccionado;
         }
 
-        // Métodos para manejar los datos de retiro
         internal void SetDatosRetiro(DatosRetiro datos)
         {
             datosRetiro = datos;
@@ -69,7 +63,6 @@ namespace TUTASA.ImposicionAgencia
             return datosRetiro;
         }
 
-        // Métodos para manejar los bultos
         internal void AgregarBulto(CategoriaBulto categoria)
         {
             guias.Add(new Guia
@@ -80,7 +73,6 @@ namespace TUTASA.ImposicionAgencia
             });
         }
 
-        // Método para quitar un bulto por su índice
         internal void QuitarBulto(int indice)
         {
             guias.RemoveAt(indice);
@@ -88,14 +80,14 @@ namespace TUTASA.ImposicionAgencia
                 guias[i].idGuia = i + 1;
         }
 
-        // Método para obtener la lista de bultos
         internal List<Guia> GetBultos()
         {
             return guias;
         }
 
-        // Método para construir un destinatario a partir de los datos ingresados
-        internal Destinatario ConstruirDestinatario(string nombre, string dni, string telefono, TipoEntrega tipo,string domicilio = null, string codigoPostal = null,Agencias agencia = null, CentrosDeDistribucion cd = null)
+        internal Destinatario ConstruirDestinatario(string nombre, string dni, string telefono, TipoEntrega tipo,
+            string domicilio = null, string codigoPostal = null,
+            Agencias agencia = null, CentrosDeDistribucion cd = null)
         {
             return new Destinatario
             {
@@ -110,80 +102,158 @@ namespace TUTASA.ImposicionAgencia
             };
         }
 
-        // Método para asignar un destinatario a todos los bultos y actualizar su estado
         internal void AsignarDestinatarioAGuias(Destinatario destinatario)
         {
+            DateTime ahora = DateTime.Now;
+
+            // Buscar el CD origen que corresponde a la agencia activa
+            int idCDOrigen = 0;
+            foreach (AgenciaEntidad agenciaEntidad in AgenciaAlmacen.agencias)
+            {
+                if (agenciaEntidad.IdAgencia == agenciaActiva.idAgencia)
+                {
+                    idCDOrigen = agenciaEntidad.IdCD;
+                    break;
+                }
+            }
+
             foreach (var bulto in guias)
             {
-                bulto.Destinatario = destinatario;
+                // Generar NroTracking: idAgencia + número correlativo
+                int nuevoId = GuiaAlmacen.guias.Count + 1;
+                string nroTracking = agenciaActiva.idAgencia + "-" + nuevoId.ToString("D8");
 
-                bulto.Estado = EstadoGuia.Impuesta;
+                bulto.NroTracking = nroTracking;
+                bulto.Destinatario = destinatario;
+                bulto.Estado = EstadoGuia.DisponibleParaRetiro;
+
+                // Determinar extras segun tipo de entrega
+                // En ImposicionAgencia no hay extra de retiro (el cliente trae el bulto a la agencia)
+                bool tieneExtraRetiro = false;
+                bool tieneExtraEntregaDomicilio = destinatario.TipoEntrega == TipoEntrega.Domicilio;
+                bool tieneExtraEntregaAgencia = destinatario.TipoEntrega == TipoEntrega.Agencia;
+
+                // Determinar idAgenciaDestino e idCDDestino segun tipo de entrega
+                int idAgenciaDestino = 0;
+                int idCDDestino = 0;
+
+                if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                    idAgenciaDestino = destinatario.AgenciaDestino.idAgencia;
+                else if (destinatario.TipoEntrega == TipoEntrega.CD && destinatario.CDDestino != null)
+                    idCDDestino = destinatario.CDDestino.idCD;
+
+                // Buscar idCliente en el almacen por CUIT
+                int idCliente = 0;
+                foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
+                {
+                    if (clienteEntidad.CuitCliente.ToString() == clienteSeleccionado.CUIT)
+                    {
+                        idCliente = clienteEntidad.IdCliente;
+                        break;
+                    }
+                }
+
+                // Crear GuiaEntidad con estado DisponibleParaRetiro e historial de 2 pasos
+                // La tarifa definitiva se calculara en Admision
+                GuiaEntidad nuevaGuia = new GuiaEntidad
+                {
+                    IdGuia = nuevoId,
+                    NroTracking = nroTracking,
+                    IdCliente = idCliente,
+                    FechaImposicion = ahora,
+                    TipoEntrega = (TipoEntregaEnum)destinatario.TipoEntrega,
+                    IdAgenciaOrigen = agenciaActiva.idAgencia,
+                    IdCDOrigen = idCDOrigen,
+                    CategoriaBulto = (CategoriaBultoEnum)bulto.Categoria,
+                    RemDni = 0,
+                    RemDomicilioRetiro = string.Empty,
+                    RemCodPostal = string.Empty,
+                    DniDestinatario = long.Parse(destinatario.DNI),
+                    NombreApellidoDestinatario = destinatario.NombreCompleto,
+                    TelefonoDestinatario = long.Parse(destinatario.Telefono),
+                    DomicilioEntrega = destinatario.DomicilioEntrega ?? string.Empty,
+                    DomicilioEntregaCodPostal = destinatario.CodigoPostal ?? string.Empty,
+                    IdAgenciaDestino = idAgenciaDestino,
+                    IdCDDestino = idCDDestino,
+                    IdTarifaCliente = 0,    // se calcula en Admision
+                    IdExtras = 0,    // se calcula en Admision
+                    TarifaDefinitiva = 0,    // se calcula en Admision
+                    TieneExtraRetiro = tieneExtraRetiro,
+                    TieneExtraEntregaDomicilio = tieneExtraEntregaDomicilio,
+                    TieneExtraEntregaAgencia = tieneExtraEntregaAgencia,
+                    EstadoGuia = EstadoGuiaEnum.DisponibleParaRetiro,
+                    Historial = new List<HistorialGuia>
+                    {
+                        new HistorialGuia { Estado = EstadoGuiaEnum.Impuesta,             Fecha = ahora },
+                        new HistorialGuia { Estado = EstadoGuiaEnum.DisponibleParaRetiro, Fecha = ahora }
+                    }
+                };
+
+                GuiaAlmacen.guias.Add(nuevaGuia);
             }
-        
+
+            GuiaAlmacen.Guardar();
         }
-        
+
         internal List<Agencias> ObtenerAgencias()
         {
-            return new List<Agencias>()
+            var resultado = new List<Agencias>();
+            foreach (AgenciaEntidad agenciaEntidad in AgenciaAlmacen.agencias)
             {
-                new Agencias { idAgencia = 1, nombreAgencia = "Agencia La Plata Centro", CodigoPostal = "1900", Domicilio = "Calle 7 Nro 123"        },
-                new Agencias { idAgencia = 2, nombreAgencia = "Agencia La Plata Norte",  CodigoPostal = "1900", Domicilio = "Calle 44 Nro 456"       },
-                new Agencias { idAgencia = 3, nombreAgencia = "Agencia Quilmes",         CodigoPostal = "1800", Domicilio = "Av. Mitre Nro 789"      },
-                new Agencias { idAgencia = 4, nombreAgencia = "Agencia Morón",           CodigoPostal = "1700", Domicilio = "Av. Rivadavia Nro 321"  },
-                new Agencias { idAgencia = 5, nombreAgencia = "Agencia CABA Centro",     CodigoPostal = "1000", Domicilio = "Av. Corrientes Nro 654" },
-                new Agencias { idAgencia = 6, nombreAgencia = "Agencia Córdoba",         CodigoPostal = "5000", Domicilio = "Av. Colón Nro 987"      },
-            };
-
+                resultado.Add(new Agencias
+                {
+                    idAgencia = agenciaEntidad.IdAgencia,
+                    nombreAgencia = agenciaEntidad.NombreAgencia,
+                    CodigoPostal = agenciaEntidad.IdCodPostal,
+                    Domicilio = agenciaEntidad.DomicilioAgencia
+                });
+            }
+            return resultado;
         }
 
         internal List<CentrosDeDistribucion> ObtenerCentrosDeDistribucion()
         {
-            return new List<CentrosDeDistribucion>()
+            var resultado = new List<CentrosDeDistribucion>();
+            foreach (CentroDistribucionEntidad cdEntidad in CentroDistribucionAlmacen.centroDistribucions)
             {
-                new CentrosDeDistribucion
+                resultado.Add(new CentrosDeDistribucion
                 {
-                    idCD = 1,
-                    nombreCD = "CD Gran Buenos Aires",
-                    CodigosPostales = new List<string> { "1900", "1800", "1700" }
-                },
-                new CentrosDeDistribucion
-                {
-                    idCD = 2,
-                    nombreCD = "CD CABA",
-                    CodigosPostales = new List<string> { "1000" }
-                },
-                new CentrosDeDistribucion
-                {
-                    idCD = 3,
-                    nombreCD = "CD Centro",
-                    CodigosPostales = new List<string> { "5000", "1900" } // 1900 cae en dos CDs
-                },
-            };
+                    idCD = cdEntidad.IdCD,
+                    nombreCD = cdEntidad.NombreCD,
+                    CodigosPostales = cdEntidad.IdCodPostal
+                });
+            }
+            return resultado;
         }
 
         internal List<CodigoPostal> ObtenerCodigosPostales()
         {
-            return new List<CodigoPostal>()
+            var resultado = new List<CodigoPostal>();
+            foreach (CodigoPostalEntidad cpEntidad in CodigoPostalAlmacen.codigoPostals)
             {
-                new CodigoPostal { idCodPostal = "1900", DescripcionLocalidad = "La Plata", DescripcionProvincia = "Buenos Aires" },
-                new CodigoPostal { idCodPostal = "1800", DescripcionLocalidad = "Quilmes", DescripcionProvincia = "Buenos Aires" },
-                new CodigoPostal { idCodPostal = "1700", DescripcionLocalidad = "Morón", DescripcionProvincia = "Buenos Aires" },
-                new CodigoPostal { idCodPostal = "1000", DescripcionLocalidad = "Buenos Aires", DescripcionProvincia = "CABA" },
-                new CodigoPostal { idCodPostal = "5000", DescripcionLocalidad = "Córdoba", DescripcionProvincia = "Córdoba" },
-            };
-            
+                resultado.Add(new CodigoPostal
+                {
+                    idCodPostal = cpEntidad.IdCodPostal,
+                    DescripcionProvincia = cpEntidad.DescripcionProvincia,
+                    DescripcionLocalidad = cpEntidad.DescripcionLocalidad
+                });
+            }
+            return resultado;
         }
 
         internal List<Cliente> ObtenerClientes()
         {
-            
-            return new List<Cliente>()
+            var resultado = new List<Cliente>();
+            foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
             {
-                new Cliente { Id = 1, NombreCompleto = "Juan Pérez", CUIT = "20304050607" },
-                new Cliente { Id = 2, NombreCompleto = "María González", CUIT = "27333311122" },
-                new Cliente { Id = 3, NombreCompleto = "Carlos Sosa", CUIT = "20111222333" },
-                new Cliente { Id = 4, NombreCompleto = "Lucía Fernández", CUIT = "27222333444" }
-            };
+                resultado.Add(new Cliente
+                {
+                    Id = clienteEntidad.IdCliente,
+                    NombreCompleto = clienteEntidad.NombreCliente + " " + clienteEntidad.ApellidoCliente,
+                    CUIT = clienteEntidad.CuitCliente.ToString()
+                });
+            }
+            return resultado;
         }
     }
 }
