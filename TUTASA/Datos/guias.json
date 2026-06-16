@@ -18,25 +18,33 @@
     "DomicilioEntregaCodPostal": "5000",
     "IdAgenciaDestino": 6,
     "IdCDDestino": 2,
-    "IdTarifaCliente": 1,
-    "IdExtras": 0,
+    "IdTarifaCliente": 2,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 1500,
     "TieneExtraRetiro": false,
     "TieneExtraEntregaDomicilio": false,
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 1,
     "IdComisionFletero": 0,
-    "EstadoGuia": 4,
+    "EstadoGuia": 5,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-01T09:00:00"
       },
       {
+        "Estado": 1,
+        "Fecha": "2026-05-01T09:00:00"
+      },
+      {
         "Estado": 4,
         "Fecha": "2026-05-02T10:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-03T10:00:00"
       }
-    ],
-    "TarifaDefinitiva": 0.0
+    ]
   },
   {
     "IdGuia": 2,
@@ -57,21 +65,33 @@
     "DomicilioEntregaCodPostal": "5500",
     "IdAgenciaDestino": 0,
     "IdCDDestino": 4,
-    "IdTarifaCliente": 2,
-    "IdExtras": 0,
+    "IdTarifaCliente": 7,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 2000,
     "TieneExtraRetiro": false,
     "TieneExtraEntregaDomicilio": false,
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
-    "EstadoGuia": 4,
+    "EstadoGuia": 5,
     "Historial": [
       {
-        "Estado": 4,
+        "Estado": 0,
         "Fecha": "2026-05-01T10:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-01T10:00:00"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2026-05-02T10:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-03T10:00:00"
       }
-    ],
-    "TarifaDefinitiva": 0.0
+    ]
   },
   {
     "IdGuia": 3,
@@ -81,7 +101,7 @@
     "TipoEntrega": 0,
     "IdAgenciaOrigen": 1,
     "IdCDOrigen": 1,
-    "CategoriaBulto": 0,
+    "CategoriaBulto": 1,
     "RemDni": 23456789,
     "RemDomicilioRetiro": "Calle 7 Nro 200",
     "RemCodPostal": "1900",
@@ -92,25 +112,33 @@
     "DomicilioEntregaCodPostal": "5500",
     "IdAgenciaDestino": 0,
     "IdCDDestino": 4,
-    "IdTarifaCliente": 3,
+    "IdTarifaCliente": 6,
     "IdExtras": 1,
+    "TarifaDefinitiva": 1650,
     "TieneExtraRetiro": true,
     "TieneExtraEntregaDomicilio": false,
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 1,
-    "EstadoGuia": 4,
+    "EstadoGuia": 5,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-03T11:00:00"
       },
       {
+        "Estado": 1,
+        "Fecha": "2026-05-03T11:00:00"
+      },
+      {
         "Estado": 4,
         "Fecha": "2026-05-04T09:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-05T10:00:00"
       }
-    ],
-    "TarifaDefinitiva": 0.0
+    ]
   },
   {
     "IdGuia": 4,
@@ -131,55 +159,451 @@
     "DomicilioEntregaCodPostal": "1000",
     "IdAgenciaDestino": 0,
     "IdCDDestino": 1,
-    "IdTarifaCliente": 1,
-    "IdExtras": 0,
+    "IdTarifaCliente": 12,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 900,
     "TieneExtraRetiro": false,
     "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-10T08:30:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-10T08:30:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 5,
+    "NroTracking": "1-00000005",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-11T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 1,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 0,
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Calle 7 Nro 123",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 33445566,
+    "NombreApellidoDestinatario": "Martín Torres",
+    "TelefonoDestinatario": 1145000005,
+    "DomicilioEntrega": "Av. Corrientes 500",
+    "DomicilioEntregaCodPostal": "1000",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 0,
+    "IdExtras": 0,
+    "TarifaDefinitiva": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 1,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 1,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-11T09:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-11T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 6,
+    "NroTracking": "1-00000006",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-12T09:00:00",
+    "TipoEntrega": 1,
+    "IdAgenciaOrigen": 1,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 1,
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Calle 44 Nro 456",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 44556677,
+    "NombreApellidoDestinatario": "Claudia Ríos",
+    "TelefonoDestinatario": 1145000006,
+    "DomicilioEntrega": "Av. Corrientes 500",
+    "DomicilioEntregaCodPostal": "1000",
+    "IdAgenciaDestino": 5,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 0,
+    "IdExtras": 0,
+    "TarifaDefinitiva": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": true,
+    "IdComisionAgencia": 1,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 1,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-12T09:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-12T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 7,
+    "NroTracking": "3-00000007",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-13T08:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 3,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 2,
+    "RemDni": 34567890,
+    "RemDomicilioRetiro": "Av. Mitre 789",
+    "RemCodPostal": "1800",
+    "DniDestinatario": 55667788,
+    "NombreApellidoDestinatario": "Fernando López",
+    "TelefonoDestinatario": 1145000007,
+    "DomicilioEntrega": "Calle 7 Nro 500",
+    "DomicilioEntregaCodPostal": "1900",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 0,
+    "IdExtras": 0,
+    "TarifaDefinitiva": 0,
+    "TieneExtraRetiro": true,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 2,
+    "EstadoGuia": 1,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-13T08:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-13T08:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 8,
+    "NroTracking": "1-00000008",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-14T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 1,
+    "RemDni": 0,
+    "RemDomicilioRetiro": "",
+    "RemCodPostal": "",
+    "DniDestinatario": 66778899,
+    "NombreApellidoDestinatario": "Valeria Méndez",
+    "TelefonoDestinatario": 1145000008,
+    "DomicilioEntrega": "Av. Rivadavia 456",
+    "DomicilioEntregaCodPostal": "1000",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 10,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 850,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-14T09:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-14T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 9,
+    "NroTracking": "1-00000009",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-14T10:00:00",
+    "TipoEntrega": 1,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 0,
+    "RemDni": 0,
+    "RemDomicilioRetiro": "",
+    "RemCodPostal": "",
+    "DniDestinatario": 77889900,
+    "NombreApellidoDestinatario": "Santiago Ruiz",
+    "TelefonoDestinatario": 1145000009,
+    "DomicilioEntrega": "Calle 7 Nro 500",
+    "DomicilioEntregaCodPostal": "1900",
+    "IdAgenciaDestino": 2,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 9,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 420,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": true,
+    "IdComisionAgencia": 1,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-14T10:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-14T10:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 10,
+    "NroTracking": "1-00000010",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-15T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 1,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 2,
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Calle 7 Nro 200",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 88990011,
+    "NombreApellidoDestinatario": "Luciana Paz",
+    "TelefonoDestinatario": 1145000010,
+    "DomicilioEntrega": "Av. Colón 200",
+    "DomicilioEntregaCodPostal": "5000",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 2,
+    "IdTarifaCliente": 0,
+    "IdExtras": 0,
+    "TarifaDefinitiva": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": true,
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
     "EstadoGuia": 4,
     "Historial": [
       {
+        "Estado": 0,
+        "Fecha": "2026-05-15T09:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-15T09:00:00"
+      },
+      {
+        "Estado": 2,
+        "Fecha": "2026-05-16T08:00:00"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2026-05-17T10:00:00"
+      },
+      {
         "Estado": 4,
-        "Fecha": "2026-05-10T08:30:00"
+        "Fecha": "2026-05-18T09:00:00"
       }
-    ],
-    "TarifaDefinitiva": 0.0
+    ]
   },
   {
-    "IdGuia": 5,
-    "NroTracking": "3-00000005",
-    "IdCliente": 2,
-    "FechaImposicion": "2026-05-11T09:00:00",
+    "IdGuia": 11,
+    "NroTracking": "1-00000011",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-15T10:00:00",
     "TipoEntrega": 0,
-    "IdAgenciaOrigen": 3,
+    "IdAgenciaOrigen": 1,
     "IdCDOrigen": 1,
-    "CategoriaBulto": 1,
-    "RemDni": 23456789,
-    "RemDomicilioRetiro": "Av. Mitre 789",
-    "RemCodPostal": "1800",
-    "DniDestinatario": 44332211,
-    "NombreApellidoDestinatario": "Sofía Torres",
-    "TelefonoDestinatario": 2214000005,
-    "DomicilioEntrega": "Calle 50 Nro 100",
-    "DomicilioEntregaCodPostal": "1900",
-    "IdAgenciaDestino": 2,
-    "IdCDDestino": 1,
-    "IdTarifaCliente": 1,
+    "CategoriaBulto": 3,
+    "RemDni": 12345678,
+    "RemDomicilioRetiro": "Calle 7 Nro 123",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 99001122,
+    "NombreApellidoDestinatario": "Diego Suárez",
+    "TelefonoDestinatario": 1145000011,
+    "DomicilioEntrega": "Av. San Martín 300",
+    "DomicilioEntregaCodPostal": "5500",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 4,
+    "IdTarifaCliente": 0,
     "IdExtras": 0,
+    "TarifaDefinitiva": 0,
     "TieneExtraRetiro": false,
-    "TieneExtraEntregaDomicilio": false,
-    "TieneExtraEntregaAgencia": true,
-    "IdComisionAgencia": 2,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
-    "EstadoGuia": 0,
+    "EstadoGuia": 4,
     "Historial": [
       {
         "Estado": 0,
-        "Fecha": "2026-05-11T09:00:00"
+        "Fecha": "2026-05-15T10:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-15T10:00:00"
+      },
+      {
+        "Estado": 2,
+        "Fecha": "2026-05-16T08:00:00"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2026-05-17T10:00:00"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2026-05-18T09:00:00"
       }
-    ],
-    "TarifaDefinitiva": 0.0
+    ]
+  },
+  {
+    "IdGuia": 12,
+    "NroTracking": "1-00000012",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-16T09:00:00",
+    "TipoEntrega": 1,
+    "IdAgenciaOrigen": 1,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 0,
+    "RemDni": 23456789,
+    "RemDomicilioRetiro": "Calle 44 Nro 456",
+    "RemCodPostal": "1900",
+    "DniDestinatario": 11334455,
+    "NombreApellidoDestinatario": "Romina Castro",
+    "TelefonoDestinatario": 1145000012,
+    "DomicilioEntrega": "Av. Corrientes 800",
+    "DomicilioEntregaCodPostal": "1000",
+    "IdAgenciaDestino": 5,
+    "IdCDDestino": 1,
+    "IdTarifaCliente": 0,
+    "IdExtras": 0,
+    "TarifaDefinitiva": 0,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": false,
+    "TieneExtraEntregaAgencia": true,
+    "IdComisionAgencia": 1,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 4,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-16T09:00:00"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2026-05-16T09:00:00"
+      },
+      {
+        "Estado": 2,
+        "Fecha": "2026-05-17T08:00:00"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2026-05-18T10:00:00"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2026-05-19T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 13,
+    "NroTracking": "1-00000013",
+    "IdCliente": 1,
+    "FechaImposicion": "2026-05-17T09:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 1,
+    "RemDni": 0,
+    "RemDomicilioRetiro": "",
+    "RemCodPostal": "",
+    "DniDestinatario": 22334455,
+    "NombreApellidoDestinatario": "Pablo Herrera",
+    "TelefonoDestinatario": 1145000013,
+    "DomicilioEntrega": "Av. Belgrano 400",
+    "DomicilioEntregaCodPostal": "5000",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 2,
+    "IdTarifaCliente": 2,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 1500,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-17T09:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-17T09:00:00"
+      }
+    ]
+  },
+  {
+    "IdGuia": 14,
+    "NroTracking": "1-00000014",
+    "IdCliente": 2,
+    "FechaImposicion": "2026-05-17T10:00:00",
+    "TipoEntrega": 0,
+    "IdAgenciaOrigen": 0,
+    "IdCDOrigen": 1,
+    "CategoriaBulto": 2,
+    "RemDni": 0,
+    "RemDomicilioRetiro": "",
+    "RemCodPostal": "",
+    "DniDestinatario": 33445566,
+    "NombreApellidoDestinatario": "Natalia Vega",
+    "TelefonoDestinatario": 1145000014,
+    "DomicilioEntrega": "Av. San Martín 150",
+    "DomicilioEntregaCodPostal": "5500",
+    "IdAgenciaDestino": 0,
+    "IdCDDestino": 4,
+    "IdTarifaCliente": 7,
+    "IdExtras": 1,
+    "TarifaDefinitiva": 2000,
+    "TieneExtraRetiro": false,
+    "TieneExtraEntregaDomicilio": true,
+    "TieneExtraEntregaAgencia": false,
+    "IdComisionAgencia": 0,
+    "IdComisionFletero": 0,
+    "EstadoGuia": 5,
+    "Historial": [
+      {
+        "Estado": 0,
+        "Fecha": "2026-05-17T10:00:00"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2026-05-17T10:00:00"
+      }
+    ]
   }
 ]
+

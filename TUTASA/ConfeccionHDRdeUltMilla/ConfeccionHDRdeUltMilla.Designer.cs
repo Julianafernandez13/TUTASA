@@ -2,15 +2,8 @@
 {
     partial class ConfeccionHDRdeUltMilla
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.groupBusquedaGuias = new System.Windows.Forms.GroupBox();
@@ -74,11 +63,6 @@
             // 
             // cmbDomicilio
             // 
-            this.cmbDomicilio.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
             this.cmbDomicilio.Location = new System.Drawing.Point(543, 56);
             this.cmbDomicilio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDomicilio.Name = "cmbDomicilio";
@@ -96,11 +80,6 @@
             // 
             // cmbLocalidad
             // 
-            this.cmbLocalidad.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
             this.cmbLocalidad.Location = new System.Drawing.Point(124, 56);
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbLocalidad.Name = "cmbLocalidad";
@@ -143,11 +122,6 @@
             // 
             // cmbFleteros
             // 
-            this.cmbFleteros.Items.AddRange(new object[] {
-            "Todas",
-            "Empresa A",
-            "Empresa B",
-            "Empresa C"});
             this.cmbFleteros.Location = new System.Drawing.Point(124, 68);
             this.cmbFleteros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFleteros.Name = "cmbFleteros";
@@ -306,7 +280,7 @@
             this.MaximizeBox = false;
             this.Name = "ConfeccionHDRdeUltMilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TUTASA – Confección de Hoja de Ruta ";
+            this.Text = "TUTASA – Confección de Hoja de Ruta";
             this.Load += new System.EventHandler(this.ConfeccionHDRdeUltMilla_Load);
             this.groupBusquedaGuias.ResumeLayout(false);
             this.groupBusquedaGuias.PerformLayout();
@@ -316,7 +290,6 @@
             this.groupTipoConfeccion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
