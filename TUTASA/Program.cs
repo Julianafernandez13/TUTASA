@@ -17,7 +17,7 @@ namespace TUTASA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TUTASA.Forms.Administracion.EmitirFactura());
+            Application.Run(new TUTASA.Forms.Administracion.CostovsVentas());
 
             //antes de que finalice el programa, guardar todos los datos en almacenes
             AgenciaAlmacen.Guardar();
