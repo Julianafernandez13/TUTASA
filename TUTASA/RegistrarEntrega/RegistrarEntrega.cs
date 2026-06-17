@@ -47,7 +47,7 @@ namespace TUTASA.Forms.CD
 
             listViewEncomiendas.Items.Clear();
 
-            var guias = modelo.ObtenerGuiasDisponibles();
+            var guias = modelo.GuiasDisponibles;
 
             if (guias.Count == 0)
             {
@@ -63,7 +63,7 @@ namespace TUTASA.Forms.CD
             foreach (var guia in guias)
             {
                 var item = new ListViewItem(guia.NroTracking);
-                item.SubItems.Add(guia.NombreRemitente);
+                item.SubItems.Add(guia.NombreCliente);
                 item.SubItems.Add(guia.NombreDestinatario);
                 item.SubItems.Add(modelo.ReceptorSeleccionado.Dni);
                 listViewEncomiendas.Items.Add(item);

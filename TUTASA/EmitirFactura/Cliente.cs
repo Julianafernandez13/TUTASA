@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUTASA.Almacenes;
 
 namespace TUTASA.EmitirFactura
 {
@@ -11,6 +12,6 @@ namespace TUTASA.EmitirFactura
         public int Id { get; set; }
         public string NombreCompleto { get; set; }
         public string CUIT { get; set; }
-        public string CondicionIVA { get; set; }
+        public TipoFacturaEnum TipoFactura { get; set; }
     }
 }

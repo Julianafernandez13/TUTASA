@@ -14,8 +14,8 @@ namespace TUTASA.RendicionHDRdeUltMilla
         public string Localidad { get; set; }
         public string Direccion { get; set; }
         public string Entrega { get; set; }
-
-        public EstadoHDRUltMillaEnum Estado { get; set; }
+        public string Estado { get; set; }
+        public string TipoHDR { get; set; }
         public int IdFletero { get; set; }
     }
 }

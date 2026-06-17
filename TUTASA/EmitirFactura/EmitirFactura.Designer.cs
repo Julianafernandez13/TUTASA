@@ -65,7 +65,6 @@
             // 
             // groupEmitirFactura
             // 
-            this.groupEmitirFactura.Controls.Add(this.btnBuscarPeriodo);
             this.groupEmitirFactura.Controls.Add(this.btnCancelar);
             this.groupEmitirFactura.Controls.Add(this.btnEmitirFactura);
             this.groupEmitirFactura.Controls.Add(this.lblMostrarTotal);
@@ -74,20 +73,21 @@
             this.groupEmitirFactura.Controls.Add(this.groupPeriodo);
             this.groupEmitirFactura.Controls.Add(this.groupBuscarCliente);
             this.groupEmitirFactura.Controls.Add(this.label1);
-            this.groupEmitirFactura.Location = new System.Drawing.Point(16, 14);
-            this.groupEmitirFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.groupEmitirFactura.Location = new System.Drawing.Point(18, 18);
+            this.groupEmitirFactura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupEmitirFactura.Name = "groupEmitirFactura";
-            this.groupEmitirFactura.Padding = new System.Windows.Forms.Padding(4);
-            this.groupEmitirFactura.Size = new System.Drawing.Size(886, 522);
+            this.groupEmitirFactura.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupEmitirFactura.Size = new System.Drawing.Size(997, 652);
             this.groupEmitirFactura.TabIndex = 0;
             this.groupEmitirFactura.TabStop = false;
             this.groupEmitirFactura.Text = "TUTASA - Emitir Factura";
             // 
             // btnBuscarPeriodo
             // 
-            this.btnBuscarPeriodo.Location = new System.Drawing.Point(380, 193);
+            this.btnBuscarPeriodo.Location = new System.Drawing.Point(499, 25);
+            this.btnBuscarPeriodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
-            this.btnBuscarPeriodo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarPeriodo.Size = new System.Drawing.Size(117, 33);
             this.btnBuscarPeriodo.TabIndex = 0;
             this.btnBuscarPeriodo.Text = "Buscar";
             this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
@@ -95,10 +95,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(418, 486);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(869, 608);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(112, 35);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -106,10 +106,10 @@
             // 
             // btnEmitirFactura
             // 
-            this.btnEmitirFactura.Location = new System.Drawing.Point(286, 486);
-            this.btnEmitirFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmitirFactura.Location = new System.Drawing.Point(705, 608);
+            this.btnEmitirFactura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEmitirFactura.Name = "btnEmitirFactura";
-            this.btnEmitirFactura.Size = new System.Drawing.Size(119, 28);
+            this.btnEmitirFactura.Size = new System.Drawing.Size(134, 35);
             this.btnEmitirFactura.TabIndex = 6;
             this.btnEmitirFactura.Text = "Emitir Factura";
             this.btnEmitirFactura.UseVisualStyleBackColor = true;
@@ -119,19 +119,19 @@
             // 
             this.lblMostrarTotal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblMostrarTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMostrarTotal.Location = new System.Drawing.Point(380, 437);
+            this.lblMostrarTotal.Location = new System.Drawing.Point(428, 546);
             this.lblMostrarTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostrarTotal.Name = "lblMostrarTotal";
-            this.lblMostrarTotal.Size = new System.Drawing.Size(159, 27);
+            this.lblMostrarTotal.Size = new System.Drawing.Size(179, 33);
             this.lblMostrarTotal.TabIndex = 5;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(259, 438);
+            this.lblTotal.Location = new System.Drawing.Point(291, 548);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(104, 16);
+            this.lblTotal.Size = new System.Drawing.Size(125, 20);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "Total a Facturar:";
             // 
@@ -139,11 +139,11 @@
             // 
             this.groupMovimientos.Controls.Add(this.listViewMovimientos);
             this.groupMovimientos.Controls.Add(this.label4);
-            this.groupMovimientos.Location = new System.Drawing.Point(25, 270);
-            this.groupMovimientos.Margin = new System.Windows.Forms.Padding(4);
+            this.groupMovimientos.Location = new System.Drawing.Point(28, 338);
+            this.groupMovimientos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupMovimientos.Name = "groupMovimientos";
-            this.groupMovimientos.Padding = new System.Windows.Forms.Padding(4);
-            this.groupMovimientos.Size = new System.Drawing.Size(854, 175);
+            this.groupMovimientos.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupMovimientos.Size = new System.Drawing.Size(961, 219);
             this.groupMovimientos.TabIndex = 3;
             this.groupMovimientos.TabStop = false;
             this.groupMovimientos.Text = "Movimientos a Facturar";
@@ -157,14 +157,13 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader4});
-            this.listViewMovimientos.Enabled = false;
             this.listViewMovimientos.FullRowSelect = true;
             this.listViewMovimientos.GridLines = true;
             this.listViewMovimientos.HideSelection = false;
-            this.listViewMovimientos.Location = new System.Drawing.Point(13, 23);
-            this.listViewMovimientos.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewMovimientos.Location = new System.Drawing.Point(15, 29);
+            this.listViewMovimientos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewMovimientos.Name = "listViewMovimientos";
-            this.listViewMovimientos.Size = new System.Drawing.Size(841, 120);
+            this.listViewMovimientos.Size = new System.Drawing.Size(946, 149);
             this.listViewMovimientos.TabIndex = 1;
             this.listViewMovimientos.UseCompatibleStateImageBehavior = false;
             this.listViewMovimientos.View = System.Windows.Forms.View.Details;
@@ -202,24 +201,25 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(475, 304);
+            this.label4.Location = new System.Drawing.Point(534, 380);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 0;
             // 
             // groupPeriodo
             // 
+            this.groupPeriodo.Controls.Add(this.btnBuscarPeriodo);
             this.groupPeriodo.Controls.Add(this.cmbAño);
             this.groupPeriodo.Controls.Add(this.cmbMes);
             this.groupPeriodo.Controls.Add(this.lblAño);
             this.groupPeriodo.Controls.Add(this.lblMes);
             this.groupPeriodo.Controls.Add(this.label3);
-            this.groupPeriodo.Location = new System.Drawing.Point(25, 174);
-            this.groupPeriodo.Margin = new System.Windows.Forms.Padding(4);
+            this.groupPeriodo.Location = new System.Drawing.Point(28, 218);
+            this.groupPeriodo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupPeriodo.Name = "groupPeriodo";
-            this.groupPeriodo.Padding = new System.Windows.Forms.Padding(4);
-            this.groupPeriodo.Size = new System.Drawing.Size(420, 73);
+            this.groupPeriodo.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupPeriodo.Size = new System.Drawing.Size(953, 91);
             this.groupPeriodo.TabIndex = 2;
             this.groupPeriodo.TabStop = false;
             this.groupPeriodo.Text = "Periodo";
@@ -238,10 +238,10 @@
             "2024",
             "2025",
             "2026"});
-            this.cmbAño.Location = new System.Drawing.Point(208, 22);
+            this.cmbAño.Location = new System.Drawing.Point(314, 29);
             this.cmbAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbAño.Name = "cmbAño";
-            this.cmbAño.Size = new System.Drawing.Size(86, 24);
+            this.cmbAño.Size = new System.Drawing.Size(96, 28);
             this.cmbAño.TabIndex = 12;
             // 
             // cmbMes
@@ -259,35 +259,35 @@
             "10",
             "11",
             "12"});
-            this.cmbMes.Location = new System.Drawing.Point(72, 22);
+            this.cmbMes.Location = new System.Drawing.Point(81, 28);
             this.cmbMes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMes.Name = "cmbMes";
-            this.cmbMes.Size = new System.Drawing.Size(60, 24);
+            this.cmbMes.Size = new System.Drawing.Size(97, 28);
             this.cmbMes.TabIndex = 11;
             // 
             // lblAño
             // 
-            this.lblAño.Location = new System.Drawing.Point(164, 24);
+            this.lblAño.Location = new System.Drawing.Point(252, 32);
             this.lblAño.Name = "lblAño";
-            this.lblAño.Size = new System.Drawing.Size(38, 18);
+            this.lblAño.Size = new System.Drawing.Size(43, 22);
             this.lblAño.TabIndex = 10;
             this.lblAño.Text = "Año:";
             // 
             // lblMes
             // 
-            this.lblMes.Location = new System.Drawing.Point(20, 26);
+            this.lblMes.Location = new System.Drawing.Point(22, 32);
             this.lblMes.Name = "lblMes";
-            this.lblMes.Size = new System.Drawing.Size(46, 18);
+            this.lblMes.Size = new System.Drawing.Size(52, 22);
             this.lblMes.TabIndex = 9;
             this.lblMes.Text = "Mes:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(475, 304);
+            this.label3.Location = new System.Drawing.Point(534, 380);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 0;
             // 
             // groupBuscarCliente
@@ -298,21 +298,21 @@
             this.groupBuscarCliente.Controls.Add(this.lblCliente);
             this.groupBuscarCliente.Controls.Add(this.lblCUIT);
             this.groupBuscarCliente.Controls.Add(this.label2);
-            this.groupBuscarCliente.Location = new System.Drawing.Point(25, 41);
-            this.groupBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBuscarCliente.Location = new System.Drawing.Point(28, 51);
+            this.groupBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBuscarCliente.Name = "groupBuscarCliente";
-            this.groupBuscarCliente.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBuscarCliente.Size = new System.Drawing.Size(847, 110);
+            this.groupBuscarCliente.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBuscarCliente.Size = new System.Drawing.Size(953, 138);
             this.groupBuscarCliente.TabIndex = 1;
             this.groupBuscarCliente.TabStop = false;
             this.groupBuscarCliente.Text = "Buscar Cliente";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(328, 27);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(369, 34);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -322,66 +322,66 @@
             // 
             this.lblMostrarCliente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblMostrarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMostrarCliente.Location = new System.Drawing.Point(72, 70);
+            this.lblMostrarCliente.Location = new System.Drawing.Point(81, 88);
             this.lblMostrarCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostrarCliente.Name = "lblMostrarCliente";
-            this.lblMostrarCliente.Size = new System.Drawing.Size(373, 27);
+            this.lblMostrarCliente.Size = new System.Drawing.Size(400, 33);
             this.lblMostrarCliente.TabIndex = 4;
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(62, 30);
-            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCUIT.Location = new System.Drawing.Point(81, 38);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCUIT.MaxLength = 11;
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(230, 22);
+            this.txtCUIT.Size = new System.Drawing.Size(258, 26);
             this.txtCUIT.TabIndex = 3;
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(8, 71);
+            this.lblCliente.Location = new System.Drawing.Point(9, 89);
             this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(51, 16);
+            this.lblCliente.Size = new System.Drawing.Size(62, 20);
             this.lblCliente.TabIndex = 2;
             this.lblCliente.Text = "Cliente:";
             // 
             // lblCUIT
             // 
             this.lblCUIT.AutoSize = true;
-            this.lblCUIT.Location = new System.Drawing.Point(8, 34);
+            this.lblCUIT.Location = new System.Drawing.Point(21, 41);
             this.lblCUIT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(41, 16);
+            this.lblCUIT.Size = new System.Drawing.Size(50, 20);
             this.lblCUIT.TabIndex = 1;
             this.lblCUIT.Text = "CUIT:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(475, 304);
+            this.label2.Location = new System.Drawing.Point(534, 380);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(475, 304);
+            this.label1.Location = new System.Drawing.Point(534, 380);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             // 
             // EmitirFactura
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 720);
+            this.ClientSize = new System.Drawing.Size(1039, 699);
             this.Controls.Add(this.groupEmitirFactura);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EmitirFactura";
             this.Text = "Emitir Factura";
             this.Load += new System.EventHandler(this.EmitirFactura_Load);

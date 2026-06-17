@@ -72,7 +72,7 @@ namespace TUTASA.Pantallas
             listViewHDRRendidas.Items.Clear();
             listViewHDRaEntregar.Items.Clear();
             modelo.HdrsRendidas.Clear();
-            btnConfirmar.Enabled = false;
+            
 
             // Cargar HDRs en proceso en el ComboBox para rendir
             var hdrsEnProceso = modelo.ObtenerHDRsEnProcesoPorFletero(modelo.FleteroActual.Id);
@@ -91,6 +91,8 @@ namespace TUTASA.Pantallas
                 item.Tag = h;
                 listViewHDRaEntregar.Items.Add(item);
             }
+
+            btnConfirmar.Enabled = hdrsPendientes.Count > 0;
 
             if (hdrsEnProceso.Count == 0 && hdrsPendientes.Count == 0)
             {
@@ -194,17 +196,16 @@ namespace TUTASA.Pantallas
             // Devolver la HDR al ComboBox
             cmbNroHDR.Items.Add(hdrAQuitar.NroHDR);
 
-            if (modelo.HdrsRendidas.Count == 0)
+            if (modelo.HdrsRendidas.Count == 0 && listViewHDRaEntregar.Items.Count == 0)
                 btnConfirmar.Enabled = false;
         }
 
         // ── CONFIRMAR ────────────────────────────────────────
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (modelo.HdrsRendidas.Count == 0)
+            if (modelo.HdrsRendidas.Count == 0 && listViewHDRaEntregar.Items.Count == 0)
             {
-                MessageBox.Show("Debe agregar al menos una HDR a la lista de rendición.", "Sin HDRs rendidas",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe agregar al menos una HDR a la lista de rendición.", "Sin HDRs rendidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -288,7 +288,7 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listViewHDRaEntregar.Enabled = false;
+            this.listViewHDRaEntregar.Enabled = true;
             this.listViewHDRaEntregar.FullRowSelect = true;
             this.listViewHDRaEntregar.GridLines = true;
             this.listViewHDRaEntregar.HideSelection = false;

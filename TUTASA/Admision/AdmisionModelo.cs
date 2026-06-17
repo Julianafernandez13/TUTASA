@@ -244,15 +244,60 @@ namespace TUTASA.Admision
             if (extrasVigentes != null)
                 idExtras = extrasVigentes.IdExtras;
 
+            // Buscar comision agencia vigente por categoria
+            int idComisionAgencia = 0;
+            ComisionAgencia comisionAgenciaVigente = null;
+            foreach (ComisionAgenciaEntidad ca in ComisionAgenciaAlmacen.comisionAgencias)
+            {
+                if (ca.CategoriaBulto == categoriaEnum && ca.FechaVigencia <= DateTime.Now)
+                {
+                    if (comisionAgenciaVigente == null || ca.FechaVigencia > comisionAgenciaVigente.FechaVigencia)
+                        comisionAgenciaVigente = new ComisionAgencia { IdComisionAgencia = ca.IdComisionAgencia, FechaVigencia = ca.FechaVigencia };
+                }
+            }
+            if (comisionAgenciaVigente != null)
+                idComisionAgencia = comisionAgenciaVigente.IdComisionAgencia;
+
+            // Buscar comision fletero vigente por categoria
+            int idComisionFletero = 0;
+            ComisionFletero comisionFleteroVigente = null;
+            foreach (ComisionFleteroEntidad cf in ComisionFleteroAlmacen.comisionFleteros)
+            {
+                if (cf.CategoriaBulto == categoriaEnum && cf.FechaVigencia <= DateTime.Now)
+                {
+                    if (comisionFleteroVigente == null || cf.FechaVigencia > comisionFleteroVigente.FechaVigencia)
+                        comisionFleteroVigente = new ComisionFletero { IdComisionFletero = cf.IdComisionFletero, FechaVigencia = cf.FechaVigencia };
+                }
+            }
+            if (comisionFleteroVigente != null)
+                idComisionFletero = comisionFleteroVigente.IdComisionFletero;
+
             // Actualizar GuiaEntidad en el almacen
             guiaEntidad.CategoriaBulto = categoriaEnum;
             guiaEntidad.IdTarifaCliente = idTarifaCliente;
             guiaEntidad.IdExtras = idExtras;
             guiaEntidad.TarifaDefinitiva = tarifaDefinitiva;
-            guiaEntidad.EstadoGuia = EstadoGuiaEnum.Admitida;
+            guiaEntidad.IdComisionAgencia = idComisionAgencia;
+            guiaEntidad.IdComisionFletero = idComisionFletero;
+
+            EstadoGuiaEnum nuevoEstado;
+
+            if (guiaEntidad.IdCDOrigen == guiaEntidad.IdCDDestino)
+            {
+                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD)
+                    nuevoEstado = EstadoGuiaEnum.DisponibleParaEntrega;
+                else
+                    nuevoEstado = EstadoGuiaEnum.PendienteDeDistribucion;
+            }
+            else
+            {
+                nuevoEstado = EstadoGuiaEnum.Admitida;
+            }
+
+            guiaEntidad.EstadoGuia = nuevoEstado;
             guiaEntidad.Historial.Add(new HistorialGuia
             {
-                Estado = EstadoGuiaEnum.Admitida,
+                Estado = nuevoEstado,
                 Fecha = DateTime.Now
             });
 
@@ -260,7 +305,7 @@ namespace TUTASA.Admision
 
             // Actualizar objeto local
             GuiaSeleccionada.Categoria = categoriaVerificada.Descripcion;
-            GuiaSeleccionada.EstadoActual = "Admitida";
+            GuiaSeleccionada.EstadoActual = nuevoEstado.ToString();
 
             return true;
         }

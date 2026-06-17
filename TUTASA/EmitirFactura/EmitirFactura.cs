@@ -110,54 +110,8 @@ namespace TUTASA.Forms.Administracion
   
         }
 
-        // ── CARGAR MOVIMIENTOS ───────────────────────────────
-        private void CargarMovimientos()
-        {
-            if (clienteActual == null) return;
-            if (cmbMes.SelectedIndex < 0 || cmbAño.SelectedIndex < 0) return;
-
-            int mes = cmbMes.SelectedIndex + 1;
-            int anio = int.Parse(cmbAño.SelectedItem.ToString());
-
-            movimientosActuales = modelo.ObtenerMovimientosPendientes(clienteActual.Id, mes, anio);
-
-            listViewMovimientos.Items.Clear();
-            lblMostrarTotal.Text = "";
-            btnEmitirFactura.Enabled = false;
-
-            if (movimientosActuales.Count == 0)
-            {
-                MessageBox.Show(
-                    "No existen movimientos pendientes de facturación para este cliente en el período indicado.",
-                    "Sin movimientos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                return;
-            }
-
-            // Cargar filas en la ListView
-            foreach (var m in movimientosActuales)
-            {
-                decimal totalConIVA = modelo.CalcularTotal(
-                    new List<MovimientoPendiente> { m },
-                    clienteActual.CondicionIVA);
-
-                ListViewItem item = new ListViewItem(m.NroGuia);
-                item.SubItems.Add(m.Fecha.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(m.Origen);
-                item.SubItems.Add(m.Destino);
-                item.SubItems.Add(m.Categoria);
-                item.SubItems.Add("$" + totalConIVA.ToString("N2"));
-                item.Tag = m;
-                listViewMovimientos.Items.Add(item);
-            }
-
-            // Mostrar total general
-            decimal totalGeneral = modelo.CalcularTotal(movimientosActuales, clienteActual.CondicionIVA);
-            lblMostrarTotal.Text = "$" + totalGeneral.ToString("N2");
-
-            btnEmitirFactura.Enabled = true;
-        }
+        
+        
 
         // ── EMITIR FACTURA ───────────────────────────────────
 
@@ -174,7 +128,7 @@ namespace TUTASA.Forms.Administracion
                 return;
 
             // Marcar movimientos como facturados
-            modelo.MarcarComoFacturados(movimientosActuales);
+            modelo.EmitirFactura(movimientosActuales, clienteActual.Id, clienteActual.TipoFactura);
 
             MessageBox.Show(
                 "La factura fue emitida correctamente y los movimientos quedaron registrados como facturados.",
@@ -203,25 +157,47 @@ namespace TUTASA.Forms.Administracion
         {
             if (clienteActual == null)
             {
-                MessageBox.Show(
-                    "Primero debe buscar un cliente ingresando el CUIT.",
-                    "Cliente no seleccionado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                MessageBox.Show("Primero debe buscar un cliente ingresando el CUIT.", "Cliente no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbMes.SelectedIndex < 0 || cmbAño.SelectedIndex < 0)
             {
-                MessageBox.Show(
-                    "Debe seleccionar un mes y un año para buscar los movimientos.",
-                    "Período incompleto",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un mes y un año.", "Período incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            CargarMovimientos();
+            int mes = cmbMes.SelectedIndex + 1;
+            int anio = int.Parse(cmbAño.SelectedItem.ToString());
+
+            movimientosActuales = modelo.ObtenerMovimientosPendientes(clienteActual.Id, mes, anio);
+
+            listViewMovimientos.Items.Clear();
+            lblMostrarTotal.Text = "";
+            btnEmitirFactura.Enabled = false;
+
+            if (movimientosActuales.Count == 0)
+            {
+                MessageBox.Show("No existen movimientos pendientes para este cliente en el período.", "Sin movimientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var m in movimientosActuales)
+            {
+                decimal totalConIVA = modelo.CalcularTotal(new List<MovimientoPendiente> { m }, clienteActual.TipoFactura);
+                ListViewItem item = new ListViewItem(m.NroGuia);
+                item.SubItems.Add(m.Fecha.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(m.Origen);
+                item.SubItems.Add(m.Destino);
+                item.SubItems.Add(m.Categoria);
+                item.SubItems.Add("$" + totalConIVA.ToString("N2"));
+                item.Tag = m;
+                listViewMovimientos.Items.Add(item);
+            }
+
+            decimal totalGeneral = modelo.CalcularTotal(movimientosActuales, clienteActual.TipoFactura);
+            lblMostrarTotal.Text = "$" + totalGeneral.ToString("N2");
+            btnEmitirFactura.Enabled = true;
         }
     }
 }

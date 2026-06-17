@@ -147,7 +147,7 @@ namespace TUTASA.ImposicionCD
 
                 bulto.NroTracking = nroTracking;
                 bulto.Destinatario = destinatario;
-                bulto.Estado = EstadoGuia.Admitida;
+               
 
                 // Determinar extras segun tipo de entrega
                 bool tieneExtraRetiro = false; // en ImposicionCD nunca hay retiro a domicilio
@@ -158,10 +158,34 @@ namespace TUTASA.ImposicionCD
                 int idAgenciaDestino = 0;
                 int idCDDestino = 0;
 
-                if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                if (destinatario.TipoEntrega == TipoEntrega.Domicilio)
+                {
+                    idCDDestino = ObtenerIdCDPorCodPostal(destinatario.CodigoPostal);
+                }
+                else if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                {
                     idAgenciaDestino = destinatario.AgenciaDestino.idAgencia;
+                    idCDDestino = ObtenerIdCDPorAgencia(destinatario.AgenciaDestino.idAgencia);
+                }
                 else if (destinatario.TipoEntrega == TipoEntrega.CD && destinatario.CDDestino != null)
+                {
                     idCDDestino = destinatario.CDDestino.idCD;
+                }
+
+                // Determinar estado final
+                EstadoGuiaEnum nuevoEstado;
+                if (idCDDestino == cdActivo.idCD)
+                {
+                    if (destinatario.TipoEntrega == TipoEntrega.CD)
+                        nuevoEstado = EstadoGuiaEnum.DisponibleParaEntrega;
+                    else
+                        nuevoEstado = EstadoGuiaEnum.PendienteDeDistribucion;
+                }
+                else
+                {
+                    nuevoEstado = EstadoGuiaEnum.Admitida;
+                }
+                bulto.Estado = (EstadoGuia)nuevoEstado;
 
                 // Buscar idCliente en el almacen por CUIT
                 int idCliente = 0;
@@ -216,6 +240,34 @@ namespace TUTASA.ImposicionCD
                 if (tarifaVigente != null)
                     idTarifaCliente = tarifaVigente.IdTarifaCliente;
 
+                // Buscar comision agencia vigente por categoria
+                int idComisionAgencia = 0;
+                ComisionAgencia comisionAgenciaVigente = null;
+                foreach (ComisionAgenciaEntidad ca in ComisionAgenciaAlmacen.comisionAgencias)
+                {
+                    if (ca.CategoriaBulto == (CategoriaBultoEnum)bulto.Categoria && ca.FechaVigencia <= ahora)
+                    {
+                        if (comisionAgenciaVigente == null || ca.FechaVigencia > comisionAgenciaVigente.FechaVigencia)
+                            comisionAgenciaVigente = new ComisionAgencia { IdComisionAgencia = ca.IdComisionAgencia, FechaVigencia = ca.FechaVigencia };
+                    }
+                }
+                if (comisionAgenciaVigente != null)
+                    idComisionAgencia = comisionAgenciaVigente.IdComisionAgencia;
+
+                // Buscar comision fletero vigente por categoria
+                int idComisionFletero = 0;
+                ComisionFletero comisionFleteroVigente = null;
+                foreach (ComisionFleteroEntidad cf in ComisionFleteroAlmacen.comisionFleteros)
+                {
+                    if (cf.CategoriaBulto == (CategoriaBultoEnum)bulto.Categoria && cf.FechaVigencia <= ahora)
+                    {
+                        if (comisionFleteroVigente == null || cf.FechaVigencia > comisionFleteroVigente.FechaVigencia)
+                            comisionFleteroVigente = new ComisionFletero { IdComisionFletero = cf.IdComisionFletero, FechaVigencia = cf.FechaVigencia };
+                    }
+                }
+                if (comisionFleteroVigente != null)
+                    idComisionFletero = comisionFleteroVigente.IdComisionFletero;
+
                 // Crear GuiaEntidad con estado Admitida e historial de 2 pasos
                 GuiaEntidad nuevaGuia = new GuiaEntidad
                 {
@@ -240,14 +292,16 @@ namespace TUTASA.ImposicionCD
                     IdTarifaCliente = idTarifaCliente,
                     IdExtras = idExtras,
                     TarifaDefinitiva = tarifaDefinitiva,
+                    IdComisionAgencia = idComisionAgencia,
+                    IdComisionFletero = idComisionFletero,
                     TieneExtraRetiro = tieneExtraRetiro,
                     TieneExtraEntregaDomicilio = tieneExtraEntregaDomicilio,
                     TieneExtraEntregaAgencia = tieneExtraEntregaAgencia,
-                    EstadoGuia = EstadoGuiaEnum.Admitida,
+                    EstadoGuia = nuevoEstado,
                     Historial = new List<HistorialGuia>
                     {
                         new HistorialGuia { Estado = EstadoGuiaEnum.Impuesta, Fecha = ahora },
-                        new HistorialGuia { Estado = EstadoGuiaEnum.Admitida, Fecha = ahora }
+                        new HistorialGuia { Estado = nuevoEstado,             Fecha = ahora }
                     }
                 };
 
@@ -315,6 +369,29 @@ namespace TUTASA.ImposicionCD
                 });
             }
             return resultado;
+        }
+
+        private int ObtenerIdCDPorCodPostal(string codPostal)
+        {
+            foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+            {
+                foreach (string cp in cd.IdCodPostal)
+                {
+                    if (cp == codPostal)
+                        return cd.IdCD;
+                }
+            }
+            return 0;
+        }
+
+        private int ObtenerIdCDPorAgencia(int idAgencia)
+        {
+            foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+            {
+                if (agencia.IdAgencia == idAgencia)
+                    return agencia.IdCD;
+            }
+            return 0;
         }
     }
 }

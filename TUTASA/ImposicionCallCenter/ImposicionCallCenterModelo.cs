@@ -105,10 +105,19 @@ namespace TUTASA.ImposicionCallCenter
                 int idAgenciaDestino = 0;
                 int idCDDestino = 0;
 
-                if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                if (destinatario.TipoEntrega == TipoEntrega.Domicilio)
+                {
+                    idCDDestino = ObtenerIdCDPorCodPostal(destinatario.CodigoPostal);
+                }
+                else if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                {
                     idAgenciaDestino = destinatario.AgenciaDestino.idAgencia;
+                    idCDDestino = ObtenerIdCDPorAgencia(destinatario.AgenciaDestino.idAgencia);
+                }
                 else if (destinatario.TipoEntrega == TipoEntrega.CD && destinatario.CDDestino != null)
+                {
                     idCDDestino = destinatario.CDDestino.idCD;
+                }
 
                 // Buscar idCliente en el almacen por CUIT
                 int idCliente = 0;
@@ -225,6 +234,29 @@ namespace TUTASA.ImposicionCallCenter
                 });
             }
             return resultado;
+        }
+
+        private int ObtenerIdCDPorCodPostal(string codPostal)
+        {
+            foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+            {
+                foreach (string cp in cd.IdCodPostal)
+                {
+                    if (cp == codPostal)
+                        return cd.IdCD;
+                }
+            }
+            return 0;
+        }
+
+        private int ObtenerIdCDPorAgencia(int idAgencia)
+        {
+            foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+            {
+                if (agencia.IdAgencia == idAgencia)
+                    return agencia.IdCD;
+            }
+            return 0;
         }
     }
 }

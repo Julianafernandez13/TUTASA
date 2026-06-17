@@ -10,8 +10,8 @@ namespace TUTASA.RegistrarEntrega
     {
         public int Id { get; set; }
         public string NroTracking { get; set; }
-        public string EstadoActual { get; set; }
-        public string NombreRemitente { get; set; }
+        public string Categoria { get; set; }
+        public string NombreCliente { get; set; }
         public string NombreDestinatario { get; set; }
     }
 }

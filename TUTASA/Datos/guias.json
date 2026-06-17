@@ -167,14 +167,14 @@
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
-    "EstadoGuia": 5,
+    "EstadoGuia": 7,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-10T08:30:00"
       },
       {
-        "Estado": 5,
+        "Estado": 7,
         "Fecha": "2026-05-10T08:30:00"
       }
     ]
@@ -323,14 +323,14 @@
     "TieneExtraEntregaAgencia": false,
     "IdComisionAgencia": 0,
     "IdComisionFletero": 0,
-    "EstadoGuia": 5,
+    "EstadoGuia": 7,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-14T09:00:00"
       },
       {
-        "Estado": 5,
+        "Estado": 7,
         "Fecha": "2026-05-14T09:00:00"
       }
     ]
@@ -362,14 +362,14 @@
     "TieneExtraEntregaAgencia": true,
     "IdComisionAgencia": 1,
     "IdComisionFletero": 0,
-    "EstadoGuia": 5,
+    "EstadoGuia": 7,
     "Historial": [
       {
         "Estado": 0,
         "Fecha": "2026-05-14T10:00:00"
       },
       {
-        "Estado": 5,
+        "Estado": 7,
         "Fecha": "2026-05-14T10:00:00"
       }
     ]

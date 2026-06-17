@@ -3,74 +3,136 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUTASA.Almacenes;
 
 namespace TUTASA.EmitirFactura
 {
     internal class EmitirFacturaModelo
     {
-        // ── Datos de prueba: clientes ────────────────────────
-        private List<Cliente> clientes = new List<Cliente>
-        {
-            new Cliente { Id=1, NombreCompleto="Distribuidora Norte S.A.", CUIT="20304050607", CondicionIVA="Responsable Inscripto" },
-            new Cliente { Id=2, NombreCompleto="Logística del Sur SRL",    CUIT="27112233445", CondicionIVA="Responsable Inscripto" },
-            new Cliente { Id=3, NombreCompleto="Juan Pérez",               CUIT="20987654321", CondicionIVA="Monotributista"        },
-        };
-
-        // ── Datos de prueba: movimientos ─────────────────────
-        private List<MovimientoPendiente> movimientos = new List<MovimientoPendiente>
-        {
-            new MovimientoPendiente { NroGuia="BUE-00000010", Fecha=new DateTime(2026,5,3),  Origen="Buenos Aires", Destino="Córdoba",          Categoria="M",  ImporteNeto=1500m, Facturado=false, IdCliente=1 },
-            new MovimientoPendiente { NroGuia="BUE-00000011", Fecha=new DateTime(2026,5,10), Origen="Buenos Aires", Destino="Rosario",           Categoria="S",  ImporteNeto=900m,  Facturado=false, IdCliente=1 },
-            new MovimientoPendiente { NroGuia="BUE-00000012", Fecha=new DateTime(2026,5,15), Origen="Buenos Aires", Destino="Mendoza",           Categoria="L",  ImporteNeto=2200m, Facturado=false, IdCliente=1 },
-            new MovimientoPendiente { NroGuia="BUE-00000013", Fecha=new DateTime(2026,4,20), Origen="Buenos Aires", Destino="Córdoba",           Categoria="M",  ImporteNeto=1500m, Facturado=true,  IdCliente=1 },
-            new MovimientoPendiente { NroGuia="BUE-00000014", Fecha=new DateTime(2026,5,7),  Origen="Rosario",      Destino="Buenos Aires",      Categoria="XL", ImporteNeto=3100m, Facturado=false, IdCliente=2 },
-            new MovimientoPendiente { NroGuia="BUE-00000015", Fecha=new DateTime(2026,5,18), Origen="Rosario",      Destino="Córdoba",           Categoria="S",  ImporteNeto=900m,  Facturado=false, IdCliente=2 },
-            new MovimientoPendiente { NroGuia="BUE-00000016", Fecha=new DateTime(2026,5,22), Origen="Córdoba",      Destino="Buenos Aires",      Categoria="M",  ImporteNeto=1500m, Facturado=false, IdCliente=3 },
-        };
-
-        // ── Métodos ──────────────────────────────────────────
-
-        // Busca un cliente por CUIT. Devuelve null si no existe.
+        // Busca un cliente por CUIT en el almacen
         public Cliente BuscarClientePorCUIT(string cuit)
         {
-            foreach (var c in clientes)
+            foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
             {
-                if (c.CUIT == cuit)
-                    return c;
+                if (clienteEntidad.CuitCliente.ToString() == cuit.Trim())
+                {
+                    return new Cliente
+                    {
+                        Id = clienteEntidad.IdCliente,
+                        NombreCompleto = clienteEntidad.NombreCliente + " " + clienteEntidad.ApellidoCliente,
+                        CUIT = clienteEntidad.CuitCliente.ToString(),
+                        TipoFactura = clienteEntidad.TipoFactura
+                    };
+                }
             }
             return null;
         }
 
-        // Devuelve los movimientos pendientes (no facturados) de un cliente en un período.
+        // Devuelve los movimientos pendientes de facturacion de un cliente en un periodo
         public List<MovimientoPendiente> ObtenerMovimientosPendientes(int idCliente, int mes, int anio)
         {
             var resultado = new List<MovimientoPendiente>();
-            foreach (var m in movimientos)
+
+            foreach (CtaCteClienteEntidad movEntidad in CtaCteClienteAlmacen.ctaCteClientes)
             {
-                if (m.IdCliente == idCliente && m.Fecha.Month == mes && m.Fecha.Year == anio && !m.Facturado)
-                    resultado.Add(m);
+                if (movEntidad.IdCliente != idCliente) continue;
+                if (movEntidad.Facturado) continue;
+                if (movEntidad.FechaMovimiento.Month != mes) continue;
+                if (movEntidad.FechaMovimiento.Year != anio) continue;
+
+                var mov = new MovimientoPendiente();
+                mov.IdMovimiento = movEntidad.IdMovimientoCliente;
+                mov.IdCliente = movEntidad.IdCliente;
+                mov.Fecha = movEntidad.FechaMovimiento;
+                mov.ImporteNeto = movEntidad.Importe;
+                mov.Facturado = movEntidad.Facturado;
+
+                // Buscar guia para obtener NroTracking, origen y destino
+                foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
+                {
+                    if (guiaEntidad.IdGuia == movEntidad.IdGuia)
+                    {
+                        mov.NroGuia = guiaEntidad.NroTracking;
+
+                        if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.S) mov.Categoria = "S";
+                        else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.M) mov.Categoria = "M";
+                        else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.L) mov.Categoria = "L";
+                        else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.XL) mov.Categoria = "XL";
+
+                        // Buscar nombre CD origen
+                        foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                        {
+                            if (cd.IdCD == guiaEntidad.IdCDOrigen)
+                            {
+                                mov.Origen = cd.NombreCD;
+                                break;
+                            }
+                        }
+
+                        // Buscar nombre CD destino
+                        foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                        {
+                            if (cd.IdCD == guiaEntidad.IdCDDestino)
+                            {
+                                mov.Destino = cd.NombreCD;
+                                break;
+                            }
+                        }
+
+                        break;
+                    }
+                }
+
+                resultado.Add(mov);
             }
+
             return resultado;
         }
 
-        // Calcula el total con IVA según la condición fiscal del cliente.
-        public decimal CalcularTotal(List<MovimientoPendiente> movs, string condicionIVA)
+        // Calcula el total con IVA segun la condicion fiscal del cliente
+        public decimal CalcularTotal(List<MovimientoPendiente> movs, TipoFacturaEnum tipoFactura)
         {
             decimal subtotal = 0;
             foreach (var m in movs)
                 subtotal += m.ImporteNeto;
 
-            if (condicionIVA == "Responsable Inscripto")
-                return subtotal * 1.21m; // agrega 21% de IVA
-            else
-                return subtotal; // Monotributista: no agrega IVA
+            return tipoFactura == TipoFacturaEnum.A ? subtotal * 1.21m : subtotal;
         }
 
-        // Marca los movimientos como facturados.
-        public void MarcarComoFacturados(List<MovimientoPendiente> movs)
+        // Emite la factura: marca movimientos como facturados y crea el registro en FacturaAlmacen
+        public void EmitirFactura(List<MovimientoPendiente> movs, int idCliente, TipoFacturaEnum tipoFactura)
         {
-            foreach (var m in movs)
-                m.Facturado = true;
+            DateTime ahora = DateTime.Now;
+            decimal importeTotal = CalcularTotal(movs, tipoFactura);
+            var idsMovs = new List<int>();
+
+            // Marcar movimientos como facturados
+            foreach (var mov in movs)
+            {
+                foreach (CtaCteClienteEntidad movEntidad in CtaCteClienteAlmacen.ctaCteClientes)
+                {
+                    if (movEntidad.IdMovimientoCliente == mov.IdMovimiento)
+                    {
+                        movEntidad.Facturado = true;
+                        idsMovs.Add(movEntidad.IdMovimientoCliente);
+                        break;
+                    }
+                }
+            }
+
+            // Crear factura en almacen
+            FacturaAlmacen.facturas.Add(new FacturaEntidad
+            {
+                IdFactura = FacturaAlmacen.facturas.Count + 1,
+                IdCliente = idCliente,
+                FechaEmision = ahora,
+                CAE = 0, // se completara con integracion AFIP
+                TipoFactura = tipoFactura,
+                Movimientos = idsMovs
+            });
+
+            FacturaAlmacen.Guardar();
+            CtaCteClienteAlmacen.Guardar();
         }
     }
 }

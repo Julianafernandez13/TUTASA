@@ -25,7 +25,7 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 if (!EsGuiaParaTipoHDR(guiaEntidad, tipoHDR))
                     continue;
 
-                string localidad = ObtenerLocalidad(guiaEntidad.DomicilioEntregaCodPostal);
+                string localidad = ObtenerLocalidadParaHDR(guiaEntidad, tipoHDR);
                 if (localidad != null && !localidades.Contains(localidad))
                     localidades.Add(localidad);
             }
@@ -43,12 +43,13 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 if (!EsGuiaParaTipoHDR(guiaEntidad, tipoHDR))
                     continue;
 
-                string localidadGuia = ObtenerLocalidad(guiaEntidad.DomicilioEntregaCodPostal);
+                string localidadGuia = ObtenerLocalidadParaHDR(guiaEntidad, tipoHDR);
                 if (localidadGuia != localidad)
                     continue;
 
-                if (!domicilios.Contains(guiaEntidad.DomicilioEntrega))
-                    domicilios.Add(guiaEntidad.DomicilioEntrega);
+                string domicilio = ObtenerDomicilioParaHDR(guiaEntidad, tipoHDR);
+                if (domicilio != null && !domicilios.Contains(domicilio))
+                    domicilios.Add(domicilio);
             }
 
             return domicilios;
@@ -64,18 +65,19 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 if (!EsGuiaParaTipoHDR(guiaEntidad, tipoHDR))
                     continue;
 
-                string localidadGuia = ObtenerLocalidad(guiaEntidad.DomicilioEntregaCodPostal);
+                string localidadGuia = ObtenerLocalidadParaHDR(guiaEntidad, tipoHDR);
                 if (localidadGuia != localidad)
                     continue;
 
-                if (guiaEntidad.DomicilioEntrega != domicilio)
+                string domicilioGuia = ObtenerDomicilioParaHDR(guiaEntidad, tipoHDR);
+                if (domicilioGuia != domicilio)
                     continue;
 
                 var guia = new Guia();
                 guia.Id = guiaEntidad.IdGuia;
                 guia.NroTracking = guiaEntidad.NroTracking;
                 guia.NombreDestinatario = guiaEntidad.NombreApellidoDestinatario;
-                guia.DomicilioEntrega = guiaEntidad.DomicilioEntrega;
+                guia.DomicilioEntrega = domicilioGuia;
                 guia.Localidad = localidadGuia;
                 guia.CodigoPostal = guiaEntidad.DomicilioEntregaCodPostal;
                 guia.TarifaDefinitiva = guiaEntidad.TarifaDefinitiva;
@@ -85,16 +87,16 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.L) guia.Categoria = "L";
                 else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.XL) guia.Categoria = "XL";
 
-
                 if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Domicilio) guia.TipoEntrega = "Domicilio";
                 else if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia) guia.TipoEntrega = "Agencia";
                 else if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD) guia.TipoEntrega = "CD";
 
-
                 if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.DisponibleParaRetiro)
                     guia.EstadoActual = "DisponibleParaRetiro";
-                else if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.Admitida)
-                    guia.EstadoActual = "Admitida";
+                else if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.PendienteDeDistribucion)
+                    guia.EstadoActual = "PendienteDeDistribucion";
+                else if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.IntentoDeEntregaFallido)
+                    guia.EstadoActual = "IntentoDeEntregaFallido";
 
                 // Agencia destino si corresponde
                 if (guiaEntidad.IdAgenciaDestino > 0)
@@ -234,11 +236,39 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
             }
             else if (tipoHDR == "Entrega")
             {
-                return guiaEntidad.EstadoGuia == EstadoGuiaEnum.Admitida
+                return (guiaEntidad.EstadoGuia == EstadoGuiaEnum.PendienteDeDistribucion
+                        || guiaEntidad.EstadoGuia == EstadoGuiaEnum.IntentoDeEntregaFallido)
                     && guiaEntidad.IdCDDestino == idCDSesion
                     && guiaEntidad.TipoEntrega != TipoEntregaEnum.CD;
             }
             return false;
+        }
+
+        // Obtiene la localidad segun el tipo de HDR
+        private string ObtenerLocalidadParaHDR(GuiaEntidad guiaEntidad, string tipoHDR)
+        {
+            if (tipoHDR == "Retiro")
+                return ObtenerLocalidadPorAgencia(guiaEntidad.IdAgenciaOrigen);
+            else
+            {
+                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia)
+                    return ObtenerLocalidadPorAgencia(guiaEntidad.IdAgenciaDestino);
+                else
+                    return ObtenerLocalidad(guiaEntidad.DomicilioEntregaCodPostal);
+            }
+        }
+
+        private string ObtenerDomicilioParaHDR(GuiaEntidad guiaEntidad, string tipoHDR)
+        {
+            if (tipoHDR == "Retiro")
+                return ObtenerDomicilioPorAgencia(guiaEntidad.IdAgenciaOrigen);
+            else
+            {
+                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia)
+                    return ObtenerDomicilioPorAgencia(guiaEntidad.IdAgenciaDestino);
+                else
+                    return guiaEntidad.DomicilioEntrega;
+            }
         }
 
         // Obtiene la localidad a partir de un codigo postal
@@ -248,6 +278,28 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
             {
                 if (cp.IdCodPostal == codPostal)
                     return cp.DescripcionLocalidad;
+            }
+            return null;
+        }
+
+        // Obtiene la localidad a partir de una agencia
+        private string ObtenerLocalidadPorAgencia(int idAgencia)
+        {
+            foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+            {
+                if (agencia.IdAgencia == idAgencia)
+                    return ObtenerLocalidad(agencia.IdCodPostal);
+            }
+            return null;
+        }
+
+        // Obtiene el domicilio a partir de una agencia
+        private string ObtenerDomicilioPorAgencia(int idAgencia)
+        {
+            foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+            {
+                if (agencia.IdAgencia == idAgencia)
+                    return agencia.DomicilioAgencia;
             }
             return null;
         }

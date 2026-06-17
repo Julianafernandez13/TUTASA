@@ -8,6 +8,7 @@ namespace TUTASA.EmitirFactura
 {
     internal class MovimientoPendiente
     {
+        public int IdMovimiento { get; set; }
         public string NroGuia { get; set; }
         public DateTime Fecha { get; set; }
         public string Origen { get; set; }

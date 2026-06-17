@@ -83,6 +83,8 @@
   <ItemGroup>
     <Compile Include="Admision\AdmisionModelo.cs" />
     <Compile Include="Admision\Categoria.cs" />
+    <Compile Include="Admision\ComisionAgencia.cs" />
+    <Compile Include="Admision\ComisionFletero.cs" />
     <Compile Include="Admision\Extras.cs" />
     <Compile Include="Admision\Guia.cs" />
     <Compile Include="Admision\TarifaCliente.cs" />
@@ -187,6 +189,8 @@
     <Compile Include="ImposicionCD\CentrosDeDistribucion.cs" />
     <Compile Include="ImposicionCD\Cliente.cs" />
     <Compile Include="ImposicionCD\CodigoPostal.cs" />
+    <Compile Include="ImposicionCD\ComisionAgencia.cs" />
+    <Compile Include="ImposicionCD\ComisionFletero.cs" />
     <Compile Include="ImposicionCD\Destinatario.cs" />
     <Compile Include="ImposicionCD\Extras.cs" />
     <Compile Include="ImposicionCD\Guia.cs" />
@@ -199,7 +203,6 @@
     <Compile Include="RendicionHDRdeTransporte\Guia.cs" />
     <Compile Include="RendicionHDRdeTransporte\HDR.cs" />
     <Compile Include="RendicionHDRdeTransporte\RendicionHDRTransporteModelo.cs" />
-    <Compile Include="RendicionHDRdeUltMilla\EstadoHDRUltMillaEnum.cs" />
     <Compile Include="RendicionHDRdeUltMilla\Fletero.cs" />
     <Compile Include="RendicionHDRdeUltMilla\HDR.cs" />
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRdeUltMilla.cs">

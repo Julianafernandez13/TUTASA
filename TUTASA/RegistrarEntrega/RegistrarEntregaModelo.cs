@@ -1,122 +1,159 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using TUTASA.Almacenes;
 
 namespace TUTASA.RegistrarEntrega
 {
     internal class RegistrarEntregaModelo
     {
-        public const string ESTADO_DISPONIBLE = "Disponible para Retiro";
+        // Sesion de CD (hardcodeado por ahora)
+        private int idCDSesion = 1; // CD Buenos Aires
+
+        // Sesion de Agencia (hardcodeado por ahora)
+        // private int idAgenciaSesion = 1; // Agencia La Plata Centro
 
         public Receptor ReceptorSeleccionado { get; private set; }
-
-        private List<Receptor> receptores = new List<Receptor>
-        {
-            new Receptor
-            {
-                Id = 1,
-                Dni = "12345678",
-                NombreCompleto = "Carlos Méndez",
-                Guias = new List<GuiaEntrega>
-                {
-                    new GuiaEntrega { Id = 1, NroTracking = "BUE-00000001", NombreRemitente = "Industrias López SA",    NombreDestinatario = "Carlos Méndez",    EstadoActual = "Disponible para Retiro" },
-                    new GuiaEntrega { Id = 6, NroTracking = "BUE-00000006", NombreRemitente = "Logística del Centro SA", NombreDestinatario = "Carlos Méndez",   EstadoActual = "Admitida en CD"         }
-                }
-            },
-            new Receptor
-            {
-                Id = 2,
-                Dni = "87654321",
-                NombreCompleto = "Ana Rodríguez",
-                Guias = new List<GuiaEntrega>
-                {
-                    new GuiaEntrega { Id = 2, NroTracking = "BUE-00000002", NombreRemitente = "Textiles Garmendia SRL",  NombreDestinatario = "Ana Rodríguez", EstadoActual = "Disponible para Retiro" },
-                    new GuiaEntrega { Id = 5, NroTracking = "BUE-00000005", NombreRemitente = "Importadora del Este SA", NombreDestinatario = "Ana Rodríguez", EstadoActual = "Disponible para Retiro" }
-                }
-            },
-            new Receptor
-            {
-                Id = 3,
-                Dni = "11223344",
-                NombreCompleto = "Roberto Fernández",
-                Guias = new List<GuiaEntrega>
-                {
-                    new GuiaEntrega { Id = 3, NroTracking = "BUE-00000003", NombreRemitente = "Distribuidora Norte SA", NombreDestinatario = "Roberto Fernández", EstadoActual = "Disponible para Retiro" }
-                }
-            }
-        };
+        public List<GuiaEntrega> GuiasDisponibles { get; private set; } = new List<GuiaEntrega>();
 
         internal bool BuscarReceptor(string dni)
         {
             ReceptorSeleccionado = null;
+            GuiasDisponibles = new List<GuiaEntrega>();
 
-            foreach (var receptor in receptores)
-            {
-                if (receptor.Dni == dni.Trim())
-                {
-                    ReceptorSeleccionado = receptor;
-                    break;
-                }
-            }
-
-            if (ReceptorSeleccionado == null)
-            {
-                MessageBox.Show(
-                    "No se encontró ningún receptor con el DNI ingresado.",
-                    "Receptor no encontrado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+            if (!long.TryParse(dni.Trim(), out long dniLong))
                 return false;
-            }
 
-            return true;
-        }
+            var guiasEncontradas = new List<GuiaEntrega>();
 
-        public List<GuiaEntrega> ObtenerGuiasDisponibles()
-        {
-            var disponibles = new List<GuiaEntrega>();
-
-            if (ReceptorSeleccionado == null)
-                return disponibles;
-
-            foreach (var guia in ReceptorSeleccionado.Guias)
+            foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
             {
-                if (guia.EstadoActual == ESTADO_DISPONIBLE)
-                    disponibles.Add(guia);
+                if (guiaEntidad.EstadoGuia != EstadoGuiaEnum.DisponibleParaEntrega)
+                    continue;
+
+                if (guiaEntidad.DniDestinatario != dniLong)
+                    continue;
+
+                // Filtro segun tipo de entrega y sesion activa
+                bool esDeSesion = false;
+
+                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD
+                    && guiaEntidad.IdCDDestino == idCDSesion)
+                {
+                    esDeSesion = true;
+                }
+                // Descomentar cuando se implemente sesion de agencia:
+                // else if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia
+                //     && guiaEntidad.IdAgenciaDestino == idAgenciaSesion)
+                // {
+                //     esDeSesion = true;
+                // }
+
+                if (!esDeSesion)
+                    continue;
+
+                var guia = new GuiaEntrega();
+                guia.Id = guiaEntidad.IdGuia;
+                guia.NroTracking = guiaEntidad.NroTracking;
+                guia.NombreDestinatario = guiaEntidad.NombreApellidoDestinatario;
+
+                if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.S) guia.Categoria = "S";
+                else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.M) guia.Categoria = "M";
+                else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.L) guia.Categoria = "L";
+                else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.XL) guia.Categoria = "XL";
+
+                
+                foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
+                {
+                    if (clienteEntidad.IdCliente == guiaEntidad.IdCliente)
+                    {
+                        guia.NombreCliente = clienteEntidad.NombreCliente + " " + clienteEntidad.ApellidoCliente;
+                        break;
+                    }
+                }
+
+                guiasEncontradas.Add(guia);
             }
 
-            return disponibles;
+            if (guiasEncontradas.Count == 0)
+                return false;
+
+            ReceptorSeleccionado = new Receptor
+            {
+                Dni = dni.Trim(),
+                NombreCompleto = guiasEncontradas[0].NombreDestinatario
+            };
+
+            GuiasDisponibles = guiasEncontradas;
+            return true;
         }
 
         internal bool ConfirmarEntrega()
         {
-            if (ReceptorSeleccionado == null)
-            {
-                MessageBox.Show(
-                    "Debe buscar un receptor primero.",
-                    "Error de validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+            if (ReceptorSeleccionado == null || GuiasDisponibles.Count == 0)
                 return false;
-            }
 
-            var disponibles = ObtenerGuiasDisponibles();
+            DateTime ahora = DateTime.Now;
 
-            if (disponibles.Count == 0)
+            foreach (var guia in GuiasDisponibles)
             {
-                MessageBox.Show(
-                    "El receptor no tiene encomiendas disponibles para retiro.",
-                    "Sin encomiendas",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                return false;
+                foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
+                {
+                    if (guiaEntidad.IdGuia == guia.Id)
+                    {
+                        // Actualizar estado
+                        guiaEntidad.EstadoGuia = EstadoGuiaEnum.Entregada;
+                        guiaEntidad.Historial.Add(new HistorialGuia
+                        {
+                            Estado = EstadoGuiaEnum.Entregada,
+                            Fecha = ahora
+                        });
+
+                        // Registrar en cuenta corriente cliente
+                        int nuevoIdCliente = CtaCteClienteAlmacen.ctaCteClientes.Count + 1;
+                        CtaCteClienteAlmacen.ctaCteClientes.Add(new CtaCteClienteEntidad
+                        {
+                            IdMovimientoCliente = nuevoIdCliente,
+                            IdCliente = guiaEntidad.IdCliente,
+                            IdGuia = guiaEntidad.IdGuia,
+                            Facturado = false,
+                            Importe = guiaEntidad.TarifaDefinitiva,
+                            FechaMovimiento = ahora
+                        });
+
+                        // Registrar comision agencia origen si corresponde
+                        if (guiaEntidad.IdComisionAgencia > 0 && guiaEntidad.IdAgenciaOrigen > 0)
+                        {
+                            decimal montoAgencia = 0;
+                            foreach (ComisionAgenciaEntidad ca in ComisionAgenciaAlmacen.comisionAgencias)
+                            {
+                                if (ca.IdComisionAgencia == guiaEntidad.IdComisionAgencia)
+                                {
+                                    montoAgencia = ca.MontoComision;
+                                    break;
+                                }
+                            }
+
+                            int nuevoIdAgencia = CtaCteAgenciaAlmacen.ctaCteAgencias.Count + 1;
+                            CtaCteAgenciaAlmacen.ctaCteAgencias.Add(new CtaCteAgenciaEntidad
+                            {
+                                IdMovimientoAgencia = nuevoIdAgencia,
+                                IdAgencia = guiaEntidad.IdAgenciaOrigen,
+                                IdGuia = guiaEntidad.IdGuia,
+                                Pagado = false,
+                                Importe = montoAgencia,
+                                FechaMovimiento = ahora
+                            });
+                        }
+
+                        break;
+                    }
+                }
             }
 
-            foreach (var guia in disponibles)
-            {
-                guia.EstadoActual = "Entregada en CD";
-            }
-
-            ReceptorSeleccionado = null;
+            GuiaAlmacen.Guardar();
+            CtaCteClienteAlmacen.Guardar();
+            CtaCteAgenciaAlmacen.Guardar();
 
             return true;
         }
@@ -124,6 +161,7 @@ namespace TUTASA.RegistrarEntrega
         internal void LimpiarSeleccion()
         {
             ReceptorSeleccionado = null;
+            GuiasDisponibles = new List<GuiaEntrega>();
         }
     }
 }

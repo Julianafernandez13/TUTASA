@@ -102,7 +102,7 @@ namespace TUTASA.Pantallas
             btnGuardar.Enabled = false;
 
             // Cargar guías admitidas para ese CD destino
-            var guias = modelo.ObtenerGuiasPorCDDestino(nombreCDDestino);
+            var guias = modelo.ObtenerGuiasPorCDDestino(cdDestino.IdCD);
 
             if (guias.Count == 0)
             {

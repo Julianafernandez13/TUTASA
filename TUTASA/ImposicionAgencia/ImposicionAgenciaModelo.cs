@@ -137,10 +137,22 @@ namespace TUTASA.ImposicionAgencia
                 int idAgenciaDestino = 0;
                 int idCDDestino = 0;
 
-                if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                if (destinatario.TipoEntrega == TipoEntrega.Domicilio)
+                {
+                    // Buscar CD destino por codigo postal del domicilio
+                    idCDDestino = ObtenerIdCDPorCodPostal(destinatario.CodigoPostal);
+                }
+                else if (destinatario.TipoEntrega == TipoEntrega.Agencia && destinatario.AgenciaDestino != null)
+                {
+                    // Buscar CD destino a partir de la agencia destino
                     idAgenciaDestino = destinatario.AgenciaDestino.idAgencia;
+                    idCDDestino = ObtenerIdCDPorAgencia(destinatario.AgenciaDestino.idAgencia);
+                }
                 else if (destinatario.TipoEntrega == TipoEntrega.CD && destinatario.CDDestino != null)
+                {
+                    // CD destino es el CD seleccionado directamente
                     idCDDestino = destinatario.CDDestino.idCD;
+                }
 
                 // Buscar idCliente en el almacen por CUIT
                 int idCliente = 0;
@@ -254,6 +266,29 @@ namespace TUTASA.ImposicionAgencia
                 });
             }
             return resultado;
+        }
+
+        private int ObtenerIdCDPorCodPostal(string codPostal)
+        {
+            foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+            {
+                foreach (string cp in cd.IdCodPostal)
+                {
+                    if (cp == codPostal)
+                        return cd.IdCD;
+                }
+            }
+            return 0;
+        }
+
+        private int ObtenerIdCDPorAgencia(int idAgencia)
+        {
+            foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+            {
+                if (agencia.IdAgencia == idAgencia)
+                    return agencia.IdCD;
+            }
+            return 0;
         }
     }
 }
