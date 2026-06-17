@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUTASA.Almacenes;
 
 namespace TUTASA.ConsultaTracking
 {
@@ -16,5 +17,6 @@ namespace TUTASA.ConsultaTracking
         public string CdDestino { get; set; }
         public string NombreRemitente { get; set; }
         public string NombreDestinatario { get; set; }
+        public List<HistorialGuia> Historial { get; set; } = new List<HistorialGuia>();
     }
 }
