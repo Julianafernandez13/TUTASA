@@ -29,8 +29,8 @@
             this.lblAdministrativo = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnImposicionCallCenter = new System.Windows.Forms.Button();
+            this.btnImposicionAgencia = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbAgencias = new System.Windows.Forms.ComboBox();
             this.lblAgencias = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.btnConfeccionHDR.TabIndex = 2;
             this.btnConfeccionHDR.Text = "HDR de Ultima Milla";
             this.btnConfeccionHDR.UseVisualStyleBackColor = true;
+            this.btnConfeccionHDR.Click += new System.EventHandler(this.btnConfeccionHDR_Click);
             // 
             // btnRendicionHDR
             // 
@@ -160,8 +161,8 @@
             this.groupOpcionesDisponibles.Controls.Add(this.lblAdministrativo);
             this.groupOpcionesDisponibles.Controls.Add(this.button4);
             this.groupOpcionesDisponibles.Controls.Add(this.button3);
-            this.groupOpcionesDisponibles.Controls.Add(this.button1);
-            this.groupOpcionesDisponibles.Controls.Add(this.button2);
+            this.groupOpcionesDisponibles.Controls.Add(this.btnImposicionCallCenter);
+            this.groupOpcionesDisponibles.Controls.Add(this.btnImposicionAgencia);
             this.groupOpcionesDisponibles.Controls.Add(this.btnImposicionCD);
             this.groupOpcionesDisponibles.Controls.Add(this.btnConfeccionHDR);
             this.groupOpcionesDisponibles.Controls.Add(this.btnTracking);
@@ -224,25 +225,27 @@
             this.button3.Text = "Emitir Factura";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnImposicionCallCenter
             // 
-            this.button1.Location = new System.Drawing.Point(42, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Imposición Call Center";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnImposicionCallCenter.Location = new System.Drawing.Point(42, 37);
+            this.btnImposicionCallCenter.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImposicionCallCenter.Name = "btnImposicionCallCenter";
+            this.btnImposicionCallCenter.Size = new System.Drawing.Size(235, 23);
+            this.btnImposicionCallCenter.TabIndex = 9;
+            this.btnImposicionCallCenter.Text = "Imposición Call Center";
+            this.btnImposicionCallCenter.UseVisualStyleBackColor = true;
+            this.btnImposicionCallCenter.Click += new System.EventHandler(this.btnImposicionCallCenter_Click);
             // 
-            // button2
+            // btnImposicionAgencia
             // 
-            this.button2.Location = new System.Drawing.Point(42, 64);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Imposición Agencia";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnImposicionAgencia.Location = new System.Drawing.Point(42, 64);
+            this.btnImposicionAgencia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImposicionAgencia.Name = "btnImposicionAgencia";
+            this.btnImposicionAgencia.Size = new System.Drawing.Size(235, 23);
+            this.btnImposicionAgencia.TabIndex = 10;
+            this.btnImposicionAgencia.Text = "Imposición Agencia";
+            this.btnImposicionAgencia.UseVisualStyleBackColor = true;
+            this.btnImposicionAgencia.Click += new System.EventHandler(this.btnImposicionAgencia_Click);
             // 
             // groupBox1
             // 
@@ -433,8 +436,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioBtnCD;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImposicionAgencia;
+        private System.Windows.Forms.Button btnImposicionCallCenter;
         private System.Windows.Forms.RadioButton radioBtnAgencia;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

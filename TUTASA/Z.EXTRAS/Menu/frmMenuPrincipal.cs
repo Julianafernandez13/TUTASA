@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using TUTASA.Almacenes;
-using System.Linq;
+using TUTASA.Forms.Agencia;
+using TUTASA.Forms.CallCenter;
+using TUTASA.Forms.CD;
+using TUTASA.Pantallas;
 
 namespace TUTASA.Forms.Menu
 {
@@ -123,8 +127,8 @@ namespace TUTASA.Forms.Menu
             bool esCD = radioBtnCD.Checked;
             bool esAgencia = radioBtnAgencia.Checked;
 
-            button1.Enabled = esCD;                // Imposición Call Center
-            button2.Enabled = esAgencia;           // Imposición Agencia
+            btnImposicionCallCenter.Enabled = esCD;                // Imposición Call Center
+            btnImposicionAgencia.Enabled = esAgencia;           // Imposición Agencia
             btnImposicionCD.Enabled = esCD;        // Imposición CD
             btnConfeccionHDR.Enabled = esCD;       // HDR de Retiro
             btnRendicionHDR.Enabled = esCD;        // Rendición HDR de Retiro
@@ -139,8 +143,8 @@ namespace TUTASA.Forms.Menu
 
         private void HabilitarBotones(bool habilitar)
         {
-            button1.Enabled = habilitar;
-            button2.Enabled = habilitar;
+            btnImposicionCallCenter.Enabled = habilitar;
+            btnImposicionAgencia.Enabled = habilitar;
             btnImposicionCD.Enabled = habilitar;
             btnConfeccionHDR.Enabled = habilitar;
             btnRendicionHDR.Enabled = habilitar;
@@ -192,12 +196,6 @@ namespace TUTASA.Forms.Menu
 
         // ── Eventos de botones del menú ───────────────────────────────
 
-        private void btnImposicionCD_Click(object sender, EventArgs e)
-        {
-            if (!ValidarSeleccion()) return;
-            // TODO: abrir frmImposicionCD
-        }
-
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             var resultado = MessageBox.Show(
@@ -211,5 +209,34 @@ namespace TUTASA.Forms.Menu
         }
 
         private void lblBienvenida_Click(object sender, EventArgs e) { }
+
+        private void btnImposicionCallCenter_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            //var form = new ImposicionCallCenter();
+            //form.Show();
+        }
+
+        private void btnImposicionCD_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmImposicionCD();
+            form.Show();
+        }
+
+
+        private void btnImposicionAgencia_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmImposicionAgencia();
+            form.Show();
+        }
+
+        private void btnConfeccionHDR_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            //var form = new ConfeccionHDRdeUltMilla();
+            //form.Show();
+        }
     }
 }
