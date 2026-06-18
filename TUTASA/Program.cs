@@ -9,6 +9,9 @@ namespace TUTASA
 {
     internal static class Program
     {
+        public static int CdActivoId { get; set; } = 0;
+        public static int AgenciaActivaId { get; set; } = 0;
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -24,8 +27,24 @@ namespace TUTASA
             CentroDistribucionAlmacen.Guardar();
             ClienteAlmacen.Guardar();
             CodigoPostalAlmacen.Guardar();
+            ComisionAgenciaAlmacen.Guardar();
+            ComisionFleteroAlmacen.Guardar();
+            CtaCteAgenciaAlmacen.Guardar();
+            CtaCteClienteAlmacen.Guardar();
+            CtaCteEmpresaTransporteAlmacen.Guardar();
+            CtaCteFleteroAlmacen.Guardar();
+            EmpresaTransporteAlmacen.Guardar();
+            ExtrasAlmacen.Guardar();
+            FacturaAlmacen.Guardar();
+            FleteroAlmacen.Guardar();
+            GuiaAlmacen.Guardar();
+            HDREntregaAlmacen.Guardar();
+            HDRRetiroAlmacen.Guardar();
+            HDRTransporteAlmacen.Guardar();
+            RutasEmpresaTransporteAlmacen.Guardar();
+            TarifaArrendamientoAlmacen.Guardar();
+            TarifaClienteAlmacen.Guardar();
 
-            //etc...
         }
     }
 }

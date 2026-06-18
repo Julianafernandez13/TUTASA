@@ -192,6 +192,18 @@ namespace TUTASA.Forms.Menu
                 }
             }
 
+            // Asignar sesion
+            if (radioBtnCD.Checked)
+            {
+                Program.CdActivoId = (int)cmbCD.SelectedValue;
+                Program.AgenciaActivaId = 0;
+            }
+            else
+            {
+                Program.AgenciaActivaId = (int)cmbAgencias.SelectedValue;
+                Program.CdActivoId = (int)cmbCDdeAgencia.SelectedValue;
+            }
+
             return true;
         }
 

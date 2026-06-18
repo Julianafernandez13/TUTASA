@@ -16,18 +16,26 @@ namespace TUTASA.ImposicionAgencia
         private Cliente clienteSeleccionado = null;
         private DatosRetiro datosRetiro = null;
 
-        // Agencia activa hardcodeada por ahora
-        private Agencias agenciaActiva = new Agencias
+        private Agencias agenciaActiva
         {
-            idAgencia = 1,
-            nombreAgencia = "Agencia La Plata Centro",
-            CodigoPostal = "1900",
-            Domicilio = "Calle 7 Nro 123"
-        };
-
-        internal Agencias GetAgenciaActiva()
-        {
-            return agenciaActiva;
+            get
+            {
+                int agenciaActivaId = Program.AgenciaActivaId;
+                foreach (AgenciaEntidad agenciaEntidad in AgenciaAlmacen.agencias)
+                {
+                    if (agenciaEntidad.IdAgencia == agenciaActivaId)
+                    {
+                        return new Agencias
+                        {
+                            idAgencia = agenciaEntidad.IdAgencia,
+                            nombreAgencia = agenciaEntidad.NombreAgencia,
+                            CodigoPostal = agenciaEntidad.IdCodPostal,
+                            Domicilio = agenciaEntidad.DomicilioAgencia
+                        };
+                    }
+                }
+                return null;
+            }
         }
 
         internal DatosRetiro GetDatosRetiroAgencia()
@@ -204,7 +212,6 @@ namespace TUTASA.ImposicionAgencia
                 GuiaAlmacen.guias.Add(nuevaGuia);
             }
 
-            GuiaAlmacen.Guardar();
         }
 
         internal List<Agencias> ObtenerAgencias()

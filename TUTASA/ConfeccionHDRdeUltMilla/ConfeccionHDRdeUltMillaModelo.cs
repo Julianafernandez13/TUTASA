@@ -9,8 +9,19 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
 {
     internal class ConfeccionHDRdeUltMillaModelo
     {
-        // CD activo de sesión (hardcodeado por ahora)
-        private int idCDSesion = 1; // CD Buenos Aires
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
         public List<Guia> GuiasEncontradas { get; set; } = new List<Guia>();
         public bool Limpiando { get; set; } = false;
@@ -186,8 +197,6 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 }
 
                 HDRRetiroAlmacen.hDRRetiros.Add(nuevaHDR);
-                HDRRetiroAlmacen.Guardar();
-                GuiaAlmacen.Guardar();
             }
             else if (tipoHDR == "Entrega")
             {
@@ -221,8 +230,7 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
                 }
 
                 HDREntregaAlmacen.hDREntregas.Add(nuevaHDR);
-                HDREntregaAlmacen.Guardar();
-                GuiaAlmacen.Guardar();
+
             }
         }
 
@@ -232,13 +240,13 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
             if (tipoHDR == "Retiro")
             {
                 return guiaEntidad.EstadoGuia == EstadoGuiaEnum.DisponibleParaRetiro
-                    && guiaEntidad.IdCDOrigen == idCDSesion;
+                    && guiaEntidad.IdCDOrigen == cdActivo.IdCD;
             }
             else if (tipoHDR == "Entrega")
             {
                 return (guiaEntidad.EstadoGuia == EstadoGuiaEnum.PendienteDeDistribucion
                         || guiaEntidad.EstadoGuia == EstadoGuiaEnum.IntentoDeEntregaFallido)
-                    && guiaEntidad.IdCDDestino == idCDSesion
+                    && guiaEntidad.IdCDDestino == cdActivo.IdCD
                     && guiaEntidad.TipoEntrega != TipoEntregaEnum.CD;
             }
             return false;

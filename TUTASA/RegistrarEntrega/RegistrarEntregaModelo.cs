@@ -7,11 +7,33 @@ namespace TUTASA.RegistrarEntrega
 {
     internal class RegistrarEntregaModelo
     {
-        // Sesion de CD (hardcodeado por ahora)
-        private int idCDSesion = 1; // CD Buenos Aires
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
-        // Sesion de Agencia (hardcodeado por ahora)
-        // private int idAgenciaSesion = 1; // Agencia La Plata Centro
+        private AgenciaEntidad agenciaActiva
+        {
+            get
+            {
+                int agenciaActivaId = Program.AgenciaActivaId;
+                foreach (AgenciaEntidad agencia in AgenciaAlmacen.agencias)
+                {
+                    if (agencia.IdAgencia == agenciaActivaId)
+                        return agencia;
+                }
+                return null;
+            }
+        }
 
         public Receptor ReceptorSeleccionado { get; private set; }
         public List<GuiaEntrega> GuiasDisponibles { get; private set; } = new List<GuiaEntrega>();
@@ -37,17 +59,14 @@ namespace TUTASA.RegistrarEntrega
                 // Filtro segun tipo de entrega y sesion activa
                 bool esDeSesion = false;
 
-                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD
-                    && guiaEntidad.IdCDDestino == idCDSesion)
+                if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD && guiaEntidad.IdCDDestino == cdActivo.IdCD)
                 {
                     esDeSesion = true;
                 }
-                // Descomentar cuando se implemente sesion de agencia:
-                // else if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia
-                //     && guiaEntidad.IdAgenciaDestino == idAgenciaSesion)
-                // {
-                //     esDeSesion = true;
-                // }
+                else if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia && guiaEntidad.IdAgenciaDestino == agenciaActiva.IdAgencia)
+                {
+                    esDeSesion = true;
+                }
 
                 if (!esDeSesion)
                     continue;
@@ -150,10 +169,6 @@ namespace TUTASA.RegistrarEntrega
                     }
                 }
             }
-
-            GuiaAlmacen.Guardar();
-            CtaCteClienteAlmacen.Guardar();
-            CtaCteAgenciaAlmacen.Guardar();
 
             return true;
         }

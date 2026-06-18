@@ -14,13 +14,27 @@ namespace TUTASA.ImposicionCD
         private List<Guia> guias = new List<Guia>();
         private Cliente clienteSeleccionado = null;
 
-        // CD activo de sesión (hardcodeado por ahora)
-        private CentrosDeDistribucion cdActivo = new CentrosDeDistribucion
+        // CD activo de sesión 
+        private CentrosDeDistribucion cdActivo
         {
-            idCD = 1,
-            nombreCD = "CD Buenos Aires",
-            CodigosPostales = new List<string> { "1000", "1900", "1800", "1700" }
-        };
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                    {
+                        return new CentrosDeDistribucion
+                        {
+                            idCD = cd.IdCD,
+                            nombreCD = cd.NombreCD,
+                            CodigosPostales = cd.IdCodPostal
+                        };
+                    }
+                }
+                return null;
+            }
+        }
 
         // Métodos para manejar el cliente seleccionado
         internal void SetClienteSeleccionado(Cliente cliente)
@@ -308,7 +322,6 @@ namespace TUTASA.ImposicionCD
                 GuiaAlmacen.guias.Add(nuevaGuia);
             }
 
-            GuiaAlmacen.Guardar();
         }
 
         internal List<Agencias> ObtenerAgencias()

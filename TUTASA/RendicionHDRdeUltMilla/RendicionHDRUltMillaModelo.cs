@@ -13,8 +13,20 @@ namespace TUTASA.RendicionHDRdeUltMilla
         public Fletero FleteroActual { get; set; } = null;
         public List<HDR> HdrsRendidas { get; set; } = new List<HDR>();
 
-        // CD activo de sesión (hardcodeado por ahora)
-        private int idCDSesion = 1; // CD Buenos Aires
+        // CD activo de sesión 
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
         // Busca un fletero por DNI
         public Fletero BuscarFleteroPorDNI(string dni)
@@ -190,8 +202,7 @@ namespace TUTASA.RendicionHDRdeUltMilla
                             break;
                         }
                     }
-                    if (cumplida)
-                        CtaCteFleteroAlmacen.Guardar();
+                   
                 }
                 else if (hdr.TipoHDR == "Entrega")
                 {
@@ -277,9 +288,6 @@ namespace TUTASA.RendicionHDRdeUltMilla
                     hdrEntrega.EstadoHDR = EstadoHDRUltimaMillaEnum.EnProceso;
             }
 
-            HDRRetiroAlmacen.Guardar();
-            HDREntregaAlmacen.Guardar();
-            GuiaAlmacen.Guardar();
         }
 
         private void RegistrarMovimientosEntrega(GuiaEntidad guia, DateTime ahora)
@@ -344,18 +352,14 @@ namespace TUTASA.RendicionHDRdeUltMilla
                     Importe = montoAgencia,
                     FechaMovimiento = ahora
                 });
-            }
-
-            CtaCteClienteAlmacen.Guardar();
-            CtaCteFleteroAlmacen.Guardar();
-            CtaCteAgenciaAlmacen.Guardar();
+            }       
         }
 
         // Crea una guia de devolucion cuando se cancela por 2do intento fallido
         private void CrearGuiaDevolucion(GuiaEntidad guiaOriginal, DateTime ahora)
         {
             int nuevoId = GuiaAlmacen.guias.Count + 1;
-            string nroTracking = idCDSesion + "-DEV-" + nuevoId.ToString("D6");
+            string nroTracking = cdActivo.IdCD + "-DEV-" + nuevoId.ToString("D6");
 
             // Determinar destino segun como fue impuesta originalmente
             int idAgenciaDestino = 0;
@@ -388,7 +392,7 @@ namespace TUTASA.RendicionHDRdeUltMilla
                 FechaImposicion = ahora,
                 TipoEntrega = tipoEntregaDevolucion,
                 IdAgenciaOrigen = 0,
-                IdCDOrigen = idCDSesion,
+                IdCDOrigen = cdActivo.IdCD,
                 CategoriaBulto = guiaOriginal.CategoriaBulto,
                 RemDni = 0,
                 RemDomicilioRetiro = string.Empty,

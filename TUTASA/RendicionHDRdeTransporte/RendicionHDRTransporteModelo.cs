@@ -15,8 +15,19 @@ namespace TUTASA.RendicionHDRdeTransporte
         public HDR HdrActual { get; set; } = null;
         public bool Limpiando { get; set; } = false;
 
-        // CD activo de sesion (hardcodeado por ahora)
-        private int idCDSesion = 1; // CD bs as
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
         // Devuelve todas las empresas de transporte
         public void ObtenerEmpresas()
@@ -42,7 +53,7 @@ namespace TUTASA.RendicionHDRdeTransporte
                 
                 if (hdrEntidad.IdEmpresaTransporte != idEmpresa) continue;
                 if (hdrEntidad.EstadoHDR != EstadoHDRTransporteEnum.Despachada) continue;
-                if (hdrEntidad.IdCDDestino != idCDSesion) continue;
+                if (hdrEntidad.IdCDDestino != cdActivo.IdCD) continue;
 
                 // Buscar nombre CD origen
                 string nombreCDOrigen = "";
@@ -124,7 +135,7 @@ namespace TUTASA.RendicionHDRdeTransporte
                     {
                         EstadoGuiaEnum nuevoEstado;
 
-                        if (guiaEntidad.IdCDDestino == idCDSesion)
+                        if (guiaEntidad.IdCDDestino == cdActivo.IdCD)
                         {
                             if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD)
                                 nuevoEstado = EstadoGuiaEnum.DisponibleParaEntrega;
@@ -147,8 +158,6 @@ namespace TUTASA.RendicionHDRdeTransporte
                     }
                 }
             }
-            HDRTransporteAlmacen.Guardar();
-            GuiaAlmacen.Guardar();
         }
     }
 }

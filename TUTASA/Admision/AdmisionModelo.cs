@@ -9,8 +9,19 @@ namespace TUTASA.Admision
     {
         public Guia GuiaSeleccionada { get; private set; }
 
-        // CD activo de sesión (hardcodeado por ahora)
-        private int idCDSesion = 1; // CD Buenos Aires
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
         // Filtra dinamicamente desde el almacen las guias en estado PreAdmitida
         private List<Guia> guias
@@ -20,7 +31,8 @@ namespace TUTASA.Admision
                 var guiasAAdmitir = new List<Guia>();
                 foreach (var guiaEntidad in GuiaAlmacen.guias)
                 {
-                    if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.PreAdmitida) 
+                    if (guiaEntidad.EstadoGuia == EstadoGuiaEnum.PreAdmitida && guiaEntidad.IdCDOrigen == cdActivo.IdCD)
+
                     {
                         var guia = new Guia();
                         guia.IdGuia = guiaEntidad.IdGuia;
@@ -301,7 +313,6 @@ namespace TUTASA.Admision
                 Fecha = DateTime.Now
             });
 
-            GuiaAlmacen.Guardar();
 
             // Actualizar objeto local
             GuiaSeleccionada.Categoria = categoriaVerificada.Descripcion;

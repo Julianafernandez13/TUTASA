@@ -130,8 +130,6 @@ namespace TUTASA.EmitirFactura
                 Movimientos = idsMovs
             });
 
-            FacturaAlmacen.Guardar();
-            CtaCteClienteAlmacen.Guardar();
 
             // Limpiar estado
             ClienteActual = null;

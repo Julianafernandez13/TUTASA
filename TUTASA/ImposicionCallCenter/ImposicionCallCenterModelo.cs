@@ -14,13 +14,27 @@ namespace TUTASA.ImposicionCallCenter
         private Cliente clienteSeleccionado = null;
         private DatosRetiro datosRetiro = null;
 
-        // CD activo de sesión (hardcodeado por ahora)
-        private CentrosDeDistribucion cdActivo = new CentrosDeDistribucion
+        // CD activo de sesión 
+        private CentrosDeDistribucion cdActivo
         {
-            idCD = 1,
-            nombreCD = "CD Buenos Aires",
-            CodigosPostales = new List<string> { "1000", "1900", "1800", "1700" }
-        };
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                    {
+                        return new CentrosDeDistribucion
+                        {
+                            idCD = cd.IdCD,
+                            nombreCD = cd.NombreCD,
+                            CodigosPostales = cd.IdCodPostal
+                        };
+                    }
+                }
+                return null;
+            }
+        }
 
         internal void SetClienteSeleccionado(Cliente cliente)
         {
@@ -168,8 +182,6 @@ namespace TUTASA.ImposicionCallCenter
 
                 GuiaAlmacen.guias.Add(nuevaGuia);
             }
-
-            GuiaAlmacen.Guardar();
         }
 
         // Obtener agencias del almacen y convertir a modelo de agencia para la vista

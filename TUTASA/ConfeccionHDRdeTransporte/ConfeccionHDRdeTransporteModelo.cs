@@ -11,7 +11,19 @@ namespace TUTASA.ConfeccionHDRdeTransporte
     {
         public List<Guia> GuiasSeleccionadas { get; set; } = new List<Guia>();
         public bool Limpiando { get; set; } = false;
-        public int IdCDOrigen { get; set; } = 1; // CD Buenos Aires
+        private CentroDistribucionEntidad cdActivo
+        {
+            get
+            {
+                int cdActivoId = Program.CdActivoId;
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == cdActivoId)
+                        return cd;
+                }
+                return null;
+            }
+        }
 
         // Devuelve los CDs destino que tienen guias admitidas desde el CD de sesion
         public List<CentroDistribucionEntidad> ObtenerDestinosDisponibles()
@@ -19,7 +31,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
             var idsDestino = new List<int>();
             foreach (var ruta in RutasEmpresaTransporteAlmacen.rutasEmpresaTransportes)
             {
-                if (ruta.IdCDOrigen == IdCDOrigen && !idsDestino.Contains(ruta.IdCDDestino))
+                if (ruta.IdCDOrigen == cdActivo.IdCD && !idsDestino.Contains(ruta.IdCDDestino))
                     idsDestino.Add(ruta.IdCDDestino);
             }
 
@@ -38,7 +50,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
             var idsEmpresa = new List<int>();
             foreach (var ruta in RutasEmpresaTransporteAlmacen.rutasEmpresaTransportes)
             {
-                if (ruta.IdCDOrigen == IdCDOrigen && ruta.IdCDDestino == idCDDestino)
+                if (ruta.IdCDOrigen == cdActivo.IdCD && ruta.IdCDDestino == idCDDestino)
                     idsEmpresa.Add(ruta.IdEmpresaTransporte);
             }
 
@@ -67,7 +79,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
             {
                 if (guiaEntidad.EstadoGuia != EstadoGuiaEnum.Admitida)
                     continue;
-                if (guiaEntidad.IdCDOrigen != IdCDOrigen)
+                if (guiaEntidad.IdCDOrigen != cdActivo.IdCD) 
                     continue;
                 if (guiaEntidad.IdCDDestino != idCDDestino)
                     continue;
@@ -158,7 +170,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
             HDRTransporteAlmacen.hDRTransportes.Add(new HDRTransporteEntidad
             {
                 IdHDRdeTransporte = HDRTransporteAlmacen.hDRTransportes.Count + 1,
-                IdCDOrigen = IdCDOrigen,
+                IdCDOrigen = cdActivo.IdCD,
                 IdCDDestino = idCDDestino,
                 IdEmpresaTransporte = empresa.IdEmpresaTransporte,
                 Fecha = ahora,
@@ -186,8 +198,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
             }
 
             GuiasSeleccionadas.Clear();
-            HDRTransporteAlmacen.Guardar();
-            GuiaAlmacen.Guardar();
+  
         }
     }
 }

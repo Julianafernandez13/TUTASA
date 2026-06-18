@@ -27,7 +27,7 @@ namespace TUTASA.Pantallas
         {
             // CD Origen autorrelleno por sesión
             labelMuestraCDOrigen.Text = CentroDistribucionAlmacen.centroDistribucions
-                .Find(cd => cd.IdCD == modelo.IdCDOrigen)?.NombreCD ?? "Sin CD";
+                .Find(cd => cd.IdCD == Program.CdActivoId)?.NombreCD ?? "Sin CD";
 
             // Cargar CDs destino disponibles desde el CD de sesión
             cmbCDDestino.Items.Clear();
