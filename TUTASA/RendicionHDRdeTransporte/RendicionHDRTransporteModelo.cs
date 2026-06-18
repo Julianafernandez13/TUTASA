@@ -3,95 +3,152 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using TUTASA.Almacenes;
 
 namespace TUTASA.RendicionHDRdeTransporte
 {
     internal class RendicionHDRTransporteModelo
     {
-        // ── Propiedades de estado ─────────────────────────────
+        public List<EmpresaTransporte> EmpresasActuales { get; private set; } = new List<EmpresaTransporte>();
+        public List<HDR> HDRsActuales { get; private set; } = new List<HDR>();
         public HDR HdrActual { get; set; } = null;
         public bool Limpiando { get; set; } = false;
 
-        // ── Datos de prueba: empresas de transporte ──────────
-        private List<EmpresaTransporte> empresas = new List<EmpresaTransporte>
-        {
-            new EmpresaTransporte { Id=1, Nombre="Flecha Bus"   },
-            new EmpresaTransporte { Id=2, Nombre="Andesmar"     },
-            new EmpresaTransporte { Id=3, Nombre="Chevallier"   },
-        };
-
-        // ── Datos de prueba: HDRs ────────────────────────────
-        private List<HDR> hdrs = new List<HDR>
-        {
-            new HDR
-            {
-                Id=1, NroHDR="HDR-001", CdOrigen="Buenos Aires", CdDestino="Córdoba",
-                CantBultos=3, EstadoActual="Pendiente", IdEmpresaTransporte=1,
-                Guias = new List<Guia>
-                {
-                    new Guia { Id=1, NroTracking="BUE-00000010", EstadoActual="En tránsito", NombreRemitente="Distribuidora Norte S.A.", NombreDestinatario="Ana García",   Categoria="M"  },
-                    new Guia { Id=2, NroTracking="BUE-00000011", EstadoActual="En tránsito", NombreRemitente="Logística del Sur SRL",    NombreDestinatario="Pedro Díaz",   Categoria="S"  },
-                    new Guia { Id=3, NroTracking="BUE-00000012", EstadoActual="En tránsito", NombreRemitente="Juan Pérez",               NombreDestinatario="Laura Sosa",   Categoria="L"  },
-                }
-            },
-            new HDR
-            {
-                Id=2, NroHDR="HDR-002", CdOrigen="Buenos Aires", CdDestino="Rosario",
-                CantBultos=2, EstadoActual="Pendiente", IdEmpresaTransporte=1,
-                Guias = new List<Guia>
-                {
-                    new Guia { Id=4, NroTracking="BUE-00000013", EstadoActual="En tránsito", NombreRemitente="Distribuidora Norte S.A.", NombreDestinatario="Sofía Torres", Categoria="M"  },
-                    new Guia { Id=5, NroTracking="BUE-00000014", EstadoActual="En tránsito", NombreRemitente="Logística del Sur SRL",    NombreDestinatario="Diego Molina", Categoria="XL" },
-                }
-            },
-            new HDR
-            {
-                Id=3, NroHDR="HDR-003", CdOrigen="Córdoba", CdDestino="Mendoza",
-                CantBultos=1, EstadoActual="Pendiente", IdEmpresaTransporte=2,
-                Guias = new List<Guia>
-                {
-                    new Guia { Id=6, NroTracking="COR-00000020", EstadoActual="En tránsito", NombreRemitente="Juan Pérez",               NombreDestinatario="Marcos Ruiz",  Categoria="XL" },
-                }
-            },
-        };
-
-        // ── Métodos ──────────────────────────────────────────
+        // CD activo de sesion (hardcodeado por ahora)
+        private int idCDSesion = 1; // CD bs as
 
         // Devuelve todas las empresas de transporte
-        public List<EmpresaTransporte> ObtenerEmpresas()
+        public void ObtenerEmpresas()
         {
-            return empresas;
-        }
-
-        // Devuelve las HDRs pendientes de una empresa
-        public List<HDR> ObtenerHDRsPorEmpresa(int idEmpresa)
-        {
-            var resultado = new List<HDR>();
-            foreach (var h in hdrs)
+            EmpresasActuales = new List<EmpresaTransporte>();
+            foreach (EmpresaTransporteEntidad emp in EmpresaTransporteAlmacen.empresaTransportes)
             {
-                if (h.IdEmpresaTransporte == idEmpresa && h.EstadoActual == "Pendiente")
-                    resultado.Add(h);
+                EmpresasActuales.Add(new EmpresaTransporte
+                {
+                    Id = emp.IdEmpresaTransporte,
+                    Nombre = emp.NombreEmpresa
+                });
             }
-            return resultado;
         }
 
-        // Devuelve una HDR por su Id
-        public HDR ObtenerHDRPorId(int idHDR)
+        // Devuelve las HDRs en estado Despachada para una empresa cuyo CDDestino es el CD de sesion
+        public void ObtenerHDRsPorEmpresa(int idEmpresa)
         {
-            foreach (var h in hdrs)
+            HDRsActuales = new List<HDR>();
+            
+            foreach (HDRTransporteEntidad hdrEntidad in HDRTransporteAlmacen.hDRTransportes)
             {
-                if (h.Id == idHDR)
-                    return h;
+                
+                if (hdrEntidad.IdEmpresaTransporte != idEmpresa) continue;
+                if (hdrEntidad.EstadoHDR != EstadoHDRTransporteEnum.Despachada) continue;
+                if (hdrEntidad.IdCDDestino != idCDSesion) continue;
+
+                // Buscar nombre CD origen
+                string nombreCDOrigen = "";
+                string nombreCDDestino = "";
+                foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
+                {
+                    if (cd.IdCD == hdrEntidad.IdCDOrigen) nombreCDOrigen = cd.NombreCD;
+                    if (cd.IdCD == hdrEntidad.IdCDDestino) nombreCDDestino = cd.NombreCD;
+                }
+
+                // Mapear guias
+                var guias = new List<Guia>();
+                foreach (int idGuia in hdrEntidad.GuiasDespachadas)
+                {
+                    foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
+                    {
+                        if (guiaEntidad.IdGuia == idGuia)
+                        {
+                            var guia = new Guia();
+                            guia.Id = guiaEntidad.IdGuia;
+                            guia.NroTracking = guiaEntidad.NroTracking;
+                            guia.NombreDestinatario = guiaEntidad.NombreApellidoDestinatario;
+
+                            if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.S) guia.Categoria = "S";
+                            else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.M) guia.Categoria = "M";
+                            else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.L) guia.Categoria = "L";
+                            else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.XL) guia.Categoria = "XL";
+
+                            // Buscar nombre remitente
+                            foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
+                            {
+                                if (clienteEntidad.IdCliente == guiaEntidad.IdCliente)
+                                {
+                                    guia.NombreRemitente = clienteEntidad.NombreCliente + " " + clienteEntidad.ApellidoCliente;
+                                    break;
+                                }
+                            }
+
+                            guias.Add(guia);
+                            break;
+                        }
+                    }
+                }
+
+                HDRsActuales.Add(new HDR
+                {
+                    Id = (int)hdrEntidad.IdHDRdeTransporte,
+                    NroHDR = "TRP-" + hdrEntidad.IdHDRdeTransporte.ToString("D6"),
+                    CdOrigen = nombreCDOrigen,
+                    CdDestino = nombreCDDestino,
+                    CantBultos = guias.Count,
+                    EstadoActual = "Despachada",
+                    IdEmpresaTransporte = hdrEntidad.IdEmpresaTransporte,
+                    Guias = guias
+                });
             }
-            return null;
         }
 
-        // Confirma la recepción de una HDR
+        // Confirma la recepcion de una HDR
         public void ConfirmarRecepcion(HDR hdr)
         {
-            hdr.EstadoActual = "Recibida";
-            foreach (var g in hdr.Guias)
-                g.EstadoActual = "Recibida en CD destino";
+            DateTime ahora = DateTime.Now;
+
+            foreach (HDRTransporteEntidad hdrEntidad in HDRTransporteAlmacen.hDRTransportes)
+            {
+                if ((int)hdrEntidad.IdHDRdeTransporte == hdr.Id)
+                {
+                    hdrEntidad.EstadoHDR = EstadoHDRTransporteEnum.Recepcionada;
+                    break;
+                }
+            }
+
+            // Actualizar estado de las guias
+            foreach (var guia in hdr.Guias)
+            {
+                foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
+                {
+                    if (guiaEntidad.IdGuia == guia.Id)
+                    {
+                        EstadoGuiaEnum nuevoEstado;
+
+                        if (guiaEntidad.IdCDDestino == idCDSesion)
+                        {
+                            if (guiaEntidad.TipoEntrega == TipoEntregaEnum.CD)
+                                nuevoEstado = EstadoGuiaEnum.DisponibleParaEntrega;
+                            else
+                                nuevoEstado = EstadoGuiaEnum.PendienteDeDistribucion;
+                        }
+                        else
+                        {
+                            nuevoEstado = EstadoGuiaEnum.Admitida;
+                        }
+
+                        guiaEntidad.EstadoGuia = nuevoEstado;
+                        guiaEntidad.Historial.Add(new HistorialGuia
+                        {
+                            Estado = nuevoEstado,
+                            Fecha = ahora
+                        });
+
+                        break;
+                    }
+                }
+            }
+            HDRTransporteAlmacen.Guardar();
+            GuiaAlmacen.Guardar();
         }
     }
 }

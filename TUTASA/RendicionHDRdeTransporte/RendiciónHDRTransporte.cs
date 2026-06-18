@@ -25,7 +25,8 @@ namespace TUTASA.Forms.CD
         private void RendicionHDRTransporte_Load(object sender, EventArgs e)
         {
             cmbEmpresaTransporte.Items.Clear();
-            foreach (var emp in modelo.ObtenerEmpresas())
+            modelo.ObtenerEmpresas();
+            foreach (var emp in modelo.EmpresasActuales)
                 cmbEmpresaTransporte.Items.Add(emp.Nombre);
 
             cmbNroHDR.Items.Clear();
@@ -63,8 +64,8 @@ namespace TUTASA.Forms.CD
                 return;
             }
 
-            int idEmpresa = cmbEmpresaTransporte.SelectedIndex + 1;
-            var hdrs = modelo.ObtenerHDRsPorEmpresa(idEmpresa);
+            int idEmpresa = modelo.EmpresasActuales[cmbEmpresaTransporte.SelectedIndex].Id;
+            modelo.ObtenerHDRsPorEmpresa(idEmpresa);
 
             cmbNroHDR.Items.Clear();
             listViewGuias.Items.Clear();
@@ -74,7 +75,7 @@ namespace TUTASA.Forms.CD
             btnConfirmarRecepcion.Enabled = false;
             modelo.HdrActual = null;
 
-            if (hdrs.Count == 0)
+            if (modelo.HDRsActuales.Count == 0)
             {
                 MessageBox.Show(
                     "No existen HDRs pendientes de recepción para el servicio seleccionado.",
@@ -84,7 +85,7 @@ namespace TUTASA.Forms.CD
                 return;
             }
 
-            foreach (var h in hdrs)
+            foreach (var h in modelo.HDRsActuales)
                 cmbNroHDR.Items.Add(h.NroHDR);
         }
 
@@ -93,9 +94,8 @@ namespace TUTASA.Forms.CD
         {
             if (cmbNroHDR.SelectedIndex < 0) return;
 
-            int idEmpresa = cmbEmpresaTransporte.SelectedIndex + 1;
-            var hdrs = modelo.ObtenerHDRsPorEmpresa(idEmpresa);
-            modelo.HdrActual = hdrs[cmbNroHDR.SelectedIndex];
+            int idEmpresa = modelo.EmpresasActuales[cmbEmpresaTransporte.SelectedIndex].Id;
+            modelo.HdrActual = modelo.HDRsActuales[cmbNroHDR.SelectedIndex];
 
             lblCDOrigen.Text = modelo.HdrActual.CdOrigen;
             lblCDDestino.Text = modelo.HdrActual.CdDestino;

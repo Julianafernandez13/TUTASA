@@ -162,7 +162,7 @@ namespace TUTASA.ConfeccionHDRdeTransporte
                 IdCDDestino = idCDDestino,
                 IdEmpresaTransporte = empresa.IdEmpresaTransporte,
                 Fecha = ahora,
-                EstadoHDR = EstadoHDRTransporteEnum.Pendiente,
+                EstadoHDR = EstadoHDRTransporteEnum.Despachada,
                 DetalleDiscrepancias = string.Empty,
                 GuiasDespachadas = idsGuias
             });
