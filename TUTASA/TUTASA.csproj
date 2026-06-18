@@ -286,6 +286,7 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="PRUEBA\ImposicionCallCenter\ImposicionCallCenter_ImposicionExitosa.txt" />
     <EmbeddedResource Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla.resx">
       <DependentUpon>ConfeccionHDRdeUltMilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,67 +339,67 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Datos\centros_distribucion.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\clientes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\codigos_postales.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\comisiones_agencia.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\comisiones_fletero.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\cta_cte_agencia.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\cta_cte_cliente.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\cta_cte_empresa_transporte.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\cta_cte_fletero.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\empresas_transporte.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\extras.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\facturas.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\fleteros.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\guias.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\guias_en_hdr_transporte.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\hdr_entrega.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\hdr_retiro.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="Datos\hdr_transporte.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Datos\rutas_empresa_transporte.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\tarifas_arrendamiento.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Datos\tarifas_cliente.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -415,11 +416,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PRUEBA\" />
+    <Folder Include="PRUEBA\Admision\" />
+    <Folder Include="PRUEBA\ConfeccionHDRdeTransporte\" />
+    <Folder Include="PRUEBA\ConfeccionHDRdeUltMilla\" />
+    <Folder Include="PRUEBA\ConsultaTracking\" />
+    <Folder Include="PRUEBA\CostovsVentas\" />
+    <Folder Include="PRUEBA\EmitirFactura\" />
+    <Folder Include="PRUEBA\ImposicionAgencia\" />
+    <Folder Include="PRUEBA\ImposicionCD\" />
+    <Folder Include="PRUEBA\RegistrarEntrega\" />
+    <Folder Include="PRUEBA\RendicionHDRdeTransporte\" />
+    <Folder Include="PRUEBA\RendicionHDRdeUltMilla\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Datos\agencias.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,190 @@
+Plan de Prueba: ImposicionCallCenter_ImposicionExitosa_EntregaenCD
+
+Sección: Datos del cliente
+1.CUIT						Ingresar CUIT cliente			-> Dato de prueba: 27222333444 
+2.Boton						"Buscar Cliente"				 
+3.Nombre					Mostrar <Nombre de Cliente>		-> Resultado esperado: Lucia Fernandez
+
+Sección: Datos del Retiro
+4.DNI del remitente			Ingresar DNI valido				-> DNI de prueba: 45755694
+5.Domicilio de Retiro		Ingresar domicilio				-> Domicilio de prueba: Lavalle 46
+6.Codigo Postal				Ingresar Codigo Postal			-> CP de prueba: 1000
+7.Boton						"Buscar localidad"				
+8.Localidad/Provincia		Mostrar <Localidad>				-> Resultado esperado: Buenos Aires, CABA
+
+Sección: Bultos
+ -Hacer
+9.Categoría					Selección excluyente: S || M || L || XL
+10.Boton					"Agregar bulto"
+ - Hasta finalizar la carga de bultos						-> Carga para la prueba: 2 bultos
+11.Botón					Quitar seleccionado				-> Quitar un bulto: Resultado esperado: Bulto fuera de la lista
+ 
+
+12.Tipo de entrega			Selección excluyente: Domicilio || Agencia || CD
+
+Sección en CD
+13.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario.
+14.DNI						Ingresar DNI
+15.Codigo Postal			Ingresar Codigo postal
+16.Boton					"Buscar Localidad" -> Filtra localidad
+17.Localidad/Provincia		Mostrar <CD>
+18.Boton					"Confirmar Solicitud"
+19.Volver al menú principal
+
+Verificación:
+20. Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+
+{
+	idGuia:ultimoId + 1,
+	NroTracking:1-00000017,
+	idCliente:4,
+	fechaImposicion:FechaYHora_DiaDeLaPrueba,
+	tipoEntrega:2,								-> Refiere por enum a CD
+	idAgenciaOrigen:0,
+	idCDOrigen:1,
+	categoriaBulto:0,							-> Refiere por enum a S
+	remDni: 45755694,
+	remDomicilioRetiro: Lavalle 46,
+	remCodPostal: 1000,
+	dniDestinatario:44754693,
+	nombreApellidoDestinatario:Leonardo Musalem,
+	telefonoDestinatario:38933333,
+	domicilioEntrega:"",
+	doicilioEntregaCodPostal:"",
+	idAdenciaDestino:0,
+	idCDDestino:1,
+	idTarifaCliente:int,
+	idExtras:int,
+	tieneExtraRetiro:boolean,
+	tieneExtraEntregaDomicilio:boolean,
+	tieneExtraEntregaAgencia:int,
+	idComisionFletero:int,
+	estadoGuia:"Admitida",
+	historial:List<HistorialGuia>
+}
+
+Sección a domicilio
+7.1.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario.
+8.1.DNI						Ingresar DNI
+9.1.Domicilio de Entrega	Ingresar Domicilio de entrega
+10.1.Codigo Postal			Ingresar Codigo postal
+11.1.Boton					"Buscar Localidad" -> Filtra localidad
+12.1.Localidad/Provincia	Mostrar <Localidad>
+13.1.Boton					"Confirmar Solicitud"
+14.1.Volver al menú principal
+
+Verificación:
+15.1 Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+
+{
+	idGuia:int,
+	idCliente:int,
+	fechaImposicion:DateTime,
+	tipoEntrega:TipoEntregaEnum,
+	idAgenciaOrigen:int,
+	idCDOrigen:int,
+	categoriaBulto:CategoriaBultoEnum,
+	remDni: int,
+	remDomicilioRetiro: String,
+	remCodPostal: String,
+	dniDestinatario:Long,
+	nombreApellidoDestinatario:String,
+	telefonoDestinatario:Long,
+	domicilioEntrega:String,
+	doicilioEntregaCodPostal: String,
+	idAdenciaDestino:int,
+	idCDDestino:int,
+	idTarifaCliente:int,
+	idExtras:int,
+	tieneExtraRetiro:boolean,
+	tieneExtraEntregaDomicilio:boolean,
+	tieneExtraEntregaAgencia:int,
+	idComisionFletero:int,
+	estadoGuia:"Admitida",
+	historial:List<HistorialGuia>
+}
+
+
+Sección en agencia
+7.2.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario.
+8.2.DNI				Ingresar DNI
+9.2.Codigo Postal		Ingresar Codigo postal
+10.2.Boton			"Buscar Localidad" -> Filtra localidad
+11.2.Localidad/Provincia	Mostrar <Agencia>
+12.2.Boton			"Confirmar Solicitud"
+13.2.Volver al menú principal
+
+Verificación:
+14.2 Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+
+{
+	idGuia:int,
+	idCliente:int,
+	fechaImposicion:DateTime,
+	tipoEntrega:TipoEntregaEnum,
+	idAgenciaOrigen:int,
+	idCDOrigen:int,
+	categoriaBulto:CategoriaBultoEnum,
+	remDni: int,
+	remDomicilioRetiro: String,
+	remCodPostal: String,
+	dniDestinatario:Long,
+	nombreApellidoDestinatario:String,
+	telefonoDestinatario:Long,
+	domicilioEntrega:String,
+	doicilioEntregaCodPostal: String,
+	idAdenciaDestino:int,
+	idCDDestino:int,
+	idTarifaCliente:int,
+	idExtras:int,
+	tieneExtraRetiro:boolean,
+	tieneExtraEntregaDomicilio:boolean,
+	tieneExtraEntregaAgencia:int,
+	idComisionFletero:int,
+	estadoGuia:"Admitida",
+	historial:List<HistorialGuia>
+}
+
+
+
+Sección en CD
+7.3.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario.
+8.3.DNI				Ingresar DNI
+9.3.Codigo Postal		Ingresar Codigo postal
+10.3.Boton			"Buscar Localidad" -> Filtra localidad
+11.3.Localidad/Provincia	Mostrar <CD>
+12.3.Boton			"Confirmar Solicitud"
+13.3.Volver al menú principal
+
+Verificación:
+14.3. Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+
+{
+	idGuia:int,
+	idCliente:int,
+	fechaImposicion:DateTime,
+	tipoEntrega:TipoEntregaEnum,
+	idAgenciaOrigen:int,
+	idCDOrigen:int,
+	categoriaBulto:CategoriaBultoEnum,
+	remDni: int,
+	remDomicilioRetiro: String,
+	remCodPostal: String,
+	dniDestinatario:Long,
+	nombreApellidoDestinatario:String,
+	telefonoDestinatario:Long,
+	domicilioEntrega:String,
+	doicilioEntregaCodPostal: String,
+	idAdenciaDestino:int,
+	idCDDestino:int,
+	idTarifaCliente:int,
+	idExtras:int,
+	tieneExtraRetiro:boolean,
+	tieneExtraEntregaDomicilio:boolean,
+	tieneExtraEntregaAgencia:int,
+	idComisionFletero:int,
+	estadoGuia:"Admitida",
+	historial:List<HistorialGuia>
+}
+
+
