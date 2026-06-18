@@ -415,18 +415,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admision\Pruebas\" />
-    <Folder Include="ConfeccionHDRdeTransporte\Pruebas\" />
-    <Folder Include="ConfeccionHDRdeUltMilla\Pruebas\" />
-    <Folder Include="ConsultaTracking\Pruebas\" />
-    <Folder Include="CostovsVentas\Pruebas\" />
-    <Folder Include="EmitirFactura\Pruebas\" />
-    <Folder Include="ImposicionAgencia\Pruebas\" />
-    <Folder Include="ImposicionCallCenter\Pruebas\" />
-    <Folder Include="ImposicionCD\Pruebas\" />
-    <Folder Include="RegistrarEntrega\Pruebas\" />
-    <Folder Include="RendicionHDRdeTransporte\Pruebas\" />
-    <Folder Include="RendicionHDRdeUltMilla\Pruebas\" />
+    <Folder Include="PRUEBA\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Datos\agencias.json">
