@@ -81,7 +81,10 @@ namespace TUTASA.Forms.CD
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            LimpiarFormulario();
+            txtDNIReceptor.Clear();
+            listViewEncomiendas.Items.Clear();
+            modelo.LimpiarSeleccion();
+            txtDNIReceptor.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -94,12 +97,6 @@ namespace TUTASA.Forms.CD
                 this.Close();
         }
 
-        private void LimpiarFormulario()
-        {
-            txtDNIReceptor.Clear();
-            listViewEncomiendas.Items.Clear();
-            modelo.LimpiarSeleccion();
-            txtDNIReceptor.Focus();
-        }
+        
     }
 }

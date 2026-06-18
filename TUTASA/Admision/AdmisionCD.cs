@@ -78,7 +78,11 @@ namespace TUTASA.Forms.CD
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            LimpiarFormulario();
+            txtNroDeGuia.Clear();
+            labelNrodeGuia.Text = "";
+            cmbCategoria.SelectedIndex = -1;
+            modelo.LimpiarSeleccion();
+            txtNroDeGuia.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -91,13 +95,6 @@ namespace TUTASA.Forms.CD
                 this.Close();
         }
 
-        private void LimpiarFormulario()
-        {
-            txtNroDeGuia.Clear();
-            labelNrodeGuia.Text = "";
-            cmbCategoria.SelectedIndex = -1;
-            modelo.LimpiarSeleccion();
-            txtNroDeGuia.Focus();
-        }
+       
     }
 }

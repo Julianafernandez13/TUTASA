@@ -9,33 +9,39 @@ namespace TUTASA.EmitirFactura
 {
     internal class EmitirFacturaModelo
     {
+        public Cliente ClienteActual { get; private set; }
+        public List<MovimientoPendiente> MovimientosActuales { get; private set; } = new List<MovimientoPendiente>();
+
         // Busca un cliente por CUIT en el almacen
-        public Cliente BuscarClientePorCUIT(string cuit)
+        public bool BuscarClientePorCUIT(string cuit)
         {
+            ClienteActual = null;
+
             foreach (ClienteEntidad clienteEntidad in ClienteAlmacen.clientes)
             {
                 if (clienteEntidad.CuitCliente.ToString() == cuit.Trim())
                 {
-                    return new Cliente
+                    ClienteActual = new Cliente
                     {
                         Id = clienteEntidad.IdCliente,
                         NombreCompleto = clienteEntidad.NombreCliente + " " + clienteEntidad.ApellidoCliente,
                         CUIT = clienteEntidad.CuitCliente.ToString(),
                         TipoFactura = clienteEntidad.TipoFactura
                     };
+                    return true;
                 }
             }
-            return null;
+            return false;
         }
 
-        // Devuelve los movimientos pendientes de facturacion de un cliente en un periodo
-        public List<MovimientoPendiente> ObtenerMovimientosPendientes(int idCliente, int mes, int anio)
+        // Obtiene los movimientos pendientes de facturacion del cliente actual en un periodo
+        public void ObtenerMovimientosPendientes(int mes, int anio)
         {
-            var resultado = new List<MovimientoPendiente>();
+            MovimientosActuales = new List<MovimientoPendiente>();
 
             foreach (CtaCteClienteEntidad movEntidad in CtaCteClienteAlmacen.ctaCteClientes)
             {
-                if (movEntidad.IdCliente != idCliente) continue;
+                if (movEntidad.IdCliente != ClienteActual.Id) continue;
                 if (movEntidad.Facturado) continue;
                 if (movEntidad.FechaMovimiento.Month != mes) continue;
                 if (movEntidad.FechaMovimiento.Year != anio) continue;
@@ -47,7 +53,6 @@ namespace TUTASA.EmitirFactura
                 mov.ImporteNeto = movEntidad.Importe;
                 mov.Facturado = movEntidad.Facturado;
 
-                // Buscar guia para obtener NroTracking, origen y destino
                 foreach (GuiaEntidad guiaEntidad in GuiaAlmacen.guias)
                 {
                     if (guiaEntidad.IdGuia == movEntidad.IdGuia)
@@ -59,7 +64,6 @@ namespace TUTASA.EmitirFactura
                         else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.L) mov.Categoria = "L";
                         else if (guiaEntidad.CategoriaBulto == CategoriaBultoEnum.XL) mov.Categoria = "XL";
 
-                        // Buscar nombre CD origen
                         foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
                         {
                             if (cd.IdCD == guiaEntidad.IdCDOrigen)
@@ -69,7 +73,6 @@ namespace TUTASA.EmitirFactura
                             }
                         }
 
-                        // Buscar nombre CD destino
                         foreach (CentroDistribucionEntidad cd in CentroDistribucionAlmacen.centroDistribucions)
                         {
                             if (cd.IdCD == guiaEntidad.IdCDDestino)
@@ -83,13 +86,11 @@ namespace TUTASA.EmitirFactura
                     }
                 }
 
-                resultado.Add(mov);
+                MovimientosActuales.Add(mov);
             }
-
-            return resultado;
         }
 
-        // Calcula el total con IVA segun la condicion fiscal del cliente
+        // Calcula el total con IVA segun el tipo de factura del cliente
         public decimal CalcularTotal(List<MovimientoPendiente> movs, TipoFacturaEnum tipoFactura)
         {
             decimal subtotal = 0;
@@ -99,15 +100,14 @@ namespace TUTASA.EmitirFactura
             return tipoFactura == TipoFacturaEnum.A ? subtotal * 1.21m : subtotal;
         }
 
-        // Emite la factura: marca movimientos como facturados y crea el registro en FacturaAlmacen
-        public void EmitirFactura(List<MovimientoPendiente> movs, int idCliente, TipoFacturaEnum tipoFactura)
+        // Emite la factura y marca los movimientos como facturados
+        public void EmitirFactura()
         {
             DateTime ahora = DateTime.Now;
-            decimal importeTotal = CalcularTotal(movs, tipoFactura);
+            decimal importeTotal = CalcularTotal(MovimientosActuales, ClienteActual.TipoFactura);
             var idsMovs = new List<int>();
 
-            // Marcar movimientos como facturados
-            foreach (var mov in movs)
+            foreach (var mov in MovimientosActuales)
             {
                 foreach (CtaCteClienteEntidad movEntidad in CtaCteClienteAlmacen.ctaCteClientes)
                 {
@@ -120,19 +120,22 @@ namespace TUTASA.EmitirFactura
                 }
             }
 
-            // Crear factura en almacen
             FacturaAlmacen.facturas.Add(new FacturaEntidad
             {
                 IdFactura = FacturaAlmacen.facturas.Count + 1,
-                IdCliente = idCliente,
+                IdCliente = ClienteActual.Id,
                 FechaEmision = ahora,
-                CAE = 0, // se completara con integracion AFIP
-                TipoFactura = tipoFactura,
+                CAE = 0,
+                TipoFactura = ClienteActual.TipoFactura,
                 Movimientos = idsMovs
             });
 
             FacturaAlmacen.Guardar();
             CtaCteClienteAlmacen.Guardar();
+
+            // Limpiar estado
+            ClienteActual = null;
+            MovimientosActuales = new List<MovimientoPendiente>();
         }
     }
 }

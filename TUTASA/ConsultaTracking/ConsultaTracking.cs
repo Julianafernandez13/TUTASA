@@ -26,18 +26,26 @@ namespace TUTASA.Forms.CallCenter
             listViewHistorial.Columns.Add("Ubicacion", 180);
             listViewHistorial.Columns.Add("Estado", 200);
 
-            LimpiarFormulario();
+            txtNroDeGuia.Clear();
+            lblEstadoActual.Text = "";
+            lblEstadoActual.BackColor = Color.White;
+            lblGuia.Text = "";
+            lblCDOrigen.Text = "";
+            lblCategoria.Text = "";
+            lblCDDestino.Text = "";
+            lblCliente.Text = "";
+            lblDestinatario.Text = "";
+            listViewHistorial.Items.Clear();
+            modelo.LimpiarSeleccion();
+            txtNroDeGuia.Focus();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNroDeGuia.Text))
             {
-                MessageBox.Show(
-                    "Debe ingresar un número de guía.",
-                    "Error de validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un número de guía.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -48,14 +56,10 @@ namespace TUTASA.Forms.CallCenter
                 return;
             }
 
-            MostrarDatosGuia(modelo.GuiaSeleccionada);
-        }
+            GuiaTracking guia = modelo.GuiaSeleccionada;
 
-        private void MostrarDatosGuia(GuiaTracking guia)
-        {
             lblEstadoActual.Text = guia.EstadoActual;
             lblEstadoActual.BackColor = modelo.ObtenerColorEstado(guia.EstadoActual);
-
             lblGuia.Text = guia.NroTracking;
             lblCDOrigen.Text = guia.CdOrigen;
             lblCategoria.Text = guia.Categoria;
@@ -64,8 +68,7 @@ namespace TUTASA.Forms.CallCenter
             lblDestinatario.Text = guia.NombreDestinatario;
 
             listViewHistorial.Items.Clear();
-            var historial = modelo.ObtenerHistorial(guia);
-            foreach (var evento in historial)
+            foreach (var evento in modelo.ObtenerHistorial(guia))
             {
                 var item = new ListViewItem(evento.Fecha);
                 item.SubItems.Add(evento.Hora);
@@ -77,43 +80,44 @@ namespace TUTASA.Forms.CallCenter
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarFormulario();
-        }
-
-        private void btnNuevaConsulta_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            var resultado = MessageBox.Show("¿Está seguro que desea salir? Se perderán todos los datos ingresados.", "Salir",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Warning);
-
-            if (resultado == DialogResult.OK)
-                this.Close();
-        }
-
-        private void LimpiarFormulario()
-        {
             txtNroDeGuia.Clear();
-
             lblEstadoActual.Text = "";
             lblEstadoActual.BackColor = Color.White;
-
             lblGuia.Text = "";
             lblCDOrigen.Text = "";
             lblCategoria.Text = "";
             lblCDDestino.Text = "";
             lblCliente.Text = "";
             lblDestinatario.Text = "";
-
             listViewHistorial.Items.Clear();
-
             modelo.LimpiarSeleccion();
-
             txtNroDeGuia.Focus();
+        }
+
+        private void btnNuevaConsulta_Click(object sender, EventArgs e)
+        {
+            txtNroDeGuia.Clear();
+            lblEstadoActual.Text = "";
+            lblEstadoActual.BackColor = Color.White;
+            lblGuia.Text = "";
+            lblCDOrigen.Text = "";
+            lblCategoria.Text = "";
+            lblCDDestino.Text = "";
+            lblCliente.Text = "";
+            lblDestinatario.Text = "";
+            listViewHistorial.Items.Clear();
+            modelo.LimpiarSeleccion();
+            txtNroDeGuia.Focus();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show(
+                "¿Está seguro que desea salir?", "Salir",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.OK)
+                this.Close();
         }
     }
 }

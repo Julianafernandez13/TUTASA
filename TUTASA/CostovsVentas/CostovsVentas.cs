@@ -47,8 +47,8 @@ namespace TUTASA.Forms.Administracion
             foreach (string emp in modelo.ObtenerEmpresas())
                 cmbEmpresa.Items.Add(emp);
 
-            // Limpiar grilla y totales
-            LimpiarPantalla();
+            listViewResultados.Items.Clear();
+            lblTotales.Text = "Totales: Ingresos / Costos / Margen";
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -90,7 +90,8 @@ namespace TUTASA.Forms.Administracion
                     "No se encontraron datos para los filtros seleccionados.\nVerifique el período o la empresa indicada.",
                     "Sin resultados",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarPantalla();
+                listViewResultados.Items.Clear();
+                lblTotales.Text = "Totales: Ingresos / Costos / Margen"; ;
                 return;
             }
 
@@ -124,20 +125,14 @@ namespace TUTASA.Forms.Administracion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarPantalla();
+            listViewResultados.Items.Clear();
+            lblTotales.Text = "Totales: Ingresos / Costos / Margen";
             cmbMes.SelectedIndex = -1;
             cmbAño.SelectedIndex = -1;
             cmbEmpresa.SelectedIndex = -1;
             cmbMes.Focus();
         }
-
-        private void LimpiarPantalla()
-        {
-            listViewResultados.Items.Clear();
-            lblTotales.Text = "Totales: Ingresos / Costos / Margen";
-        }
-
-
+             
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
