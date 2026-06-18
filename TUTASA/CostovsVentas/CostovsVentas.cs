@@ -11,11 +11,11 @@ using TUTASA.CostovsVentas;
 
 namespace TUTASA.Forms.Administracion
 {
-    public partial class CostovsVentas : Form
+    public partial class frmCostovsVentas : Form
     {
         private CostovsVentasModelo modelo = new CostovsVentasModelo();
 
-        public CostovsVentas()
+        public frmCostovsVentas()
         {
             InitializeComponent();
         }

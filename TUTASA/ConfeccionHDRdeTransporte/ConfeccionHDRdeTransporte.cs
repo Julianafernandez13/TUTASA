@@ -12,12 +12,12 @@ using TUTASA.ConfeccionHDRdeTransporte;
 
 namespace TUTASA.Pantallas
 {
-    public partial class ConfeccionHDRdeTransporte : Form
+    public partial class frmConfeccionHDRdeTransporte : Form
     {
         // ── Instancia del modelo ──────────────────────────────
         private ConfeccionHDRdeTransporteModelo modelo = new ConfeccionHDRdeTransporteModelo();
 
-        public ConfeccionHDRdeTransporte()
+        public frmConfeccionHDRdeTransporte()
         {
             InitializeComponent();
         }

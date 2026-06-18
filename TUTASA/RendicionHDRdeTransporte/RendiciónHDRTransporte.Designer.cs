@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CD
 {
-    partial class RendicionHDRTransporte
+    partial class frmRendicionHDRTransporte
     {
         /// <summary>
         /// Required designer variable.

@@ -11,12 +11,12 @@ using TUTASA.RendicionHDRdeTransporte;
 
 namespace TUTASA.Forms.CD
 {
-    public partial class RendicionHDRTransporte : Form
+    public partial class frmRendicionHDRTransporte : Form
     {
         // ── Instancia del modelo ──────────────────────────────
         private RendicionHDRTransporteModelo modelo = new RendicionHDRTransporteModelo();
 
-        public RendicionHDRTransporte()
+        public frmRendicionHDRTransporte()
         {
             InitializeComponent();
         }

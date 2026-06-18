@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CallCenter
 {
-    partial class ConsultaTracking
+    partial class frmConsultaTracking
     {
         /// <summary>
         /// Required designer variable.

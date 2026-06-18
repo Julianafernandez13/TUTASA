@@ -11,13 +11,13 @@ using TUTASA.EmitirFactura;
 
 namespace TUTASA.Forms.Administracion
 {
-    public partial class EmitirFactura : Form
+    public partial class frmEmitirFactura : Form
     {
         //instancia del modelo de EmitirFactura
         private EmitirFacturaModelo modelo = new EmitirFacturaModelo();
         private Cliente clienteActual = null;
         private List<MovimientoPendiente> movimientosActuales = new List<MovimientoPendiente>();
-        public EmitirFactura()
+        public frmEmitirFactura()
         {
             InitializeComponent();
         }

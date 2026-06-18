@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.Administracion
 {
-    partial class CostovsVentas
+    partial class frmCostovsVentas
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Pantallas
 {
-    partial class RendicionHDRdeUltMilla
+    partial class frmRendicionHDRdeUltMilla
     {
         /// <summary>
         /// Required designer variable.

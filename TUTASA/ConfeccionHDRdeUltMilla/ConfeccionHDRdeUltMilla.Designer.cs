@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Pantallas
 {
-    partial class ConfeccionHDRdeUltMilla
+    partial class frmConfeccionHDRdeUltMilla
     {
         private System.ComponentModel.IContainer components = null;
 

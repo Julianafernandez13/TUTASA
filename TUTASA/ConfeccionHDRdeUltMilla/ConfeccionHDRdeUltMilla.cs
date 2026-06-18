@@ -5,19 +5,17 @@ using TUTASA.ConfeccionHDRdeUltMilla;
 
 namespace TUTASA.Pantallas
 {
-    public partial class ConfeccionHDRdeUltMilla : Form
+    public partial class frmConfeccionHDRdeUltMilla : Form
     {
         private ConfeccionHDRdeUltMillaModelo modelo = new ConfeccionHDRdeUltMillaModelo();
         
 
-        public ConfeccionHDRdeUltMilla()
+        public frmConfeccionHDRdeUltMilla()
         {
             InitializeComponent();
         }
 
         // ── LOAD ─────────────────────────────────────────────
-
-
 
         private void ConfeccionHDRdeUltMilla_Load(object sender, EventArgs e)
         {

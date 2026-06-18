@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Pantallas
 {
-    partial class ConfeccionHDRdeTransporte
+    partial class frmConfeccionHDRdeTransporte
     {
         /// <summary>
         /// Required designer variable.

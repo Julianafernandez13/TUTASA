@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.Administracion
 {
-    partial class EmitirFactura
+    partial class frmEmitirFactura
     {
         /// <summary>
         /// Required designer variable.

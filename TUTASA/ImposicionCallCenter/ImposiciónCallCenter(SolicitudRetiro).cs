@@ -7,11 +7,11 @@ using TUTASA.ImposicionCallCenter;
 
 namespace TUTASA.Forms.CallCenter
 {
-    public partial class ImposicionCallCenter : Form
+    public partial class frmImposicionCallCenter : Form
     {
         //instancia del modelo de ImposicionCallCenter
         private ImposicionCallCenterModelo modelo = new ImposicionCallCenterModelo();
-        public ImposicionCallCenter()
+        public frmImposicionCallCenter()
         {
             InitializeComponent();
         }

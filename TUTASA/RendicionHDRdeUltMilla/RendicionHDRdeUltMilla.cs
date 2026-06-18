@@ -11,12 +11,12 @@ using TUTASA.RendicionHDRdeUltMilla;
 
 namespace TUTASA.Pantallas
 {
-    public partial class RendicionHDRdeUltMilla : Form
+    public partial class frmRendicionHDRdeUltMilla : Form
     {
         // ── Instancia del modelo ──────────────────────────────
         private RendicionHDRUltMillaModelo modelo = new RendicionHDRUltMillaModelo();
 
-        public RendicionHDRdeUltMilla()
+        public frmRendicionHDRdeUltMilla()
         {
             InitializeComponent();
         }

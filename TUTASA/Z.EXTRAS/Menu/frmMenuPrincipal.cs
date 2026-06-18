@@ -6,6 +6,7 @@ using TUTASA.Almacenes;
 using TUTASA.Forms.Agencia;
 using TUTASA.Forms.CallCenter;
 using TUTASA.Forms.CD;
+using TUTASA.Forms.Administracion;
 using TUTASA.Pantallas;
 
 namespace TUTASA.Forms.Menu
@@ -136,8 +137,8 @@ namespace TUTASA.Forms.Menu
             btnDespacho.Enabled = esCD;            // HDR de Transporte
             btnRecepcionTransporte.Enabled = esCD; // Rendición HDR de Transporte
             btnEntregaCD.Enabled = true;           // Entrega de Encomienda: ambos
-            button3.Enabled = esCD;                // Emitir Factura
-            button4.Enabled = esCD;                // Costos vs Ventas
+            btnEmitirFactura.Enabled = esCD;                // Emitir Factura
+            btnCostosVentas.Enabled = esCD;                // Costos vs Ventas
             btnTracking.Enabled = esCD;            // Consultar Tracking
         }
 
@@ -152,8 +153,8 @@ namespace TUTASA.Forms.Menu
             btnDespacho.Enabled = habilitar;
             btnRecepcionTransporte.Enabled = habilitar;
             btnEntregaCD.Enabled = habilitar;
-            button3.Enabled = habilitar;
-            button4.Enabled = habilitar;
+            btnEmitirFactura.Enabled = habilitar;
+            btnCostosVentas.Enabled = habilitar;
             btnTracking.Enabled = habilitar;
         }
 
@@ -213,15 +214,15 @@ namespace TUTASA.Forms.Menu
         private void btnImposicionCallCenter_Click(object sender, EventArgs e)
         {
             if (!ValidarSeleccion()) return;
-            //var form = new ImposicionCallCenter();
-            //form.Show();
+            var form = new frmImposicionCallCenter();
+            form.ShowDialog();
         }
 
         private void btnImposicionCD_Click(object sender, EventArgs e)
         {
             if (!ValidarSeleccion()) return;
             var form = new frmImposicionCD();
-            form.Show();
+            form.ShowDialog();
         }
 
 
@@ -229,14 +230,70 @@ namespace TUTASA.Forms.Menu
         {
             if (!ValidarSeleccion()) return;
             var form = new frmImposicionAgencia();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void btnConfeccionHDR_Click(object sender, EventArgs e)
         {
             if (!ValidarSeleccion()) return;
-            //var form = new ConfeccionHDRdeUltMilla();
-            //form.Show();
+            var form = new frmConfeccionHDRdeUltMilla();
+            form.ShowDialog();
+        }
+
+        private void btnRendicionHDR_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmRendicionHDRdeUltMilla();
+            form.ShowDialog();
+        }
+
+        private void btnAdmision_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmAdmision();
+            form.ShowDialog();
+        }
+
+        private void btnDespacho_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmConfeccionHDRdeTransporte();
+            form.ShowDialog();
+        }
+
+        private void btnRecepcionTransporte_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmRendicionHDRTransporte();
+            form.ShowDialog();
+        }
+
+        private void btnEntregaCD_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmEntrega();
+            form.ShowDialog();
+        }
+
+        private void btnEmitirFactura_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmEmitirFactura();
+            form.ShowDialog();
+        }
+
+        private void btnCostosVentas_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmCostovsVentas();
+            form.ShowDialog();
+        }
+
+        private void btnTracking_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+            var form = new frmConsultaTracking();
+            form.ShowDialog();
         }
     }
 }

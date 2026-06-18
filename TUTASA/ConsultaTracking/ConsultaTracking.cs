@@ -5,11 +5,11 @@ using TUTASA.ConsultaTracking;
 
 namespace TUTASA.Forms.CallCenter
 {
-    public partial class ConsultaTracking : Form
+    public partial class frmConsultaTracking : Form
     {
         private ConsultaTrackingModelo modelo = new ConsultaTrackingModelo();
 
-        public ConsultaTracking()
+        public frmConsultaTracking()
         {
             InitializeComponent();
         }

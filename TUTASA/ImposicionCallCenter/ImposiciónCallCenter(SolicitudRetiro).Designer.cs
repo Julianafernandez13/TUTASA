@@ -1,6 +1,6 @@
 ﻿namespace TUTASA.Forms.CallCenter
 {
-    partial class ImposicionCallCenter
+    partial class frmImposicionCallCenter
     {
         private System.ComponentModel.IContainer components = null;
 
