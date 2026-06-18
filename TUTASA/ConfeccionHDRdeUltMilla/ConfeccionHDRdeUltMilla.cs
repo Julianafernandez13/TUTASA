@@ -47,6 +47,7 @@ namespace TUTASA.Pantallas
             foreach (var loc in modelo.ObtenerLocalidadesPorTipo("Entrega"))
                 cmbLocalidad.Items.Add(loc);
         }
+
         private void radioBtnRetiro_CheckedChanged(object sender, EventArgs e)
         {
             if (!radioBtnRetiro.Checked) return;
@@ -168,7 +169,6 @@ namespace TUTASA.Pantallas
             foreach (var f in modelo.ObtenerFleterosPorLocalidad(localidad))
                 cmbFleteros.Items.Add(f.NombreCompleto);
         }
-
 
         // ── SELECCIÓN DE FLETERO ─────────────────────────────
         private void cmbFleteros_SelectedIndexChanged(object sender, EventArgs e)
