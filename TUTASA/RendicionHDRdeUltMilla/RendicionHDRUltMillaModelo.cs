@@ -393,7 +393,7 @@ namespace TUTASA.RendicionHDRdeUltMilla
                 RemDni = 0,
                 RemDomicilioRetiro = string.Empty,
                 RemCodPostal = string.Empty,
-                DniDestinatario = guiaOriginal.RemDni,
+                DniDestinatario = 99999999, //HARDCODEADO destinatario genérico para devoluciones, FALTA SOLUCIONAR!!!
                 NombreApellidoDestinatario = "DEVOLUCION - " + guiaOriginal.NombreApellidoDestinatario,
                 TelefonoDestinatario = 0,
                 DomicilioEntrega = guiaOriginal.RemDomicilioRetiro,
