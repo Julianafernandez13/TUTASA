@@ -94,5 +94,37 @@
     "IdCDDestino": 1,
     "PrecioBase": 900,
     "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 13,
+    "CategoriaBulto": 0,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 3,
+    "PrecioBase": 750,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 14,
+    "CategoriaBulto": 1,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 3,
+    "PrecioBase": 1400,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 15,
+    "CategoriaBulto": 2,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 3,
+    "PrecioBase": 2000,
+    "FechaVigencia": "2026-01-01T00:00:00"
+  },
+  {
+    "IdTarifaCliente": 16,
+    "CategoriaBulto": 3,
+    "IdCDOrigen": 1,
+    "IdCDDestino": 3,
+    "PrecioBase": 2800,
+    "FechaVigencia": "2026-01-01T00:00:00"
   }
 ]

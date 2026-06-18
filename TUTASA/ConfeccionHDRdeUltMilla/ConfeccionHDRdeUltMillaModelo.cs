@@ -256,7 +256,12 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
         private string ObtenerLocalidadParaHDR(GuiaEntidad guiaEntidad, string tipoHDR)
         {
             if (tipoHDR == "Retiro")
-                return ObtenerLocalidadPorAgencia(guiaEntidad.IdAgenciaOrigen);
+            {
+                if (guiaEntidad.IdAgenciaOrigen > 0)
+                    return ObtenerLocalidadPorAgencia(guiaEntidad.IdAgenciaOrigen);
+                else
+                    return ObtenerLocalidad(guiaEntidad.RemCodPostal);
+            }
             else
             {
                 if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia)
@@ -269,7 +274,12 @@ namespace TUTASA.ConfeccionHDRdeUltMilla
         private string ObtenerDomicilioParaHDR(GuiaEntidad guiaEntidad, string tipoHDR)
         {
             if (tipoHDR == "Retiro")
-                return ObtenerDomicilioPorAgencia(guiaEntidad.IdAgenciaOrigen);
+            {
+                if (guiaEntidad.IdAgenciaOrigen > 0)
+                    return ObtenerDomicilioPorAgencia(guiaEntidad.IdAgenciaOrigen);
+                else
+                    return guiaEntidad.RemDomicilioRetiro;
+            }
             else
             {
                 if (guiaEntidad.TipoEntrega == TipoEntregaEnum.Agencia)
