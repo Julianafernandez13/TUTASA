@@ -287,6 +287,7 @@
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="PRUEBA\ImposicionCallCenter\ImposicionCallCenter_ImposicionExitosa.txt" />
+    <Content Include="PRUEBA\ImposicionCallCenter\ImposicionCallCenter_ImposicionExitosa_EntregaenAgencia.txt" />
     <EmbeddedResource Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla.resx">
       <DependentUpon>ConfeccionHDRdeUltMilla.cs</DependentUpon>
     </EmbeddedResource>

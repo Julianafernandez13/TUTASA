@@ -19,7 +19,6 @@ namespace TUTASA.Almacenes
         IncluidaEnHDREntrega,
         IntentoDeEntregaFallido,
         DisponibleParaEntrega,
-        Devolucion,
         Cancelada,
         Entregada
     }
