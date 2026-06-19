@@ -1,0 +1,41 @@
+Plan de Prueba: RendicionHDRUltMilla
+
+El punto de partida es la seleccion del CD Buenos Aires en el menu principal
+
+Seccion: Identificacion del fletero
+1.Ingresar DNI					Ingresar DNI     -> Prueba utiliza 12345678
+2.Boton							"Seleccionar"
+3.Fletero seleccionado			Muestra <fletero> -> Resultado esperado: Carlos Rodriguez
+
+Seccion: Rendicion
+4.Nro de HDR					Selecciona HDR del desplegable -> Prueba utiliza RET -000001
+5.Seleccion excluyente			Cumplida || No cumplida			-> Prueba utiliza Cumplida
+6.Boton							"Aceptar"						-> Resultado esperado: RET -000001 pasa a la siguiente seccion 
+
+Seccion: Resumen de HDR rendidas
+7.Muestra NroHDR en grilla
+
+Seccion: Hojas de ruta a entregar a fletero(informativo)
+8.Muestra la guia que el fletero tiene asignada en ese CD
+
+9.Boton							"Confirmar"
+10.Muestra						Mensaje de confirmacion.
+11.Boton						"Si"
+12.Muestra						Confirmacion de HDR.
+13.Boton						"Aceptar"
+14.Boton						"Cancelar" -> Resultado esperado: Retorno al Menu Principal
+
+Verificacion: 
+15.hdr_retiro.json debe ser similar a:
+{
+    "IdHDRdeRetiro": 1,
+    "IdFletero": 1,
+    "FechaEmisionHDR": "2026-05-10T08:00:00",
+    "EstadoHDR": 2,
+    "GuiasRetiro": [
+      3
+    ]
+ }
+
+ 16.guias.json debe ser similar a:
+{"IdGuia":3,"NroTracking":"1-00000003","IdCliente":2,"FechaImposicion":"2026-05-03T11:00:00","TipoEntrega":0,"IdAgenciaOrigen":1,"IdCDOrigen":1,"CategoriaBulto":1,"RemDni":23456789,"RemDomicilioRetiro":"Calle 7 Nro 200","RemCodPostal":"1900","DniDestinatario":99887766,"NombreApellidoDestinatario":"Laura Sosa","TelefonoDestinatario":2614000003,"DomicilioEntrega":"Av. Las Heras 300","DomicilioEntregaCodPostal":"5500","IdAgenciaDestino":0,"IdCDDestino":4,"IdTarifaCliente":6,"IdExtras":1,"TarifaDefinitiva":1650,"TieneExtraRetiro":true,"TieneExtraEntregaDomicilio":false,"TieneExtraEntregaAgencia":false,"IdComisionAgencia":0,"IdComisionFletero":1,"EstadoGuia":4,"Historial":[{"Estado":0,"Fecha":"2026-05-03T11:00:00"},{"Estado":1,"Fecha":"2026-05-03T11:00:00"},{"Estado":4,"Fecha":"2026-05-04T09:00:00"},{"Estado":5,"Fecha":"2026-05-05T10:00:00"},{"Estado":4,"Fecha":"2026-06-18T22:23:45.0195913-03:00"}]}

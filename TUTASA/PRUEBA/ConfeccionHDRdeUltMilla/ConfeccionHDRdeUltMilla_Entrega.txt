@@ -1,17 +1,17 @@
-Plan de Pruebas: ConfeccionDeHDRdeUlTMilla_HDRdeRetiro
+Plan de Pruebas: ConfeccionDeHDRdeUlTMilla_HDRdeEntrega
 
 El punto de partida es la selección de CD Buenos Aires en el menu principal
 
 Seccion: Tipo de Confeccion
-1.Selecciona tipo de HDR a confeccionar			Seleccion excluyente: Entrega || Retiro  -> Prueba selecciona Retiro
+1.Selecciona tipo de HDR a confeccionar			Seleccion excluyente: Entrega || Retiro  -> Prueba selecciona Entrega
 
 Seccion: Busqueda de Guias
 2.Localidad										Selecciona una localidad con guias pendientes de retirar -> Prueba selecciona La Plata
-3.Domicilio										Selecciona Domicilio con guia pendiente de retirar -> Prueba selecciona Calle 7 Nro 123, La Plata
+3.Domicilio										Selecciona Domicilio con guia pendiente de retirar -> Prueba selecciona Calle 44 Nro 456, La Plata
 4.Boton											"Buscar"
 
 Seccion Guias a rutear
-5.Seleccionar Guias a rutear					Selecciona las guias a rutear en el domicilio previamente seleccionado -> Prueba selecciona las dos guias de prueba para el domicilio: 1-00000005 y 1-00000006
+5.Seleccionar Guias a rutear					Selecciona las guias a rutear en el domicilio previamente seleccionado -> Prueba selecciona guia de prueba para el domicilio: 1-00000009
 
 Seccion fletero disponible
 6.Fletero										Muestra desplegable	
@@ -22,11 +22,11 @@ Seccion fletero disponible
 10.Boton										"Cancelar" -> Resultado esperado: Retorna a menu principal
 
 Verificacion:
-11.hdr_retiro.json debe ser similar a:
+11.hdr_entrega.json debe ser similar a:
 {
-	"IdHDRdeRetiro":2,
+	"IdHDRdeEntrega":2,
 	"IdFletero":1,
 	"FechaEmisionHDR":FechaYHoraMomentodePrueba,
 	,"EstadoHDR":0,
-	"GuiasRetiro":[5,6]
+	"GuiasEntrega":[9]
 }

@@ -286,6 +286,8 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="PRUEBA\ConfeccionHDRdeTransporte\ConfeccionHDRTransporte.txt" />
+    <Content Include="PRUEBA\ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla_Entrega.txt" />
     <Content Include="PRUEBA\ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla_HDRRetiro.txt" />
     <Content Include="PRUEBA\ImposicionAgencia\ImposicionAgencia_ImposicionExitosa_EntregaADomicilio.txt" />
     <Content Include="PRUEBA\ImposicionAgencia\ImposicionAgencia_ImposicionExitosa_EntregaenAgencia.txt" />
@@ -296,6 +298,7 @@
     <Content Include="PRUEBA\ImposicionCD\ImposicionCD_ImposicionExitosa_EntregaenAgencia.txt" />
     <Content Include="PRUEBA\ImposicionCD\ImposicionCD_ImposicionExitosa_EntregaenCD.txt" />
     <Content Include="PRUEBA\ImposicionCD\ImposicionCD_ImposicionExitosa_EntregaenDomicilio.txt" />
+    <Content Include="PRUEBA\RendicionHDRdeUltMilla\RendicionHDRUltMilla.txt" />
     <EmbeddedResource Include="ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla.resx">
       <DependentUpon>ConfeccionHDRdeUltMilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,13 +429,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PRUEBA\Admision\" />
-    <Folder Include="PRUEBA\ConfeccionHDRdeTransporte\" />
     <Folder Include="PRUEBA\ConsultaTracking\" />
     <Folder Include="PRUEBA\CostovsVentas\" />
     <Folder Include="PRUEBA\EmitirFactura\" />
     <Folder Include="PRUEBA\RegistrarEntrega\" />
     <Folder Include="PRUEBA\RendicionHDRdeTransporte\" />
-    <Folder Include="PRUEBA\RendicionHDRdeUltMilla\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Datos\agencias.json">
