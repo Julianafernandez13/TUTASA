@@ -254,33 +254,8 @@ namespace TUTASA.ImposicionCD
                 if (tarifaVigente != null)
                     idTarifaCliente = tarifaVigente.IdTarifaCliente;
 
-                // Buscar comision agencia vigente por categoria
                 int idComisionAgencia = 0;
-                ComisionAgencia comisionAgenciaVigente = null;
-                foreach (ComisionAgenciaEntidad ca in ComisionAgenciaAlmacen.comisionAgencias)
-                {
-                    if (ca.CategoriaBulto == (CategoriaBultoEnum)bulto.Categoria && ca.FechaVigencia <= ahora)
-                    {
-                        if (comisionAgenciaVigente == null || ca.FechaVigencia > comisionAgenciaVigente.FechaVigencia)
-                            comisionAgenciaVigente = new ComisionAgencia { IdComisionAgencia = ca.IdComisionAgencia, FechaVigencia = ca.FechaVigencia };
-                    }
-                }
-                if (comisionAgenciaVigente != null)
-                    idComisionAgencia = comisionAgenciaVigente.IdComisionAgencia;
-
-                // Buscar comision fletero vigente por categoria
                 int idComisionFletero = 0;
-                ComisionFletero comisionFleteroVigente = null;
-                foreach (ComisionFleteroEntidad cf in ComisionFleteroAlmacen.comisionFleteros)
-                {
-                    if (cf.CategoriaBulto == (CategoriaBultoEnum)bulto.Categoria && cf.FechaVigencia <= ahora)
-                    {
-                        if (comisionFleteroVigente == null || cf.FechaVigencia > comisionFleteroVigente.FechaVigencia)
-                            comisionFleteroVigente = new ComisionFletero { IdComisionFletero = cf.IdComisionFletero, FechaVigencia = cf.FechaVigencia };
-                    }
-                }
-                if (comisionFleteroVigente != null)
-                    idComisionFletero = comisionFleteroVigente.IdComisionFletero;
 
                 // Crear GuiaEntidad con estado Admitida e historial de 2 pasos
                 GuiaEntidad nuevaGuia = new GuiaEntidad
