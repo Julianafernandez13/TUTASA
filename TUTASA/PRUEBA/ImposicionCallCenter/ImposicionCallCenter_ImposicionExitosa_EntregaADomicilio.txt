@@ -1,4 +1,4 @@
-Plan de Prueba: ImposicionCallCenter_ImposicionExitosa_EntregaenCD
+Plan de Prueba: ImposicionCallCenter_ImposicionExitosa_EntregaenDomicilio
 
 Se parte desde el menu principal seleccionando CD Buenos Aires
 
@@ -24,27 +24,27 @@ Sección: Bultos
 
 12.Tipo de entrega			Selección excluyente: Domicilio || Agencia || CD
 
-Sección en CD
+Sección A Domicilio
 13.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario. -> Nombre de prueba: Valentino Ratti
 14.DNI						Ingresar DNI								-> 20489765
 15.Telefono de contacto		Ingresar telefono del destinatario			-> 2763044018
-16.Codigo Postal			Ingresar Codigo postal						-> 5000
-16.Boton					"Buscar Localidad" -> Filtra localidad		
-17.CD						Mostrar <CD> disponible para seleccionar	-> Resultado esperado: CD Cordoba
-18.Desplegable				Seleccionar CD
-19.Boton					"Confirmar Solicitud"				-> Resultado esperado: Mensaje de solicitud de confirmacion						
-20.Boton					"Aceptar"							-> Resultado esperado: Mensaje de confirmacion correcta
-21.Boton					"Aceptar"							-> Resultado esperado: Retorno al Menu Principal		
+16.Domicilio de entrega		Ingresar domicilio para la distribucuión	-> Billinghurst 2143
+17.Codigo Postal			Ingresar Codigo postal						-> 5000
+18.Boton					"Buscar Localidad" -> Filtra localidad		
+19.Localidad/Provincia		Mostrar <Localidad/Provincia> disponible para seleccionar	-> Resultado esperado: Cordoba, Cordoba
+20.Boton					"Confirmar Solicitud"				-> Resultado esperado: Mensaje de solicitud de confirmacion						
+21.Boton					"Aceptar"							-> Resultado esperado: Mensaje de confirmacion correcta
+22.Boton					"Aceptar"							-> Resultado esperado: Retorno al Menu Principal		
 
 Verificación:
-22. Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+23. Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
 
 {
 	"IdGuia":15,
 	"NroTracking":1-00000015,
 	"IdCliente":4,
 	"FechaImposicion":"FechaYHora_DiaDeLaPrueba",
-	"TipoEntrega":2,								
+	"TipoEntrega":0,								
 	"IdAgenciaOrigen":0,
 	"IdCDOrigen":1,
 	"CategoriaBulto":0,								
@@ -54,20 +54,18 @@ Verificación:
 	"DniDestinatario":20489765,
 	"NombreApellidoDestinatario":"Valentino Ratti",
 	"TelefonoDestinatario":2763044018,
-	"DomicilioEntrega":"",
-	"DomicilioEntregaCodPostal":"",
+	"DomicilioEntrega":Billinghurst 2143"",
+	"DomicilioEntregaCodPostal":"5000",
 	"IdAdenciaDestino":0,
 	"IdCDDestino":2,
 	"IdTarifaCliente":0,
 	"IdExtras":0,
 	"TaridaDefinitiva":0
 	"TieneExtraRetiro":true,
-	"TieneExtraEntregaDomicilio":false,
+	"TieneExtraEntregaDomicilio":true,
 	"TieneExtraEntregaAgencia":false,
 	"IdComisionAgencia":0,
 	"IdComisionFletero":0,
 	"EstadoGuia":1,
 	"Historial":[{"Estado":0,"Fecha":"FechaYHora_DiaDeLaPrueba"},{"Estado":1,"Fecha":"FechaYHora_DiaDeLaPrueba"}]}]
 }
-
-

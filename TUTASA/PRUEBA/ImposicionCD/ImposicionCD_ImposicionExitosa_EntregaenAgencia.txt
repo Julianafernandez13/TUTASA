@@ -1,0 +1,66 @@
+Plan de Prueba: ImposicionCD_ImposicionExitosa_EntregaenAgencia
+
+Se parte desde el menu principal seleccionando CD Buenos Aires
+
+Sección: Datos del cliente
+1.CUIT						Ingresar CUIT cliente			-> Dato de prueba: 27222333444
+2.Boton						"Buscar Cliente"				 
+3.Nombre					Mostrar <Nombre de Cliente>		-> Resultado esperado: Lucia Fernandez
+
+Sección: Bultos
+ -Hacer
+4.Categoría					Selección excluyente: S || M || L || XL
+5.Boton						"Agregar bulto"
+ - Hasta finalizar la carga de bultos						-> Carga para la prueba: Se cargan 2 bultos, uno S y uno M
+6.Botón						Quitar seleccionado				-> Quitar un bulto M: Resultado esperado: Bulto M fuera de la lista
+ 
+
+7.Tipo de entrega			Selección excluyente: Domicilio || Agencia || CD
+
+Sección En Agencia
+8.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario. -> Nombre de prueba: Valentino Ratti
+9.DNI						Ingresar DNI								-> 20489765
+10.Telefono de contacto		Ingresar telefono del destinatario			-> 2763044018
+11.Codigo Postal			Ingresar Codigo postal						-> 5000
+12.Boton					"Buscar Localidad" -> Filtra localidad		
+13.Agencia					Mostrar <Agencia> disponible para seleccionar	-> Resultado esperado: Agencia Cordoba
+14.Desplegable				Seleccionar Agencia
+15.Boton					"Confirmar Solicitud"				-> Resultado esperado: Mensaje de solicitud de confirmacion						
+16.Boton					"Aceptar"							-> Resultado esperado: Mensaje de confirmacion correcta
+17.Boton					"Aceptar"							-> Resultado esperado: Retorno al Menu Principal		
+
+Verificación:
+18. Archivo Guias.json - Ultima entrada debe ser similar a (Cantidad de entradas == Cantidad de bultos):
+
+{
+	"IdGuia":15,
+	"NroTracking":1-00000015,
+	"IdCliente":4,
+	"FechaImposicion":"FechaYHora_DiaDeLaPrueba",
+	"TipoEntrega":1,								
+	"IdAgenciaOrigen":0,
+	"IdCDOrigen":1,
+	"CategoriaBulto":0,								
+	"RemDni":0,
+	"RemDomicilioRetiro":"",
+	"RemCodPostal":"",
+	"DniDestinatario":20489765,
+	"NombreApellidoDestinatario":"Valentino Ratti",
+	"TelefonoDestinatario":2763044018,
+	"DomicilioEntrega":"",
+	"DomicilioEntregaCodPostal":"",
+	"IdAdenciaDestino":6,
+	"IdCDDestino":2,
+	"IdTarifaCliente":1,
+	"IdExtras":1,
+	"TaridaDefinitiva":920
+	"TieneExtraRetiro":false
+	"TieneExtraEntregaDomicilio":false,
+	"TieneExtraEntregaAgencia":true,
+	"IdComisionAgencia":1,					
+	"IdComisionFletero":1,					
+	"EstadoGuia":5,
+	"Historial":[{"Estado":0,"Fecha":"FechaYHora_DiaDeLaPrueba"},{"Estado":5,"Fecha":"FechaYHora_DiaDeLaPrueba"}]}]
+}
+
+

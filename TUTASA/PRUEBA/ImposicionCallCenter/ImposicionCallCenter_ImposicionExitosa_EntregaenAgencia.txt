@@ -1,5 +1,7 @@
 Plan de Prueba: ImposicionCallCenter_ImposicionExitosa_EntregaenAgencia
 
+Se parte desde el menu principal seleccionando CD Buenos Aires
+
 Sección: Datos del cliente
 1.CUIT						Ingresar CUIT cliente			-> Dato de prueba: 27222333444
 2.Boton						"Buscar Cliente"				 
@@ -22,7 +24,7 @@ Sección: Bultos
 
 12.Tipo de entrega			Selección excluyente: Domicilio || Agencia || CD
 
-Sección en Agencia
+Sección En Agencia
 13.Nombre y Apellido		Ingresar Nombre y Apellido de destinatario. -> Nombre de prueba: Valentino Ratti
 14.DNI						Ingresar DNI								-> 20489765
 15.Telefono de contacto		Ingresar telefono del destinatario			-> 2763044018
@@ -42,7 +44,7 @@ Verificación:
 	"NroTracking":1-00000015,
 	"IdCliente":4,
 	"FechaImposicion":"FechaYHora_DiaDeLaPrueba",
-	"TipoEntrega":2,								
+	"TipoEntrega":1,								
 	"IdAgenciaOrigen":0,
 	"IdCDOrigen":1,
 	"CategoriaBulto":0,								
@@ -54,16 +56,16 @@ Verificación:
 	"TelefonoDestinatario":2763044018,
 	"DomicilioEntrega":"",
 	"DomicilioEntregaCodPostal":"",
-	"IdAdenciaDestino":0,
+	"IdAdenciaDestino":6,
 	"IdCDDestino":2,
 	"IdTarifaCliente":0,
 	"IdExtras":0,
 	"TaridaDefinitiva":0
 	"TieneExtraRetiro":true,
 	"TieneExtraEntregaDomicilio":false,
-	"TieneExtraEntregaAgencia":false,
+	"TieneExtraEntregaAgencia":true,
 	"IdComisionAgencia":0,
 	"IdComisionFletero":0,
 	"EstadoGuia":1,
-	"Historial":List<HistorialGuia>
+	"Historial":[{"Estado":0,"Fecha":"FechaYHora_DiaDeLaPrueba"},{"Estado":1,"Fecha":"FechaYHora_DiaDeLaPrueba"}]}]
 }
