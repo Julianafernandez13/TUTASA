@@ -1,0 +1,22 @@
+Plan de Prueba: ConfeccionHDRTransporte
+
+Se parte de la seleccion CD Buenos Aires en el menu principal
+
+Seccion: Datos Despacho
+1.CD Origen						Muestra <CD Buenos Aires>
+2.CD Destino					Selecciona CD Destino													-> Prueba utiliza CD Cordoba
+
+Seccion: Servicio de Transporte
+3.Servicio						Selecciona Servicio														-> Prueba utiliza Flecha Bus
+4.Tipo de arrendamiento			Muestra <Tipo de arrendamiento para el servicio seleccionado>			-> Resultado esperado: C
+
+Seccion: Listado de encomiendas
+5.Listado de encomiendas		Selecciona encomiendas.													-> Prueba utiliza 1-00000013
+6.Boton							"Guardar"																-> Resultado esperado: Muestra solicitud de confirmacion
+7.Boton							"Si"																	-> Resultado esperado: Muestra mensaje de confirmacion
+8.Boton							"Aceptar"
+9.Boton							"Cancelar"																-> Resultado esperado: Retorno Menu Principal
+
+Verificacion:
+10.guias.json debe ser similar a:
+{"IdGuia":13,"NroTracking":"1-00000013","IdCliente":1,"FechaImposicion":"2026-05-17T09:00:00","TipoEntrega":0,"IdAgenciaOrigen":0,"IdCDOrigen":1,"CategoriaBulto":1,"RemDni":0,"RemDomicilioRetiro":"","RemCodPostal":"","DniDestinatario":22334455,"NombreApellidoDestinatario":"Pablo Herrera","TelefonoDestinatario":1145000013,"DomicilioEntrega":"Av. Belgrano 400","DomicilioEntregaCodPostal":"5000","IdAgenciaDestino":0,"IdCDDestino":2,"IdTarifaCliente":2,"IdExtras":1,"TarifaDefinitiva":1500,"TieneExtraRetiro":false,"TieneExtraEntregaDomicilio":true,"TieneExtraEntregaAgencia":false,"IdComisionAgencia":0,"IdComisionFletero":0,"EstadoGuia":6,"Historial":[{"Estado":0,"Fecha":"2026-05-17T09:00:00"},{"Estado":5,"Fecha":"2026-05-17T09:00:00"},{"Estado":6,"Fecha":"FechaYHoraDePrueba"}]}

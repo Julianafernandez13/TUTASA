@@ -503,7 +503,7 @@
     "TieneExtraEntregaAgencia": true,
     "IdComisionAgencia": 1,
     "IdComisionFletero": 0,
-    "EstadoGuia": 4,
+    "EstadoGuia": 10,
     "Historial": [
       {
         "Estado": 0,

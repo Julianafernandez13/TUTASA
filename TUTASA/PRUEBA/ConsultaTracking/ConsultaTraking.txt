@@ -1,0 +1,23 @@
+PlanDePrueba: ConsultaDeTracking
+
+El punto de partida es la seleccion de CD Buenos Aires en el menu principal
+
+Seccion: Busqueda de Guia.
+1.N de guia (tracking ID)				Ingresa Nro de Tracking					-> Prueba utiliza 5-00000001
+2.Boton									"Consultar"								
+
+Seccion: Estado Actual de la Guia
+3.Estado:								Muestra Estado							-> Resultado esperado: Admitida en CD
+4.N de guia								Muestra N de Guia						-> Resultado esperado: 5-00000001
+5.Origen								Muestra Origen							-> Resultado esperado: CD Buenos Aires
+6.Categoria								Muestra Categoria						-> Resultado esperado: M
+7.Destino								Muestra Destino							-> Resultado esperado: CD Cordoba	
+8.Cliente								Muestra Cliente							-> Resultado esperado: Juan Perez
+9.Destinatario							Muestra Destinatario					-> Resultado esperado: Ana Garcia
+
+Seccion: Historial de Eventos
+10.Muestra lista de eventos				Impuesta -> Disponible para retiro -> Pre-Admitida -> Admitida
+
+11.Boton								"Salir"									-> Resultado esperado: Confirmacion de salida
+12.Boton								"Aceptar"								-> Resultado esperado: Retorno a menu principal		
+

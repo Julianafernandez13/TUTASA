@@ -1,0 +1,46 @@
+Plan de prueba: AdmisionExitosa
+
+El punto de partida es el ingreso desde CD Buenos Aires
+
+1.Numero de Guia			Ingresar numero de guia  -> Prueba utiliza 1-00000010
+2.Boton						"Buscar"
+
+Seccion: Admision
+3.Muestra					<Numero de Guia>		-> Resultado esperado: 1-00000010
+4.Categoria verificada		Ingresa categoria verificada  -> Prueba utiliza L
+5.Boton						"Admitir"
+6.Muestra					<La guia fue admitida correctamente>
+7.Boton						"Aceptar"
+
+Verificacion:
+8.guias.json debe ser similar:
+{
+	"IdGuia":10,
+	"NroTracking":"1-00000010",
+	"IdCliente":2,
+	"FechaImposicion":"2026-05-15T09:00:00",
+	"TipoEntrega":0,
+	"IdAgenciaOrigen":1,
+	"IdCDOrigen":1,
+	"CategoriaBulto":2,
+	"RemDni":23456789,
+	"RemDomicilioRetiro":"Calle 7 Nro 200",
+	"RemCodPostal":"1900",
+	"DniDestinatario":88990011,
+	"NombreApellidoDestinatario":"Luciana Paz",
+	"TelefonoDestinatario":1145000010,
+	"DomicilioEntrega":"Av. Col\u00F3n 200",
+	"DomicilioEntregaCodPostal":"5000",
+	"IdAgenciaDestino":0,
+	"IdCDDestino":2,
+	"IdTarifaCliente":3,
+	"IdExtras":1,
+	"TarifaDefinitiva":2550.0,
+	"TieneExtraRetiro":false,
+	"TieneExtraEntregaDomicilio":true,
+	"TieneExtraEntregaAgencia":false,
+	"IdComisionAgencia":3,
+	"IdComisionFletero":3,
+	"EstadoGuia":5,
+	"Historial":[{"Estado":0,"Fecha":"2026-05-15T09:00:00"},{"Estado":1,"Fecha":"2026-05-15T09:00:00"},{"Estado":2,"Fecha":"2026-05-16T08:00:00"},{"Estado":3,"Fecha":"2026-05-17T10:00:00"},{"Estado":4,"Fecha":"2026-05-18T09:00:00"},{"Estado":5,"Fecha":"FechaYHoradePrueba"}]
+}

@@ -40,4 +40,31 @@ Verificacion:
  16.guias.json debe ser similar a:
 {
     "IdGuia":3,
-"NroTracking":"1-00000003","IdCliente":2,"FechaImposicion":"2026-05-03T11:00:00","TipoEntrega":0,"IdAgenciaOrigen":1,"IdCDOrigen":1,"CategoriaBulto":1,"RemDni":23456789,"RemDomicilioRetiro":"Calle 7 Nro 200","RemCodPostal":"1900","DniDestinatario":99887766,"NombreApellidoDestinatario":"Laura Sosa","TelefonoDestinatario":2614000003,"DomicilioEntrega":"Av. Las Heras 300","DomicilioEntregaCodPostal":"5500","IdAgenciaDestino":0,"IdCDDestino":4,"IdTarifaCliente":6,"IdExtras":1,"TarifaDefinitiva":1650,"TieneExtraRetiro":true,"TieneExtraEntregaDomicilio":false,"TieneExtraEntregaAgencia":false,"IdComisionAgencia":0,"IdComisionFletero":1,"EstadoGuia":4,"Historial":[{"Estado":0,"Fecha":"2026-05-03T11:00:00"},{"Estado":1,"Fecha":"2026-05-03T11:00:00"},{"Estado":4,"Fecha":"2026-05-04T09:00:00"},{"Estado":5,"Fecha":"2026-05-05T10:00:00"},{"Estado":4,"Fecha":"2026-06-18T22:23:45.0195913-03:00"}]}
+    "NroTracking":"1-00000003",
+    "IdCliente":2,
+    "FechaImposicion":"2026-05-03T11:00:00",
+    "TipoEntrega":0,
+    "IdAgenciaOrigen":1,
+    "IdCDOrigen":1,
+    "CategoriaBulto":1,
+    "RemDni":23456789,
+    "RemDomicilioRetiro":"Calle 7 Nro 200",
+    "RemCodPostal":"1900",
+    "DniDestinatario":99887766,
+    "NombreApellidoDestinatario":"Laura Sosa",
+    "TelefonoDestinatario":2614000003,
+    "DomicilioEntrega":"Av. Las Heras 300",
+    "DomicilioEntregaCodPostal":"5500",
+    "IdAgenciaDestino":0,
+    "IdCDDestino":4,
+    "IdTarifaCliente":6,
+    "IdExtras":1,
+    "TarifaDefinitiva":1650,
+    "TieneExtraRetiro":true,
+    "TieneExtraEntregaDomicilio":false,
+    "TieneExtraEntregaAgencia":false,
+    "IdComisionAgencia":0,
+    "IdComisionFletero":1,
+    "EstadoGuia":4,
+    "Historial":[{"Estado":0,"Fecha":"2026-05-03T11:00:00"},{"Estado":1,"Fecha":"2026-05-03T11:00:00"},{"Estado":4,"Fecha":FechaYHoraPrueba"}]
+}
