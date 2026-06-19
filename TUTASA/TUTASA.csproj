@@ -272,16 +272,16 @@
       <DependentUpon>RendiciónHDRTransporte.cs</DependentUpon>
     </Compile>
     <Compile Include="RendicionHDRdeUltMilla\RendicionHDRUltMillaModelo.cs" />
-    <Compile Include="Z.EXTRAS\Login\frmLogin.cs">
+    <Compile Include="Menu\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Z.EXTRAS\Login\frmLogin.Designer.cs">
+    <Compile Include="Menu\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuPrincipal.cs">
+    <Compile Include="Menu\Menu\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Z.EXTRAS\Menu\frmMenuPrincipal.Designer.cs">
+    <Compile Include="Menu\Menu\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="program.cs" />
@@ -335,10 +335,10 @@
     <EmbeddedResource Include="RendicionHDRdeTransporte\RendiciónHDRTransporte.resx">
       <DependentUpon>RendiciónHDRTransporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Z.EXTRAS\Login\frmLogin.resx">
+    <EmbeddedResource Include="Menu\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Z.EXTRAS\Menu\frmMenuPrincipal.resx">
+    <EmbeddedResource Include="Menu\Menu\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

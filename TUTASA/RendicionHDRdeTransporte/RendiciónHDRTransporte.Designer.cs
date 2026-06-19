@@ -60,11 +60,11 @@
             this.gbBusqueda.Controls.Add(this.label1);
             this.gbBusqueda.Controls.Add(this.cmbEmpresaTransporte);
             this.gbBusqueda.Controls.Add(this.btnConfirmar);
-            this.gbBusqueda.Location = new System.Drawing.Point(13, 12);
-            this.gbBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbBusqueda.Location = new System.Drawing.Point(15, 15);
+            this.gbBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbBusqueda.Size = new System.Drawing.Size(779, 86);
+            this.gbBusqueda.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbBusqueda.Size = new System.Drawing.Size(876, 108);
             this.gbBusqueda.TabIndex = 0;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda de servicio";
@@ -72,30 +72,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 41);
+            this.label1.Location = new System.Drawing.Point(219, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Servicio:";
             // 
             // cmbEmpresaTransporte
             // 
             this.cmbEmpresaTransporte.FormattingEnabled = true;
-            this.cmbEmpresaTransporte.Location = new System.Drawing.Point(292, 37);
+            this.cmbEmpresaTransporte.Location = new System.Drawing.Point(328, 46);
             this.cmbEmpresaTransporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEmpresaTransporte.Name = "cmbEmpresaTransporte";
-            this.cmbEmpresaTransporte.Size = new System.Drawing.Size(149, 24);
+            this.cmbEmpresaTransporte.Size = new System.Drawing.Size(167, 28);
             this.cmbEmpresaTransporte.TabIndex = 11;
             this.cmbEmpresaTransporte.UseWaitCursor = true;
             this.cmbEmpresaTransporte.SelectedIndexChanged += new System.EventHandler(this.cmbEmpresaTransporte_SelectedIndexChanged);
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(483, 33);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmar.Location = new System.Drawing.Point(543, 41);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(133, 30);
+            this.btnConfirmar.Size = new System.Drawing.Size(150, 38);
             this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -111,55 +111,52 @@
             this.gbDatosHdr.Controls.Add(this.lblCantBultosTitulo);
             this.gbDatosHdr.Controls.Add(this.lblCdDestinoTitulo);
             this.gbDatosHdr.Controls.Add(this.lblCdOrigenTitulo);
-            this.gbDatosHdr.Location = new System.Drawing.Point(13, 106);
-            this.gbDatosHdr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDatosHdr.Location = new System.Drawing.Point(15, 132);
+            this.gbDatosHdr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbDatosHdr.Name = "gbDatosHdr";
-            this.gbDatosHdr.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbDatosHdr.Size = new System.Drawing.Size(779, 154);
+            this.gbDatosHdr.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbDatosHdr.Size = new System.Drawing.Size(876, 192);
             this.gbDatosHdr.TabIndex = 1;
             this.gbDatosHdr.TabStop = false;
             this.gbDatosHdr.Text = "Datos de la HDR:";
-            
             // 
             // lblCDDestino
             // 
             this.lblCDDestino.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCDDestino.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCDDestino.Location = new System.Drawing.Point(505, 86);
+            this.lblCDDestino.Location = new System.Drawing.Point(568, 108);
             this.lblCDDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCDDestino.Name = "lblCDDestino";
-            this.lblCDDestino.Size = new System.Drawing.Size(218, 27);
+            this.lblCDDestino.Size = new System.Drawing.Size(245, 33);
             this.lblCDDestino.TabIndex = 19;
             // 
             // lblCDOrigen
             // 
             this.lblCDOrigen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCDOrigen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCDOrigen.Location = new System.Drawing.Point(155, 86);
+            this.lblCDOrigen.Location = new System.Drawing.Point(174, 108);
             this.lblCDOrigen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCDOrigen.Name = "lblCDOrigen";
-            this.lblCDOrigen.Size = new System.Drawing.Size(218, 27);
+            this.lblCDOrigen.Size = new System.Drawing.Size(245, 33);
             this.lblCDOrigen.TabIndex = 18;
-           
             // 
             // lblCantBultos
             // 
             this.lblCantBultos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCantBultos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCantBultos.Location = new System.Drawing.Point(155, 122);
+            this.lblCantBultos.Location = new System.Drawing.Point(174, 152);
             this.lblCantBultos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantBultos.Name = "lblCantBultos";
-            this.lblCantBultos.Size = new System.Drawing.Size(218, 27);
+            this.lblCantBultos.Size = new System.Drawing.Size(245, 33);
             this.lblCantBultos.TabIndex = 17;
-           
             // 
             // cmbNroHDR
             // 
             this.cmbNroHDR.FormattingEnabled = true;
-            this.cmbNroHDR.Location = new System.Drawing.Point(292, 34);
+            this.cmbNroHDR.Location = new System.Drawing.Point(328, 42);
             this.cmbNroHDR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbNroHDR.Name = "cmbNroHDR";
-            this.cmbNroHDR.Size = new System.Drawing.Size(149, 24);
+            this.cmbNroHDR.Size = new System.Drawing.Size(167, 28);
             this.cmbNroHDR.TabIndex = 14;
             this.cmbNroHDR.UseWaitCursor = true;
             this.cmbNroHDR.SelectedIndexChanged += new System.EventHandler(this.cmbNroHDR_SelectedIndexChanged);
@@ -167,51 +164,51 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 38);
+            this.label2.Location = new System.Drawing.Point(111, 48);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(173, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Selecciona N° de HDR:";
             // 
             // lblCantBultosTitulo
             // 
             this.lblCantBultosTitulo.AutoSize = true;
-            this.lblCantBultosTitulo.Location = new System.Drawing.Point(8, 123);
+            this.lblCantBultosTitulo.Location = new System.Drawing.Point(9, 154);
             this.lblCantBultosTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantBultosTitulo.Name = "lblCantBultosTitulo";
-            this.lblCantBultosTitulo.Size = new System.Drawing.Size(126, 16);
+            this.lblCantBultosTitulo.Size = new System.Drawing.Size(155, 20);
             this.lblCantBultosTitulo.TabIndex = 6;
             this.lblCantBultosTitulo.Text = "Cant. total de bultos:";
             // 
             // lblCdDestinoTitulo
             // 
             this.lblCdDestinoTitulo.AutoSize = true;
-            this.lblCdDestinoTitulo.Location = new System.Drawing.Point(412, 90);
+            this.lblCdDestinoTitulo.Location = new System.Drawing.Point(464, 112);
             this.lblCdDestinoTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCdDestinoTitulo.Name = "lblCdDestinoTitulo";
-            this.lblCdDestinoTitulo.Size = new System.Drawing.Size(78, 16);
+            this.lblCdDestinoTitulo.Size = new System.Drawing.Size(95, 20);
             this.lblCdDestinoTitulo.TabIndex = 4;
             this.lblCdDestinoTitulo.Text = "CD Destino:";
             // 
             // lblCdOrigenTitulo
             // 
             this.lblCdOrigenTitulo.AutoSize = true;
-            this.lblCdOrigenTitulo.Location = new System.Drawing.Point(68, 87);
+            this.lblCdOrigenTitulo.Location = new System.Drawing.Point(76, 109);
             this.lblCdOrigenTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCdOrigenTitulo.Name = "lblCdOrigenTitulo";
-            this.lblCdOrigenTitulo.Size = new System.Drawing.Size(72, 16);
+            this.lblCdOrigenTitulo.Size = new System.Drawing.Size(87, 20);
             this.lblCdOrigenTitulo.TabIndex = 2;
             this.lblCdOrigenTitulo.Text = "CD Origen:";
             // 
             // gbGuias
             // 
             this.gbGuias.Controls.Add(this.listViewGuias);
-            this.gbGuias.Location = new System.Drawing.Point(13, 270);
-            this.gbGuias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbGuias.Location = new System.Drawing.Point(15, 338);
+            this.gbGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbGuias.Name = "gbGuias";
-            this.gbGuias.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbGuias.Size = new System.Drawing.Size(779, 222);
+            this.gbGuias.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbGuias.Size = new System.Drawing.Size(876, 278);
             this.gbGuias.TabIndex = 2;
             this.gbGuias.TabStop = false;
             this.gbGuias.Text = "Detalle de Guias incluidas";
@@ -228,14 +225,13 @@
             this.listViewGuias.FullRowSelect = true;
             this.listViewGuias.GridLines = true;
             this.listViewGuias.HideSelection = false;
-            this.listViewGuias.Location = new System.Drawing.Point(63, 25);
-            this.listViewGuias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewGuias.Location = new System.Drawing.Point(71, 31);
+            this.listViewGuias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewGuias.Name = "listViewGuias";
-            this.listViewGuias.Size = new System.Drawing.Size(636, 190);
+            this.listViewGuias.Size = new System.Drawing.Size(715, 236);
             this.listViewGuias.TabIndex = 0;
             this.listViewGuias.UseCompatibleStateImageBehavior = false;
             this.listViewGuias.View = System.Windows.Forms.View.Details;
-           
             // 
             // columnHeader1
             // 
@@ -264,10 +260,10 @@
             // 
             // btnConfirmarRecepcion
             // 
-            this.btnConfirmarRecepcion.Location = new System.Drawing.Point(429, 551);
-            this.btnConfirmarRecepcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmarRecepcion.Location = new System.Drawing.Point(483, 660);
+            this.btnConfirmarRecepcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirmarRecepcion.Name = "btnConfirmarRecepcion";
-            this.btnConfirmarRecepcion.Size = new System.Drawing.Size(200, 37);
+            this.btnConfirmarRecepcion.Size = new System.Drawing.Size(225, 46);
             this.btnConfirmarRecepcion.TabIndex = 5;
             this.btnConfirmarRecepcion.Text = "Confirmar recepción";
             this.btnConfirmarRecepcion.UseVisualStyleBackColor = true;
@@ -275,27 +271,27 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(672, 551);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(756, 660);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 46);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // RendicionHDRTransporte
+            // frmRendicionHDRTransporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 596);
+            this.ClientSize = new System.Drawing.Size(917, 745);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarRecepcion);
             this.Controls.Add(this.gbGuias);
             this.Controls.Add(this.gbDatosHdr);
             this.Controls.Add(this.gbBusqueda);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "RendicionHDRTransporte";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmRendicionHDRTransporte";
             this.Text = "TUTASA - Recepcion HDR de Transporte";
             this.Load += new System.EventHandler(this.RendicionHDRTransporte_Load);
             this.gbBusqueda.ResumeLayout(false);

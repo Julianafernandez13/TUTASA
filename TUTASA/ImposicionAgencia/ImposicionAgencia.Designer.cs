@@ -1,4 +1,6 @@
-﻿namespace TUTASA.Forms.Agencia
+﻿using System.Windows.Forms;
+
+namespace TUTASA.Forms.Agencia
 {
     partial class frmImposicionAgencia
     {
@@ -14,6 +16,7 @@
         private void InitializeComponent()
         {
             this.groupRemitente = new System.Windows.Forms.GroupBox();
+            this.lblMuestraNombre = new System.Windows.Forms.Label();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -31,6 +34,7 @@
             this.btnQuitarBulto = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.grpDomicilio = new System.Windows.Forms.GroupBox();
+            this.lblMuestraLocProv = new System.Windows.Forms.Label();
             this.lblProvinciaRetiro = new System.Windows.Forms.Label();
             this.lblNombreDom = new System.Windows.Forms.Label();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
@@ -75,8 +79,6 @@
             this.radioBtnAgencia = new System.Windows.Forms.RadioButton();
             this.radioBtnDomicilio = new System.Windows.Forms.RadioButton();
             this.lblDestino = new System.Windows.Forms.Label();
-            this.lblMuestraNombre = new System.Windows.Forms.Label();
-            this.lblMuestraLocProv = new System.Windows.Forms.Label();
             this.groupRemitente.SuspendLayout();
             this.grpBultos.SuspendLayout();
             this.grpDomicilio.SuspendLayout();
@@ -99,6 +101,16 @@
             this.groupRemitente.TabIndex = 0;
             this.groupRemitente.TabStop = false;
             this.groupRemitente.Text = "Datos del Remitente";
+            // 
+            // lblMuestraNombre
+            // 
+            this.lblMuestraNombre.AutoSize = true;
+            this.lblMuestraNombre.Location = new System.Drawing.Point(103, 69);
+            this.lblMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraNombre.Name = "lblMuestraNombre";
+            this.lblMuestraNombre.Size = new System.Drawing.Size(135, 20);
+            this.lblMuestraNombre.TabIndex = 10;
+            this.lblMuestraNombre.Text = "[muestra Nombre]";
             // 
             // lblCUIT
             // 
@@ -288,6 +300,16 @@
             this.grpDomicilio.Size = new System.Drawing.Size(976, 186);
             this.grpDomicilio.TabIndex = 7;
             this.grpDomicilio.TabStop = false;
+            // 
+            // lblMuestraLocProv
+            // 
+            this.lblMuestraLocProv.AutoSize = true;
+            this.lblMuestraLocProv.Location = new System.Drawing.Point(665, 145);
+            this.lblMuestraLocProv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMuestraLocProv.Name = "lblMuestraLocProv";
+            this.lblMuestraLocProv.Size = new System.Drawing.Size(231, 20);
+            this.lblMuestraLocProv.TabIndex = 12;
+            this.lblMuestraLocProv.Text = "[muestra Localidaad / Provincia]";
             // 
             // lblProvinciaRetiro
             // 
@@ -742,32 +764,12 @@
             this.lblDestino.TabIndex = 19;
             this.lblDestino.Text = "Tipo de entrega:";
             // 
-            // lblMuestraNombre
-            // 
-            this.lblMuestraNombre.AutoSize = true;
-            this.lblMuestraNombre.Location = new System.Drawing.Point(103, 69);
-            this.lblMuestraNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMuestraNombre.Name = "lblMuestraNombre";
-            this.lblMuestraNombre.Size = new System.Drawing.Size(135, 20);
-            this.lblMuestraNombre.TabIndex = 10;
-            this.lblMuestraNombre.Text = "[muestra Nombre]";
-            // 
-            // lblMuestraLocProv
-            // 
-            this.lblMuestraLocProv.AutoSize = true;
-            this.lblMuestraLocProv.Location = new System.Drawing.Point(665, 145);
-            this.lblMuestraLocProv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMuestraLocProv.Name = "lblMuestraLocProv";
-            this.lblMuestraLocProv.Size = new System.Drawing.Size(231, 20);
-            this.lblMuestraLocProv.TabIndex = 12;
-            this.lblMuestraLocProv.Text = "[muestra Localidaad / Provincia]";
-            // 
             // frmImposicionAgencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1052, 1050);
+            this.ClientSize = new System.Drawing.Size(1028, 1050);
             this.Controls.Add(this.radioBtnCD);
             this.Controls.Add(this.radioBtnAgencia);
             this.Controls.Add(this.radioBtnDomicilio);

@@ -71,7 +71,7 @@
             this.groupRendicion.Controls.Add(this.radioBtnNoCumplida);
             this.groupRendicion.Controls.Add(this.radioBtnCumplida);
             this.groupRendicion.Controls.Add(this.lblNroHDR);
-            this.groupRendicion.Location = new System.Drawing.Point(12, 192);
+            this.groupRendicion.Location = new System.Drawing.Point(55, 214);
             this.groupRendicion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupRendicion.Name = "groupRendicion";
             this.groupRendicion.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -137,7 +137,7 @@
             // 
             this.groupResumenHDRRendidas.Controls.Add(this.btnQuitar);
             this.groupResumenHDRRendidas.Controls.Add(this.listViewHDRRendidas);
-            this.groupResumenHDRRendidas.Location = new System.Drawing.Point(12, 395);
+            this.groupResumenHDRRendidas.Location = new System.Drawing.Point(55, 417);
             this.groupResumenHDRRendidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupResumenHDRRendidas.Name = "groupResumenHDRRendidas";
             this.groupResumenHDRRendidas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,7 +212,7 @@
             this.grpFletero.Controls.Add(this.btnSeleccionar);
             this.grpFletero.Controls.Add(this.lblDNIFletero);
             this.grpFletero.Controls.Add(this.txtDNI);
-            this.grpFletero.Location = new System.Drawing.Point(22, 11);
+            this.grpFletero.Location = new System.Drawing.Point(65, 33);
             this.grpFletero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpFletero.Name = "grpFletero";
             this.grpFletero.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -254,7 +254,7 @@
             // 
             this.lblMuestraFletero.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblMuestraFletero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMuestraFletero.Location = new System.Drawing.Point(196, 128);
+            this.lblMuestraFletero.Location = new System.Drawing.Point(239, 150);
             this.lblMuestraFletero.Name = "lblMuestraFletero";
             this.lblMuestraFletero.Size = new System.Drawing.Size(260, 22);
             this.lblMuestraFletero.TabIndex = 26;
@@ -262,7 +262,7 @@
             // lblFleteroSeleccionado
             // 
             this.lblFleteroSeleccionado.AutoSize = true;
-            this.lblFleteroSeleccionado.Location = new System.Drawing.Point(32, 129);
+            this.lblFleteroSeleccionado.Location = new System.Drawing.Point(75, 151);
             this.lblFleteroSeleccionado.Name = "lblFleteroSeleccionado";
             this.lblFleteroSeleccionado.Size = new System.Drawing.Size(160, 20);
             this.lblFleteroSeleccionado.TabIndex = 27;
@@ -271,7 +271,7 @@
             // groupHDRaEntregar
             // 
             this.groupHDRaEntregar.Controls.Add(this.listViewHDRaEntregar);
-            this.groupHDRaEntregar.Location = new System.Drawing.Point(12, 682);
+            this.groupHDRaEntregar.Location = new System.Drawing.Point(55, 699);
             this.groupHDRaEntregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupHDRaEntregar.Name = "groupHDRaEntregar";
             this.groupHDRaEntregar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -288,7 +288,6 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listViewHDRaEntregar.Enabled = true;
             this.listViewHDRaEntregar.FullRowSelect = true;
             this.listViewHDRaEntregar.GridLines = true;
             this.listViewHDRaEntregar.HideSelection = false;
@@ -347,12 +346,12 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // RendicionHDRdeUltMilla
+            // frmRendicionHDRdeUltMilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(848, 1050);
+            this.ClientSize = new System.Drawing.Size(942, 1050);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.groupHDRaEntregar);
@@ -362,7 +361,7 @@
             this.Controls.Add(this.groupResumenHDRRendidas);
             this.Controls.Add(this.groupRendicion);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "RendicionHDRdeUltMilla";
+            this.Name = "frmRendicionHDRdeUltMilla";
             this.Text = "Rendicion de HDR Ultima Milla";
             this.Load += new System.EventHandler(this.RendicionHDRdeUltMilla_Load);
             this.groupRendicion.ResumeLayout(false);

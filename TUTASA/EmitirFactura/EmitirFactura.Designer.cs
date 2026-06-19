@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupEmitirFactura = new System.Windows.Forms.GroupBox();
-            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEmitirFactura = new System.Windows.Forms.Button();
             this.lblMostrarTotal = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.groupPeriodo = new System.Windows.Forms.GroupBox();
+            this.btnBuscarPeriodo = new System.Windows.Forms.Button();
             this.cmbAño = new System.Windows.Forms.ComboBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
             this.lblAño = new System.Windows.Forms.Label();
@@ -77,25 +77,14 @@
             this.groupEmitirFactura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupEmitirFactura.Name = "groupEmitirFactura";
             this.groupEmitirFactura.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupEmitirFactura.Size = new System.Drawing.Size(997, 652);
+            this.groupEmitirFactura.Size = new System.Drawing.Size(997, 737);
             this.groupEmitirFactura.TabIndex = 0;
             this.groupEmitirFactura.TabStop = false;
             this.groupEmitirFactura.Text = "TUTASA - Emitir Factura";
             // 
-            // btnBuscarPeriodo
-            // 
-            this.btnBuscarPeriodo.Location = new System.Drawing.Point(499, 25);
-            this.btnBuscarPeriodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
-            this.btnBuscarPeriodo.Size = new System.Drawing.Size(117, 33);
-            this.btnBuscarPeriodo.TabIndex = 0;
-            this.btnBuscarPeriodo.Text = "Buscar";
-            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
-            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(869, 608);
+            this.btnCancelar.Location = new System.Drawing.Point(877, 692);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 35);
@@ -106,7 +95,7 @@
             // 
             // btnEmitirFactura
             // 
-            this.btnEmitirFactura.Location = new System.Drawing.Point(705, 608);
+            this.btnEmitirFactura.Location = new System.Drawing.Point(701, 692);
             this.btnEmitirFactura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEmitirFactura.Name = "btnEmitirFactura";
             this.btnEmitirFactura.Size = new System.Drawing.Size(134, 35);
@@ -119,7 +108,7 @@
             // 
             this.lblMostrarTotal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblMostrarTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMostrarTotal.Location = new System.Drawing.Point(428, 546);
+            this.lblMostrarTotal.Location = new System.Drawing.Point(441, 618);
             this.lblMostrarTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostrarTotal.Name = "lblMostrarTotal";
             this.lblMostrarTotal.Size = new System.Drawing.Size(179, 33);
@@ -128,7 +117,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(291, 548);
+            this.lblTotal.Location = new System.Drawing.Point(299, 620);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(125, 20);
@@ -143,7 +132,7 @@
             this.groupMovimientos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupMovimientos.Name = "groupMovimientos";
             this.groupMovimientos.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupMovimientos.Size = new System.Drawing.Size(961, 219);
+            this.groupMovimientos.Size = new System.Drawing.Size(961, 292);
             this.groupMovimientos.TabIndex = 3;
             this.groupMovimientos.TabStop = false;
             this.groupMovimientos.Text = "Movimientos a Facturar";
@@ -163,7 +152,7 @@
             this.listViewMovimientos.Location = new System.Drawing.Point(15, 29);
             this.listViewMovimientos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewMovimientos.Name = "listViewMovimientos";
-            this.listViewMovimientos.Size = new System.Drawing.Size(946, 149);
+            this.listViewMovimientos.Size = new System.Drawing.Size(946, 226);
             this.listViewMovimientos.TabIndex = 1;
             this.listViewMovimientos.UseCompatibleStateImageBehavior = false;
             this.listViewMovimientos.View = System.Windows.Forms.View.Details;
@@ -223,6 +212,17 @@
             this.groupPeriodo.TabIndex = 2;
             this.groupPeriodo.TabStop = false;
             this.groupPeriodo.Text = "Periodo";
+            // 
+            // btnBuscarPeriodo
+            // 
+            this.btnBuscarPeriodo.Location = new System.Drawing.Point(499, 25);
+            this.btnBuscarPeriodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBuscarPeriodo.Name = "btnBuscarPeriodo";
+            this.btnBuscarPeriodo.Size = new System.Drawing.Size(117, 33);
+            this.btnBuscarPeriodo.TabIndex = 0;
+            this.btnBuscarPeriodo.Text = "Buscar";
+            this.btnBuscarPeriodo.UseVisualStyleBackColor = true;
+            this.btnBuscarPeriodo.Click += new System.EventHandler(this.btnBuscarPeriodo_Click);
             // 
             // cmbAño
             // 
@@ -375,14 +375,14 @@
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             // 
-            // EmitirFactura
+            // frmEmitirFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 699);
+            this.ClientSize = new System.Drawing.Size(1041, 769);
             this.Controls.Add(this.groupEmitirFactura);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "EmitirFactura";
+            this.Name = "frmEmitirFactura";
             this.Text = "Emitir Factura";
             this.Load += new System.EventHandler(this.EmitirFactura_Load);
             this.groupEmitirFactura.ResumeLayout(false);

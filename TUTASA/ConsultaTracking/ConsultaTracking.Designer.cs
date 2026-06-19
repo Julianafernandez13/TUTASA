@@ -140,7 +140,7 @@
             this.grpEstado.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.grpEstado.Name = "grpEstado";
             this.grpEstado.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.grpEstado.Size = new System.Drawing.Size(890, 318);
+            this.grpEstado.Size = new System.Drawing.Size(890, 282);
             this.grpEstado.TabIndex = 0;
             this.grpEstado.TabStop = false;
             this.grpEstado.Text = "Estado actual de la guía";
@@ -149,7 +149,7 @@
             // 
             this.lblCDDestino.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCDDestino.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCDDestino.Location = new System.Drawing.Point(516, 151);
+            this.lblCDDestino.Location = new System.Drawing.Point(516, 140);
             this.lblCDDestino.Name = "lblCDDestino";
             this.lblCDDestino.Size = new System.Drawing.Size(246, 27);
             this.lblCDDestino.TabIndex = 14;
@@ -157,7 +157,7 @@
             // lblCDDestinoTitulo
             // 
             this.lblCDDestinoTitulo.AutoSize = true;
-            this.lblCDDestinoTitulo.Location = new System.Drawing.Point(429, 151);
+            this.lblCDDestinoTitulo.Location = new System.Drawing.Point(437, 141);
             this.lblCDDestinoTitulo.Name = "lblCDDestinoTitulo";
             this.lblCDDestinoTitulo.Size = new System.Drawing.Size(68, 20);
             this.lblCDDestinoTitulo.TabIndex = 13;
@@ -175,7 +175,7 @@
             // lblCDOrigenTitulo
             // 
             this.lblCDOrigenTitulo.AutoSize = true;
-            this.lblCDOrigenTitulo.Location = new System.Drawing.Point(429, 94);
+            this.lblCDOrigenTitulo.Location = new System.Drawing.Point(445, 95);
             this.lblCDOrigenTitulo.Name = "lblCDOrigenTitulo";
             this.lblCDOrigenTitulo.Size = new System.Drawing.Size(60, 20);
             this.lblCDOrigenTitulo.TabIndex = 11;
@@ -184,7 +184,7 @@
             // lblDestinatarioTitulo
             // 
             this.lblDestinatarioTitulo.AutoSize = true;
-            this.lblDestinatarioTitulo.Location = new System.Drawing.Point(20, 275);
+            this.lblDestinatarioTitulo.Location = new System.Drawing.Point(20, 228);
             this.lblDestinatarioTitulo.Name = "lblDestinatarioTitulo";
             this.lblDestinatarioTitulo.Size = new System.Drawing.Size(99, 20);
             this.lblDestinatarioTitulo.TabIndex = 9;
@@ -194,7 +194,7 @@
             // 
             this.lblDestinatario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDestinatario.Location = new System.Drawing.Point(136, 274);
+            this.lblDestinatario.Location = new System.Drawing.Point(136, 227);
             this.lblDestinatario.Name = "lblDestinatario";
             this.lblDestinatario.Size = new System.Drawing.Size(246, 27);
             this.lblDestinatario.TabIndex = 10;
@@ -203,7 +203,7 @@
             // 
             this.lblCliente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCliente.Location = new System.Drawing.Point(136, 214);
+            this.lblCliente.Location = new System.Drawing.Point(136, 184);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(246, 27);
             this.lblCliente.TabIndex = 9;
@@ -211,7 +211,7 @@
             // lblClienteTitulo
             // 
             this.lblClienteTitulo.AutoSize = true;
-            this.lblClienteTitulo.Location = new System.Drawing.Point(20, 214);
+            this.lblClienteTitulo.Location = new System.Drawing.Point(57, 185);
             this.lblClienteTitulo.Name = "lblClienteTitulo";
             this.lblClienteTitulo.Size = new System.Drawing.Size(62, 20);
             this.lblClienteTitulo.TabIndex = 8;
@@ -221,7 +221,7 @@
             // 
             this.lblCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCategoria.Location = new System.Drawing.Point(136, 151);
+            this.lblCategoria.Location = new System.Drawing.Point(136, 139);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(246, 27);
             this.lblCategoria.TabIndex = 7;
@@ -229,7 +229,7 @@
             // lblCategoriaTitulo
             // 
             this.lblCategoriaTitulo.AutoSize = true;
-            this.lblCategoriaTitulo.Location = new System.Drawing.Point(20, 152);
+            this.lblCategoriaTitulo.Location = new System.Drawing.Point(37, 141);
             this.lblCategoriaTitulo.Name = "lblCategoriaTitulo";
             this.lblCategoriaTitulo.Size = new System.Drawing.Size(82, 20);
             this.lblCategoriaTitulo.TabIndex = 6;
@@ -247,7 +247,7 @@
             // lblNroGuiaTitulo
             // 
             this.lblNroGuiaTitulo.AutoSize = true;
-            this.lblNroGuiaTitulo.Location = new System.Drawing.Point(20, 94);
+            this.lblNroGuiaTitulo.Location = new System.Drawing.Point(34, 95);
             this.lblNroGuiaTitulo.Name = "lblNroGuiaTitulo";
             this.lblNroGuiaTitulo.Size = new System.Drawing.Size(85, 20);
             this.lblNroGuiaTitulo.TabIndex = 4;
@@ -283,7 +283,7 @@
             // 
             // btnNuevaConsulta
             // 
-            this.btnNuevaConsulta.Location = new System.Drawing.Point(558, 824);
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(604, 747);
             this.btnNuevaConsulta.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnNuevaConsulta.Name = "btnNuevaConsulta";
             this.btnNuevaConsulta.Size = new System.Drawing.Size(184, 43);
@@ -295,11 +295,11 @@
             // grpHistorial
             // 
             this.grpHistorial.Controls.Add(this.listViewHistorial);
-            this.grpHistorial.Location = new System.Drawing.Point(16, 475);
+            this.grpHistorial.Location = new System.Drawing.Point(16, 437);
             this.grpHistorial.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.grpHistorial.Name = "grpHistorial";
             this.grpHistorial.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.grpHistorial.Size = new System.Drawing.Size(890, 330);
+            this.grpHistorial.Size = new System.Drawing.Size(890, 288);
             this.grpHistorial.TabIndex = 1;
             this.grpHistorial.TabStop = false;
             this.grpHistorial.Text = "Historial de eventos";
@@ -314,10 +314,10 @@
             this.listViewHistorial.FullRowSelect = true;
             this.listViewHistorial.GridLines = true;
             this.listViewHistorial.HideSelection = false;
-            this.listViewHistorial.Location = new System.Drawing.Point(24, 51);
+            this.listViewHistorial.Location = new System.Drawing.Point(41, 42);
             this.listViewHistorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewHistorial.Name = "listViewHistorial";
-            this.listViewHistorial.Size = new System.Drawing.Size(838, 269);
+            this.listViewHistorial.Size = new System.Drawing.Size(833, 208);
             this.listViewHistorial.TabIndex = 3;
             this.listViewHistorial.UseCompatibleStateImageBehavior = false;
             this.listViewHistorial.View = System.Windows.Forms.View.Details;
@@ -340,11 +340,11 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Estado";
-            this.columnHeader4.Width = 200;
+            this.columnHeader4.Width = 362;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(808, 824);
+            this.btnSalir.Location = new System.Drawing.Point(825, 747);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(98, 43);
@@ -353,21 +353,21 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // ConsultaTracking
+            // frmConsultaTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(928, 881);
+            this.ClientSize = new System.Drawing.Size(958, 819);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnNuevaConsulta);
             this.Controls.Add(this.grpHistorial);
             this.Controls.Add(this.grpEstado);
+            this.Controls.Add(this.btnNuevaConsulta);
             this.Controls.Add(this.groupBusquedaGuia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MinimizeBox = false;
-            this.Name = "ConsultaTracking";
+            this.Name = "frmConsultaTracking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TUTASA - Consultar estado e historial de guia";
             this.Load += new System.EventHandler(this.frmConsultaTrackingCallCenter_Load);

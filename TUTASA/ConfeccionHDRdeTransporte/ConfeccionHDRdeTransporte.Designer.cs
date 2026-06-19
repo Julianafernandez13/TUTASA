@@ -157,7 +157,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(578, 449);
+            this.btnCancelar.Location = new System.Drawing.Point(596, 616);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 31);
@@ -168,7 +168,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(445, 449);
+            this.btnGuardar.Location = new System.Drawing.Point(450, 616);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(109, 31);
@@ -184,7 +184,7 @@
             this.groupListadoEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupListadoEncomiendas.Name = "groupListadoEncomiendas";
             this.groupListadoEncomiendas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupListadoEncomiendas.Size = new System.Drawing.Size(691, 174);
+            this.groupListadoEncomiendas.Size = new System.Drawing.Size(691, 316);
             this.groupListadoEncomiendas.TabIndex = 29;
             this.groupListadoEncomiendas.TabStop = false;
             this.groupListadoEncomiendas.Text = "Listado de encomiendas";
@@ -201,7 +201,7 @@
             this.listViewEncomiendas.Location = new System.Drawing.Point(24, 28);
             this.listViewEncomiendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listViewEncomiendas.Name = "listViewEncomiendas";
-            this.listViewEncomiendas.Size = new System.Drawing.Size(649, 139);
+            this.listViewEncomiendas.Size = new System.Drawing.Size(649, 267);
             this.listViewEncomiendas.TabIndex = 2;
             this.listViewEncomiendas.UseCompatibleStateImageBehavior = false;
             this.listViewEncomiendas.View = System.Windows.Forms.View.Details;
@@ -222,18 +222,18 @@
             this.columnHeader12.Text = "CD Destino";
             this.columnHeader12.Width = 491;
             // 
-            // ConfeccionHDRdeTransporte
+            // frmConfeccionHDRdeTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 517);
+            this.ClientSize = new System.Drawing.Size(743, 660);
             this.Controls.Add(this.groupListadoEncomiendas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupServicioTransporte);
             this.Controls.Add(this.groupDatosDespacho);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ConfeccionHDRdeTransporte";
+            this.Name = "frmConfeccionHDRdeTransporte";
             this.Text = "TUTASA – Confección de Hoja de Ruta de Transporte";
             this.Load += new System.EventHandler(this.ConfeccionHDRdeTransporte_Load);
             this.groupDatosDespacho.ResumeLayout(false);

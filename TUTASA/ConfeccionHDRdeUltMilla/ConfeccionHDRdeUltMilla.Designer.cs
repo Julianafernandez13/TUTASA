@@ -98,10 +98,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(917, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(917, 46);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(109, 38);
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -115,14 +115,14 @@
             this.groupSeleccionFletero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupSeleccionFletero.Name = "groupSeleccionFletero";
             this.groupSeleccionFletero.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupSeleccionFletero.Size = new System.Drawing.Size(1104, 149);
+            this.groupSeleccionFletero.Size = new System.Drawing.Size(1104, 96);
             this.groupSeleccionFletero.TabIndex = 11;
             this.groupSeleccionFletero.TabStop = false;
             this.groupSeleccionFletero.Text = "Seleccionar fletero disponible";
             // 
             // cmbFleteros
             // 
-            this.cmbFleteros.Location = new System.Drawing.Point(124, 68);
+            this.cmbFleteros.Location = new System.Drawing.Point(124, 44);
             this.cmbFleteros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFleteros.Name = "cmbFleteros";
             this.cmbFleteros.Size = new System.Drawing.Size(266, 28);
@@ -132,7 +132,7 @@
             // labelFletero
             // 
             this.labelFletero.AutoSize = true;
-            this.labelFletero.Location = new System.Drawing.Point(37, 71);
+            this.labelFletero.Location = new System.Drawing.Point(37, 44);
             this.labelFletero.Name = "labelFletero";
             this.labelFletero.Size = new System.Drawing.Size(63, 20);
             this.labelFletero.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(810, 662);
+            this.btnConfirmar.Location = new System.Drawing.Point(799, 635);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(109, 31);
@@ -151,7 +151,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(966, 662);
+            this.btnCancelar.Location = new System.Drawing.Point(963, 635);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 31);
@@ -162,6 +162,7 @@
             // 
             // listViewGuiasARutear
             // 
+            this.listViewGuiasARutear.CheckBoxes = true;
             this.listViewGuiasARutear.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader8,
@@ -169,6 +170,7 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader1});
+            this.listViewGuiasARutear.FullRowSelect = true;
             this.listViewGuiasARutear.HideSelection = false;
             this.listViewGuiasARutear.Location = new System.Drawing.Point(16, 312);
             this.listViewGuiasARutear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -176,9 +178,6 @@
             this.listViewGuiasARutear.Size = new System.Drawing.Size(1104, 163);
             this.listViewGuiasARutear.TabIndex = 3;
             this.listViewGuiasARutear.UseCompatibleStateImageBehavior = false;
-            this.listViewGuiasARutear.FullRowSelect = true;
-            this.listViewGuiasARutear.MultiSelect = true;
-            this.listViewGuiasARutear.CheckBoxes = true;
             this.listViewGuiasARutear.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader6
@@ -263,11 +262,11 @@
             this.radioBtnRetiro.Text = "Retiro";
             this.radioBtnRetiro.CheckedChanged += new System.EventHandler(this.radioBtnRetiro_CheckedChanged);
             // 
-            // ConfeccionHDRdeUltMilla
+            // frmConfeccionHDRdeUltMilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 706);
+            this.ClientSize = new System.Drawing.Size(1156, 676);
             this.Controls.Add(this.groupTipoConfeccion);
             this.Controls.Add(this.labelSeleccionarGuiasRuteo);
             this.Controls.Add(this.listViewGuiasARutear);
@@ -278,7 +277,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "ConfeccionHDRdeUltMilla";
+            this.Name = "frmConfeccionHDRdeUltMilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TUTASA – Confección de Hoja de Ruta";
             this.Load += new System.EventHandler(this.ConfeccionHDRdeUltMilla_Load);
@@ -290,6 +289,7 @@
             this.groupTipoConfeccion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
