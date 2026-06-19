@@ -292,6 +292,48 @@ namespace TUTASA.Admision
             guiaEntidad.IdComisionAgencia = idComisionAgencia;
             guiaEntidad.IdComisionFletero = idComisionFletero;
 
+            // Registrar comision fletero de retiro si corresponde (guias de Agencia o CallCenter)
+            if (guiaEntidad.IdAgenciaOrigen > 0 || guiaEntidad.RemDni > 0)
+            {
+                if (idComisionFletero > 0)
+                {
+                    decimal montoFletero = 0;
+                    foreach (ComisionFleteroEntidad cf in ComisionFleteroAlmacen.comisionFleteros)
+                    {
+                        if (cf.IdComisionFletero == idComisionFletero)
+                        {
+                            montoFletero = cf.MontoComision;
+                            break;
+                        }
+                    }
+
+                    // Buscar el fletero que hizo el retiro en HDRRetiroAlmacen
+                    int idFleteroRetiro = 0;
+                    foreach (HDRRetiroEntidad hdr in HDRRetiroAlmacen.hDRRetiros)
+                    {
+                        if (hdr.GuiasRetiro.Contains(guiaEntidad.IdGuia))
+                        {
+                            idFleteroRetiro = hdr.IdFletero;
+                            break;
+                        }
+                    }
+
+                    if (idFleteroRetiro > 0)
+                    {
+                        int nuevoId = CtaCteFleteroAlmacen.ctaCteFleteros.Count + 1;
+                        CtaCteFleteroAlmacen.ctaCteFleteros.Add(new CtaCteFleteroEntidad
+                        {
+                            IdMovimientoFletero = nuevoId,
+                            IdFletero = idFleteroRetiro,
+                            IdGuia = guiaEntidad.IdGuia,
+                            Pagado = false,
+                            Importe = montoFletero,
+                            FechaMovimiento = DateTime.Now
+                        });
+                    }
+                }
+            }
+
             EstadoGuiaEnum nuevoEstado;
 
             if (guiaEntidad.IdCDOrigen == guiaEntidad.IdCDDestino)

@@ -129,7 +129,6 @@ namespace TUTASA.ConsultaTracking
                 case EstadoGuiaEnum.IncluidaEnHDREntrega:       return "Esperando Fletero";
                 case EstadoGuiaEnum.IntentoDeEntregaFallido:    return "Intento de entrega fallido";
                 case EstadoGuiaEnum.DisponibleParaEntrega:      return "Disponible para entregar en destino";
-                case EstadoGuiaEnum.Devolucion:                 return "En devolución";
                 case EstadoGuiaEnum.Cancelada:                  return "Cancelada - Dos intentos de entrega fallidos";
                 case EstadoGuiaEnum.Entregada:                  return "Entregada";
                 default:                                        return estado.ToString();
