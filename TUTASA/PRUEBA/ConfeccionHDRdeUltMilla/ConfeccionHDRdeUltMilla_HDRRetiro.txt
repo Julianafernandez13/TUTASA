@@ -1,0 +1,13 @@
+Plan de Pruebas: ConfeccionDeHDRdeUlTMilla_HDRdeRetiro
+
+El punto de partida es la selección de CD Buenos Aires en el menu principal
+
+Seccion: Tipo de Confeccion
+1. Selecciona tipo de HDR a confeccionar			Seleccion excluyente: Entrega || Retiro  -> Prueba selecciona Retiro
+
+Seccion: Busqueda de Guias
+2. Localidad										Selecciona una localidad con guias pendientes de retirar -> Prueba selecciona La Plata
+3. Domicilio										Selecciona Domicilio con guia pendiente de retirar -> Prueba selecciona Calle 7 Nro 123, La Plata
+4. Boton											"Buscar"
+
+Seccion Guias a rutear

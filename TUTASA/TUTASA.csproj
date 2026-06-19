@@ -286,6 +286,7 @@
     </Compile>
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="PRUEBA\ConfeccionHDRdeUltMilla\ConfeccionHDRdeUltMilla_HDRRetiro.txt" />
     <Content Include="PRUEBA\ImposicionAgencia\ImposicionAgencia_ImposicionExitosa_EntregaADomicilio.txt" />
     <Content Include="PRUEBA\ImposicionAgencia\ImposicionAgencia_ImposicionExitosa_EntregaenAgencia.txt" />
     <Content Include="PRUEBA\ImposicionAgencia\ImposicionAgencia_ImposicionExitosa_EntregaenCD.TXT" />
@@ -426,7 +427,6 @@
   <ItemGroup>
     <Folder Include="PRUEBA\Admision\" />
     <Folder Include="PRUEBA\ConfeccionHDRdeTransporte\" />
-    <Folder Include="PRUEBA\ConfeccionHDRdeUltMilla\" />
     <Folder Include="PRUEBA\ConsultaTracking\" />
     <Folder Include="PRUEBA\CostovsVentas\" />
     <Folder Include="PRUEBA\EmitirFactura\" />
